@@ -1,0 +1,128 @@
+---
+import { Image } from "astro:assets";
+import MainLayout from "../layouts/MainLayout.astro";
+import siteConfig from "../site.config";
+import coverImage from "../assets/images/1.png";
+---
+
+<MainLayout activePage="proyecto" pageTitle={siteConfig.title + " | Proyecto"}>
+  <div class="page-content max-w-4xl mx-auto">
+    <h1 class="sigmar-ff text-balance mb-8">El Proyecto OP01</h1>
+    
+    <Image
+      width={1024}
+      height={600}
+      loading="eager"
+      layout="constrained"
+      class="rounded-4xl mb-12 mx-auto"
+      src={coverImage}
+      alt="Prototipo OP01"
+    />
+
+    <section class="text-left space-y-16">
+      
+      <!-- Visión Técnica -->
+      <div>
+        <h2 class="sigmar-ff text-3xl mb-4 text-space-red dark:text-space-yellow">Visión Técnica</h2>
+        <p class="kanit-light text-lg sm:text-xl leading-relaxed">
+          El proyecto <strong>OP01</strong> es el resultado de un ciclo de ingeniería que abarca concepción, diseño, fabricación, validación y presentación bajo normas internacionales. El objetivo es desarrollar un monoplaza fiable y optimizado para pilotos principiantes, priorizando bajos costos operativos y diseños manufacturables mediante el razonamiento ingenieril.
+        </p>
+      </div>
+
+      <!-- Objetivos de Diseño -->
+      <div>
+        <h3 class="sigmar-ff text-2xl mb-6">Objetivos de Diseño</h3>
+        <ul class="space-y-6 kanit-light text-lg sm:text-xl">
+          <li class="flex items-start gap-4">
+            <span class="text-2xl mt-1">🛡️</span>
+            <div>
+              <strong class="kanit-regular text-space-red dark:text-space-yellow">Seguridad y Confiabilidad:</strong><br/>
+              Priorizar la integridad del piloto y asegurar que todos los sistemas integrados sean fiables para cumplir con el reglamento técnico.
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="text-2xl mt-1">⚙️</span>
+            <div>
+              <strong class="kanit-regular text-space-red dark:text-space-yellow">Optimización y Manufactura:</strong><br/>
+              Desarrollar diseños manufacturables con bajos costos operativos, utilizando el razonamiento ingenieril para la toma de decisiones.
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="text-2xl mt-1">📊</span>
+            <div>
+              <strong class="kanit-regular text-space-red dark:text-space-yellow">Recolección de Datos y Continuidad:</strong><br/>
+              Implementar un sistema de obtención de datos que sirva como antecedente y base competitiva para futuras generaciones.
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Sistemas del Vehículo -->
+      <div>
+        <h2 class="sigmar-ff text-3xl mb-4 text-space-red dark:text-space-yellow">Sistemas del Vehículo</h2>
+        <p class="kanit-light text-lg sm:text-xl leading-relaxed mb-6">
+          El desarrollo del OP01 se divide en áreas técnicas interconectadas que trabajan en conjunto para maximizar el rendimiento:
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-black/5 dark:bg-white/5 p-6 rounded-3xl border border-black/10 dark:border-white/10">
+            <h4 class="sigmar-ff text-xl mb-2">🔥 Powertrain</h4>
+            <p class="kanit-light text-base sm:text-lg">Enfocado en la tracción efectiva y la gestión térmica del motor CBR600RR 2012.</p>
+          </div>
+          <div class="bg-black/5 dark:bg-white/5 p-6 rounded-3xl border border-black/10 dark:border-white/10">
+            <h4 class="sigmar-ff text-xl mb-2">💨 Aero & Dynamics</h4>
+            <p class="kanit-light text-base sm:text-lg">Optimización del aprovechamiento de downforce e integración estructural para la estabilidad dinámica.</p>
+          </div>
+          <div class="bg-black/5 dark:bg-white/5 p-6 rounded-3xl border border-black/10 dark:border-white/10">
+            <h4 class="sigmar-ff text-xl mb-2">⚡ Electronics</h4>
+            <p class="kanit-light text-base sm:text-lg">Diseño del ruteo seguro y empaquetamiento de sistemas electrónicos para la adquisición de datos.</p>
+          </div>
+          <div class="bg-black/5 dark:bg-white/5 p-6 rounded-3xl border border-black/10 dark:border-white/10">
+            <h4 class="sigmar-ff text-xl mb-2">🏎️ Shell & Chassis</h4>
+            <p class="kanit-light text-base sm:text-lg">Validación dinámica y diseño de la carrocería y estructura base del monoplaza.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Herramientas y Validación -->
+      <div>
+        <h3 class="sigmar-ff text-2xl mb-6">Herramientas y Validación</h3>
+        <p class="kanit-light text-lg sm:text-xl leading-relaxed mb-6">
+          Para garantizar la precisión de cada componente, el equipo utiliza herramientas de nivel industrial para simulaciones y diseño:
+        </p>
+        <ul class="space-y-4 kanit-light text-lg sm:text-xl">
+          <li><strong class="kanit-regular text-space-red dark:text-space-yellow">Diseño CAD:</strong> Uso extensivo de Solidworks para el modelado mecánico.</li>
+          <li><strong class="kanit-regular text-space-red dark:text-space-yellow">Simulación:</strong> Análisis estructural y de fluidos mediante Ansys y ESSS.</li>
+          <li><strong class="kanit-regular text-space-red dark:text-space-yellow">Manufactura:</strong> Planificación de procesos con aliados estratégicos para asegurar la viabilidad técnica de los componentes.</li>
+        </ul>
+      </div>
+
+      <!-- Ruta hacia Michigan -->
+      <div class="bg-gray-100 dark:bg-gray-800 p-8 rounded-3xl">
+        <h2 class="sigmar-ff text-3xl mb-4 text-space-red dark:text-space-yellow">Ruta hacia Michigan</h2>
+        <p class="kanit-light text-lg sm:text-xl leading-relaxed mb-8">
+          El proyecto tiene una línea de tiempo definida que busca el crecimiento constante del equipo:
+        </p>
+        <div class="border-l-4 border-space-red dark:border-space-yellow pl-6 space-y-8">
+          <div class="relative">
+            <div class="absolute -left-[35px] top-1 h-4 w-4 rounded-full bg-space-red dark:bg-space-yellow"></div>
+            <h4 class="sigmar-ff text-xl">Fundación (Marzo 2025)</h4>
+            <p class="kanit-light text-lg">Inicio del diseño conceptual y formación del equipo multidisciplinario.</p>
+          </div>
+          <div class="relative">
+            <div class="absolute -left-[35px] top-1 h-4 w-4 rounded-full bg-space-red dark:bg-space-yellow"></div>
+            <h4 class="sigmar-ff text-xl">FSAE México (2026)</h4>
+            <p class="kanit-light text-lg">Participación en [LUGAR] con el prototipo físico y pruebas de diseño.</p>
+          </div>
+          <div class="relative">
+            <div class="absolute -left-[35px] top-1 h-4 w-4 rounded-full bg-space-red dark:bg-space-yellow"></div>
+            <h4 class="sigmar-ff text-xl">FSAE Michigan (2027)</h4>
+            <p class="kanit-light text-lg">Meta de clasificación y competencia internacional en Estados Unidos.</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+</MainLayout>
