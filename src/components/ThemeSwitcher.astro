@@ -34,11 +34,7 @@ import Button from "./Button.astro";
 </style>
 
 <script is:inline>
-  theme =
-    localStorage?.getItem("theme") ||
-    (window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light");
+  theme = localStorage?.getItem("theme") || "dark";
 
   if (theme === "light") {
     document.documentElement.classList.add("light");

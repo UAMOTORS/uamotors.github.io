@@ -14,7 +14,7 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
 
 <MainLayout
   activePage="home"
-  pageTitle={siteConfig.title + " | An Astro Personal Blog Template"}
+  pageTitle={"UAMOTORS"}
 >
   <div
     class="jumbo-banner flex flex-col sm:flex-row sm:items-center sm:justify-between w-full px-4 my-12 gap-6"
@@ -27,7 +27,7 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
           </span>
         )
       }
-      <h1 class="sigmar-ff leading-tight text-balance sm:pt-0!">
+      <h1 class="sigmar-ff-italic leading-tight text-balance sm:pt-0!">
         {siteConfig.hero?.title}
       </h1>
       <p class="kanit-regular text-balance text-xs sm:text-base">
