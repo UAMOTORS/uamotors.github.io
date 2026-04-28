@@ -31,18 +31,33 @@ const { activePage } = Astro.props;
   </div>
 </header>
 <script is:inline>
-  document.querySelector("#hamburger-menu").addEventListener("click", () => {
-    console.log("clicked...");
-    document.querySelector("#mobile-links").classList.remove("slideOutUp");
-    document.querySelector("#mobile-links").classList.add("expanded");
-    document.querySelector("#mobile-links").classList.add("slideInDown");
-  });
+  document.addEventListener('astro:page-load', () => {
+    const hamburger = document.querySelector("#hamburger-menu");
+    const closeMenu = document.querySelector(".close-menu");
+    const mobileLinks = document.querySelector("#mobile-links");
 
-  document.querySelector(".close-menu").addEventListener("click", () => {
-    console.log("clicked...");
-    document.querySelector("#mobile-links").classList.add("slideOutUp");
-    document.querySelector("#mobile-links").classList.add("expanded");
-    document.querySelector("#mobile-links").classList.remove("slideInDown");
+    if (hamburger && mobileLinks) {
+      // Remover listener anterior si existe para evitar duplicados en desarrollo
+      const newHamburger = hamburger.cloneNode(true);
+      hamburger.parentNode.replaceChild(newHamburger, hamburger);
+      
+      newHamburger.addEventListener("click", () => {
+        mobileLinks.classList.remove("slideOutUp");
+        mobileLinks.classList.add("expanded");
+        mobileLinks.classList.add("slideInDown");
+      });
+    }
+
+    if (closeMenu && mobileLinks) {
+      const newCloseMenu = closeMenu.cloneNode(true);
+      closeMenu.parentNode.replaceChild(newCloseMenu, closeMenu);
+      
+      newCloseMenu.addEventListener("click", () => {
+        mobileLinks.classList.add("slideOutUp");
+        mobileLinks.classList.add("expanded");
+        mobileLinks.classList.remove("slideInDown");
+      });
+    }
   });
 </script>
 
