@@ -20,7 +20,7 @@ const { activePage } = Astro.props;
   </nav>
   <div
     id="mobile-links"
-    class="font-light animated h-0 m-0 opacity-0 top-0 w-full"
+    class="font-light animated h-0 m-0 opacity-0 top-0 w-full pointer-events-none"
   >
     <span class="close-menu cursor-pointer hover:text-space-red dark:hover:text-space-yellow transition-colors mb-4"><CloseIcon class="w-6 h-6" /></span>
     <NavLinks
@@ -33,7 +33,6 @@ const { activePage } = Astro.props;
 <script is:inline>
   document.addEventListener('astro:page-load', () => {
     const hamburger = document.querySelector("#hamburger-menu");
-    const closeMenu = document.querySelector(".close-menu");
     const mobileLinks = document.querySelector("#mobile-links");
 
     if (hamburger && mobileLinks) {
@@ -48,14 +47,17 @@ const { activePage } = Astro.props;
       });
     }
 
-    if (closeMenu && mobileLinks) {
-      const newCloseMenu = closeMenu.cloneNode(true);
-      closeMenu.parentNode.replaceChild(newCloseMenu, closeMenu);
-      
-      newCloseMenu.addEventListener("click", () => {
-        mobileLinks.classList.add("slideOutUp");
-        mobileLinks.classList.add("expanded");
-        mobileLinks.classList.remove("slideInDown");
+    const closeMenus = document.querySelectorAll(".close-menu");
+    if (closeMenus.length > 0 && mobileLinks) {
+      closeMenus.forEach(closeMenu => {
+        const newCloseMenu = closeMenu.cloneNode(true);
+        closeMenu.parentNode.replaceChild(newCloseMenu, closeMenu);
+        
+        newCloseMenu.addEventListener("click", () => {
+          mobileLinks.classList.add("slideOutUp");
+          mobileLinks.classList.add("expanded");
+          mobileLinks.classList.remove("slideInDown");
+        });
       });
     }
   });
@@ -72,6 +74,7 @@ const { activePage } = Astro.props;
       gap: 0.5rem;
       justify-content: end;
       position: absolute;
+      pointer-events: auto;
       z-index: 10;
       opacity: 1;
       padding: 1rem 2rem;
