@@ -1,0 +1,127 @@
+---
+import { Image } from "astro:assets";
+import MainLayout from "../layouts/MainLayout.astro";
+import siteConfig from "../site.config";
+import coverImage from "../assets/images/pixeltrue-space-discovery.svg";
+import EmailIcon from "../icons/Email.astro";
+import LinkedinIcon from "../icons/Linkedin.astro";
+import InstagramIcon from "../icons/Instagram.astro";
+import TiktokIcon from "../icons/Tiktok.astro";
+---
+
+<MainLayout activePage="contacto" pageTitle={siteConfig.title + " | Contacto"}>
+  <div class="page-content max-w-4xl mx-auto">
+    <h1 class="sigmar-ff text-balance mb-8">Contacto</h1>
+
+    <section class="text-left space-y-16">
+      
+      <!-- ¿Por qué contactarnos? -->
+      <div>
+        <h2 class="sigmar-ff text-3xl mb-6 text-space-red dark:text-space-yellow">¿Por qué contactarnos?</h2>
+        <ul class="space-y-6 kanit-light text-lg sm:text-xl">
+          <li class="flex items-start gap-4">
+            <span class="text-2xl mt-1">🤝</span>
+            <div>
+              <strong class="kanit-regular text-space-red dark:text-space-yellow">Patrocinios:</strong><br/>
+              Para establecer alianzas estratégicas y vinculación industria-academia.
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="text-2xl mt-1">🎁</span>
+            <div>
+              <strong class="kanit-regular text-space-red dark:text-space-yellow">Donaciones:</strong><br/>
+              Gestión de apoyos monetarios, en especie o componentes para el monoplaza OP01.
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="text-2xl mt-1">🚀</span>
+            <div>
+              <strong class="kanit-regular text-space-red dark:text-space-yellow">Reclutamiento:</strong><br/>
+              Información sobre procesos de integración al equipo multidisciplinario.
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Canales Oficiales -->
+      <div>
+        <h2 class="sigmar-ff text-3xl mb-6 text-space-red dark:text-space-yellow">Canales Oficiales</h2>
+        <div class="flex flex-col gap-6 kanit-light text-lg sm:text-xl">
+          <a href="mailto:uamotors.fsae@azc.uam.mx" class="flex items-center gap-4 hover:text-space-red dark:hover:text-space-yellow transition-colors group w-fit">
+            <div class="p-3 bg-black/5 dark:bg-white/5 rounded-2xl group-hover:bg-space-red/10 dark:group-hover:bg-space-yellow/10 transition-colors">
+              <EmailIcon class="w-6 h-6" />
+            </div>
+            <span><strong class="kanit-regular">Correo Institucional:</strong> uamotors.fsae@azc.uam.mx</span>
+          </a>
+          <a href="https://www.linkedin.com/company/uamotors/" target="_blank" class="flex items-center gap-4 hover:text-space-red dark:hover:text-space-yellow transition-colors group w-fit">
+            <div class="p-3 bg-black/5 dark:bg-white/5 rounded-2xl group-hover:bg-space-red/10 dark:group-hover:bg-space-yellow/10 transition-colors">
+              <LinkedinIcon class="w-6 h-6" />
+            </div>
+            <span><strong class="kanit-regular">LinkedIn:</strong> UAMOTORS</span>
+          </a>
+          <div class="flex items-center gap-4 group w-fit">
+            <div class="p-3 bg-black/5 dark:bg-white/5 rounded-2xl">
+              <div class="flex gap-3">
+                <a href="https://instagram.com/uamotors.fsae" target="_blank" class="hover:text-space-red dark:hover:text-space-yellow transition-colors"><InstagramIcon class="w-6 h-6" /></a>
+                <a href="https://tiktok.com/@uamotors.fsae" target="_blank" class="hover:text-space-red dark:hover:text-space-yellow transition-colors"><TiktokIcon class="w-6 h-6" /></a>
+              </div>
+            </div>
+            <span><strong class="kanit-regular">Redes Sociales:</strong> @uamotors.fsae (Instagram y TikTok)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contacto Directo -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 bg-black/5 dark:bg-white/5 p-8 rounded-3xl border border-black/10 dark:border-white/10">
+        <div class="md:col-span-2">
+           <h3 class="sigmar-ff text-2xl mb-2 text-center text-space-red dark:text-space-yellow">Contacto Directo</h3>
+           <p class="kanit-light text-center text-base sm:text-lg mb-4 text-black/60 dark:text-white/60">Incluir a los responsables directos genera confianza con las empresas.</p>
+        </div>
+        <div class="bg-white dark:bg-black/20 p-6 rounded-2xl border border-black/5 dark:border-white/5 shadow-sm">
+          <h4 class="sigmar-ff text-xl mb-3">Capitán</h4>
+          <p class="kanit-light text-lg leading-relaxed">
+            <strong class="kanit-regular">Jehoshua Alberto Soto Benavides</strong><br/>
+            <a href="tel:+524773600127" class="hover:text-space-red dark:hover:text-space-yellow flex items-center gap-2 mt-3 w-fit bg-black/5 dark:bg-white/5 px-4 py-2 rounded-lg transition-colors">
+              📞 477 360 0127
+            </a>
+          </p>
+        </div>
+        <div class="bg-white dark:bg-black/20 p-6 rounded-2xl border border-black/5 dark:border-white/5 shadow-sm">
+          <h4 class="sigmar-ff text-xl mb-3">Faculty Advisor</h4>
+          <p class="kanit-light text-lg leading-relaxed">
+            <strong class="kanit-regular">Ing. Romy Pérez Moreno</strong><br/>
+            <a href="tel:+525529003893" class="hover:text-space-red dark:hover:text-space-yellow flex items-center gap-2 mt-3 w-fit bg-black/5 dark:bg-white/5 px-4 py-2 rounded-lg transition-colors">
+              📞 55 2900 3893
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Ubicación Física -->
+      <div class="bg-space-red/10 dark:bg-space-yellow/10 p-8 sm:p-12 rounded-3xl border border-space-red/20 dark:border-space-yellow/20">
+        <h2 class="sigmar-ff text-3xl mb-6 text-space-red dark:text-space-yellow">Ubicación Física</h2>
+        <p class="kanit-light text-lg sm:text-xl leading-relaxed mb-8">
+          Indispensable para visitas de patrocinadores o entrega de componentes en especie.
+        </p>
+        <div class="flex flex-col gap-6 kanit-light text-lg">
+          <div class="flex items-start gap-4 bg-white dark:bg-black/40 p-6 rounded-2xl shadow-sm border border-black/5 dark:border-white/5">
+            <span class="text-3xl mt-1">📍</span>
+            <div>
+              <strong class="kanit-regular">Dirección:</strong><br/>
+              Av. San Pablo No. 420, Col. Nueva el Rosario, Alcaldía Azcapotzalco, C.P. 02128, Ciudad de México.
+            </div>
+          </div>
+          <div class="flex items-center gap-4 bg-white dark:bg-black/40 p-6 rounded-2xl shadow-sm border border-black/5 dark:border-white/5">
+            <span class="text-3xl">🏛️</span>
+            <div>
+              <strong class="kanit-regular">Institución:</strong><br/>
+              Universidad Autónoma Metropolitana, Unidad Azcapotzalco.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+</MainLayout>

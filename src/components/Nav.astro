@@ -4,6 +4,7 @@ import Hamburger from "./Hamburger.astro";
 import ThemeSwitcher from "./ThemeSwitcher.astro";
 import SiteIdentity from "./SiteIdentity.astro";
 import NavLinks from "./NavLinks.astro";
+import CloseIcon from "../icons/Close.astro";
 import { withBase } from "../utils/helpers";
 const { activePage } = Astro.props;
 ---
@@ -21,7 +22,7 @@ const { activePage } = Astro.props;
     id="mobile-links"
     class="font-light animated h-0 m-0 opacity-0 top-0 w-full"
   >
-    <span class="close-menu">❌</span>
+    <span class="close-menu cursor-pointer hover:text-space-red dark:hover:text-space-yellow transition-colors mb-4"><CloseIcon class="w-6 h-6" /></span>
     <NavLinks
       activePage={activePage}
       links={siteConfig.headerNavLinks}
@@ -30,18 +31,33 @@ const { activePage } = Astro.props;
   </div>
 </header>
 <script is:inline>
-  document.querySelector("#hamburger-menu").addEventListener("click", () => {
-    console.log("clicked...");
-    document.querySelector("#mobile-links").classList.remove("slideOutUp");
-    document.querySelector("#mobile-links").classList.add("expanded");
-    document.querySelector("#mobile-links").classList.add("slideInDown");
-  });
+  document.addEventListener('astro:page-load', () => {
+    const hamburger = document.querySelector("#hamburger-menu");
+    const closeMenu = document.querySelector(".close-menu");
+    const mobileLinks = document.querySelector("#mobile-links");
 
-  document.querySelector(".close-menu").addEventListener("click", () => {
-    console.log("clicked...");
-    document.querySelector("#mobile-links").classList.add("slideOutUp");
-    document.querySelector("#mobile-links").classList.add("expanded");
-    document.querySelector("#mobile-links").classList.remove("slideInDown");
+    if (hamburger && mobileLinks) {
+      // Remover listener anterior si existe para evitar duplicados en desarrollo
+      const newHamburger = hamburger.cloneNode(true);
+      hamburger.parentNode.replaceChild(newHamburger, hamburger);
+      
+      newHamburger.addEventListener("click", () => {
+        mobileLinks.classList.remove("slideOutUp");
+        mobileLinks.classList.add("expanded");
+        mobileLinks.classList.add("slideInDown");
+      });
+    }
+
+    if (closeMenu && mobileLinks) {
+      const newCloseMenu = closeMenu.cloneNode(true);
+      closeMenu.parentNode.replaceChild(newCloseMenu, closeMenu);
+      
+      newCloseMenu.addEventListener("click", () => {
+        mobileLinks.classList.add("slideOutUp");
+        mobileLinks.classList.add("expanded");
+        mobileLinks.classList.remove("slideInDown");
+      });
+    }
   });
 </script>
 

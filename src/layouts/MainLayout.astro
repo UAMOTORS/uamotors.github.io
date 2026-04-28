@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import { ClientRouter } from "astro:transitions";
 
 import Footer from "../components/Footer.astro";
 import Nav from "../components/Nav.astro";
@@ -15,12 +16,12 @@ type LayoutProps = {
 const {
   pageTitle,
   activePage,
-  showSubscribeForm = true,
+  showSubscribeForm = false,
 } = Astro.props as LayoutProps;
 ---
 
 <!doctype html>
-<html lang="es" class="antialiased wrap-break-word">
+<html lang="es" class="antialiased break-words">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href={withBase(`favicon-uamotors.png`)} />
@@ -40,12 +41,15 @@ const {
       href={new URL(withBase("/rss.xml"), Astro.site)}
     />
     <title>{pageTitle}</title>
+    <ClientRouter />
   </head>
   <body>
-    <main class="max-w-3xl mx-auto min-h-screen">
+    <main class="max-w-3xl mx-auto min-h-screen flex flex-col">
       <Nav activePage={activePage} />
-      <slot />
-      {showSubscribeForm && <Subscribe class="my-12 w-full" />}
+      <div transition:animate="slide" class="flex-grow">
+        <slot />
+        {showSubscribeForm && <Subscribe class="my-12 w-full" />}
+      </div>
       <Footer />
     </main>
   </body>

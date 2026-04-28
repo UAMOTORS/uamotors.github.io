@@ -78,19 +78,19 @@ const siteConfig: SiteConfig = {
     headerNavLinks: [
         {
             text: 'Nosotros',
-            href: withBase('/')
+            href: withBase('nosotros')
         },
         {
             text: 'Proyecto',
-            href: withBase('/tags')
+            href: withBase('proyecto')
         },
         {
-            text: 'Patrocinios',
-            href: withBase('/about')
+            text: 'Patrocinadores',
+            href: withBase('patrocinadores')
         },
         {
             text: 'Contacto',
-            href: withBase('/contact')
+            href: withBase('contacto')
         }
     ],
     footerNavLinks: [
@@ -136,11 +136,11 @@ const siteConfig: SiteConfig = {
         actions: [
             {
                 text: 'Ver OP01',
-                href: withBase('/blog')
+                href: withBase('/proyecto')
             },
             {
                 text: 'Patrocina',
-                href: '#subscribe'
+                href: withBase('/patrocinadores')
             }
         ]
     },

@@ -1,0 +1,84 @@
+---
+import { Image } from "astro:assets";
+import MainLayout from "../layouts/MainLayout.astro";
+import siteConfig from "../site.config";
+import coverImage from "../assets/images/1.png";
+---
+
+<MainLayout activePage="nosotros" pageTitle={siteConfig.title + " | Nosotros"}>
+  <div class="page-content max-w-4xl mx-auto">
+    <h1 class="sigmar-ff text-balance mb-8">Nosotros</h1>
+    
+    <Image
+      width={1024}
+      height={600}
+      loading="eager"
+      layout="constrained"
+      class="rounded-4xl mb-12 mx-auto"
+      src={coverImage}
+      alt="Equipo UAMOTORS"
+    />
+
+    <section class="text-left space-y-16">
+      <!-- Quiénes somos -->
+      <div>
+        <h2 class="sigmar-ff text-3xl mb-4 text-space-red dark:text-space-yellow">¿Quiénes somos?</h2>
+        <p class="kanit-light text-lg sm:text-xl leading-relaxed">
+          <strong>UAMOTORS</strong> es un equipo multidisciplinario de estudiantes de la UAM Azcapotzalco, fundado en marzo de 2025 por iniciativa del propio alumnado. No somos solo un grupo de ingeniería; integramos conocimientos de las tres divisiones de nuestra unidad: <strong>CBI</strong> (Ciencias Básicas e Ingeniería), <strong>CSH</strong> (Ciencias Sociales y Humanidades) y <strong>CyAD</strong> (Ciencias y Artes para el Diseño).
+        </p>
+        <p class="kanit-light text-lg sm:text-xl leading-relaxed mt-4">
+          Nuestra razón de ser es enfrentar retos reales de desarrollo tecnológico a través del diseño y construcción de un monoplaza tipo fórmula que cumpla con las normas internacionales de la <strong>Society of Automotive Engineers (SAE)</strong>.
+        </p>
+      </div>
+
+      <!-- Misión y Visión -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 bg-black/5 dark:bg-white/5 p-8 rounded-3xl border border-black/10 dark:border-white/10">
+        <div>
+          <h3 class="sigmar-ff text-2xl mb-3">Nuestra Misión</h3>
+          <p class="kanit-light text-base sm:text-lg leading-relaxed">
+            Aspiramos a generar un impacto educativo profundo en cada integrante mediante la creación de alianzas estratégicas con la industria que fortalezcan el desarrollo tecnológico de México.
+          </p>
+        </div>
+        <div>
+          <h3 class="sigmar-ff text-2xl mb-3">Visión de Diseño</h3>
+          <p class="kanit-light text-base sm:text-lg leading-relaxed">
+            Nuestro enfoque está en construir un monoplaza <strong>OP01</strong> que sea fiable, optimizado para pilotos principiantes y de bajos costos operativos, priorizando diseños manufacturables y decisiones basadas en el razonamiento ingenieril.
+          </p>
+        </div>
+      </div>
+
+      <!-- Objetivos Estratégicos -->
+      <div>
+        <h2 class="sigmar-ff text-3xl mb-6 text-space-red dark:text-space-yellow">Objetivos Estratégicos</h2>
+        <p class="kanit-light text-lg sm:text-xl leading-relaxed mb-8">
+          Para consolidar a UAMOTORS como un referente, trabajamos bajo metas claras:
+        </p>
+        
+        <ul class="space-y-6 kanit-light text-lg sm:text-xl">
+          <li class="flex items-start gap-4">
+            <span class="text-2xl mt-1">🏎️</span>
+            <div>
+              <strong class="kanit-regular text-space-red dark:text-space-yellow">Seguridad e Integridad:</strong><br/>
+              Priorizar la protección del piloto y la fiabilidad de todos los sistemas del vehículo.
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="text-2xl mt-1">🏆</span>
+            <div>
+              <strong class="kanit-regular text-space-red dark:text-space-yellow">Competitividad:</strong><br/>
+              Crear una base sólida para que las futuras generaciones de la UAM tengan un antecedente de éxito en la competencia.
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="text-2xl mt-1">🌎</span>
+            <div>
+              <strong class="kanit-regular text-space-red dark:text-space-yellow">Proyección Internacional:</strong><br/>
+              Nuestra hoja de ruta incluye la participación en FSAE México [LUGAR] 2026 así como clasificar y competir en Formula SAE Michigan (EE. UU.) 2027.
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </div>
+</MainLayout>
