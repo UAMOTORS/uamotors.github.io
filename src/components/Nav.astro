@@ -36,28 +36,27 @@ const { activePage } = Astro.props;
     const mobileLinks = document.querySelector("#mobile-links");
 
     if (hamburger && mobileLinks) {
-      // Remover listener anterior si existe para evitar duplicados en desarrollo
-      const newHamburger = hamburger.cloneNode(true);
-      hamburger.parentNode.replaceChild(newHamburger, hamburger);
-      
-      newHamburger.addEventListener("click", () => {
-        mobileLinks.classList.remove("slideOutUp");
-        mobileLinks.classList.add("expanded");
-        mobileLinks.classList.add("slideInDown");
-      });
+      if (!hamburger.dataset.listenerAttached) {
+        hamburger.addEventListener("click", () => {
+          mobileLinks.classList.remove("slideOutUp");
+          mobileLinks.classList.add("expanded");
+          mobileLinks.classList.add("slideInDown");
+        });
+        hamburger.dataset.listenerAttached = "true";
+      }
     }
 
     const closeMenus = document.querySelectorAll(".close-menu");
     if (closeMenus.length > 0 && mobileLinks) {
       closeMenus.forEach(closeMenu => {
-        const newCloseMenu = closeMenu.cloneNode(true);
-        closeMenu.parentNode.replaceChild(newCloseMenu, closeMenu);
-        
-        newCloseMenu.addEventListener("click", () => {
-          mobileLinks.classList.add("slideOutUp");
-          mobileLinks.classList.add("expanded");
-          mobileLinks.classList.remove("slideInDown");
-        });
+        if (!closeMenu.dataset.listenerAttached) {
+          closeMenu.addEventListener("click", () => {
+            mobileLinks.classList.add("slideOutUp");
+            mobileLinks.classList.add("expanded");
+            mobileLinks.classList.remove("slideInDown");
+          });
+          closeMenu.dataset.listenerAttached = "true";
+        }
       });
     }
   });
