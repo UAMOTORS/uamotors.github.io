@@ -61,18 +61,49 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
     </div>
   </div>
   <div class="page-content">
-    <div id="posts" class="flex flex-col items-center justify-center w-full">
-      <h2 class="sigmar-ff text-balance pt-0! pb-8!">Recent Stories</h2>
-      <div class="flex flex-col gap-8 max-w-full text-left">
-        {
-          allPosts
-            .slice(0, siteConfig.recentPostLimit)
-            .map((post) => <PostCardPreview post={post} />)
-        }
+    <div id="instagram-feed" class="flex flex-col items-center justify-center w-full">
+      <h2 class="sigmar-ff text-balance pt-0! pb-8! text-space-red dark:text-space-yellow">Síguenos en Instagram</h2>
+      
+      <div class="w-full max-w-4xl mx-auto mt-4 overflow-hidden">
+        <!-- Place <div> tag where you want the feed to appear -->
+        <div id="curator-feed-default-feed-layout"><a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a></div>
+
+        <!-- The Javascript can be moved to the end of the html page before the </body> tag -->
+        <script type="text/javascript" is:inline>
+        /* curator-feed-default-feed-layout */
+        (function(){
+        var i,e,d=document,s="script";i=d.createElement("script");i.async=1;i.charset="UTF-8";
+        i.src="https://cdn.curator.io/published/a1e46c5e-ad11-49f1-b60c-867fd268c002.js";
+        e=d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
+        })();
+        </script>
       </div>
-      <Button href={withBase("/blog")} class="space-btn-filled mt-8">
-        View All Posts <ArrowRight class="w-5 h-5 fill-current ml-4" />
+
+      <Button href="https://www.instagram.com/uamotors" target="_blank" class="space-btn-filled mt-8">
+        Ver perfil completo <ArrowRight class="w-5 h-5 fill-current ml-4" />
       </Button>
     </div>
   </div>
 </MainLayout>
+
+<style is:global>
+   /* Forzar color oscuro en texto de Curator cuando el sitio está en modo oscuro */
+   html.dark #curator-feed-default-feed-layout .crt-post-header span,
+   html.dark #curator-feed-default-feed-layout .crt-post-header a,
+   html.dark #curator-feed-default-feed-layout .crt-post-header div,
+   html.dark #curator-feed-default-feed-layout .crt-date,
+   html.dark #curator-feed-default-feed-layout .crt-post-date,
+   html.dark #curator-feed-default-feed-layout .crt-time {
+    color: #111827 !important;
+  }
+
+  /* Neutralizar efectos de hover (cambio a rojo/amarillo de la página o efectos nativos de Curator) en CUALQUIER enlace del widget */
+  #curator-feed-default-feed-layout a:hover,
+  #curator-feed-default-feed-layout .crt-date:hover,
+  #curator-feed-default-feed-layout .crt-post-date:hover,
+  #curator-feed-default-feed-layout .crt-time:hover {
+    color: inherit !important;
+    opacity: 1 !important;
+    text-decoration: none !important;
+  }
+</style>
