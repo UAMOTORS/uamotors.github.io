@@ -140,7 +140,7 @@ const siteConfig: SiteConfig = {
             },
             {
                 text: 'Patrocina',
-                href: '#subscribe'
+                href: withBase('/patrocinadores')
             }
         ]
     },

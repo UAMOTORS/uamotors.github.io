@@ -31,11 +31,14 @@ const currentYear = new Date().getFullYear();
     </div>
   </div>
   <div
-    class="footer-secondary flex flex-col sm:flex-row items-center justify-center gap-6 min-w-full pb-4"
+    class="footer-secondary flex flex-col items-center justify-center gap-2 min-w-full pb-8"
   >
-    <div class="flex flex-row gap-2 items-center justify-center text-balance opacity-80">
-      <span>&copy; {currentYear}</span>
-      {siteConfig.title}. Todos los derechos reservados.
+    <div class="flex flex-col gap-1 items-center justify-center text-balance opacity-80 text-center">
+      <span>&copy; {currentYear} {siteConfig.title}. Todos los derechos reservados.</span>
+      <span class="text-xs opacity-75 mt-1">
+        Desarrollado por <a href="https://github.com/lexrammart" target="_blank" class="kanit-regular hover:text-space-red dark:hover:text-space-yellow transition-colors">Alejandro Ramírez</a> para UAMOTORS. <span class="hidden sm:inline">|</span><br class="sm:hidden" />
+        Basado en el tema <a href="https://github.com/djsiddz/space-ahead" target="_blank" class="kanit-regular hover:text-space-red dark:hover:text-space-yellow transition-colors">Space Ahead</a>.
+      </span>
     </div>
   </div>
   <div
