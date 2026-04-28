@@ -3,6 +3,9 @@ import { Image } from "astro:assets";
 import MainLayout from "../layouts/MainLayout.astro";
 import siteConfig from "../site.config";
 import coverImage from "../assets/images/1.png";
+import RacingCar from "../icons/assets/RacingCar.astro";
+import Trophy from "../icons/assets/Trophy.astro";
+import Globe from "../icons/assets/Globe.astro";
 ---
 
 <MainLayout activePage="nosotros" pageTitle={siteConfig.title + " | Nosotros"}>
@@ -56,21 +59,21 @@ import coverImage from "../assets/images/1.png";
         
         <ul class="space-y-6 kanit-light text-lg sm:text-xl">
           <li class="flex items-start gap-4">
-            <span class="text-2xl mt-1">🏎️</span>
+            <RacingCar class="w-8 h-8 shrink-0 mt-1" />
             <div>
               <strong class="kanit-regular text-space-red dark:text-space-yellow">Seguridad e Integridad:</strong><br/>
               Priorizar la protección del piloto y la fiabilidad de todos los sistemas del vehículo.
             </div>
           </li>
           <li class="flex items-start gap-4">
-            <span class="text-2xl mt-1">🏆</span>
+            <Trophy class="w-8 h-8 shrink-0 mt-1" />
             <div>
               <strong class="kanit-regular text-space-red dark:text-space-yellow">Competitividad:</strong><br/>
               Crear una base sólida para que las futuras generaciones de la UAM tengan un antecedente de éxito en la competencia.
             </div>
           </li>
           <li class="flex items-start gap-4">
-            <span class="text-2xl mt-1">🌎</span>
+            <Globe class="w-8 h-8 shrink-0 mt-1" />
             <div>
               <strong class="kanit-regular text-space-red dark:text-space-yellow">Proyección Internacional:</strong><br/>
               Nuestra hoja de ruta incluye la participación en FSAE México [LUGAR] 2026 así como clasificar y competir en Formula SAE Michigan (EE. UU.) 2027.
