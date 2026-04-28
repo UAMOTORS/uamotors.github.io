@@ -3,6 +3,13 @@ import { Image } from "astro:assets";
 import MainLayout from "../layouts/MainLayout.astro";
 import siteConfig from "../site.config";
 import coverImage from "../assets/images/1.png";
+import Shield from "../icons/assets/Shield.astro";
+import Gear from "../icons/assets/Gear.astro";
+import Chart from "../icons/assets/Chart.astro";
+import Electronics from "../icons/assets/Electronics.astro";
+import Wind from "../icons/assets/Wind.astro";
+import Fire from "../icons/assets/Fire.astro";
+import RacingCar from "../icons/assets/RacingCar.astro";
 ---
 
 <MainLayout activePage="proyecto" pageTitle={siteConfig.title + " | Proyecto"}>
@@ -22,7 +29,6 @@ import coverImage from "../assets/images/1.png";
 
     <section class="text-left space-y-16">
       
-      <!-- Visión Técnica -->
       <div>
         <h2 class="sigmar-ff text-3xl mb-4 text-space-red dark:text-space-yellow">Visión Técnica</h2>
         <p class="kanit-light text-lg sm:text-xl leading-relaxed">
@@ -30,26 +36,25 @@ import coverImage from "../assets/images/1.png";
         </p>
       </div>
 
-      <!-- Objetivos de Diseño -->
       <div>
         <h3 class="sigmar-ff text-2xl mb-6">Objetivos de Diseño</h3>
         <ul class="space-y-6 kanit-light text-lg sm:text-xl">
           <li class="flex items-start gap-4">
-            <span class="text-2xl mt-1">🛡️</span>
+            <Shield class="w-8 h-8 shrink-0 mt-1" />
             <div>
               <strong class="kanit-regular text-space-red dark:text-space-yellow">Seguridad:</strong><br/>
               Priorizar la integridad del piloto y la seguridad estructural del vehículo en todo momento.
             </div>
           </li>
           <li class="flex items-start gap-4">
-            <span class="text-2xl mt-1">⚙️</span>
+            <Gear class="w-8 h-8 shrink-0 mt-1" />
             <div>
               <strong class="kanit-regular text-space-red dark:text-space-yellow">Confiabilidad:</strong><br/>
               Asegurar la consistencia de los sistemas integrados para cumplir con las pruebas técnicas (tech inspection).
             </div>
           </li>
           <li class="flex items-start gap-4">
-            <span class="text-2xl mt-1">📊</span>
+            <Chart class="w-8 h-8 shrink-0 mt-1" />
             <div>
               <strong class="kanit-regular text-space-red dark:text-space-yellow">Desarrollo Basado en Datos:</strong><br/>
               Implementar un sistema robusto de recolección de datos (telemetría) como base técnica para futuras evoluciones del equipo.
@@ -58,7 +63,6 @@ import coverImage from "../assets/images/1.png";
         </ul>
       </div>
 
-      <!-- Sistemas del Vehículo -->
       <div>
         <h2 class="sigmar-ff text-3xl mb-4 text-space-red dark:text-space-yellow">Sistemas del Vehículo</h2>
         <p class="kanit-light text-lg sm:text-xl leading-relaxed mb-6">
@@ -67,25 +71,24 @@ import coverImage from "../assets/images/1.png";
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div class="bg-black/5 dark:bg-white/5 p-6 rounded-3xl border border-black/10 dark:border-white/10">
-            <h4 class="sigmar-ff text-xl mb-2">🔥 Powertrain</h4>
+            <h4 class="sigmar-ff text-xl mb-2 flex items-center gap-2"><Fire class="w-6 h-6 shrink-0" /> Powertrain</h4>
             <p class="kanit-light text-base sm:text-lg">Enfocado en la tracción efectiva y la gestión térmica del motor CBR600RR 2012.</p>
           </div>
           <div class="bg-black/5 dark:bg-white/5 p-6 rounded-3xl border border-black/10 dark:border-white/10">
-            <h4 class="sigmar-ff text-xl mb-2">💨 Aero & Dynamics</h4>
+            <h4 class="sigmar-ff text-xl mb-2 flex items-center gap-2"><Wind class="w-6 h-6 shrink-0" /> Aero & Dynamics</h4>
             <p class="kanit-light text-base sm:text-lg">Optimización del aprovechamiento de downforce e integración estructural para la estabilidad dinámica.</p>
           </div>
           <div class="bg-black/5 dark:bg-white/5 p-6 rounded-3xl border border-black/10 dark:border-white/10">
-            <h4 class="sigmar-ff text-xl mb-2">⚡ Electronics</h4>
+            <h4 class="sigmar-ff text-xl mb-2 flex items-center gap-2"><Electronics class="w-6 h-6 shrink-0" /> Electronics</h4>
             <p class="kanit-light text-base sm:text-lg">Diseño del ruteo seguro y empaquetamiento de sistemas electrónicos para la adquisición de datos en tiempo real.</p>
           </div>
           <div class="bg-black/5 dark:bg-white/5 p-6 rounded-3xl border border-black/10 dark:border-white/10">
-            <h4 class="sigmar-ff text-xl mb-2">🏎️ Shell & Chassis</h4>
+            <h4 class="sigmar-ff text-xl mb-2 flex items-center gap-2"><RacingCar class="w-6 h-6 shrink-0" /> Shell & Chassis</h4>
             <p class="kanit-light text-base sm:text-lg">Validación dinámica y diseño de la carrocería y estructura base del monoplaza.</p>
           </div>
         </div>
       </div>
 
-      <!-- Herramientas y Validación -->
       <div>
         <h3 class="sigmar-ff text-2xl mb-6">Herramientas y Validación</h3>
         <p class="kanit-light text-lg sm:text-xl leading-relaxed mb-6">
@@ -98,7 +101,6 @@ import coverImage from "../assets/images/1.png";
         </ul>
       </div>
 
-      <!-- Ruta hacia Michigan -->
       <div class="bg-gray-100 dark:bg-gray-800 p-8 rounded-3xl">
         <h2 class="sigmar-ff text-3xl mb-4 text-space-red dark:text-space-yellow">Ruta hacia Michigan</h2>
         <p class="kanit-light text-lg sm:text-xl leading-relaxed mb-8">

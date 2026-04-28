@@ -8,6 +8,12 @@ import LinkedinIcon from "../icons/social_media/Linkedin.astro";
 import InstagramIcon from "../icons/social_media/Instagram.astro";
 import TiktokIcon from "../icons/social_media/Tiktok.astro";
 import FacebookIcon from "../icons/social_media/Facebook.astro";
+import Handshake from "../icons/assets/Handshake.astro";
+import Gift from "../icons/assets/Gift.astro";
+import Rocket from "../icons/assets/Rocket.astro";
+import LocationPin from "../icons/assets/LocationPin.astro";
+import Building from "../icons/assets/Building.astro";
+
 ---
 
 <MainLayout activePage="contacto" pageTitle={siteConfig.title + " | Contacto"}>
@@ -15,27 +21,25 @@ import FacebookIcon from "../icons/social_media/Facebook.astro";
     <h1 class="sigmar-ff text-balance mb-8">Contacto</h1>
 
     <section class="text-left space-y-16">
-      
-      <!-- ¿Por qué contactarnos? -->
       <div>
         <h2 class="sigmar-ff text-3xl mb-6 text-space-red dark:text-space-yellow">¿Por qué contactarnos?</h2>
         <ul class="space-y-6 kanit-light text-lg sm:text-xl">
           <li class="flex items-start gap-4">
-            <span class="text-2xl mt-1">🤝</span>
+            <Handshake class="w-8 h-8 shrink-0 mt-1" />
             <div>
               <strong class="kanit-regular text-space-red dark:text-space-yellow">Patrocinios:</strong><br/>
               Para establecer alianzas estratégicas y vinculación industria-academia.
             </div>
           </li>
           <li class="flex items-start gap-4">
-            <span class="text-2xl mt-1">🎁</span>
+            <Gift class="w-8 h-8 shrink-0 mt-1" />
             <div>
               <strong class="kanit-regular text-space-red dark:text-space-yellow">Donaciones:</strong><br/>
               Gestión de apoyos monetarios, en especie o componentes para el monoplaza OP01.
             </div>
           </li>
           <li class="flex items-start gap-4">
-            <span class="text-2xl mt-1">🚀</span>
+            <Rocket class="w-8 h-8 shrink-0 mt-1" />
             <div>
               <strong class="kanit-regular text-space-red dark:text-space-yellow">Reclutamiento:</strong><br/>
               Información sobre procesos de integración al equipo multidisciplinario.
@@ -44,7 +48,6 @@ import FacebookIcon from "../icons/social_media/Facebook.astro";
         </ul>
       </div>
 
-      <!-- Canales Oficiales -->
       <div>
         <h2 class="sigmar-ff text-3xl mb-6 text-space-red dark:text-space-yellow">Canales Oficiales</h2>
         <div class="flex flex-col gap-6 kanit-light text-lg sm:text-xl">
@@ -87,7 +90,6 @@ import FacebookIcon from "../icons/social_media/Facebook.astro";
         </div>
       </div>
 
-      <!-- Contacto Directo -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 bg-black/5 dark:bg-white/5 p-8 rounded-3xl border border-black/10 dark:border-white/10">
         <div class="md:col-span-2">
            <h3 class="sigmar-ff text-2xl mb-2 text-center text-space-red dark:text-space-yellow">Contacto Directo</h3>
@@ -112,19 +114,18 @@ import FacebookIcon from "../icons/social_media/Facebook.astro";
         </div>
       </div>
 
-      <!-- Ubicación Física -->
       <div class="bg-space-red/10 dark:bg-space-yellow/10 p-8 sm:p-12 rounded-3xl border border-space-red/20 dark:border-space-yellow/20">
         <h2 class="sigmar-ff text-3xl mb-6 text-space-red dark:text-space-yellow">Ubicación Física</h2>
         <div class="flex flex-col gap-6 kanit-light text-lg">
           <div class="flex items-start gap-4 bg-white dark:bg-black/40 p-6 rounded-2xl shadow-sm border border-black/5 dark:border-white/5">
-            <span class="text-3xl mt-1">📍</span>
+            <LocationPin class="w-8 h-8 shrink-0 mt-1" />
             <div>
               <strong class="kanit-regular">Dirección:</strong><br/>
               Av. San Pablo No. 420, Col. Nueva el Rosario, Alcaldía Azcapotzalco, C.P. 02128, Ciudad de México.
             </div>
           </div>
           <div class="flex items-center gap-4 bg-white dark:bg-black/40 p-6 rounded-2xl shadow-sm border border-black/5 dark:border-white/5">
-            <span class="text-3xl">🏛️</span>
+            <Building class="w-8 h-8 shrink-0 mt-1" />
             <div>
               <strong class="kanit-regular">Institución:</strong><br/>
               Universidad Autónoma Metropolitana, Unidad Azcapotzalco.
