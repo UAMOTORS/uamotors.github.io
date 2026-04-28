@@ -3,6 +3,8 @@ import { Image } from "astro:assets";
 import MainLayout from "../layouts/MainLayout.astro";
 import siteConfig from "../site.config";
 import coverImage from "../assets/images/1.png";
+import EmailIcon from "../icons/Email.astro";
+import InstagramIcon from "../icons/Instagram.astro";
 ---
 
 <MainLayout activePage="patrocinadores" pageTitle={siteConfig.title + " | Patrocinadores"}>
@@ -96,12 +98,11 @@ import coverImage from "../assets/images/1.png";
           </a>
         </div>
         <div class="mt-8 pt-8 border-t border-space-red/20 dark:border-white/10 flex flex-col sm:flex-row justify-center gap-6 sm:gap-12 kanit-light text-lg">
-          <a href="mailto:uamotors.fsae@azc.uam.mx" class="flex items-center justify-center gap-2 hover:text-space-red dark:hover:text-space-yellow transition-colors">
-            📧 uamotors.fsae@azc.uam.mx
+          <a href="mailto:uamotors.fsae@azc.uam.mx" class="flex items-center justify-center gap-2 hover:text-space-red dark:hover:text-space-yellow transition-colors group">
+            <EmailIcon class="w-5 h-5" /> uamotors.fsae@azc.uam.mx
           </a>
-          <a href="https://instagram.com/uamotors.fsae" target="_blank" class="flex items-center justify-center gap-2 hover:text-space-red dark:hover:text-space-yellow transition-colors">
-            📱 @uamotors.fsae
-          </a>
+          <!-- <a href="https://instagram.com/uamotors.fsae" target="_blank" class="flex items-center justify-center gap-2 hover:text-space-red dark:hover:text-space-yellow transition-colors group">
+            <InstagramIcon class="w-5 h-5" /> uamotors.fsae -->
         </div>
       </div>
 

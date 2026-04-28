@@ -4,6 +4,7 @@ import Hamburger from "./Hamburger.astro";
 import ThemeSwitcher from "./ThemeSwitcher.astro";
 import SiteIdentity from "./SiteIdentity.astro";
 import NavLinks from "./NavLinks.astro";
+import CloseIcon from "../icons/Close.astro";
 import { withBase } from "../utils/helpers";
 const { activePage } = Astro.props;
 ---
@@ -21,7 +22,7 @@ const { activePage } = Astro.props;
     id="mobile-links"
     class="font-light animated h-0 m-0 opacity-0 top-0 w-full"
   >
-    <span class="close-menu">❌</span>
+    <span class="close-menu cursor-pointer hover:text-space-red dark:hover:text-space-yellow transition-colors mb-4"><CloseIcon class="w-6 h-6" /></span>
     <NavLinks
       activePage={activePage}
       links={siteConfig.headerNavLinks}
