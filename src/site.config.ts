@@ -70,7 +70,7 @@ export type SiteConfig = {
 const siteConfig: SiteConfig = {
     website: 'https://example.com',
     title: 'UAMOTORS',
-    description: 'A minimal space-inspired personal blog template built with Astro.js and Tailwind CSS, by Siddhesh Thadeshwar',
+    description: 'Llevando la ingeniería mexicana al límite. Escudería Formula SAE de la UAM Azcapotzalco dedicada al diseño, manufactura y validación de un vehículo tipo Fórmula.',
     image: {
         src: '/space-ahead-preview.jpeg',
         alt: 'Space Ahead ✨ - A minimal space-inspired personal blog template, created by Siddhesh Thadeshwar.'
@@ -128,7 +128,7 @@ const siteConfig: SiteConfig = {
     hero: {
         eyebrowText: 'UAM Azcapotzalco | Formula SAE',
         title: 'Diseña con ingenio, crea con pasión.',
-        text: "Más que una escudería, somos un centro de innovación y talento. Únete a nuestro proyecto y ayúdanos a llevar la ingeniería mexicana a la competencia internacional en Michigan.",
+        text: "Más que una escudería, somos un centro de innovación y talento. Únete a nuestro proyecto y ayúdanos a llevar la ingeniería mexicana a la competencia internacional Formula SAE.",
         image: {
             src: '/assets/images/pixeltrue-space-discovery.svg',
             alt: 'A person sitting at a desk in front of a computer'
@@ -143,44 +143,7 @@ const siteConfig: SiteConfig = {
                 href: withBase('/patrocinadores')
             }
         ]
-    },
-    about: {
-        title: 'About',
-        text: 'Space Ahead is a blog about space exploration and travel. It is written by Astro-naut Sid, a space explorer at Beyond Earth. Sid is known for his love of adventure and his insatiable curiosity about the universe. He has explored countless planets, discovered new life forms, and made friends with aliens along the way. 🚀',
-    },
-    contactInfo: {
-        title: 'Contact',
-        text: "Hi! Whether you have a question, a suggestion, or just want to share your thoughts, I'm all ears. Feel free to get in touch through any of the methods below:",
-        email: {
-            text: "Drop me an email and I’ll do my best to respond as soon as possible.",
-            href: "mailto:example@example.com",
-            email: "example@example.com"
-        },
-        socialProfiles: [
-            {
-                text: "LinkedIn",
-                href: "https://www.linkedin.com/"
-            },
-            {
-                text: "Peerlist",
-                href: "https://www.peerlist.io/"
-            },
-            {
-                text: "GitHub",
-                href: "https://github.com/"
-            }
-        ]
-    },
-    subscribe: {
-        title: 'Subscribe to Space Ahead',
-        text: 'One update per week. All the latest stories in your inbox.',
-        formUrl: '#'
-    },
-    blog: {
-        description: "Read about my space adventures, explorations and the aliens I've met on my journeys."
-    },
-    postsPerPage: 2,
-    recentPostLimit: 3
+    }
 };
 
 export default siteConfig;
