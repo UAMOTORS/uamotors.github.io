@@ -19,7 +19,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-sans: "Kanit", "sans-serif";
+  --font-sans: "Heebo", "sans-serif";
   --color-space-red: var(--space-red);
   --color-space-yellow: var(--space-yellow);
   --color-space-sand: var(--space-sand);
@@ -71,6 +71,13 @@ main {
 
 footer {
   @apply mx-auto mt-12 flex w-full max-w-3xl flex-col flex-wrap items-center justify-center gap-4;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Teko", sans-serif !important;
+  /* text-transform: uppercase; */
 }
 
 h1 {
