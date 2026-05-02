@@ -2,11 +2,7 @@
 @import url("fonts.css");
 @import "tailwindcss";
 
-/* 0. color variables & fonts */
-/* 1. html elements */
-/* 2. utilities */
-
-/* 0. color variables & fonts */
+/*color variables & fonts */
 :root {
   --space-red: #E31E24;
   --space-yellow: #FF4046;
@@ -19,7 +15,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-sans: "Kanit", "sans-serif";
+  --font-sans: "Heebo", "sans-serif";
   --color-space-red: var(--space-red);
   --color-space-yellow: var(--space-yellow);
   --color-space-sand: var(--space-sand);
@@ -27,7 +23,7 @@
   --color-whitesmoke: whitesmoke;
 }
 
-/* 1. html elements */
+/* html elements */
 html,
 body {
   @apply mx-0 my-auto min-h-screen p-0 text-base;
@@ -65,12 +61,27 @@ header>nav {
     0 3.5px 6px hsla(0, 0%, 0%, 0.09);
 }
 
+.nav-brand-text {
+  font-size: 1.3rem !important;
+  line-height: 1 !important;
+  margin-top: 0.25rem !important;
+  display: inline-block;
+  vertical-align: middle;
+}
+
 main {
   @apply mx-auto flex flex-col items-start justify-between px-4 pt-0 pb-0 sm:items-center;
 }
 
 footer {
   @apply mx-auto mt-12 flex w-full max-w-3xl flex-col flex-wrap items-center justify-center gap-4;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Teko", sans-serif !important;
+  /* text-transform: uppercase; */
 }
 
 h1 {

@@ -1,49 +1,52 @@
+/* Títulos: Mapeo de Sigmar a Teko */
 .sigmar-ff {
-  font-family: "Exo 2", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 900;
+  font-family: "Teko", sans-serif !important;
+  font-weight: 700;
   font-style: normal;
+  text-transform: uppercase;
+  /* Para el look de ingeniería técnica */
 }
 
 .sigmar-ff-italic {
-  font-family: "Exo 2", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 900;
+  font-family: "Teko", sans-serif !important;
+  font-weight: 700;
   font-style: italic;
+  text-transform: uppercase;
 }
 
+/* Cuerpo de texto: Mapeo de Kanit a Heebo */
 .kanit-light {
-  /* font-family: "Kanit", sans-serif; */
+  font-family: "Heebo", sans-serif !important;
   font-weight: 300;
   font-style: normal;
 }
 
 .kanit-light-italic {
-  /* font-family: "Kanit", sans-serif; */
+  font-family: "Heebo", sans-serif !important;
   font-weight: 300;
   font-style: italic;
 }
 
 .kanit-regular {
-  /* font-family: "Kanit", sans-serif; */
+  font-family: "Heebo", sans-serif !important;
   font-weight: 400;
   font-style: normal;
 }
 
 .kanit-regular-italic {
-  /* font-family: "Kanit", sans-serif; */
+  font-family: "Heebo", sans-serif !important;
   font-weight: 400;
   font-style: italic;
 }
 
 .kanit-bold {
-  /* font-family: "Kanit", sans-serif; */
+  font-family: "Heebo", sans-serif !important;
   font-weight: 700;
   font-style: normal;
 }
 
 .kanit-bold-italic {
-  /* font-family: "Kanit", sans-serif; */
+  font-family: "Heebo", sans-serif !important;
   font-weight: 700;
   font-style: italic;
 }
