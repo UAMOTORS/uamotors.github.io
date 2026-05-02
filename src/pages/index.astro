@@ -79,31 +79,36 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
         </script>
       </div>
 
-      <Button href="https://www.instagram.com/uamotors" target="_blank" class="space-btn-filled mt-8">
-        Ver perfil completo <ArrowRight class="w-5 h-5 fill-current ml-4" />
+      <Button href="https://www.instagram.com/uamotors.fsae" target="_blank" class="space-btn-filled mt-8">
+        @uamotors.fsae <ArrowRight class="w-5 h-5 fill-current ml-4" />
       </Button>
     </div>
   </div>
 </MainLayout>
 
 <style is:global>
-   /* Forzar color oscuro en texto de Curator cuando el sitio está en modo oscuro */
-   html.dark #curator-feed-default-feed-layout .crt-post-header span,
-   html.dark #curator-feed-default-feed-layout .crt-post-header a,
-   html.dark #curator-feed-default-feed-layout .crt-post-header div,
-   html.dark #curator-feed-default-feed-layout .crt-date,
-   html.dark #curator-feed-default-feed-layout .crt-post-date,
-   html.dark #curator-feed-default-feed-layout .crt-time {
-    color: #111827 !important;
+  /* 1. ESTADO BASE: Color gris (#434343) para todo el texto y links */
+  #curator-feed-default-feed-layout .crt-post-header span,
+  #curator-feed-default-feed-layout .crt-post-header a,
+  #curator-feed-default-feed-layout .crt-post-header div,
+  #curator-feed-default-feed-layout .crt-date,
+  #curator-feed-default-feed-layout .crt-post-date,
+  #curator-feed-default-feed-layout .crt-time,
+  #curator-feed-default-feed-layout a {
+    color: #434343 !important;
+    opacity: 1 !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease; /* Para que el cambio al rojo no sea tan brusco */
   }
 
-  /* Neutralizar efectos de hover (cambio a rojo/amarillo de la página o efectos nativos de Curator) en CUALQUIER enlace del widget */
+  /* 2. ESTADO HOVER: Color rojo (#E31E24) al pasar el mouse */
   #curator-feed-default-feed-layout a:hover,
+  #curator-feed-default-feed-layout a:hover span,
+  #curator-feed-default-feed-layout .crt-post-header a:hover,
   #curator-feed-default-feed-layout .crt-date:hover,
   #curator-feed-default-feed-layout .crt-post-date:hover,
   #curator-feed-default-feed-layout .crt-time:hover {
-    color: inherit !important;
+    color: #E31E24 !important;
     opacity: 1 !important;
-    text-decoration: none !important;
   }
 </style>
