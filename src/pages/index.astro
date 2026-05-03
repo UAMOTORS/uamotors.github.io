@@ -30,9 +30,7 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
       <h1 class="sigmar-ff-italic leading-tight text-balance sm:pt-0!">
         {siteConfig.hero?.title}
       </h1>
-      <p class="kanit-regular text-balance text-xs sm:text-base">
-        {siteConfig.hero?.text}
-      </p>
+      <p class="kanit-regular text-balance text-xs sm:text-base" set:html={siteConfig.hero?.text} />
       <div
         class="flex flex-wrap items-center text-xs sm:text-base gap-x-2 gap-y-8 mt-3 sm:mt-12"
       >
