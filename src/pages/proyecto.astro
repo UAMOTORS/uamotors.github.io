@@ -10,6 +10,8 @@ import Electronics from "../icons/assets/Electronics.astro";
 import Wind from "../icons/assets/Wind.astro";
 import Fire from "../icons/assets/Fire.astro";
 import RacingCar from "../icons/assets/RacingCar.astro";
+import Chart2 from "../icons/assets/Chart2.astro";
+import RaceFlag from "../icons/assets/RaceFlag.astro";
 ---
 
 <MainLayout activePage="proyecto" pageTitle={siteConfig.title + " | Proyecto"}>
@@ -101,24 +103,62 @@ import RacingCar from "../icons/assets/RacingCar.astro";
         </ul>
       </div>
 
+      <div>
+        <h2 id="formula-sae" class="sigmar-ff text-3xl mb-4 text-space-red dark:text-space-yellow">¿Qué es Fórmula SAE?</h2>
+        <p class="kanit-light text-lg sm:text-xl leading-relaxed mb-8">
+          <strong><a href="https://www.fsaeonline.com/" target="_blank" class="">Fórmula SAE (FSAE)</a></strong> es la competencia de ingeniería automotriz con mayor reconocimiento internacional, regida por los estándares técnicos de la 
+          <strong><a href="https://www.sae.org/" target="_blank" class="">Society of Automotive Engineers (SAE)</a></strong>.
+          No es sólo una competencia de velocidad, sino una plataforma donde más de 100 universidades validan el diseño, la manufactura y la 
+          gestión financiera de un monoplaza de alto rendimiento.
+        </p>
+        <!-- Evaluación -->
+        <div>
+          <h3 class="sigmar-ff text-2xl mb-6">Criterios de Evaluación</h2>
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-8 gap-y-12 kanit-light text-lg sm:text-xl">
+            <li class="flex items-start gap-4">
+              <Chart2 class="w-8 h-8 shrink-0 mt-1" />
+              <div>
+                <strong class="kanit-regular text-space-red dark:text-space-yellow">Pruebas Estáticas</strong><br/>
+                <ul style="list-disc list-inside mt-2 space-y-1">
+                  <li><strong>Diseño de ingeniería:</strong> Defensa técninca de cada decisión tomada ante jueces expertos.</li><br>
+                  <li><strong>Análisis de costos:</strong> Evalúaa la eficiencia en el uso de recursos y procesos de manufactura.</li><br>
+                  <li><strong>Plan de negocios:</strong> Presentación de una estrategia de mercado para la producción del vehículo.</li>
+                </ul>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <RaceFlag class="w-8 h-8 shrink-0 mt-1" />
+              <div>
+                <strong class="kanit-regular text-space-red dark:text-space-yellow">Pruebas Dinámicas</strong><br/>
+                <ul style="list-disc list-inside mt-2 space-y-1">
+                  <li><strong>Aceleración y Skidpad:</strong> Pruebas de potencia pura y fuerza lateral en curvas.</li><br>
+                  <li><strong>Autocross:</strong> Evaluación de la agilidad y maniobrabilidad en circuitos técnicos.</li><br>
+                  <li><strong>Endurance:</strong> Reto de 22km para probar la fiabilidad y eficiencia de combustible del monoplaza.</li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div> 
+
       <div class="bg-gray-100 dark:bg-gray-800 p-8 rounded-3xl">
-        <h2 class="sigmar-ff text-3xl mb-4 text-space-red dark:text-space-yellow">Ruta hacia Michigan</h2>
+        <h2 class="sigmar-ff text-3xl mb-4 text-space-red dark:text-space-yellow">Ruta FSAE Michigan 2027</h2>
         <p class="kanit-light text-lg sm:text-xl leading-relaxed mb-8">
           El proyecto tiene una línea de tiempo definida que busca el crecimiento constante del equipo:
         </p>
         <div class="border-l-4 border-space-red dark:border-space-yellow pl-6 space-y-8">
           <div class="relative">
-            <div class="absolute -left-[35px] top-1 h-4 w-4 rounded-full bg-space-red dark:bg-space-yellow"></div>
+            <div class="absolute -left-[34px] top-1 h-4 w-4 rounded-full bg-space-red dark:bg-space-yellow"></div>
             <h4 class="sigmar-ff text-xl">Fundación (Marzo 2025)</h4>
             <p class="kanit-light text-lg">Inicio del diseño conceptual y formación del equipo multidisciplinario.</p>
           </div>
           <div class="relative">
-            <div class="absolute -left-[35px] top-1 h-4 w-4 rounded-full bg-space-red dark:bg-space-yellow"></div>
-            <h4 class="sigmar-ff text-xl">FSAE México (2026)</h4>
-            <p class="kanit-light text-lg">Participación en Guadalajara con el prototipo físico y pruebas de diseño.</p>
+            <div class="absolute -left-[34px] top-1 h-4 w-4 rounded-full bg-space-red dark:bg-space-yellow"></div>
+            <h4 class="sigmar-ff text-xl">FSAE México (2027)</h4>
+            <p class="kanit-light text-lg">Participación en FSAE México con el prototipo físico y pruebas de diseño.</p>
           </div>
           <div class="relative">
-            <div class="absolute -left-[35px] top-1 h-4 w-4 rounded-full bg-space-red dark:bg-space-yellow"></div>
+            <div class="absolute -left-[34px] top-1 h-4 w-4 rounded-full bg-space-red dark:bg-space-yellow"></div>
             <h4 class="sigmar-ff text-xl">FSAE Michigan (2027)</h4>
             <p class="kanit-light text-lg">Meta de clasificación y competencia internacional en Estados Unidos.</p>
           </div>
