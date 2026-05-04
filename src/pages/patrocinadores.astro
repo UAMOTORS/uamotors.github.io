@@ -16,6 +16,14 @@ import logo3 from "../assets/logos/logo-3.jpg";
 import logo4 from "../assets/logos/logo-4.png";
 import logo5 from "../assets/logos/logo-5.png";
 import logo6 from "../assets/logos/logo-6.png";
+import logo7 from "../assets/logos/logo-7.jpg";
+import logo8 from "../assets/logos/logo-8.jpg";
+import logo9 from "../assets/logos/logo-9.webp";
+import logo10 from "../assets/logos/logo-10.webp";
+import logo11 from "../assets/logos/logo-11.jpeg";
+import logoFuam from "../assets/logos/logo-fuam.svg";
+import logoGeely from "../assets/logos/logo-geely.svg";
+import LocationPin from "../icons/assets/LocationPin.astro";
 ---
 
 <MainLayout activePage="patrocinadores" pageTitle={siteConfig.title + " | Patrocinadores"}>
@@ -27,8 +35,38 @@ import logo6 from "../assets/logos/logo-6.png";
       <div>
         <h2 class="sigmar-ff text-3xl mb-4 text-space-red dark:text-space-yellow">Nuestros Aliados</h2>
         <!-- Placeholder para la galería de logos -->
-        <div class="mt-8 border-black/20 dark:border-white/20 rounded-3xl p-6 sm:p-12 overflow-hidden w-full relative" style="contain: content;">
-  
+
+        <div id="diamante-grid" class="mt-8 w-full">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-6 md:gap-12 items-center max-w-2xl mx-auto">
+            <!-- <div class="h-8 sm:h-10 w-full flex items-center justify-center">
+              <Image 
+                src={LogoUamotors} 
+                alt="UAMOTORS" 
+                height={40}
+                class="h-full w-40 object-contain" 
+              />
+            </div> -->
+            <div class="h-8 sm:h-10 w-full flex items-center justify-center">
+              <Image 
+                src={logoGeely} 
+                alt="Geely" 
+                height={40}
+                class="h-full w-40 object-contain dark:brightness-0 dark:invert transition-all" 
+              />
+            </div>
+            <div class="h-8 sm:h-10 w-full flex items-center justify-center">
+              <Image 
+                src={logoFuam} 
+                alt="Fundación UAM" 
+                height={40}
+                class="h-full w-40 object-contain" 
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Patrocinadores Oro -->
+        <div id="carousel-oro" class="mt-8 border-black/20 dark:border-white/20 rounded-3xl p-6 sm:p-12 overflow-hidden w-full relative" style="contain: content;">
           <LogoCarousel>
             <Image src={LogoUamotors} alt="UAMOTORS" height={40} class="h-10 w-auto object-contain" />
             <Image src={logo1} alt="Socio" height={40} class="h-10 w-auto object-contain" />
@@ -38,8 +76,26 @@ import logo6 from "../assets/logos/logo-6.png";
             <Image src={logo5} alt="Socio" height={40} class="h-10 w-auto object-contain" />
             <Image src={logo6} alt="Socio" height={40} class="h-10 w-auto object-contain" />
           </LogoCarousel>
-
         </div>
+
+        <!-- Patrocinadores Bronce & Plata-->
+        <div id="carousel-bronce-plata" class="mt-8 border-black/20 dark:border-white/20 rounded-3xl p-6 sm:p-12 overflow-hidden w-full relative" style="contain: content;">
+          <LogoCarousel>
+            <!-- <Image src={LogoUamotors} alt="UAMOTORS" height={40} class="h-10 w-auto object-contain" /> -->
+            <Image src={logo1} alt="Socio" height={40} class="h-10 w-auto object-contain" />
+            <Image src={logo2} alt="Socio" height={40} class="h-10 w-auto object-contain" />
+            <Image src={logo3} alt="Socio" height={40} class="h-10 w-auto object-contain" />
+            <Image src={logo4} alt="Socio" height={40} class="h-10 w-auto object-contain" />
+            <Image src={logo5} alt="Socio" height={40} class="h-10 w-auto object-contain" />
+            <Image src={logo6} alt="Socio" height={40} class="h-10 w-auto object-contain" />
+            <Image src={logo7} alt="Socio" height={40} class="h-10 w-auto object-contain" />
+            <Image src={logo8} alt="Socio" height={40} class="h-10 w-auto object-contain" />
+            <Image src={logo9} alt="Socio" height={40} class="h-10 w-auto object-contain" />
+            <Image src={logo10} alt="Socio" height={40} class="h-10 w-auto object-contain" />
+            <Image src={logo11} alt="Socio" height={40} class="h-10 w-auto object-contain" />
+          </LogoCarousel>
+        </div>
+
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 bg-black/5 dark:bg-white/5 p-8 rounded-3xl border border-black/10 dark:border-white/10">
         <div class="md:col-span-2">
@@ -116,3 +172,12 @@ import logo6 from "../assets/logos/logo-6.png";
 
   </div>
 </MainLayout>
+
+<style is:global>
+  /* Quitar redondeo global de las imágenes en las galerías de patrocinadores para no recortar los logos */
+  #diamante-grid img,
+  #carousel-oro img,
+  #carousel-bronce-plata img {
+    border-radius: 0 !important;
+  }
+</style>
