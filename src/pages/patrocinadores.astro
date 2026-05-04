@@ -9,6 +9,7 @@ import Mobile from "../icons/assets/Mobile.astro";
 import Document from "../icons/assets/Document.astro";
 import Event from "../icons/assets/Event.astro";
 import Pdf from "../icons/assets/Pdf.astro";
+import LogoUamotors from "../assets/logos/logo-uamotors.png"
 import logo1 from "../assets/logos/logo-1.png";
 import logo2 from "../assets/logos/logo-2.jpg";
 import logo3 from "../assets/logos/logo-3.jpg";
@@ -32,6 +33,7 @@ import logo6 from "../assets/logos/logo-6.png";
             <div class="logo-marquee">
               <!-- Grupo 1 -->
               <div class="logo-group">
+                <Image src={LogoUamotors} alt="UAMOTORS" height={40} class="h-10 w-auto object-contain" />
                 <Image src={logo1} alt="Socio" height={40} class="h-10 w-auto object-contain" />
                 <Image src={logo2} alt="Socio" height={40} class="h-10 w-auto object-contain" />
                 <Image src={logo3} alt="Socio" height={40} class="h-10 w-auto object-contain" />
@@ -41,6 +43,7 @@ import logo6 from "../assets/logos/logo-6.png";
               </div>
               <!-- Grupo 2 (Duplicado para el efecto infinito) -->
               <div class="logo-group" aria-hidden="true">
+                <Image src={LogoUamotors} alt="UAMOTORS" height={40} class="h-10 w-auto object-contain" />
                 <Image src={logo1} alt="Socio" height={40} class="h-10 w-auto object-contain" />
                 <Image src={logo2} alt="Socio" height={40} class="h-10 w-auto object-contain" />
                 <Image src={logo3} alt="Socio" height={40} class="h-10 w-auto object-contain" />
@@ -146,20 +149,19 @@ import logo6 from "../assets/logos/logo-6.png";
   .logo-marquee {
     display: inline-flex;
     width: max-content;
-    animation: scroll-left 25s linear infinite;
+    animation: scroll-left 15s linear infinite;
   }
 
-  .logo-marquee:hover {
+  /* .logo-marquee:hover {
     animation-play-state: paused;
-  }
+  } */
 
   .logo-group {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    min-width: 100%;
     gap: 3rem;
     padding-right: 3rem; /* Igual al gap para mantener la distancia uniforme al ciclar */
+    flex-shrink: 0;
   }
 
   @keyframes scroll-left {
