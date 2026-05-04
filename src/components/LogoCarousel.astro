@@ -1,0 +1,54 @@
+---
+const html = await Astro.slots.render('default');
+---
+
+<section class="logo-carousel-wrapper" aria-label="Patrocinadores UAMOTORS">
+  <div class="logo-marquee">
+    <!-- Grupo 1 -->
+    <div class="logo-group" set:html={html} />
+    <!-- Grupo 2 (Duplicado para el efecto infinito) -->
+    <div class="logo-group" aria-hidden="true" set:html={html} />
+  </div>
+</section>
+
+<style is:global>
+  /* Carrusel Infinito */
+  .logo-carousel-wrapper {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    max-width: 100%;
+    contain: content; /* Aisla el modelo de caja y previene que expanda al padre */
+    position: relative;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  }
+
+  .logo-marquee {
+    display: flex;
+    width: max-content;
+    animation: scroll-left 15s linear infinite;
+    will-change: transform;
+  }
+
+  /* .logo-marquee:hover {
+    animation-play-state: paused;
+  } */
+
+  .logo-group {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    padding-right: 3rem;
+    flex-shrink: 0;
+  }
+
+  @keyframes scroll-left {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+</style>

@@ -1,8 +1,8 @@
 ---
 import { Image } from "astro:assets";
 import MainLayout from "../layouts/MainLayout.astro";
+import LogoCarousel from "../components/LogoCarousel.astro";
 import siteConfig from "../site.config";
-import coverImage from "../assets/images/1.png";
 import EmailIcon from "../icons/social_media/Email.astro";
 import Eyes from "../icons/assets/Eyes.astro";
 import Mobile from "../icons/assets/Mobile.astro";
@@ -26,33 +26,18 @@ import logo6 from "../assets/logos/logo-6.png";
       
       <div>
         <h2 class="sigmar-ff text-3xl mb-4 text-space-red dark:text-space-yellow">Nuestros Aliados</h2>
-        <!-- Placeholder para la futura galería de logos -->
-        <div class="mt-8 border-2 border-dashed border-black/20 dark:border-white/20 rounded-3xl p-6 sm:p-12 overflow-hidden w-full relative" style="contain: content;">
+        <!-- Placeholder para la galería de logos -->
+        <div class="mt-8 border-black/20 dark:border-white/20 rounded-3xl p-6 sm:p-12 overflow-hidden w-full relative" style="contain: content;">
   
-          <section class="logo-carousel-wrapper" aria-label="Patrocinadores UAMOTORS">
-            <div class="logo-marquee">
-              <!-- Grupo 1 -->
-              <div class="logo-group">
-                <Image src={LogoUamotors} alt="UAMOTORS" height={40} class="h-10 w-auto object-contain" />
-                <Image src={logo1} alt="Socio" height={40} class="h-10 w-auto object-contain" />
-                <Image src={logo2} alt="Socio" height={40} class="h-10 w-auto object-contain" />
-                <Image src={logo3} alt="Socio" height={40} class="h-10 w-auto object-contain" />
-                <Image src={logo4} alt="Socio" height={40} class="h-10 w-auto object-contain" />
-                <Image src={logo5} alt="Socio" height={40} class="h-10 w-auto object-contain" />
-                <Image src={logo6} alt="Socio" height={40} class="h-10 w-auto object-contain" />
-              </div>
-              <!-- Grupo 2 (Duplicado para el efecto infinito) -->
-              <div class="logo-group" aria-hidden="true">
-                <Image src={LogoUamotors} alt="UAMOTORS" height={40} class="h-10 w-auto object-contain" />
-                <Image src={logo1} alt="Socio" height={40} class="h-10 w-auto object-contain" />
-                <Image src={logo2} alt="Socio" height={40} class="h-10 w-auto object-contain" />
-                <Image src={logo3} alt="Socio" height={40} class="h-10 w-auto object-contain" />
-                <Image src={logo4} alt="Socio" height={40} class="h-10 w-auto object-contain" />
-                <Image src={logo5} alt="Socio" height={40} class="h-10 w-auto object-contain" />
-                <Image src={logo6} alt="Socio" height={40} class="h-10 w-auto object-contain" />
-              </div>
-            </div>
-          </section>
+          <LogoCarousel>
+            <Image src={LogoUamotors} alt="UAMOTORS" height={40} class="h-10 w-auto object-contain" />
+            <Image src={logo1} alt="Socio" height={40} class="h-10 w-auto object-contain" />
+            <Image src={logo2} alt="Socio" height={40} class="h-10 w-auto object-contain" />
+            <Image src={logo3} alt="Socio" height={40} class="h-10 w-auto object-contain" />
+            <Image src={logo4} alt="Socio" height={40} class="h-10 w-auto object-contain" />
+            <Image src={logo5} alt="Socio" height={40} class="h-10 w-auto object-contain" />
+            <Image src={logo6} alt="Socio" height={40} class="h-10 w-auto object-contain" />
+          </LogoCarousel>
 
         </div>
       </div>
@@ -131,53 +116,3 @@ import logo6 from "../assets/logos/logo-6.png";
 
   </div>
 </MainLayout>
-
-<style is:global>
-  /* Carrusel Infinito CSS Puro */
-  .logo-carousel-wrapper {
-    overflow: hidden;
-    white-space: nowrap;
-    width: 100%;
-    max-width: 100%;
-    contain: content; /* Aisla el modelo de caja y previene que expanda al padre */
-    position: relative;
-    /* Difuminado a los bordes para un mejor efecto visual */
-    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-  }
-
-  .logo-marquee {
-    display: inline-flex;
-    width: max-content;
-    animation: scroll-left 15s linear infinite;
-  }
-
-  /* .logo-marquee:hover {
-    animation-play-state: paused;
-  } */
-
-  .logo-group {
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-    padding-right: 3rem; /* Igual al gap para mantener la distancia uniforme al ciclar */
-    flex-shrink: 0;
-  }
-
-  @keyframes scroll-left {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-50%);
-    }
-  }
-
-  /* Ajustes en celular */
-  @media (max-width: 768px) {
-    .logo-group {
-      gap: 2rem;
-      padding-right: 2rem;
-    }
-  }
-</style>
