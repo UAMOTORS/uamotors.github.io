@@ -18,7 +18,7 @@ import logo6 from "../assets/logos/logo-6.png";
 ---
 
 <MainLayout activePage="patrocinadores" pageTitle={siteConfig.title + " | Patrocinadores"}>
-  <div class="page-content max-w-4xl mx-auto">
+  <div class="page-content max-w-3xl mx-auto min-w-0">
     <h1 class="sigmar-ff text-balance mb-8">Patrocinadores</h1>
 
     <section class="text-left space-y-16">
@@ -26,17 +26,31 @@ import logo6 from "../assets/logos/logo-6.png";
       <div>
         <h2 class="sigmar-ff text-3xl mb-4 text-space-red dark:text-space-yellow">Nuestros Aliados</h2>
         <!-- Placeholder para la futura galería de logos -->
-        <div class="mt-8 border-2 border-dashed border-black/20 dark:border-white/20 rounded-3xl p-12 text-center kanit-light text-lg text-black/50 dark:text-white/50">
-          [ Espacio reservado para la Galería de Logos de Patrocinadores ]
-              <Image
-                width={1024}
-                height={600}
-                loading="eager"
-                layout="constrained"
-                class="rounded-4xl mb-12 mx-auto"
-                src={coverImage}
-                alt="Patrocinadores UAMOTORS"
-              />
+        <div class="mt-8 border-2 border-dashed border-black/20 dark:border-white/20 rounded-3xl p-6 sm:p-12 overflow-hidden w-full relative" style="contain: content;">
+  
+          <section class="logo-carousel-wrapper" aria-label="Patrocinadores UAMOTORS">
+            <div class="logo-marquee">
+              <!-- Grupo 1 -->
+              <div class="logo-group">
+                <Image src={logo1} alt="Socio" height={40} class="h-10 w-auto object-contain" />
+                <Image src={logo2} alt="Socio" height={40} class="h-10 w-auto object-contain" />
+                <Image src={logo3} alt="Socio" height={40} class="h-10 w-auto object-contain" />
+                <Image src={logo4} alt="Socio" height={40} class="h-10 w-auto object-contain" />
+                <Image src={logo5} alt="Socio" height={40} class="h-10 w-auto object-contain" />
+                <Image src={logo6} alt="Socio" height={40} class="h-10 w-auto object-contain" />
+              </div>
+              <!-- Grupo 2 (Duplicado para el efecto infinito) -->
+              <div class="logo-group" aria-hidden="true">
+                <Image src={logo1} alt="Socio" height={40} class="h-10 w-auto object-contain" />
+                <Image src={logo2} alt="Socio" height={40} class="h-10 w-auto object-contain" />
+                <Image src={logo3} alt="Socio" height={40} class="h-10 w-auto object-contain" />
+                <Image src={logo4} alt="Socio" height={40} class="h-10 w-auto object-contain" />
+                <Image src={logo5} alt="Socio" height={40} class="h-10 w-auto object-contain" />
+                <Image src={logo6} alt="Socio" height={40} class="h-10 w-auto object-contain" />
+              </div>
+            </div>
+          </section>
+
         </div>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 bg-black/5 dark:bg-white/5 p-8 rounded-3xl border border-black/10 dark:border-white/10">
@@ -96,6 +110,7 @@ import logo6 from "../assets/logos/logo-6.png";
         <h2 class="sigmar-ff text-3xl sm:text-4xl mb-4 text-space-red dark:text-space-yellow">¡Únete al equipo!</h2>
         <p class="kanit-light text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl mx-auto opacity-90">
           Buscamos construir relaciones de valor con cada uno de nuestros patrocinadores. Para conocer los montos y el retorno de inversión de cada nivel, descarga nuestro resumen de propuesta o contáctanos directamente.
+        </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a href="#" class="button-link space-btn-outlined kanit-regular text-lg font-bold hover:scale-105 transition-transform px-8 py-3 flex items-center gap-3">
             <Pdf class="w-6 h-6 shrink-0" />
@@ -113,3 +128,54 @@ import logo6 from "../assets/logos/logo-6.png";
 
   </div>
 </MainLayout>
+
+<style is:global>
+  /* Carrusel Infinito CSS Puro */
+  .logo-carousel-wrapper {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    max-width: 100%;
+    contain: content; /* Aisla el modelo de caja y previene que expanda al padre */
+    position: relative;
+    /* Difuminado a los bordes para un mejor efecto visual */
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  }
+
+  .logo-marquee {
+    display: inline-flex;
+    width: max-content;
+    animation: scroll-left 25s linear infinite;
+  }
+
+  .logo-marquee:hover {
+    animation-play-state: paused;
+  }
+
+  .logo-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-width: 100%;
+    gap: 3rem;
+    padding-right: 3rem; /* Igual al gap para mantener la distancia uniforme al ciclar */
+  }
+
+  @keyframes scroll-left {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Ajustes en celular */
+  @media (max-width: 768px) {
+    .logo-group {
+      gap: 2rem;
+      padding-right: 2rem;
+    }
+  }
+</style>

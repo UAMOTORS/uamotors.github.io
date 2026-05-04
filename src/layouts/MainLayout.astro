@@ -43,7 +43,7 @@ const {
   <body>
     <main class="max-w-3xl mx-auto min-h-screen flex flex-col">
       <Nav activePage={activePage} />
-      <div transition:animate="slide" class="flex-grow">
+      <div transition:animate="slide" class="flex-grow w-full min-w-0">
         <slot />
         {showSubscribeForm && <Subscribe class="my-12 w-full" />}
       </div>
