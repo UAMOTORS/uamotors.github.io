@@ -21,7 +21,7 @@ const {
       .join(" ")
       .trim();
     return (
-      <a class={classNames} href={link.href}>
+      <a class={classNames} href={link.href} {...(link.href.includes('patrocinadores') ? {'data-astro-reload': true} : {})}>
         {link.text}
       </a>
     );

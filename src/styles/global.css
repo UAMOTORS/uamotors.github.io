@@ -24,10 +24,20 @@
 }
 
 /* html elements */
+html {
+  @apply overflow-x-hidden;
+}
+
 html,
 body {
   @apply mx-0 my-auto min-h-screen p-0 text-base;
   overscroll-behavior: none;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
 }
 
 html.dark body {
