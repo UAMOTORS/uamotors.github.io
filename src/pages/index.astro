@@ -17,12 +17,16 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
   pageTitle={"UAMOTORS"}
 >
   <div
-    class="jumbo-banner flex flex-col sm:flex-row sm:items-center sm:justify-between w-full px-4 my-12 gap-6"
+    class="jumbo-banner relative flex flex-col sm:flex-row sm:items-center sm:justify-between w-full px-4 my-12 gap-6"
   >
+    <!-- Efecto "Light Blobs" (Nubes espaciales) -->
+    <div class="absolute top-0 left-0 sm:left-[-10%] w-64 h-64 sm:w-80 sm:h-80 bg-space-red/20 dark:bg-white/10 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
+    <div class="absolute bottom-0 right-0 sm:right-[-10%] w-72 h-72 sm:w-96 sm:h-96 bg-space-red/10 dark:bg-white/5 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
+    
     <div class="w-full sm:w-fit sm:max-w-1/2">
       {
         siteConfig.hero?.eyebrowText && (
-          <span class="tag rounded-full text-xs px-2 py-0 border border-gray-500 kanit-light">
+          <span class="tag inline-block mb-2 rounded-full text-sm sm:text-base px-3 py-1 border border-gray-500 kanit-light">
             {siteConfig.hero?.eyebrowText}
           </span>
         )
@@ -30,7 +34,7 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
       <h1 class="sigmar-ff-italic leading-tight text-balance sm:pt-0!">
         {siteConfig.hero?.title}
       </h1>
-      <p class="kanit-regular text-balance text-xs sm:text-base" set:html={siteConfig.hero?.text} />
+      <p class="kanit-regular text-balance text-base sm:text-lg" set:html={siteConfig.hero?.text} />
       <div
         class="flex flex-wrap items-center text-xs sm:text-base gap-x-2 gap-y-8 mt-3 sm:mt-12"
       >
@@ -67,7 +71,7 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
         <div id="curator-feed-default-feed-layout"><a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a></div>
 
         <!-- The Javascript can be moved to the end of the html page before the </body> tag -->
-        <script type="text/javascript" is:inline>
+        <script type="text/javascript" is:inline data-astro-rerun>
         /* curator-feed-default-feed-layout */
         (function(){
         var i,e,d=document,s="script";i=d.createElement("script");i.async=1;i.charset="UTF-8";
