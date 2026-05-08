@@ -11,7 +11,7 @@ import Globe from "../icons/assets/Globe.astro";
 <MainLayout activePage="nosotros" pageTitle={siteConfig.title + " | Nosotros"}>
   <div class="page-content max-w-4xl mx-auto">
     <h1 class="sigmar-ff text-balance mb-8">Nosotros</h1>
-    
+
     <Image
       width={1024}
       height={600}
@@ -25,63 +25,112 @@ import Globe from "../icons/assets/Globe.astro";
     <section class="text-left space-y-16">
       <!-- Quiénes somos -->
       <div>
-        <h2 class="sigmar-ff text-3xl mb-4 text-space-red dark:text-space-yellow">¿Quiénes somos?</h2>
+        <h2
+          class="sigmar-ff text-3xl mb-4 text-space-red dark:text-space-yellow"
+        >
+          ¿Quiénes somos?
+        </h2>
         <p class="kanit-light text-lg sm:text-xl leading-relaxed">
-          <strong>UAMOTORS</strong> es un equipo multidisciplinario de estudiantes de la <a href="https://www.azc.uam.mx/" target="_blank"><strong>UAM Azcapotzalco</strong></a>, fundado en marzo de 2025 por iniciativa del propio alumnado. No somos solo un grupo de ingeniería; integramos conocimientos de las tres divisiones académicas de nuestra unidad: <strong>CBI</strong> (Ciencias Básicas e Ingeniería), <strong>CSH</strong> (Ciencias Sociales y Humanidades) y <strong>CyAD</strong> (Ciencias y Artes para el Diseño).
+          <strong>UAMOTORS</strong> es un equipo multidisciplinario de estudiantes
+          de la <a href="https://www.azc.uam.mx/" target="_blank"
+            ><strong>UAM Azcapotzalco</strong></a
+          >, fundado en marzo de 2025 por iniciativa del propio alumnado. No
+          somos solo un grupo de ingeniería; integramos conocimientos de las
+          tres divisiones académicas de nuestra unidad: <strong>CBI</strong> (Ciencias
+          Básicas e Ingeniería), <strong>CSH</strong> (Ciencias Sociales y Humanidades)
+          y <strong>CyAD</strong> (Ciencias y Artes para el Diseño).
         </p>
         <p class="kanit-light text-lg sm:text-xl leading-relaxed mt-4">
-          Nuestra razón de ser es enfrentar retos reales de desarrollo tecnológico a través del diseño y construcción de un monoplaza tipo fórmula que cumpla con las normas internacionales de la <a href="https://www.sae.org/" target="_blank"><strong>Society of Automotive Engineers (SAE)</strong></a>.
+          Nuestra razón de ser es enfrentar retos reales de desarrollo
+          tecnológico a través del diseño y construcción de un monoplaza tipo
+          fórmula que cumpla con las normas internacionales de la <a
+            href="https://www.sae.org/"
+            target="_blank"
+            ><strong>Society of Automotive Engineers (SAE)</strong></a
+          >.
         </p>
       </div>
 
       <!-- Misión y Visión -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="bg-black/5 dark:bg-white/5 p-8 rounded-3xl border border-black/10 dark:border-white/10 hover:-translate-y-2 hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300">
+        <div
+          class="bg-black/5 dark:bg-white/5 p-8 rounded-3xl border border-black/10 dark:border-white/10 hover:-translate-y-2 hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300"
+        >
           <h3 class="sigmar-ff text-2xl mb-3">Nuestra Misión</h3>
           <p class="kanit-light text-base sm:text-lg leading-relaxed">
-            Aspiramos a generar un impacto educativo profundo en cada integrante mediante la creación de alianzas estratégicas con la industria que fortalezcan el desarrollo tecnológico de México.
+            Aspiramos a generar un impacto educativo profundo en cada integrante
+            mediante la creación de alianzas estratégicas con la industria que
+            fortalezcan el desarrollo tecnológico de México.
           </p>
         </div>
-        <div class="bg-black/5 dark:bg-white/5 p-8 rounded-3xl border border-black/10 dark:border-white/10 hover:-translate-y-2 hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300">
+        <div
+          class="bg-black/5 dark:bg-white/5 p-8 rounded-3xl border border-black/10 dark:border-white/10 hover:-translate-y-2 hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300"
+        >
           <h3 class="sigmar-ff text-2xl mb-3">Visión de Diseño</h3>
           <p class="kanit-light text-base sm:text-lg leading-relaxed">
-            Nuestro enfoque está en construir un monoplaza <strong>OP01</strong> que sea fiable, optimizado para pilotos principiantes y de bajos costos operativos, priorizando diseños manufacturables y decisiones basadas en el razonamiento ingenieril.
+            Nuestro enfoque está en construir un monoplaza <strong>"OP"</strong> que
+            sea fiable, optimizado para pilotos principiantes y de bajos costos operativos,
+            priorizando diseños manufacturables y decisiones basadas en el razonamiento
+            ingenieril.
           </p>
         </div>
       </div>
 
       <!-- Objetivos Estratégicos -->
       <div>
-        <h2 class="sigmar-ff text-3xl mb-6 text-space-red dark:text-space-yellow">Objetivos Estratégicos</h2>
+        <h2
+          class="sigmar-ff text-3xl mb-6 text-space-red dark:text-space-yellow"
+        >
+          Objetivos Estratégicos
+        </h2>
         <p class="kanit-light text-lg sm:text-xl leading-relaxed mb-8">
-          Para consolidar a UAMOTORS como un referente, trabajamos bajo metas claras:
+          Para consolidar a UAMOTORS como un referente, trabajamos bajo metas
+          claras:
         </p>
-        
+
         <ul class="space-y-6 kanit-light text-lg sm:text-xl">
           <li class="flex items-start gap-4">
             <RacingCar class="w-8 h-8 shrink-0 mt-1" />
             <div>
-              <strong class="kanit-regular text-space-red dark:text-space-yellow">Seguridad e Integridad:</strong><br/>
-              Priorizar la protección del piloto y la fiabilidad de todos los sistemas del vehículo.
+              <strong
+                class="kanit-regular text-space-red dark:text-space-yellow"
+                >Seguridad e Integridad:</strong
+              ><br />
+              Priorizar la protección del piloto y la fiabilidad de todos los sistemas
+              del vehículo.
             </div>
           </li>
           <li class="flex items-start gap-4">
             <Trophy class="w-8 h-8 shrink-0 mt-1" />
             <div>
-              <strong class="kanit-regular text-space-red dark:text-space-yellow">Competitividad:</strong><br/>
-              Crear una base sólida para que las futuras generaciones de la UAM tengan un antecedente de éxito en la competencia.
+              <strong
+                class="kanit-regular text-space-red dark:text-space-yellow"
+                >Competitividad:</strong
+              ><br />
+              Crear una base sólida para que las futuras generaciones de la UAM tengan
+              un antecedente de éxito en la competencia.
             </div>
           </li>
           <li class="flex items-start gap-4">
             <Globe class="w-8 h-8 shrink-0 mt-1" />
             <div>
-              <strong class="kanit-regular text-space-red dark:text-space-yellow">Proyección Internacional:</strong><br/>
-              Nuestra hoja de ruta incluye la participación en <a href="https://www.saemx.org/formula-sae-mx" target="_blank"><strong>FSAE México</strong></a> <strong>2027</strong> así como clasificar y competir en <a href="https://www.fsaeonline.com/" target="_blank"><strong>Formula SAE International</strong></a> <strong>2027</strong>.
+              <strong
+                class="kanit-regular text-space-red dark:text-space-yellow"
+                >Proyección Internacional:</strong
+              ><br />
+              Nuestra hoja de ruta incluye la participación en <a
+                href="https://www.saemx.org/formula-sae-mx"
+                target="_blank"><strong>FSAE México</strong></a
+              >
+              <strong>2027</strong> así como clasificar y competir en <a
+                href="https://www.fsaeonline.com/"
+                target="_blank"><strong>Formula SAE International</strong></a
+              >
+              <strong>2027</strong>.
             </div>
           </li>
         </ul>
       </div>
     </section>
-
   </div>
 </MainLayout>

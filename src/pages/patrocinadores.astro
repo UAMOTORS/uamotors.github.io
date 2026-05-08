@@ -9,7 +9,7 @@ import Mobile from "../icons/assets/Mobile.astro";
 import Document from "../icons/assets/Document.astro";
 import Event from "../icons/assets/Event.astro";
 import Pdf from "../icons/assets/Pdf.astro";
-import LogoUamotors from "../assets/logos/logo-uamotors.png"
+import LogoUamotors from "../assets/logos/logo-uamotors.png";
 import logo1 from "../assets/logos/logo-1.png";
 import logo2 from "../assets/logos/logo-2.jpg";
 import logo3 from "../assets/logos/logo-3.jpg";
@@ -26,18 +26,27 @@ import logoGeely from "../assets/logos/logo-geely.svg";
 import LocationPin from "../icons/assets/LocationPin.astro";
 ---
 
-<MainLayout activePage="patrocinadores" pageTitle={siteConfig.title + " | Patrocinadores"}>
+<MainLayout
+  activePage="patrocinadores"
+  pageTitle={siteConfig.title + " | Patrocinadores"}
+>
   <div class="page-content max-w-3xl mx-auto min-w-0">
     <h1 class="sigmar-ff text-balance mb-8">Patrocinadores</h1>
 
     <section class="text-left space-y-16">
-      
       <div>
-        <h2 class="sigmar-ff text-3xl mb-4 text-space-red dark:text-space-yellow">Nuestros Aliados</h2>
+        <h2
+          id="nuestros-aliados"
+          class="sigmar-ff text-3xl mb-4 text-space-red dark:text-space-yellow"
+        >
+          Nuestros Aliados
+        </h2>
         <!-- Placeholder para la galería de logos -->
 
         <div id="diamante-grid" class="mt-8 w-full">
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-6 md:gap-12 items-center max-w-2xl mx-auto">
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-6 md:gap-12 items-center max-w-2xl mx-auto"
+          >
             <!-- <div class="h-8 sm:h-10 w-full flex items-center justify-center">
               <Image 
                 src={LogoUamotors} 
@@ -48,21 +57,21 @@ import LocationPin from "../icons/assets/LocationPin.astro";
             </div> -->
             <div class="h-8 sm:h-10 w-full flex items-center justify-center">
               <a href="https://www.geelymexico.com/" target="_blank">
-                <Image 
-                  src={logoGeely} 
-                  alt="Geely" 
+                <Image
+                  src={logoGeely}
+                  alt="Geely"
                   height={40}
-                  class="h-full w-40 object-contain dark:brightness-0 dark:invert transition-all" 
+                  class="h-full w-40 object-contain dark:brightness-0 dark:invert transition-all"
                 />
               </a>
             </div>
             <div class="h-8 sm:h-10 w-full flex items-center justify-center">
               <a href="https://www.fundacionuam.org/" target="_blank">
-                <Image 
-                  src={logoFuam} 
-                  alt="Fundación UAM" 
+                <Image
+                  src={logoFuam}
+                  alt="Fundación UAM"
                   height={40}
-                  class="h-full w-40 object-contain" 
+                  class="h-full w-40 object-contain"
                 />
               </a>
             </div>
@@ -70,97 +79,257 @@ import LocationPin from "../icons/assets/LocationPin.astro";
         </div>
 
         <!-- Patrocinadores Oro -->
-        <div id="carousel-oro" class="mt-8 border-black/20 dark:border-white/20 rounded-3xl p-6 sm:p-12 overflow-hidden w-full relative" style="contain: content;">
+        <div
+          id="carousel-oro"
+          class="mt-8 border-black/20 dark:border-white/20 rounded-3xl p-6 sm:p-12 overflow-hidden w-full relative"
+          style="contain: content;"
+        >
           <LogoCarousel>
-            <Image src={LogoUamotors} alt="UAMOTORS" height={40} class="h-10 w-auto object-contain" />
-            <Image src={logo1} alt="Socio" height={40} class="h-10 w-auto object-contain" />
-            <Image src={logo2} alt="Socio" height={40} class="h-10 w-auto object-contain" />
-            <Image src={logo3} alt="Socio" height={40} class="h-10 w-auto object-contain" />
-            <Image src={logo4} alt="Socio" height={40} class="h-10 w-auto object-contain" />
-            <Image src={logo5} alt="Socio" height={40} class="h-10 w-auto object-contain" />
-            <Image src={logo6} alt="Socio" height={40} class="h-10 w-auto object-contain" />
+            <Image
+              src={LogoUamotors}
+              alt="UAMOTORS"
+              height={40}
+              class="h-10 w-auto object-contain"
+            />
+            <Image
+              src={logo1}
+              alt="Socio"
+              height={40}
+              class="h-10 w-auto object-contain"
+            />
+            <Image
+              src={logo2}
+              alt="Socio"
+              height={40}
+              class="h-10 w-auto object-contain"
+            />
+            <Image
+              src={logo3}
+              alt="Socio"
+              height={40}
+              class="h-10 w-auto object-contain"
+            />
+            <Image
+              src={logo4}
+              alt="Socio"
+              height={40}
+              class="h-10 w-auto object-contain"
+            />
+            <Image
+              src={logo5}
+              alt="Socio"
+              height={40}
+              class="h-10 w-auto object-contain"
+            />
+            <Image
+              src={logo6}
+              alt="Socio"
+              height={40}
+              class="h-10 w-auto object-contain"
+            />
           </LogoCarousel>
         </div>
 
         <!-- Patrocinadores Bronce & Plata-->
-        <div id="carousel-bronce-plata" class="mt-8 border-black/20 dark:border-white/20 rounded-3xl p-6 sm:p-12 overflow-hidden w-full relative" style="contain: content;">
+        <div
+          id="carousel-bronce-plata"
+          class="mt-8 border-black/20 dark:border-white/20 rounded-3xl p-6 sm:p-12 overflow-hidden w-full relative"
+          style="contain: content;"
+        >
           <LogoCarousel>
             <!-- <Image src={LogoUamotors} alt="UAMOTORS" height={40} class="h-10 w-auto object-contain" /> -->
-            <Image src={logo1} alt="Socio" height={40} class="h-10 w-auto object-contain" />
-            <Image src={logo2} alt="Socio" height={40} class="h-10 w-auto object-contain" />
-            <Image src={logo3} alt="Socio" height={40} class="h-10 w-auto object-contain" />
-            <Image src={logo4} alt="Socio" height={40} class="h-10 w-auto object-contain" />
-            <Image src={logo5} alt="Socio" height={40} class="h-10 w-auto object-contain" />
-            <Image src={logo6} alt="Socio" height={40} class="h-10 w-auto object-contain" />
-            <Image src={logo7} alt="Socio" height={40} class="h-10 w-auto object-contain" />
-            <Image src={logo8} alt="Socio" height={40} class="h-10 w-auto object-contain" />
-            <Image src={logo9} alt="Socio" height={40} class="h-10 w-auto object-contain" />
-            <Image src={logo10} alt="Socio" height={40} class="h-10 w-auto object-contain" />
-            <Image src={logo11} alt="Socio" height={40} class="h-10 w-auto object-contain" />
+            <Image
+              src={logo1}
+              alt="Socio"
+              height={40}
+              class="h-10 w-auto object-contain"
+            />
+            <Image
+              src={logo2}
+              alt="Socio"
+              height={40}
+              class="h-10 w-auto object-contain"
+            />
+            <Image
+              src={logo3}
+              alt="Socio"
+              height={40}
+              class="h-10 w-auto object-contain"
+            />
+            <Image
+              src={logo4}
+              alt="Socio"
+              height={40}
+              class="h-10 w-auto object-contain"
+            />
+            <Image
+              src={logo5}
+              alt="Socio"
+              height={40}
+              class="h-10 w-auto object-contain"
+            />
+            <Image
+              src={logo6}
+              alt="Socio"
+              height={40}
+              class="h-10 w-auto object-contain"
+            />
+            <Image
+              src={logo7}
+              alt="Socio"
+              height={40}
+              class="h-10 w-auto object-contain"
+            />
+            <Image
+              src={logo8}
+              alt="Socio"
+              height={40}
+              class="h-10 w-auto object-contain"
+            />
+            <Image
+              src={logo9}
+              alt="Socio"
+              height={40}
+              class="h-10 w-auto object-contain"
+            />
+            <Image
+              src={logo10}
+              alt="Socio"
+              height={40}
+              class="h-10 w-auto object-contain"
+            />
+            <Image
+              src={logo11}
+              alt="Socio"
+              height={40}
+              class="h-10 w-auto object-contain"
+            />
           </LogoCarousel>
         </div>
-
       </div>
       <div>
-        <p class="kanit-light text-lg sm:text-xl leading-relaxed mb-8 text-center sm:text-left">
-          <strong>UAMOTORS</strong> es una iniciativa que busca desafiar las habilidades de sus integrantes para demostrar que el nivel de la <a href="https://www.azc.uam.mx/" target="_blank"><strong>UAM Azcapotzalco</strong></a> permite afrontar exitosamente retos de desarrollo tecnológico en competencias internacionales.
+        <p
+          class="kanit-light text-lg sm:text-xl leading-relaxed mb-8 text-center sm:text-left"
+        >
+          <strong>UAMOTORS</strong> es una iniciativa que busca desafiar las habilidades
+          de sus integrantes para demostrar que el nivel de la <a
+            href="https://www.azc.uam.mx/"
+            target="_blank"><strong>UAM Azcapotzalco</strong></a
+          > permite afrontar exitosamente retos de desarrollo tecnológico en competencias
+          internacionales.
         </p>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div class="bg-black/5 dark:bg-white/5 p-8 rounded-3xl border border-black/10 dark:border-white/10 hover:-translate-y-2 hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300">
-            <h4 class="sigmar-ff text-xl mb-3 text-space-red dark:text-space-yellow">Alianza Estratégica</h4>
+          <div
+            class="bg-black/5 dark:bg-white/5 p-8 rounded-3xl border border-black/10 dark:border-white/10 hover:-translate-y-2 hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300"
+          >
+            <h4
+              class="sigmar-ff text-xl mb-3 text-space-red dark:text-space-yellow"
+            >
+              Alianza Estratégica
+            </h4>
             <p class="kanit-light text-base sm:text-lg leading-relaxed">
-              No buscamos solo un patrocinador, sino un aliado estratégico que impulse el crecimiento del talento estudiantil y fortalezca el desarrollo tecnológico de México.
+              No buscamos solo un patrocinador, sino un aliado estratégico que
+              impulse el crecimiento del talento estudiantil y fortalezca el
+              desarrollo tecnológico de México.
             </p>
           </div>
-          <div class="bg-black/5 dark:bg-white/5 p-8 rounded-3xl border border-black/10 dark:border-white/10 hover:-translate-y-2 hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300">
-            <h4 class="sigmar-ff text-xl mb-3 text-space-red dark:text-space-yellow">Vínculo Academia-Industria</h4>
+          <div
+            class="bg-black/5 dark:bg-white/5 p-8 rounded-3xl border border-black/10 dark:border-white/10 hover:-translate-y-2 hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300"
+          >
+            <h4
+              class="sigmar-ff text-xl mb-3 text-space-red dark:text-space-yellow"
+            >
+              Vínculo Academia-Industria
+            </h4>
             <p class="kanit-light text-base sm:text-lg leading-relaxed">
-              El proyecto posiciona a las empresas como impulsoras del talento joven, brindando una plataforma de vinculación directa con la comunidad universitaria de la <a href="https://www.azc.uam.mx/" target="_blank"><strong>UAM Azcapotzalco</strong></a>.
+              El proyecto posiciona a las empresas como impulsoras del talento
+              joven, brindando una plataforma de vinculación directa con la
+              comunidad universitaria de la <a
+                href="https://www.azc.uam.mx/"
+                target="_blank"><strong>UAM Azcapotzalco</strong></a
+              >.
             </p>
           </div>
         </div>
       </div>
-      
+
       <!-- Beneficios Clave -->
       <div>
-        <h2 class="sigmar-ff text-3xl mb-8 text-space-red dark:text-space-yellow">Beneficios Clave</h2>
-        <ul class="grid grid-cols-1 md:grid-cols-2 gap-8 gap-y-12 kanit-light text-lg sm:text-xl">
+        <h2
+          class="sigmar-ff text-3xl mb-8 text-space-red dark:text-space-yellow"
+        >
+          Beneficios Clave
+        </h2>
+        <ul
+          class="grid grid-cols-1 md:grid-cols-2 gap-8 gap-y-12 kanit-light text-lg sm:text-xl"
+        >
           <li class="flex items-start gap-4">
             <Eyes class="w-8 h-8 shrink-0 mt-1" />
             <div>
-              <strong class="kanit-regular text-space-red dark:text-space-yellow">Visibilidad de Marca:</strong><br/>
-              Presencia de logotipos en el monoplaza <a href="proyecto">OP01</a>, uniformes y material promocional.
+              <strong
+                class="kanit-regular text-space-red dark:text-space-yellow"
+                >Visibilidad de Marca:</strong
+              ><br />
+              Presencia de logotipos en nuestro monoplaza <a href="proyecto"
+                ><strong>"OP"</strong></a
+              >, uniformes y material promocional.
             </div>
           </li>
           <li class="flex items-start gap-4">
             <Mobile class="w-8 h-8 shrink-0 mt-1" />
             <div>
-              <strong class="kanit-regular text-space-red dark:text-space-yellow">Impacto Digital:</strong><br/>
-              Difusión constante en <a href="../contacto/#canales-oficiales"><strong>plataformas sociales</strong></a> con un alcance de más de 10,000 visualizaciones.
+              <strong
+                class="kanit-regular text-space-red dark:text-space-yellow"
+                >Impacto Digital:</strong
+              ><br />
+              Difusión constante en <a href="../contacto/#canales-oficiales"
+                ><strong>plataformas sociales</strong></a
+              > con un alcance de más de 10,000 visualizaciones.
             </div>
           </li>
           <li class="flex items-start gap-4">
             <Document class="w-8 h-8 shrink-0 mt-1" />
             <div>
-              <strong class="kanit-regular text-space-red dark:text-space-yellow">Beneficio Fiscal:</strong><br/>
-              Entrega de comprobante fiscal deducible de impuestos con el respaldo de <a href="https://www.fundacionuam.org/" target="_blank"><strong>Fundación UAM</strong></a>.
+              <strong
+                class="kanit-regular text-space-red dark:text-space-yellow"
+                >Beneficio Fiscal:</strong
+              ><br />
+              Entrega de comprobante fiscal deducible de impuestos con el respaldo
+              de <a href="https://www.fundacionuam.org/" target="_blank"
+                ><strong>Fundación UAM</strong></a
+              >.
             </div>
           </li>
           <li class="flex items-start gap-4">
             <Event class="w-8 h-8 shrink-0 mt-1" />
             <div>
-              <strong class="kanit-regular text-space-red dark:text-space-yellow">Presencia en Eventos:</strong><br/>
-              Exposición de la marca en actividades con la comunidad universitaria y exposiciones automotrices.
+              <strong
+                class="kanit-regular text-space-red dark:text-space-yellow"
+                >Presencia en Eventos:</strong
+              ><br />
+              Exposición de la marca en actividades con la comunidad universitaria
+              y exposiciones automotrices.
             </div>
           </li>
         </ul>
       </div>
 
-      <div id="unete" class="bg-space-red/10 dark:bg-space-yellow/10 p-8 sm:p-12 rounded-3xl text-center border border-space-red/20 dark:border-space-yellow/20">
-        <h2 class="sigmar-ff text-3xl sm:text-4xl mb-4 text-space-red dark:text-space-yellow">¡Acelera nuestra meta!</h2>
-        <p class="kanit-light text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl mx-auto opacity-90">
-          Tu respaldo es el motor que nos permite llevar la ingeniería de la <a href="https://www.azc.uam.mx/"><strong>UAM Azcapotzalco</strong></a> al siguiente nivel.
-          Para conocer nuestros esquemas de colaboración y sus <strong>beneficios</strong>, contactános para trabajar en una alianza.
+      <div
+        id="unete"
+        class="bg-space-red/10 dark:bg-space-yellow/10 p-8 sm:p-12 rounded-3xl text-center border border-space-red/20 dark:border-space-yellow/20"
+      >
+        <h2
+          class="sigmar-ff text-3xl sm:text-4xl mb-4 text-space-red dark:text-space-yellow"
+        >
+          ¡Acelera nuestra meta!
+        </h2>
+        <p
+          class="kanit-light text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl mx-auto opacity-90"
+        >
+          Tu respaldo es el motor que nos permite llevar la ingeniería de la <a
+            href="https://www.azc.uam.mx/"><strong>UAM Azcapotzalco</strong></a
+          > al siguiente nivel. Para conocer nuestros esquemas de colaboración y sus
+          <strong>beneficios</strong>, contactános para trabajar en una alianza.
         </p>
         <!-- <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a href="#" class="button-link space-btn-outlined kanit-regular text-lg font-bold hover:scale-105 transition-transform px-8 py-3 flex items-center gap-3">
@@ -168,15 +337,18 @@ import LocationPin from "../icons/assets/LocationPin.astro";
             Propuesta de Patrocinio
           </a>
         </div> -->
-        <div class="mt-8 pt-8 border-t border-space-red/20 dark:border-white/10 flex flex-col sm:flex-row justify-center gap-6 sm:gap-12 kanit-light text-lg">
-          <a href="mailto:uamotors.fsae@azc.uam.mx?subject=Interés%20en%20Propuesta%20de%20Patrocinio" class="flex items-center justify-center gap-2 hover:text-space-red dark:hover:text-space-yellow transition-colors group">
+        <div
+          class="mt-8 pt-8 border-t border-space-red/20 dark:border-white/10 flex flex-col sm:flex-row justify-center gap-6 sm:gap-12 kanit-light text-lg"
+        >
+          <a
+            href="mailto:uamotors.fsae@azc.uam.mx?subject=Interés%20en%20Propuesta%20de%20Patrocinio"
+            class="flex items-center justify-center gap-2 hover:text-space-red dark:hover:text-space-yellow transition-colors group"
+          >
             <EmailIcon class="w-5 h-5" /> uamotors.fsae@azc.uam.mx
           </a>
         </div>
       </div>
-
     </section>
-
   </div>
 </MainLayout>
 
