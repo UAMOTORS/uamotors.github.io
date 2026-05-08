@@ -13,7 +13,6 @@ import Gift from "../icons/assets/Gift.astro";
 import Rocket from "../icons/assets/Rocket.astro";
 import LocationPin from "../icons/assets/LocationPin.astro";
 import Building from "../icons/assets/Building.astro";
-
 ---
 
 <MainLayout activePage="contacto" pageTitle={siteConfig.title + " | Contacto"}>
@@ -22,66 +21,120 @@ import Building from "../icons/assets/Building.astro";
 
     <section class="text-left space-y-16">
       <div>
-        <h2 class="sigmar-ff text-3xl mb-6 text-space-red dark:text-space-yellow">¿Por qué contactarnos?</h2>
+        <h2
+          class="sigmar-ff text-3xl mb-6 text-space-red dark:text-space-yellow"
+        >
+          ¿Por qué contactarnos?
+        </h2>
         <ul class="space-y-6 kanit-light text-lg sm:text-xl">
           <li class="flex items-start gap-4">
             <Handshake class="w-8 h-8 shrink-0 mt-1" />
             <div>
-              <strong class="kanit-regular text-space-red dark:text-space-yellow">Patrocinios:</strong><br/>
-              Para establecer alianzas estratégicas y vinculación industria-academia.
+              <strong
+                class="kanit-regular text-space-red dark:text-space-yellow"
+                >Patrocinios:</strong
+              ><br />
+              Para establecer <strong>alianzas estratégicas</strong> y vinculación
+              industria-academia.
             </div>
           </li>
           <li class="flex items-start gap-4">
             <Gift class="w-8 h-8 shrink-0 mt-1" />
             <div>
-              <strong class="kanit-regular text-space-red dark:text-space-yellow">Donaciones:</strong><br/>
-              Gestión de apoyos monetarios, en especie o componentes para el monoplaza OP01.
+              <strong
+                class="kanit-regular text-space-red dark:text-space-yellow"
+                >Donaciones:</strong
+              ><br />
+              Gestión de apoyos monetarios, en especie o componentes para nuestro
+              monoplaza <strong>"OP"</strong>.
             </div>
           </li>
           <li class="flex items-start gap-4">
             <Rocket class="w-8 h-8 shrink-0 mt-1" />
             <div>
-              <strong class="kanit-regular text-space-red dark:text-space-yellow">Reclutamiento:</strong><br/>
-              Información sobre procesos de integración a la familia UAMOTORS.
+              <strong
+                class="kanit-regular text-space-red dark:text-space-yellow"
+                >Reclutamiento:</strong
+              ><br />
+              Información sobre procesos de integración a la familia <strong
+                >UAMOTORS</strong
+              >.
             </div>
           </li>
         </ul>
       </div>
 
       <div id="canales-oficiales">
-        <h2 class="sigmar-ff text-3xl mb-6 text-space-red dark:text-space-yellow">Canales Oficiales</h2>
+        <h2
+          class="sigmar-ff text-3xl mb-6 text-space-red dark:text-space-yellow"
+        >
+          Canales Oficiales
+        </h2>
         <div class="flex flex-col gap-6 kanit-light text-lg sm:text-xl">
-          <a href="mailto:uamotors.fsae@azc.uam.mx?subject=Interés%20en%20Propuesta%20de%20Patrocinio" class="flex items-center gap-4 hover:text-space-red dark:hover:text-space-yellow transition-colors group w-fit">
-            <div class="p-3 bg-black/5 dark:bg-white/5 rounded-2xl group-hover:bg-space-red/10 dark:group-hover:bg-space-yellow/10 transition-colors">
+          <a
+            href="mailto:uamotors.fsae@azc.uam.mx?subject=Interés%20en%20Propuesta%20de%20Patrocinio"
+            class="flex items-center gap-4 hover:text-space-red dark:hover:text-space-yellow transition-colors group w-fit"
+          >
+            <div
+              class="p-3 bg-black/5 dark:bg-white/5 rounded-2xl group-hover:bg-space-red/10 dark:group-hover:bg-space-yellow/10 transition-colors"
+            >
               <EmailIcon class="w-6 h-6" />
             </div>
-            <span><strong class="kanit-regular"> uamotors.fsae@azc.uam.mx</strong></span>
+            <span
+              ><strong class="kanit-regular">
+                uamotors.fsae@azc.uam.mx</strong
+              ></span
+            >
           </a>
-          
+
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
-            <a href="https://instagram.com/uamotors.fsae" target="_blank" class="flex items-center gap-4 hover:text-space-red dark:hover:text-space-yellow transition-colors group w-fit">
-              <div class="p-3 bg-black/5 dark:bg-white/5 rounded-2xl group-hover:bg-space-red/10 dark:group-hover:bg-space-yellow/10 transition-colors">
+            <a
+              href="https://instagram.com/uamotors.fsae"
+              target="_blank"
+              class="flex items-center gap-4 hover:text-space-red dark:hover:text-space-yellow transition-colors group w-fit"
+            >
+              <div
+                class="p-3 bg-black/5 dark:bg-white/5 rounded-2xl group-hover:bg-space-red/10 dark:group-hover:bg-space-yellow/10 transition-colors"
+              >
                 <InstagramIcon class="w-6 h-6" />
               </div>
               <span><strong class="kanit-regular"> uamotors.fsae</strong></span>
             </a>
-            
-            <a href="https://www.facebook.com/uamotors" target="_blank" class="flex items-center gap-4 hover:text-space-red dark:hover:text-space-yellow transition-colors group w-fit">
-              <div class="p-3 bg-black/5 dark:bg-white/5 rounded-2xl group-hover:bg-space-red/10 dark:group-hover:bg-space-yellow/10 transition-colors">
+
+            <a
+              href="https://www.facebook.com/uamotors"
+              target="_blank"
+              class="flex items-center gap-4 hover:text-space-red dark:hover:text-space-yellow transition-colors group w-fit"
+            >
+              <div
+                class="p-3 bg-black/5 dark:bg-white/5 rounded-2xl group-hover:bg-space-red/10 dark:group-hover:bg-space-yellow/10 transition-colors"
+              >
                 <FacebookIcon class="w-6 h-6" />
               </div>
               <span><strong class="kanit-regular"> UAMOTORS</strong></span>
             </a>
-            
-            <a href="https://tiktok.com/@uamotors.fsae" target="_blank" class="flex items-center gap-4 hover:text-space-red dark:hover:text-space-yellow transition-colors group w-fit">
-              <div class="p-3 bg-black/5 dark:bg-white/5 rounded-2xl group-hover:bg-space-red/10 dark:group-hover:bg-space-yellow/10 transition-colors">
+
+            <a
+              href="https://tiktok.com/@uamotors.fsae"
+              target="_blank"
+              class="flex items-center gap-4 hover:text-space-red dark:hover:text-space-yellow transition-colors group w-fit"
+            >
+              <div
+                class="p-3 bg-black/5 dark:bg-white/5 rounded-2xl group-hover:bg-space-red/10 dark:group-hover:bg-space-yellow/10 transition-colors"
+              >
                 <TiktokIcon class="w-6 h-6" />
               </div>
               <span><strong class="kanit-regular"> uamotors.fsae</strong></span>
             </a>
-            
-            <a href="https://www.linkedin.com/company/uamotors/" target="_blank" class="flex items-center gap-4 hover:text-space-red dark:hover:text-space-yellow transition-colors group w-fit">
-              <div class="p-3 bg-black/5 dark:bg-white/5 rounded-2xl group-hover:bg-space-red/10 dark:group-hover:bg-space-yellow/10 transition-colors">
+
+            <a
+              href="https://www.linkedin.com/company/uamotors/"
+              target="_blank"
+              class="flex items-center gap-4 hover:text-space-red dark:hover:text-space-yellow transition-colors group w-fit"
+            >
+              <div
+                class="p-3 bg-black/5 dark:bg-white/5 rounded-2xl group-hover:bg-space-red/10 dark:group-hover:bg-space-yellow/10 transition-colors"
+              >
                 <LinkedinIcon class="w-6 h-6" />
               </div>
               <span><strong class="kanit-regular"> UAMOTORS</strong></span>
@@ -90,51 +143,75 @@ import Building from "../icons/assets/Building.astro";
         </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 bg-black/5 dark:bg-white/5 p-8 rounded-3xl border border-black/10 dark:border-white/10">
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 gap-8 bg-black/5 dark:bg-white/5 p-8 rounded-3xl border border-black/10 dark:border-white/10"
+      >
         <div class="md:col-span-2">
-           <h3 class="sigmar-ff text-2xl mb-2 text-center text-space-red dark:text-space-yellow">Contacto Directo</h3>
+          <h3
+            class="sigmar-ff text-2xl mb-2 text-center text-space-red dark:text-space-yellow"
+          >
+            Contacto Directo
+          </h3>
         </div>
-        <div class="bg-white dark:bg-black/20 p-6 rounded-2xl border border-black/5 dark:border-white/5 shadow-sm h-full">
+        <div
+          class="bg-white dark:bg-black/20 p-6 rounded-2xl border border-black/5 dark:border-white/5 shadow-sm h-full"
+        >
           <h4 class="sigmar-ff text-xl mb-3">Capitán</h4>
           <p class="kanit-light text-lg leading-relaxed">
-            <strong class="kanit-regular">Jehoshua Alberto<br/>Soto Benavides</strong><br/>
+            <strong class="kanit-regular"
+              >Jehoshua Alberto<br />Soto Benavides</strong
+            ><br />
             <!-- <a href="tel:+524773600127" class="hover:text-space-red dark:hover:text-space-yellow flex items-center gap-2 mt-3 w-fit bg-black/5 dark:bg-white/5 px-4 py-2 rounded-lg transition-colors">
               📞 477 360 0127
             </a> -->
           </p>
         </div>
-        <div class="bg-white dark:bg-black/20 p-6 rounded-2xl border border-black/5 dark:border-white/5 shadow-sm h-full">
+        <div
+          class="bg-white dark:bg-black/20 p-6 rounded-2xl border border-black/5 dark:border-white/5 shadow-sm h-full"
+        >
           <h4 class="sigmar-ff text-xl mb-3">Faculty Advisor</h4>
           <p class="kanit-light text-lg leading-relaxed">
-            <strong class="kanit-regular">Ing. Romy<br/>Pérez Moreno</strong><br/>
+            <strong class="kanit-regular">Ing. Romy<br />Pérez Moreno</strong
+            ><br />
             <!-- <a href="tel:+525529003893" class="hover:text-space-red dark:hover:text-space-yellow flex items-center gap-2 mt-3 w-fit bg-black/5 dark:bg-white/5 px-4 py-2 rounded-lg transition-colors">
-              📞 55 2900 3893 -->
-            </a>
+              📞 55 2900 3893
+            </a> -->
           </p>
         </div>
       </div>
 
-      <div class="bg-space-red/10 dark:bg-space-yellow/10 p-8 sm:p-12 rounded-3xl border border-space-red/20 dark:border-space-yellow/20">
-        <h2 class="sigmar-ff text-3xl mb-6 text-space-red dark:text-space-yellow">Ubicación Física</h2>
+      <div
+        class="bg-space-red/10 dark:bg-space-yellow/10 p-8 sm:p-12 rounded-3xl border border-space-red/20 dark:border-space-yellow/20"
+      >
+        <h2 class="sigmar-ff text-3xl mb-6 text-space-red dark:text-space-yellow">
+          Ubicación Física
+        </h2>
         <div class="flex flex-col gap-6 kanit-light text-lg">
-          <div class="flex items-start gap-4 bg-white dark:bg-black/40 p-6 rounded-2xl shadow-sm border border-black/5 dark:border-white/5">
+          <div
+            class="flex items-start gap-4 bg-white dark:bg-black/40 p-6 rounded-2xl shadow-sm border border-black/5 dark:border-white/5"
+          >
             <LocationPin class="w-8 h-8 shrink-0 mt-1" />
             <div>
-              <strong class="kanit-regular">Dirección:</strong><br/>
-              <a href="https://maps.app.goo.gl/EyxHEjW32biqcbMV6" target="_blank">Av. San Pablo No. 420, Col. Nueva el Rosario, Alcaldía Azcapotzalco, C.P. 02128, Ciudad de México.</a>
+              <strong class="kanit-regular">Dirección:</strong><br />
+              <a href="https://maps.app.goo.gl/EyxHEjW32biqcbMV6" target="_blank"
+                >Av. San Pablo No. 420, Col. Nueva el Rosario, Alcaldía
+                Azcapotzalco, C.P. 02128, Ciudad de México.</a
+              >
             </div>
           </div>
-          <div class="flex items-center gap-4 bg-white dark:bg-black/40 p-6 rounded-2xl shadow-sm border border-black/5 dark:border-white/5">
+          <div
+            class="flex items-center gap-4 bg-white dark:bg-black/40 p-6 rounded-2xl shadow-sm border border-black/5 dark:border-white/5"
+          >
             <Building class="w-8 h-8 shrink-0 mt-1" />
             <div>
-              <strong class="kanit-regular">Institución:</strong><br/>
-              <a href="https://www.azc.uam.mx/" target="_blank">Universidad Autónoma Metropolitana, Unidad Azcapotzalco</a>.
+              <strong class="kanit-regular">Institución:</strong><br />
+              <a href="https://www.azc.uam.mx/" target="_blank"
+                >Universidad Autónoma Metropolitana, Unidad Azcapotzalco</a
+              >.
             </div>
           </div>
         </div>
       </div>
-
     </section>
-
   </div>
 </MainLayout>
