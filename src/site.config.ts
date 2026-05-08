@@ -68,12 +68,12 @@ export type SiteConfig = {
 };
 
 const siteConfig: SiteConfig = {
-    website: 'https://example.com',
+    website: 'https://uamotors.github.io',
     title: 'UAMOTORS',
     description: 'Llevando la ingeniería mexicana al límite. Escudería Formula SAE de la UAM Azcapotzalco dedicada al diseño, manufactura y validación de un vehículo tipo Fórmula.',
     image: {
-        src: '/space-ahead-preview.jpeg',
-        alt: 'Space Ahead ✨ - A minimal space-inspired personal blog template, created by Siddhesh Thadeshwar.'
+        src: '/tira-uamotors.svg',
+        alt: 'UAMOTORS - Escudería Formula SAE de la UAM Azcapotzalco'
     },
     headerNavLinks: [
         {
@@ -95,12 +95,12 @@ const siteConfig: SiteConfig = {
     ],
     footerNavLinks: [
         {
-            text: 'About',
-            href: withBase('/about')
+            text: 'Nosotros',
+            href: withBase('/nosotros')
         },
         {
-            text: 'Contact',
-            href: withBase('/contact')
+            text: 'Contacto',
+            href: withBase('/contacto')
         },
         {
             text: 'RSS Feed',
