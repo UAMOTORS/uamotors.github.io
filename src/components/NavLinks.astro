@@ -13,7 +13,7 @@ const {
 {
   links?.map((link) => {
     const classNames = [
-      isMobileLink ? "close-menu" : "",
+      isMobileLink ? "close-menu text-2xl py-1 font-normal" : "",
       activePage === link.text.toLowerCase()
         ? "text-space-red! dark:text-space-yellow!"
         : "",
@@ -21,7 +21,7 @@ const {
       .join(" ")
       .trim();
     return (
-      <a class={classNames} href={link.href} {...(link.href.includes('patrocinadores') ? {'data-astro-reload': true} : {})}>
+      <a class={classNames} href={link.href}>
         {link.text}
       </a>
     );
