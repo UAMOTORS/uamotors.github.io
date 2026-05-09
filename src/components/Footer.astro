@@ -1,11 +1,26 @@
 ---
+import { Image } from "astro:assets";
 import siteConfig from "../site.config";
 import SiteIdentity from "./SiteIdentity.astro";
 import InstagramIcon from "../icons/social_media/Instagram.astro";
 import FacebookIcon from "../icons/social_media/Facebook.astro";
 import TiktokIcon from "../icons/social_media/Tiktok.astro";
 import LinkedinIcon from "../icons/social_media/Linkedin.astro";
-
+import LogoCarousel from "./LogoCarousel.astro";
+import LogoUamotors from "../assets/logos/logo-uamotors.png";
+import logo1 from "../assets/logos/logo-1.png";
+import logo2 from "../assets/logos/logo-2.jpg";
+import logo3 from "../assets/logos/logo-3.jpg";
+import logo4 from "../assets/logos/logo-4.png";
+import logo5 from "../assets/logos/logo-5.png";
+import logo6 from "../assets/logos/logo-6.png";
+import logo7 from "../assets/logos/logo-7.jpg";
+import logo8 from "../assets/logos/logo-8.jpg";
+import logo9 from "../assets/logos/logo-9.webp";
+import logo10 from "../assets/logos/logo-10.webp";
+import logo11 from "../assets/logos/logo-11.jpeg";
+import logoFuam from "../assets/logos/tira-uamotors.svg";
+import logoGeely from "../assets/logos/logo-geely.svg";
 const currentYear = new Date().getFullYear();
 ---
 
@@ -16,28 +31,120 @@ const currentYear = new Date().getFullYear();
     <div
       class="flex flex-row items-center justify-around sm:justify-center gap-6 sm:gap-10 pt-8 pb-6 sm:px-6 text-center"
     >
-      <a href="https://www.instagram.com/uamotors.fsae/" target="_blank" title="Instagram" class="hover:text-space-red dark:hover:text-space-yellow transition-colors hover:scale-110 transform duration-200">
+      <a
+        href="https://www.instagram.com/uamotors.fsae/"
+        target="_blank"
+        title="Instagram"
+        class="hover:text-space-red dark:hover:text-space-yellow transition-colors hover:scale-110 transform duration-200"
+      >
         <InstagramIcon class="w-8 h-8 sm:w-10 sm:h-10" />
       </a>
-      <a href="https://www.facebook.com/uamotors" target="_blank" title="Facebook" class="hover:text-space-red dark:hover:text-space-yellow transition-colors hover:scale-110 transform duration-200">
+      <a
+        href="https://www.facebook.com/uamotors"
+        target="_blank"
+        title="Facebook"
+        class="hover:text-space-red dark:hover:text-space-yellow transition-colors hover:scale-110 transform duration-200"
+      >
         <FacebookIcon class="w-8 h-8 sm:w-10 sm:h-10" />
       </a>
-      <a href="https://www.tiktok.com/@uamotors.fsae" target="_blank" title="TikTok" class="hover:text-space-red dark:hover:text-space-yellow transition-colors hover:scale-110 transform duration-200">
+      <a
+        href="https://www.tiktok.com/@uamotors.fsae"
+        target="_blank"
+        title="TikTok"
+        class="hover:text-space-red dark:hover:text-space-yellow transition-colors hover:scale-110 transform duration-200"
+      >
         <TiktokIcon class="w-8 h-8 sm:w-10 sm:h-10" />
       </a>
-      <a href="https://www.linkedin.com/company/uamotors/" target="_blank" title="LinkedIn" class="hover:text-space-red dark:hover:text-space-yellow transition-colors hover:scale-110 transform duration-200">
+      <a
+        href="https://www.linkedin.com/company/uamotors/"
+        target="_blank"
+        title="LinkedIn"
+        class="hover:text-space-red dark:hover:text-space-yellow transition-colors hover:scale-110 transform duration-200"
+      >
         <LinkedinIcon class="w-8 h-8 sm:w-10 sm:h-10" />
       </a>
     </div>
   </div>
+
+  <!-- Carousel de logos (patrocinios) -->
+
+  <div
+    id="carousel-footer"
+    class="mt-8 border-black/20 dark:border-white/20 rounded-3xl p-6 sm:p-12 overflow-hidden w-full relative"
+    style="contain: content;"
+  >
+    <LogoCarousel>
+      <Image
+        src={LogoUamotors}
+        alt="UAMOTORS"
+        height={40}
+        class="h-10 w-auto object-contain"
+      />
+      <Image
+        src={logo1}
+        alt="Socio"
+        height={40}
+        class="h-10 w-auto object-contain"
+      />
+      <Image
+        src={logo2}
+        alt="Socio"
+        height={40}
+        class="h-10 w-auto object-contain"
+      />
+      <Image
+        src={logo3}
+        alt="Socio"
+        height={40}
+        class="h-10 w-auto object-contain"
+      />
+      <Image
+        src={logo4}
+        alt="Socio"
+        height={40}
+        class="h-10 w-auto object-contain"
+      />
+      <Image
+        src={logo5}
+        alt="Socio"
+        height={40}
+        class="h-10 w-auto object-contain"
+      />
+      <Image
+        src={logo6}
+        alt="Socio"
+        height={40}
+        class="h-10 w-auto object-contain"
+      />
+    </LogoCarousel>
+  </div>
+
+  <!-- Nota de derechos -->
   <div
     class="footer-secondary flex flex-col items-center justify-center gap-2 min-w-full pb-8"
   >
-    <div class="flex flex-col gap-1 items-center justify-center text-balance opacity-80 text-center">
-      <span>&copy; {currentYear} {siteConfig.title}. Todos los derechos reservados.</span>
+    <div
+      class="flex flex-col gap-1 items-center justify-center text-balance opacity-80 text-center"
+    >
+      <span
+        >&copy; {currentYear}
+        {siteConfig.title}. Todos los derechos reservados.</span
+      >
       <span class="text-xs opacity-75 mt-1">
-        Desarrollado por <a href="https://github.com/lexrammart" target="_blank" class="kanit-regular hover:text-space-red dark:hover:text-space-yellow transition-colors">Alejandro Ramírez</a> para UAMOTORS <span class="hidden sm:inline">|</span><br class="sm:hidden" />
-        Basado en el tema <a href="https://github.com/djsiddz/space-ahead" target="_blank" class="kanit-regular hover:text-space-red dark:hover:text-space-yellow transition-colors">Space Ahead</a>.
+        Desarrollado por <a
+          href="https://github.com/lexrammart"
+          target="_blank"
+          class="kanit-regular hover:text-space-red dark:hover:text-space-yellow transition-colors"
+          >Alejandro Ramírez</a
+        > para UAMOTORS <span class="hidden sm:inline">|</span><br
+          class="sm:hidden"
+        />
+        Basado en el tema <a
+          href="https://github.com/djsiddz/space-ahead"
+          target="_blank"
+          class="kanit-regular hover:text-space-red dark:hover:text-space-yellow transition-colors"
+          >Space Ahead</a
+        >.
       </span>
     </div>
   </div>
