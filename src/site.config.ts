@@ -136,11 +136,11 @@ const siteConfig: SiteConfig = {
         },
         actions: [
             {
-                text: 'Ver OP01',
+                text: 'Ver proyecto',
                 href: withBase('/proyecto')
             },
             {
-                text: 'Patrocina',
+                text: 'Impulsar equipo',
                 href: withBase('/patrocinadores')
             }
         ]
