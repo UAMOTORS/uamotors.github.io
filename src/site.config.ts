@@ -85,8 +85,8 @@ const siteConfig: SiteConfig = {
             href: withBase('proyecto')
         },
         {
-            text: 'Patrocinadores',
-            href: withBase('patrocinadores')
+            text: 'Nuestros Aliados',
+            href: withBase('nuestros-aliados')
         },
         {
             text: 'Contacto',
@@ -141,7 +141,7 @@ const siteConfig: SiteConfig = {
             },
             {
                 text: 'Impulsar equipo',
-                href: withBase('/patrocinadores')
+                href: withBase('/nuestros-aliados')
             }
         ]
     }
