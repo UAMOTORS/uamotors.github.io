@@ -9,7 +9,7 @@ import Mobile from "../icons/assets/Mobile.astro";
 import Document from "../icons/assets/Document.astro";
 import Event from "../icons/assets/Event.astro";
 import Pdf from "../icons/assets/Pdf.astro";
-import LogoUamotors from "../assets/logos/logo-uamotors.png";
+import TiraUamotors from "../components/TiraUamotors.astro";
 import logo1 from "../assets/logos/logo-1.png";
 import logo2 from "../assets/logos/logo-2.jpg";
 import logo3 from "../assets/logos/logo-3.jpg";
@@ -68,12 +68,7 @@ import LocationPin from "../icons/assets/LocationPin.astro";
           style="contain: content;"
         >
           <LogoCarousel>
-            <Image
-              src={LogoUamotors}
-              alt="UAMOTORS"
-              height={40}
-              class="h-10 w-auto object-contain"
-            />
+            <TiraUamotors class="h-10 w-30 object-contain" />
             <Image
               src={logo1}
               alt="Socio"
