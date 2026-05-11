@@ -7,7 +7,7 @@ import FacebookIcon from "../icons/social_media/Facebook.astro";
 import TiktokIcon from "../icons/social_media/Tiktok.astro";
 import LinkedinIcon from "../icons/social_media/Linkedin.astro";
 import LogoCarousel from "./LogoCarousel.astro";
-import LogoUamotors from "../assets/logos/logo-uamotors.png";
+import TiraUamotors from "./TiraUamotors.astro";
 import logo1 from "../assets/logos/logo-1.png";
 import logo2 from "../assets/logos/logo-2.jpg";
 import logo3 from "../assets/logos/logo-3.jpg";
@@ -74,12 +74,7 @@ const currentYear = new Date().getFullYear();
     style="contain: content;"
   >
     <LogoCarousel>
-      <Image
-        src={LogoUamotors}
-        alt="UAMOTORS"
-        height={40}
-        class="h-10 w-auto object-contain"
-      />
+      <TiraUamotors class="h-10 w-auto object-contain" />
       <Image
         src={logo1}
         alt="Socio"
