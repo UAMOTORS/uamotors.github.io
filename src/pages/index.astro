@@ -8,21 +8,25 @@ import Button from "../components/Button.astro";
 import { Image } from "astro:assets";
 import heroImage from "../assets/images/pixeltrue-space-discovery.svg";
 import ArrowRight from "../icons/ArrowRight.astro";
+import OP_image from "../assets/images/OP01-transparent.png";
 
 const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
 ---
 
-<MainLayout
-  activePage="home"
-  pageTitle={"UAMOTORS"}
->
+<MainLayout activePage="home" pageTitle={"UAMOTORS"}>
   <div
     class="jumbo-banner relative flex flex-col sm:flex-row sm:items-center sm:justify-between w-full px-4 my-12 gap-6"
   >
     <!-- Efecto "Light Blobs" (Nubes espaciales) -->
-    <div class="absolute top-0 left-0 sm:left-[-10%] w-64 h-64 sm:w-80 sm:h-80 bg-space-red/20 dark:bg-white/10 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
-    <div class="absolute bottom-0 right-0 sm:right-[-10%] w-72 h-72 sm:w-96 sm:h-96 bg-space-red/10 dark:bg-white/5 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
-    
+    <div
+      class="absolute top-0 left-0 sm:left-[-10%] w-64 h-64 sm:w-80 sm:h-80 bg-space-red/20 dark:bg-white/10 rounded-full blur-[100px] -z-10 pointer-events-none"
+    >
+    </div>
+    <div
+      class="absolute bottom-0 right-0 sm:right-[-10%] w-72 h-72 sm:w-96 sm:h-96 bg-space-red/10 dark:bg-white/5 rounded-full blur-[120px] -z-10 pointer-events-none"
+    >
+    </div>
+
     <div class="w-full sm:w-fit sm:max-w-1/2">
       {
         siteConfig.hero?.eyebrowText && (
@@ -34,7 +38,10 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
       <h1 class="sigmar-ff-italic leading-tight text-balance sm:pt-0!">
         {siteConfig.hero?.title}
       </h1>
-      <p class="kanit-regular text-balance text-base sm:text-lg" set:html={siteConfig.hero?.text} />
+      <p
+        class="kanit-regular text-balance text-base sm:text-lg"
+        set:html={siteConfig.hero?.text}
+      />
       <div
         class="flex flex-wrap items-center text-xs sm:text-base gap-x-2 gap-y-8 mt-3 sm:mt-12"
       >
@@ -54,34 +61,57 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
       <!-- {siteConfig.hero?.image && <Image src={siteConfig.hero?.image?.src} alt={siteConfig.hero?.image?.alt || ""} inferSize={true} />} -->
       <Image
         class="cover-img"
-        src={heroImage}
+        src={OP_image}
         alt={"Astronaut in space"}
-        width={400}
-        height={300}
+        width={250}
+        height={100}
         transition:name="hero-image"
       />
     </div>
   </div>
   <div class="page-content">
-    <div id="instagram-feed" class="flex flex-col items-center justify-center w-full">
-      <h2 class="sigmar-ff text-balance pt-0! pb-8! text-space-red dark:text-space-yellow">Síguenos en Instagram</h2>
-      
+    <div
+      id="instagram-feed"
+      class="flex flex-col items-center justify-center w-full"
+    >
+      <h2
+        class="sigmar-ff text-balance pt-0! pb-8! text-space-red dark:text-space-yellow"
+      >
+        Síguenos en Instagram
+      </h2>
+
       <div class="w-full max-w-4xl mx-auto mt-4 overflow-hidden">
         <!-- Place <div> tag where you want the feed to appear -->
-        <div id="curator-feed-default-feed-layout"><a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a></div>
+        <div id="curator-feed-default-feed-layout">
+          <a href="https://curator.io" target="_blank" class="crt-logo crt-tag"
+            >Powered by Curator.io</a
+          >
+        </div>
 
         <!-- The Javascript can be moved to the end of the html page before the </body> tag -->
         <script type="text/javascript" is:inline data-astro-rerun>
-        /* curator-feed-default-feed-layout */
-        (function(){
-        var i,e,d=document,s="script";i=d.createElement("script");i.async=1;i.charset="UTF-8";
-        i.src="https://cdn.curator.io/published/a1e46c5e-ad11-49f1-b60c-867fd268c002.js";
-        e=d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
-        })();
+          /* curator-feed-default-feed-layout */
+          (function () {
+            var i,
+              e,
+              d = document,
+              s = "script";
+            i = d.createElement("script");
+            i.async = 1;
+            i.charset = "UTF-8";
+            i.src =
+              "https://cdn.curator.io/published/a1e46c5e-ad11-49f1-b60c-867fd268c002.js";
+            e = d.getElementsByTagName(s)[0];
+            e.parentNode.insertBefore(i, e);
+          })();
         </script>
       </div>
 
-      <Button href="https://www.instagram.com/uamotors.fsae" target="_blank" class="space-btn-filled mt-8">
+      <Button
+        href="https://www.instagram.com/uamotors.fsae"
+        target="_blank"
+        class="space-btn-filled mt-8"
+      >
         @uamotors.fsae <ArrowRight class="w-5 h-5 fill-current ml-4" />
       </Button>
     </div>
@@ -110,7 +140,7 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
   #curator-feed-default-feed-layout .crt-date:hover,
   #curator-feed-default-feed-layout .crt-post-date:hover,
   #curator-feed-default-feed-layout .crt-time:hover {
-    color: #E31E24 !important;
+    color: #e31e24 !important;
     opacity: 1 !important;
   }
 </style>
