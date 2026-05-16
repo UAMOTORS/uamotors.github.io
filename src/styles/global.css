@@ -117,17 +117,17 @@ img {
 /* links */
 a.button-link:not(:disabled),
 button.button-link:not(:disabled) {
-  @apply inline-flex cursor-pointer items-center justify-center rounded-full border px-6 py-2 leading-tight transition hover:border-space-red hover:text-space-red sm:px-8 hover:dark:border-space-yellow hover:dark:text-space-yellow;
+  @apply inline-flex cursor-pointer items-center justify-center rounded-full border px-6 py-2 leading-tight transition sm:px-8;
 }
 
 a.button-link.space-btn-filled:not(:disabled),
 button.button-link.space-btn-filled:not(:disabled) {
-  @apply bg-black text-whitesmoke hover:border-space-red hover:bg-space-red dark:bg-whitesmoke dark:text-black dark:hover:border-space-yellow dark:hover:bg-space-yellow;
+  @apply bg-black text-whitesmoke border-transparent dark:bg-whitesmoke dark:text-black dark:border-transparent;
 }
 
 a.button-link.space-btn-outlined:not(:disabled),
 button.button-link.space-btn-outlined:not(:disabled) {
-  @apply border border-black bg-transparent text-black hover:border-space-red hover:text-space-red dark:border-whitesmoke dark:bg-transparent dark:text-whitesmoke dark:hover:border-space-yellow dark:hover:text-space-yellow;
+  @apply border border-black bg-transparent text-black dark:border-whitesmoke dark:bg-transparent dark:text-whitesmoke;
 }
 
 html.dark a:not(.button-link) {
@@ -138,12 +138,30 @@ html.light a:not(.button-link) {
   @apply text-black;
 }
 
-html.light a:not(.button-link):hover {
-  @apply text-space-red;
-}
+/* Hover styles only for devices that support hover (prevents iOS double-tap bug) */
+@media (hover: hover) {
+  a.button-link:not(:disabled):hover,
+  button.button-link:not(:disabled):hover {
+    @apply border-space-red text-space-red dark:border-space-yellow dark:text-space-yellow;
+  }
 
-html.dark a:not(.button-link):hover {
-  @apply text-space-yellow;
+  a.button-link.space-btn-filled:not(:disabled):hover,
+  button.button-link.space-btn-filled:not(:disabled):hover {
+    @apply border-space-red bg-space-red text-whitesmoke dark:border-space-yellow dark:bg-space-yellow dark:text-black;
+  }
+
+  a.button-link.space-btn-outlined:not(:disabled):hover,
+  button.button-link.space-btn-outlined:not(:disabled):hover {
+    @apply border-space-red text-space-red dark:border-space-yellow dark:text-space-yellow;
+  }
+
+  html.light a:not(.button-link):hover {
+    @apply text-space-red;
+  }
+
+  html.dark a:not(.button-link):hover {
+    @apply text-space-yellow;
+  }
 }
 
 .page-content {
