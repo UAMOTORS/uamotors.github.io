@@ -70,15 +70,20 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
       <!-- En móvil, forzamos la altura a 150px para acercarlo a los botones sin afectar el área del láser -->
       <div class="relative w-full h-[150px] sm:h-auto flex justify-center items-center transition-transform duration-700">
         
+        <!-- Láser Amarillo (Fondo) -->
+        <div class="absolute inset-0 pointer-events-none overflow-hidden z-0">
+           <div class="absolute bottom-0 left-0 w-full h-[2px] bg-[#ffb703] shadow-[0_0_20px_5px_rgba(255,183,3,0.8)] animate-laser-scan-reverse"></div>
+        </div>
+
         <Image
-          class="absolute sm:relative w-auto h-auto max-h-[300px] sm:max-h-[650px] object-contain drop-shadow-[0_15px_25px_rgba(0,0,0,0.6)] dark:drop-shadow-[0_15px_25px_rgba(0,0,0,0.8)] -rotate-90 sm:rotate-0"
+          class="absolute sm:relative w-auto h-auto max-h-[300px] sm:max-h-[650px] object-contain drop-shadow-[0_15px_25px_rgba(0,0,0,0.6)] dark:drop-shadow-[0_15px_25px_rgba(0,0,0,0.8)] -rotate-90 sm:rotate-0 z-10"
           src={OP_image_vertical}
           alt={"UAMOTORS Vehicle"}
           transition:name="hero-image"
         />
 
-        <!-- Escáner Láser Animado -->
-        <div class="absolute inset-0 pointer-events-none overflow-hidden">
+        <!-- Láser Rojo (Frente) -->
+        <div class="absolute inset-0 pointer-events-none overflow-hidden z-20">
            <div class="absolute top-0 left-0 w-full h-[2px] bg-space-red shadow-[0_0_20px_5px_rgba(227,30,36,0.8)] animate-laser-scan"></div>
         </div>
         
@@ -170,8 +175,21 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
     35% { top: 0%; opacity: 0; }
     100% { top: 0%; opacity: 0; }
   }
+  @keyframes laser-scan-reverse {
+    0% { bottom: 0%; opacity: 0; }
+    5% { opacity: 1; }
+    15% { bottom: 100%; opacity: 1; }
+    20% { bottom: 100%; opacity: 1; }
+    30% { bottom: 0%; opacity: 1; }
+    35% { bottom: 0%; opacity: 0; }
+    100% { bottom: 0%; opacity: 0; }
+  }
   .animate-laser-scan {
     opacity: 0;
     animation: laser-scan 12s ease-in-out infinite;
+  }
+  .animate-laser-scan-reverse {
+    opacity: 0;
+    animation: laser-scan-reverse 12s ease-in-out infinite;
   }
 </style>
