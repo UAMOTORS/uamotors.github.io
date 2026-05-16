@@ -4,9 +4,7 @@ const html = await Astro.slots.render('default');
 
 <section class="logo-carousel-wrapper" aria-label="Patrocinadores UAMOTORS">
   <div class="logo-marquee">
-    <!-- Grupo 1 -->
     <div class="logo-group" set:html={html} />
-    <!-- Grupo 2 (Duplicado para el efecto infinito) -->
     <div class="logo-group" aria-hidden="true" set:html={html} />
   </div>
 </section>
@@ -30,10 +28,6 @@ const html = await Astro.slots.render('default');
     animation: scroll-left 15s linear infinite;
     will-change: transform;
   }
-
-  /* .logo-marquee:hover {
-    animation-play-state: paused;
-  } */
 
   .logo-group {
     display: flex;

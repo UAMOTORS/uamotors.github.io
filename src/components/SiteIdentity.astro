@@ -22,11 +22,14 @@ const {
 
 <div class:list={["flex items-center gap-3", customClass]}>
   <Image
-    src={withBase("favicon-uamotors.png")}
-    alt="Logo"
+    src={withBase("favicon-uamotors.svg")}
+    alt="LOGO"
     width={logoWidth * 1.15}
     height={logoHeight * 1.15}
     loading={loading}
+    class="!rounded-none"
   />
-  <span class:list={["sigmar-ff nav-brand-text translate-y-[2px]", textSize]}>{siteConfig.title}</span>
+  <span class:list={["sigmar-ff nav-brand-text translate-y-[2px]", textSize]}
+    >{siteConfig.title}</span
+  >
 </div>

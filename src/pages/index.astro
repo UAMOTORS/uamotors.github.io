@@ -8,22 +8,25 @@ import Button from "../components/Button.astro";
 import { Image } from "astro:assets";
 import heroImage from "../assets/images/pixeltrue-space-discovery.svg";
 import ArrowRight from "../icons/ArrowRight.astro";
+import OP_image_vertical from "../assets/images/OP01_2-transparent.png";
 
 const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
 ---
 
-<MainLayout
-  activePage="home"
-  pageTitle={"UAMOTORS"}
->
+<MainLayout activePage="home" pageTitle={"UAMOTORS"}>
   <div
     class="jumbo-banner relative flex flex-col sm:flex-row sm:items-center sm:justify-between w-full px-4 my-12 gap-6"
   >
-    <!-- Efecto "Light Blobs" (Nubes espaciales) -->
-    <div class="absolute top-0 left-0 sm:left-[-10%] w-64 h-64 sm:w-80 sm:h-80 bg-space-red/20 dark:bg-white/10 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
-    <div class="absolute bottom-0 right-0 sm:right-[-10%] w-72 h-72 sm:w-96 sm:h-96 bg-space-red/10 dark:bg-white/5 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
-    
-    <div class="w-full sm:w-fit sm:max-w-1/2">
+    <div
+      class="absolute top-0 left-0 sm:left-[-10%] w-64 h-64 sm:w-80 sm:h-80 bg-space-red/20 dark:bg-white/10 rounded-full blur-[100px] -z-10 pointer-events-none"
+    >
+    </div>
+    <div
+      class="absolute bottom-0 right-0 sm:right-[-10%] w-72 h-72 sm:w-96 sm:h-96 bg-space-red/10 dark:bg-white/5 rounded-full blur-[120px] -z-10 pointer-events-none"
+    >
+    </div>
+
+    <div class="w-full sm:flex-1 min-w-0 relative z-30">
       {
         siteConfig.hero?.eyebrowText && (
           <span class="tag inline-block mb-2 rounded-full text-sm sm:text-base px-3 py-1 border border-gray-500 kanit-light">
@@ -34,7 +37,10 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
       <h1 class="sigmar-ff-italic leading-tight text-balance sm:pt-0!">
         {siteConfig.hero?.title}
       </h1>
-      <p class="kanit-regular text-balance text-base sm:text-lg" set:html={siteConfig.hero?.text} />
+      <p
+        class="kanit-regular text-balance text-base sm:text-lg"
+        set:html={siteConfig.hero?.text}
+      />
       <div
         class="flex flex-wrap items-center text-xs sm:text-base gap-x-2 gap-y-8 mt-3 sm:mt-12"
       >
@@ -50,38 +56,90 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
         }
       </div>
     </div>
-    <div class="w-full sm:w-fit sm:max-w-1/2">
-      <!-- {siteConfig.hero?.image && <Image src={siteConfig.hero?.image?.src} alt={siteConfig.hero?.image?.alt || ""} inferSize={true} />} -->
-      <Image
-        class="cover-img"
-        src={heroImage}
-        alt={"Astronaut in space"}
-        width={400}
-        height={300}
-        transition:name="hero-image"
-      />
+    <div
+      class="w-full sm:flex-1 min-w-0 flex justify-center items-center mt-4 sm:mt-0 relative group"
+    >
+      <div
+        class="absolute inset-0 bg-[linear-gradient(to_right,#80808020_1px,transparent_1px),linear-gradient(to_bottom,#80808020_1px,transparent_1px)] bg-[size:40px_40px] opacity-40 dark:opacity-20 pointer-events-none rounded-2xl [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_70%)]"
+      >
+      </div>
+
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 sm:w-80 sm:h-80 bg-space-red/40 rounded-full blur-[60px] sm:blur-[100px] -z-10 pointer-events-none"
+      >
+      </div>
+
+      <div
+        class="relative w-full h-[150px] sm:h-auto flex justify-center items-center transition-transform duration-700"
+      >
+        <div class="absolute inset-0 pointer-events-none overflow-hidden z-0">
+          <div
+            class="absolute bottom-0 left-0 w-full h-[2px] bg-[#ffb703] shadow-[0_0_20px_5px_rgba(255,183,3,0.8)] animate-laser-scan-reverse"
+          >
+          </div>
+        </div>
+
+        <div
+          class="absolute sm:relative z-10 animate-car-levitate flex justify-center items-center"
+        >
+          <Image
+            class="w-auto h-auto max-h-[300px] sm:max-h-[650px] object-contain drop-shadow-[0_15px_25px_rgba(0,0,0,0.6)] dark:drop-shadow-[0_15px_25px_rgba(0,0,0,0.8)] -rotate-90 sm:rotate-0"
+            src={OP_image_vertical}
+            alt={"UAMOTORS Vehicle"}
+            transition:name="hero-image"
+          />
+        </div>
+
+        <div class="absolute inset-0 pointer-events-none overflow-hidden z-20">
+          <div
+            class="absolute top-0 left-0 w-full h-[2px] bg-space-red shadow-[0_0_20px_5px_rgba(227,30,36,0.8)] animate-laser-scan"
+          >
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="page-content">
-    <div id="instagram-feed" class="flex flex-col items-center justify-center w-full">
-      <h2 class="sigmar-ff text-balance pt-0! pb-8! text-space-red dark:text-space-yellow">Síguenos en Instagram</h2>
-      
-      <div class="w-full max-w-4xl mx-auto mt-4 overflow-hidden">
-        <!-- Place <div> tag where you want the feed to appear -->
-        <div id="curator-feed-default-feed-layout"><a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a></div>
+    <div
+      id="instagram-feed"
+      class="flex flex-col items-center justify-center w-full"
+    >
+      <h2
+        class="sigmar-ff text-balance pt-0! pb-8! text-space-red dark:text-space-yellow"
+      >
+        Síguenos en Instagram
+      </h2>
 
-        <!-- The Javascript can be moved to the end of the html page before the </body> tag -->
+      <div class="w-full max-w-4xl mx-auto mt-4 overflow-hidden">
+        <div id="curator-feed-default-feed-layout">
+          <a href="https://curator.io" target="_blank" class="crt-logo crt-tag"
+            >Powered by Curator.io</a
+          >
+        </div>
+
         <script type="text/javascript" is:inline data-astro-rerun>
-        /* curator-feed-default-feed-layout */
-        (function(){
-        var i,e,d=document,s="script";i=d.createElement("script");i.async=1;i.charset="UTF-8";
-        i.src="https://cdn.curator.io/published/a1e46c5e-ad11-49f1-b60c-867fd268c002.js";
-        e=d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
-        })();
+          /* curator-feed-default-feed-layout */
+          (function () {
+            var i,
+              e,
+              d = document,
+              s = "script";
+            i = d.createElement("script");
+            i.async = 1;
+            i.charset = "UTF-8";
+            i.src =
+              "https://cdn.curator.io/published/a1e46c5e-ad11-49f1-b60c-867fd268c002.js";
+            e = d.getElementsByTagName(s)[0];
+            e.parentNode.insertBefore(i, e);
+          })();
         </script>
       </div>
 
-      <Button href="https://www.instagram.com/uamotors.fsae" target="_blank" class="space-btn-filled mt-8">
+      <Button
+        href="https://www.instagram.com/uamotors.fsae"
+        target="_blank"
+        class="space-btn-filled mt-8"
+      >
         @uamotors.fsae <ArrowRight class="w-5 h-5 fill-current ml-4" />
       </Button>
     </div>
@@ -103,14 +161,222 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
     transition: color 0.2s ease; /* Para que el cambio al rojo no sea tan brusco */
   }
 
-  /* 2. ESTADO HOVER: Color rojo (#E31E24) al pasar el mouse */
   #curator-feed-default-feed-layout a:hover,
   #curator-feed-default-feed-layout a:hover span,
   #curator-feed-default-feed-layout .crt-post-header a:hover,
   #curator-feed-default-feed-layout .crt-date:hover,
   #curator-feed-default-feed-layout .crt-post-date:hover,
   #curator-feed-default-feed-layout .crt-time:hover {
-    color: #E31E24 !important;
+    color: #e31e24 !important;
     opacity: 1 !important;
+  }
+
+  /* Escáner Láser Animación (Escritorio) */
+  @keyframes laser-scan-v4 {
+    0% {
+      top: 0%;
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    2% {
+      top: 0%;
+      opacity: 1;
+      transform: scaleX(1);
+    }
+    15% {
+      top: 100%;
+      opacity: 1;
+      transform: scaleX(1);
+    }
+    20% {
+      top: 100%;
+      opacity: 1;
+      transform: scaleX(1);
+    }
+    33% {
+      top: 0%;
+      opacity: 1;
+      transform: scaleX(1);
+    }
+    35% {
+      top: 0%;
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    100% {
+      top: 0%;
+      opacity: 0;
+      transform: scaleX(0);
+    }
+  }
+  @keyframes laser-scan-reverse-v4 {
+    0% {
+      bottom: 0%;
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    2% {
+      bottom: 0%;
+      opacity: 1;
+      transform: scaleX(1);
+    }
+    15% {
+      bottom: 100%;
+      opacity: 1;
+      transform: scaleX(1);
+    }
+    20% {
+      bottom: 100%;
+      opacity: 1;
+      transform: scaleX(1);
+    }
+    33% {
+      bottom: 0%;
+      opacity: 1;
+      transform: scaleX(1);
+    }
+    35% {
+      bottom: 0%;
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    100% {
+      bottom: 0%;
+      opacity: 0;
+      transform: scaleX(0);
+    }
+  }
+  .animate-laser-scan {
+    opacity: 0;
+    transform: scaleX(0);
+    animation: laser-scan-v4 12s ease-in-out infinite;
+    will-change: top, opacity, transform;
+  }
+  .animate-laser-scan-reverse {
+    opacity: 0;
+    transform: scaleX(0);
+    animation: laser-scan-reverse-v4 12s ease-in-out infinite;
+    will-change: bottom, opacity, transform;
+  }
+
+  /* Escáner Láser Animación (Móvil) */
+  @media (max-width: 639px) {
+    @keyframes laser-scan-mobile-v3 {
+      0% {
+        left: 0%;
+        opacity: 0;
+        transform: scaleY(0);
+      }
+      2% {
+        left: 0%;
+        opacity: 1;
+        transform: scaleY(1);
+      }
+      15% {
+        left: 100%;
+        opacity: 1;
+        transform: scaleY(1);
+      }
+      20% {
+        left: 100%;
+        opacity: 1;
+        transform: scaleY(1);
+      }
+      33% {
+        left: 0%;
+        opacity: 1;
+        transform: scaleY(1);
+      }
+      35% {
+        left: 0%;
+        opacity: 0;
+        transform: scaleY(0);
+      }
+      100% {
+        left: 0%;
+        opacity: 0;
+        transform: scaleY(0);
+      }
+    }
+    @keyframes laser-scan-reverse-mobile-v3 {
+      0% {
+        left: 100%;
+        opacity: 0;
+        transform: scaleY(0);
+      }
+      2% {
+        left: 100%;
+        opacity: 1;
+        transform: scaleY(1);
+      }
+      15% {
+        left: 0%;
+        opacity: 1;
+        transform: scaleY(1);
+      }
+      20% {
+        left: 0%;
+        opacity: 1;
+        transform: scaleY(1);
+      }
+      33% {
+        left: 100%;
+        opacity: 1;
+        transform: scaleY(1);
+      }
+      35% {
+        left: 100%;
+        opacity: 0;
+        transform: scaleY(0);
+      }
+      100% {
+        left: 100%;
+        opacity: 0;
+        transform: scaleY(0);
+      }
+    }
+    .animate-laser-scan {
+      width: 2px !important;
+      height: 100% !important;
+      transform: scaleY(0);
+      animation: laser-scan-mobile-v3 12s ease-in-out infinite !important;
+      will-change: left, opacity, transform !important;
+    }
+    .animate-laser-scan-reverse {
+      width: 2px !important;
+      height: 100% !important;
+      top: 0 !important;
+      bottom: auto !important;
+      /* Mantenemos el control sobre left para evitar conflictos con Tailwind */
+      transform: scaleY(0);
+      animation: laser-scan-reverse-mobile-v3 12s ease-in-out infinite !important;
+      will-change: left, opacity, transform !important;
+    }
+  }
+
+  body {
+    overflow-x: clip;
+  }
+
+  @keyframes car-levitate-v2 {
+    0% {
+      transform: scale(1);
+    }
+    2% {
+      transform: scale(1.05);
+    }
+    33% {
+      transform: scale(1.05);
+    }
+    35% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  .animate-car-levitate {
+    animation: car-levitate-v2 12s ease-in-out infinite;
+    will-change: transform;
   }
 </style>
