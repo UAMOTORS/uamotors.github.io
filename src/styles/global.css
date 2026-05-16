@@ -2,7 +2,6 @@
 @import url("fonts.css");
 @import "tailwindcss";
 
-/*color variables & fonts */
 :root {
   --space-red: #E31E24;
   --space-yellow: #FF4046;
@@ -23,7 +22,6 @@
   --color-whitesmoke: whitesmoke;
 }
 
-/* html elements */
 html {
   @apply overflow-x-hidden;
 }
@@ -53,19 +51,15 @@ html.light body {
   @apply bg-space-sand bg-cover bg-no-repeat text-black;
 }
 
-/* semantic elements */
 header {
   @apply sticky top-4 z-20 mr-auto ml-auto flex w-full max-w-3xl flex-col items-center justify-center px-0 py-0 text-base;
 }
 
 header>nav {
   @apply flex flex-row items-center justify-between gap-2 rounded-4xl px-5 py-2 text-xs backdrop-blur-3xl sm:gap-8 sm:py-3 sm:text-base;
-  /* inner glow 👇 */
   box-shadow:
     inset 0 0 0.5px 1px hsla(0, 0%, 100%, 0.075),
-    /* shadow ring 👇 */
     0 0 0 1px hsla(0, 0%, 0%, 0.05),
-    /* multiple soft shadows 👇 */
     0 0.3px 0.4px hsla(0, 0%, 0%, 0.02),
     0 0.9px 1.5px hsla(0, 0%, 0%, 0.045),
     0 3.5px 6px hsla(0, 0%, 0%, 0.09);
@@ -114,7 +108,6 @@ img {
   @apply h-auto max-w-full rounded-xl;
 }
 
-/* links */
 a.button-link:not(:disabled),
 button.button-link:not(:disabled) {
   @apply inline-flex cursor-pointer items-center justify-center rounded-full border px-6 py-2 leading-tight transition sm:px-8;
@@ -138,7 +131,6 @@ html.light a:not(.button-link) {
   @apply text-black;
 }
 
-/* Hover styles only for devices that support hover (prevents iOS double-tap bug) */
 @media (hover: hover) {
   a.button-link:not(:disabled):hover,
   button.button-link:not(:disabled):hover {

@@ -17,7 +17,6 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
   <div
     class="jumbo-banner relative flex flex-col sm:flex-row sm:items-center sm:justify-between w-full px-4 my-12 gap-6"
   >
-    <!-- Efecto "Light Blobs" (Nubes espaciales) -->
     <div
       class="absolute top-0 left-0 sm:left-[-10%] w-64 h-64 sm:w-80 sm:h-80 bg-space-red/20 dark:bg-white/10 rounded-full blur-[100px] -z-10 pointer-events-none"
     >
@@ -60,24 +59,19 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
     <div
       class="w-full sm:flex-1 min-w-0 flex justify-center items-center mt-4 sm:mt-0 relative group"
     >
-      <!-- Blueprint Grid (Background) -->
       <div
         class="absolute inset-0 bg-[linear-gradient(to_right,#80808020_1px,transparent_1px),linear-gradient(to_bottom,#80808020_1px,transparent_1px)] bg-[size:40px_40px] opacity-40 dark:opacity-20 pointer-events-none rounded-2xl [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_70%)]"
       >
       </div>
 
-      <!-- Contraluz (Backlighting glow) -->
       <div
         class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 sm:w-80 sm:h-80 bg-space-red/40 rounded-full blur-[60px] sm:blur-[100px] -z-10 pointer-events-none"
       >
       </div>
 
-      <!-- Image Wrapper for Laser & Layout -->
-      <!-- En móvil, forzamos la altura a 150px para acercarlo a los botones sin afectar el área del láser -->
       <div
         class="relative w-full h-[150px] sm:h-auto flex justify-center items-center transition-transform duration-700"
       >
-        <!-- Láser Amarillo (Fondo) -->
         <div class="absolute inset-0 pointer-events-none overflow-hidden z-0">
           <div
             class="absolute bottom-0 left-0 w-full h-[2px] bg-[#ffb703] shadow-[0_0_20px_5px_rgba(255,183,3,0.8)] animate-laser-scan-reverse"
@@ -96,7 +90,6 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
           />
         </div>
 
-        <!-- Láser Rojo (Frente) -->
         <div class="absolute inset-0 pointer-events-none overflow-hidden z-20">
           <div
             class="absolute top-0 left-0 w-full h-[2px] bg-space-red shadow-[0_0_20px_5px_rgba(227,30,36,0.8)] animate-laser-scan"
@@ -118,14 +111,12 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
       </h2>
 
       <div class="w-full max-w-4xl mx-auto mt-4 overflow-hidden">
-        <!-- Place <div> tag where you want the feed to appear -->
         <div id="curator-feed-default-feed-layout">
           <a href="https://curator.io" target="_blank" class="crt-logo crt-tag"
             >Powered by Curator.io</a
           >
         </div>
 
-        <!-- The Javascript can be moved to the end of the html page before the </body> tag -->
         <script type="text/javascript" is:inline data-astro-rerun>
           /* curator-feed-default-feed-layout */
           (function () {
@@ -180,7 +171,7 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
     opacity: 1 !important;
   }
 
-  /* 3. Escáner Láser Animación (Escritorio) */
+  /* Escáner Láser Animación (Escritorio) */
   @keyframes laser-scan-v4 {
     0% {
       top: 0%;
@@ -268,7 +259,7 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
     will-change: bottom, opacity, transform;
   }
 
-  /* 4. Escáner Láser Animación (Móvil) */
+  /* Escáner Láser Animación (Móvil) */
   @media (max-width: 639px) {
     @keyframes laser-scan-mobile-v3 {
       0% {
@@ -363,12 +354,10 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
     }
   }
 
-  /* 5. Prevenir scroll horizontal global causado por Light Blobs sin romper position: sticky */
   body {
     overflow-x: clip;
   }
 
-  /* 6. Levitación del vehículo sincronizada con los láseres */
   @keyframes car-levitate-v2 {
     0% {
       transform: scale(1);
