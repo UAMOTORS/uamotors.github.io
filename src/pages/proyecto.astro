@@ -12,22 +12,31 @@ import Fire from "../icons/assets/Fire.astro";
 import RacingCar from "../icons/assets/RacingCar.astro";
 import Chart2 from "../icons/assets/Chart2.astro";
 import RaceFlag from "../icons/assets/RaceFlag.astro";
+import OP_image from "../assets/images/OP01-transparent.png";
 ---
 
 <MainLayout activePage="proyecto" pageTitle={siteConfig.title + " | Proyecto"}>
   <div class="page-content max-w-4xl mx-auto">
     <h1 class="sigmar-ff text-balance mb-8">El Proyecto OP01</h1>
 
-    <Image
-      width={1024}
-      height={600}
-      loading="eager"
-      layout="constrained"
-      class="rounded-4xl mb-12 mx-auto"
-      src={coverImage}
-      alt="Prototipo OP01"
-      transition:name="hero-image"
-    />
+    <div class="relative w-full flex justify-center items-center mb-12">
+      <!-- Contraluz (Backlighting glow) sutil pero visible -->
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 sm:w-96 sm:h-96 bg-space-red/30 dark:bg-space-red/40 rounded-full blur-[60px] sm:blur-[100px] -z-10 pointer-events-none"
+      >
+      </div>
+
+      <Image
+        width={1024}
+        height={600}
+        loading="eager"
+        layout="constrained"
+        class="w-full h-auto max-h-[400px] object-contain drop-shadow-[0_15px_25px_rgba(0,0,0,0.6)] dark:drop-shadow-[0_20px_30px_rgba(0,0,0,0.9)] z-10"
+        src={OP_image}
+        alt="Prototipo OP01"
+        transition:name="hero-image"
+      />
+    </div>
 
     <section class="text-left space-y-16">
       <div>
@@ -140,9 +149,9 @@ import RaceFlag from "../icons/assets/RaceFlag.astro";
               <Electronics class="w-6 h-6 shrink-0" /> Electronics
             </h4>
             <p class="kanit-light text-base sm:text-lg">
-              Arquitectura del cableado y empaquetamiento de sistemas electrónicos.
-              Garantiza el control del motor y la adquisición de datos en tiempo
-              real para optimizar el rendimiento.
+              Arquitectura del cableado y empaquetamiento de sistemas
+              electrónicos. Garantiza el control del motor y la adquisición de
+              datos en tiempo real para optimizar el rendimiento.
             </p>
           </div>
           <div

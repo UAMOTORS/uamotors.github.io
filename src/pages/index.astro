@@ -8,7 +8,6 @@ import Button from "../components/Button.astro";
 import { Image } from "astro:assets";
 import heroImage from "../assets/images/pixeltrue-space-discovery.svg";
 import ArrowRight from "../icons/ArrowRight.astro";
-import OP_image from "../assets/images/OP01-transparent.png";
 import OP_image_vertical from "../assets/images/OP01_2-transparent.png";
 
 const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
@@ -86,7 +85,9 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
           </div>
         </div>
 
-        <div class="absolute sm:relative z-10 animate-car-levitate flex justify-center items-center">
+        <div
+          class="absolute sm:relative z-10 animate-car-levitate flex justify-center items-center"
+        >
           <Image
             class="w-auto h-auto max-h-[300px] sm:max-h-[650px] object-contain drop-shadow-[0_15px_25px_rgba(0,0,0,0.6)] dark:drop-shadow-[0_15px_25px_rgba(0,0,0,0.8)] -rotate-90 sm:rotate-0"
             src={OP_image_vertical}
@@ -270,22 +271,78 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
   /* 4. Escáner Láser Animación (Móvil) */
   @media (max-width: 639px) {
     @keyframes laser-scan-mobile-v3 {
-      0% { left: 0%; opacity: 0; transform: scaleY(0); }
-      2% { left: 0%; opacity: 1; transform: scaleY(1); }
-      15% { left: 100%; opacity: 1; transform: scaleY(1); }
-      20% { left: 100%; opacity: 1; transform: scaleY(1); }
-      33% { left: 0%; opacity: 1; transform: scaleY(1); }
-      35% { left: 0%; opacity: 0; transform: scaleY(0); }
-      100% { left: 0%; opacity: 0; transform: scaleY(0); }
+      0% {
+        left: 0%;
+        opacity: 0;
+        transform: scaleY(0);
+      }
+      2% {
+        left: 0%;
+        opacity: 1;
+        transform: scaleY(1);
+      }
+      15% {
+        left: 100%;
+        opacity: 1;
+        transform: scaleY(1);
+      }
+      20% {
+        left: 100%;
+        opacity: 1;
+        transform: scaleY(1);
+      }
+      33% {
+        left: 0%;
+        opacity: 1;
+        transform: scaleY(1);
+      }
+      35% {
+        left: 0%;
+        opacity: 0;
+        transform: scaleY(0);
+      }
+      100% {
+        left: 0%;
+        opacity: 0;
+        transform: scaleY(0);
+      }
     }
     @keyframes laser-scan-reverse-mobile-v3 {
-      0% { left: 100%; opacity: 0; transform: scaleY(0); }
-      2% { left: 100%; opacity: 1; transform: scaleY(1); }
-      15% { left: 0%; opacity: 1; transform: scaleY(1); }
-      20% { left: 0%; opacity: 1; transform: scaleY(1); }
-      33% { left: 100%; opacity: 1; transform: scaleY(1); }
-      35% { left: 100%; opacity: 0; transform: scaleY(0); }
-      100% { left: 100%; opacity: 0; transform: scaleY(0); }
+      0% {
+        left: 100%;
+        opacity: 0;
+        transform: scaleY(0);
+      }
+      2% {
+        left: 100%;
+        opacity: 1;
+        transform: scaleY(1);
+      }
+      15% {
+        left: 0%;
+        opacity: 1;
+        transform: scaleY(1);
+      }
+      20% {
+        left: 0%;
+        opacity: 1;
+        transform: scaleY(1);
+      }
+      33% {
+        left: 100%;
+        opacity: 1;
+        transform: scaleY(1);
+      }
+      35% {
+        left: 100%;
+        opacity: 0;
+        transform: scaleY(0);
+      }
+      100% {
+        left: 100%;
+        opacity: 0;
+        transform: scaleY(0);
+      }
     }
     .animate-laser-scan {
       width: 2px !important;
@@ -313,11 +370,21 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
 
   /* 6. Levitación del vehículo sincronizada con los láseres */
   @keyframes car-levitate-v2 {
-    0% { transform: scale(1); }
-    2% { transform: scale(1.05); }
-    33% { transform: scale(1.05); }
-    35% { transform: scale(1); }
-    100% { transform: scale(1); }
+    0% {
+      transform: scale(1);
+    }
+    2% {
+      transform: scale(1.05);
+    }
+    33% {
+      transform: scale(1.05);
+    }
+    35% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1);
+    }
   }
   .animate-car-levitate {
     animation: car-levitate-v2 12s ease-in-out infinite;
