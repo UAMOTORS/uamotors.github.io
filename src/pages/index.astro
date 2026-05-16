@@ -86,12 +86,14 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
           </div>
         </div>
 
-        <Image
-          class="absolute sm:relative w-auto h-auto max-h-[300px] sm:max-h-[650px] object-contain drop-shadow-[0_15px_25px_rgba(0,0,0,0.6)] dark:drop-shadow-[0_15px_25px_rgba(0,0,0,0.8)] -rotate-90 sm:rotate-0 z-10"
-          src={OP_image_vertical}
-          alt={"UAMOTORS Vehicle"}
-          transition:name="hero-image"
-        />
+        <div class="absolute sm:relative z-10 animate-car-levitate flex justify-center items-center">
+          <Image
+            class="w-auto h-auto max-h-[300px] sm:max-h-[650px] object-contain drop-shadow-[0_15px_25px_rgba(0,0,0,0.6)] dark:drop-shadow-[0_15px_25px_rgba(0,0,0,0.8)] -rotate-90 sm:rotate-0"
+            src={OP_image_vertical}
+            alt={"UAMOTORS Vehicle"}
+            transition:name="hero-image"
+          />
+        </div>
 
         <!-- Láser Rojo (Frente) -->
         <div class="absolute inset-0 pointer-events-none overflow-hidden z-20">
@@ -304,8 +306,21 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
     }
   }
 
-  /* 5. Prevenir scroll horizontal global causado por Light Blobs */
+  /* 5. Prevenir scroll horizontal global causado por Light Blobs sin romper position: sticky */
   body {
-    overflow-x: hidden;
+    overflow-x: clip;
+  }
+
+  /* 6. Levitación del vehículo sincronizada con los láseres */
+  @keyframes car-levitate-v2 {
+    0% { transform: scale(1); }
+    2% { transform: scale(1.05); }
+    33% { transform: scale(1.05); }
+    35% { transform: scale(1); }
+    100% { transform: scale(1); }
+  }
+  .animate-car-levitate {
+    animation: car-levitate-v2 12s ease-in-out infinite;
+    will-change: transform;
   }
 </style>
