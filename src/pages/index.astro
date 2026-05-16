@@ -28,7 +28,7 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
     >
     </div>
 
-    <div class="w-full sm:w-fit sm:max-w-1/2 relative z-10">
+    <div class="w-full sm:flex-1 min-w-0 relative z-10">
       {
         siteConfig.hero?.eyebrowText && (
           <span class="tag inline-block mb-2 rounded-full text-sm sm:text-base px-3 py-1 border border-gray-500 kanit-light">
@@ -58,21 +58,32 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
         }
       </div>
     </div>
-    <div class="w-full sm:w-1/2 flex justify-center items-center mt-4 sm:mt-0 relative group">
-      
+    <div
+      class="w-full sm:flex-1 min-w-0 flex justify-center items-center mt-4 sm:mt-0 relative group"
+    >
       <!-- Blueprint Grid (Background) -->
-      <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808020_1px,transparent_1px),linear-gradient(to_bottom,#80808020_1px,transparent_1px)] bg-[size:40px_40px] opacity-40 dark:opacity-20 pointer-events-none rounded-2xl [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_70%)]"></div>
+      <div
+        class="absolute inset-0 bg-[linear-gradient(to_right,#80808020_1px,transparent_1px),linear-gradient(to_bottom,#80808020_1px,transparent_1px)] bg-[size:40px_40px] opacity-40 dark:opacity-20 pointer-events-none rounded-2xl [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_70%)]"
+      >
+      </div>
 
       <!-- Contraluz (Backlighting glow) -->
-      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 sm:w-80 sm:h-80 bg-space-red/40 rounded-full blur-[60px] sm:blur-[100px] -z-10 pointer-events-none"></div>
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 sm:w-80 sm:h-80 bg-space-red/40 rounded-full blur-[60px] sm:blur-[100px] -z-10 pointer-events-none"
+      >
+      </div>
 
       <!-- Image Wrapper for Laser & Layout -->
       <!-- En móvil, forzamos la altura a 150px para acercarlo a los botones sin afectar el área del láser -->
-      <div class="relative w-full h-[150px] sm:h-auto flex justify-center items-center transition-transform duration-700">
-        
+      <div
+        class="relative w-full h-[150px] sm:h-auto flex justify-center items-center transition-transform duration-700"
+      >
         <!-- Láser Amarillo (Fondo) -->
         <div class="absolute inset-0 pointer-events-none overflow-hidden z-0">
-           <div class="absolute bottom-0 left-0 w-full h-[2px] bg-[#ffb703] shadow-[0_0_20px_5px_rgba(255,183,3,0.8)] animate-laser-scan-reverse"></div>
+          <div
+            class="absolute bottom-0 left-0 w-full h-[2px] bg-[#ffb703] shadow-[0_0_20px_5px_rgba(255,183,3,0.8)] animate-laser-scan-reverse"
+          >
+          </div>
         </div>
 
         <Image
@@ -84,9 +95,11 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
 
         <!-- Láser Rojo (Frente) -->
         <div class="absolute inset-0 pointer-events-none overflow-hidden z-20">
-           <div class="absolute top-0 left-0 w-full h-[2px] bg-space-red shadow-[0_0_20px_5px_rgba(227,30,36,0.8)] animate-laser-scan"></div>
+          <div
+            class="absolute top-0 left-0 w-full h-[2px] bg-space-red shadow-[0_0_20px_5px_rgba(227,30,36,0.8)] animate-laser-scan"
+          >
+          </div>
         </div>
-        
       </div>
     </div>
   </div>
@@ -154,7 +167,6 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
     transition: color 0.2s ease; /* Para que el cambio al rojo no sea tan brusco */
   }
 
-  /* 2. ESTADO HOVER: Color rojo (#E31E24) al pasar el mouse */
   #curator-feed-default-feed-layout a:hover,
   #curator-feed-default-feed-layout a:hover span,
   #curator-feed-default-feed-layout .crt-post-header a:hover,
@@ -165,31 +177,135 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
     opacity: 1 !important;
   }
 
-  /* 3. Escáner Láser Animación */
-  @keyframes laser-scan {
-    0% { top: 0%; opacity: 0; }
-    5% { opacity: 1; }
-    15% { top: 100%; opacity: 1; }
-    20% { top: 100%; opacity: 1; }
-    30% { top: 0%; opacity: 1; }
-    35% { top: 0%; opacity: 0; }
-    100% { top: 0%; opacity: 0; }
+  /* 3. Escáner Láser Animación (Escritorio) */
+  @keyframes laser-scan-v4 {
+    0% {
+      top: 0%;
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    2% {
+      top: 0%;
+      opacity: 1;
+      transform: scaleX(1);
+    }
+    15% {
+      top: 100%;
+      opacity: 1;
+      transform: scaleX(1);
+    }
+    20% {
+      top: 100%;
+      opacity: 1;
+      transform: scaleX(1);
+    }
+    33% {
+      top: 0%;
+      opacity: 1;
+      transform: scaleX(1);
+    }
+    35% {
+      top: 0%;
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    100% {
+      top: 0%;
+      opacity: 0;
+      transform: scaleX(0);
+    }
   }
-  @keyframes laser-scan-reverse {
-    0% { bottom: 0%; opacity: 0; }
-    5% { opacity: 1; }
-    15% { bottom: 100%; opacity: 1; }
-    20% { bottom: 100%; opacity: 1; }
-    30% { bottom: 0%; opacity: 1; }
-    35% { bottom: 0%; opacity: 0; }
-    100% { bottom: 0%; opacity: 0; }
+  @keyframes laser-scan-reverse-v4 {
+    0% {
+      bottom: 0%;
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    2% {
+      bottom: 0%;
+      opacity: 1;
+      transform: scaleX(1);
+    }
+    15% {
+      bottom: 100%;
+      opacity: 1;
+      transform: scaleX(1);
+    }
+    20% {
+      bottom: 100%;
+      opacity: 1;
+      transform: scaleX(1);
+    }
+    33% {
+      bottom: 0%;
+      opacity: 1;
+      transform: scaleX(1);
+    }
+    35% {
+      bottom: 0%;
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    100% {
+      bottom: 0%;
+      opacity: 0;
+      transform: scaleX(0);
+    }
   }
   .animate-laser-scan {
     opacity: 0;
-    animation: laser-scan 12s ease-in-out infinite;
+    transform: scaleX(0);
+    animation: laser-scan-v4 12s ease-in-out infinite;
+    will-change: top, opacity, transform;
   }
   .animate-laser-scan-reverse {
     opacity: 0;
-    animation: laser-scan-reverse 12s ease-in-out infinite;
+    transform: scaleX(0);
+    animation: laser-scan-reverse-v4 12s ease-in-out infinite;
+    will-change: bottom, opacity, transform;
+  }
+
+  /* 4. Escáner Láser Animación (Móvil) */
+  @media (max-width: 639px) {
+    @keyframes laser-scan-mobile-v3 {
+      0% { left: 0%; opacity: 0; transform: scaleY(0); }
+      2% { left: 0%; opacity: 1; transform: scaleY(1); }
+      15% { left: 100%; opacity: 1; transform: scaleY(1); }
+      20% { left: 100%; opacity: 1; transform: scaleY(1); }
+      33% { left: 0%; opacity: 1; transform: scaleY(1); }
+      35% { left: 0%; opacity: 0; transform: scaleY(0); }
+      100% { left: 0%; opacity: 0; transform: scaleY(0); }
+    }
+    @keyframes laser-scan-reverse-mobile-v3 {
+      0% { left: 100%; opacity: 0; transform: scaleY(0); }
+      2% { left: 100%; opacity: 1; transform: scaleY(1); }
+      15% { left: 0%; opacity: 1; transform: scaleY(1); }
+      20% { left: 0%; opacity: 1; transform: scaleY(1); }
+      33% { left: 100%; opacity: 1; transform: scaleY(1); }
+      35% { left: 100%; opacity: 0; transform: scaleY(0); }
+      100% { left: 100%; opacity: 0; transform: scaleY(0); }
+    }
+    .animate-laser-scan {
+      width: 2px !important;
+      height: 100% !important;
+      transform: scaleY(0);
+      animation: laser-scan-mobile-v3 12s ease-in-out infinite !important;
+      will-change: left, opacity, transform !important;
+    }
+    .animate-laser-scan-reverse {
+      width: 2px !important;
+      height: 100% !important;
+      top: 0 !important;
+      bottom: auto !important;
+      /* Mantenemos el control sobre left para evitar conflictos con Tailwind */
+      transform: scaleY(0);
+      animation: laser-scan-reverse-mobile-v3 12s ease-in-out infinite !important;
+      will-change: left, opacity, transform !important;
+    }
+  }
+
+  /* 5. Prevenir scroll horizontal global causado por Light Blobs */
+  body {
+    overflow-x: hidden;
   }
 </style>
