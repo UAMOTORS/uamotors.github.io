@@ -13,7 +13,7 @@ const {
 {
   links?.map((link) => {
     const classNames = [
-      isMobileLink ? "close-menu text-2xl py-1 font-normal" : "",
+      isMobileLink ? "close-menu text-2xl py-1 font-normal" : "whitespace-nowrap",
       activePage === link.text.toLowerCase()
         ? "text-space-red! dark:text-space-yellow!"
         : "",
