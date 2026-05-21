@@ -27,3 +27,8 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 path-tree.md
+
+# --- JetBrains (WebStorm / PyCharm) ---
+.idea/
+*.iml
+.idea_modules/
