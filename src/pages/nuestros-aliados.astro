@@ -8,13 +8,11 @@ import Eyes from "../icons/assets/Eyes.astro";
 import Mobile from "../icons/assets/Mobile.astro";
 import Document from "../icons/assets/Document.astro";
 import Event from "../icons/assets/Event.astro";
-// import Pdf from "../icons/assets/Pdf.astro";
 // import TiraUamotors from "../components/TiraUamotors.astro";
 // import logo1 from "../assets/logos/logo-1.png";
 // import logo2 from "../assets/logos/logo-2.jpg";
 import LogoFuam from "../components/LogoFuam.astro";
 import LogoGeely from "../components/LogoGeely.astro";
-// import LocationPin from "../icons/assets/LocationPin.astro";
 ---
 
 <MainLayout
@@ -31,12 +29,20 @@ import LogoGeely from "../components/LogoGeely.astro";
             class="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-6 md:gap-12 items-center max-w-2xl mx-auto"
           >
             <div class="h-8 sm:h-10 w-full flex items-center justify-center">
-              <a href="https://www.geelymexico.com/" target="_blank" class="h-full w-40 flex items-center justify-center">
+              <a
+                href="https://www.geelymexico.com/"
+                target="_blank"
+                class="h-full w-40 flex items-center justify-center"
+              >
                 <LogoGeely class="h-full w-full object-contain" />
               </a>
             </div>
             <div class="h-8 sm:h-10 w-full flex items-center justify-center">
-              <a href="https://www.fundacionuam.org/" target="_blank" class="h-full w-40 flex items-center justify-center">
+              <a
+                href="https://www.fundacionuam.org/"
+                target="_blank"
+                class="h-full w-40 flex items-center justify-center"
+              >
                 <LogoFuam class="h-full w-full object-contain" />
               </a>
             </div>
@@ -206,7 +212,6 @@ import LogoGeely from "../components/LogoGeely.astro";
 </MainLayout>
 
 <style is:global>
-  /* Quitar redondeo global de las imágenes en las galerías de patrocinadores para no recortar los logos */
   #diamante-grid img,
   #carousel-oro img,
   #carousel-bronce-plata img {
