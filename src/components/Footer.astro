@@ -214,7 +214,9 @@ const currentYear = new Date().getFullYear();
     class="footer-identity text-center overflow-hidden w-full sticky bottom-0 flex items-end justify-center"
   >
     <span
-      class="sigmar-ff text-[16vw] sm:text-[6.5rem] leading-none text-whitesmoke/50 dark:text-gray-300/30"
+      id="footer-logo-text"
+      class="sigmar-ff text-[16vw] sm:text-[6.5rem] leading-none text-whitesmoke/50 dark:text-gray-300/30 select-none cursor-pointer"
+      style="touch-action: manipulation;"
       >{siteConfig.title}</span
     >
   </div>
