@@ -42,7 +42,7 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
         set:html={siteConfig.hero?.text}
       />
       <div
-        class="flex flex-wrap items-center text-xs sm:text-base gap-x-2 gap-y-8 mt-3 sm:mt-12"
+        class="flex flex-wrap items-center text-xs sm:text-base gap-3 mt-3 sm:mt-12"
       >
         {
           siteConfig.hero?.actions?.map((action, index) => (
