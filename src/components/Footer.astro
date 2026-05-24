@@ -16,6 +16,7 @@ import LogoDitsa from "./logos/silver/LogoDitsa.astro";
 import LogoPrimeraPlus from "./logos/silver/LogoPrimeraPlus.astro";
 import LogoDepartamentoEnergia from "./logos/silver/LogoDepartamentoEnergia.astro";
 import LogoEscuadronUam from "./logos/bronze/LogoEscuadronUam.astro";
+import TiraUamotors from "./logos/TiraUamotors.astro";
 const currentYear = new Date().getFullYear();
 ---
 
@@ -211,19 +212,36 @@ const currentYear = new Date().getFullYear();
     </div>
   </div>
   <div
-    class="footer-identity text-center overflow-hidden w-full sticky bottom-0 flex items-end justify-center"
+    class="footer-identity text-center overflow-hidden w-full sticky bottom-0 flex items-end justify-center px-6 pb-2"
   >
-    <span
+    <TiraUamotors
       id="footer-logo-text"
-      class="sigmar-ff text-[16vw] sm:text-[6.5rem] leading-none text-whitesmoke/50 dark:text-gray-300/30 select-none cursor-pointer"
+      class="w-full max-w-[280px] sm:max-w-md md:max-w-lg lg:max-w-2xl h-auto text-whitesmoke/40 dark:text-white/10 select-none cursor-pointer hover:text-space-red dark:hover:text-space-yellow transition-all duration-500 transform hover:scale-[1.02]"
       style="touch-action: manipulation;"
-      >{siteConfig.title}</span
-    >
+    />
   </div>
 </footer>
 
 <style is:global>
   .footer-patrocinadores img {
     border-radius: 0 !important;
+  }
+  .footer-patrocinadores svg,
+  .footer-patrocinadores img {
+    transition: filter 0.3s ease-in-out;
+    will-change: filter;
+  }
+  /* Soft base halo glow hover for all footer sponsor logos */
+  html.dark .footer-patrocinadores a:hover svg,
+  html.dark .footer-patrocinadores a:hover img {
+    filter: invert(0) drop-shadow(0 0 12px rgba(255, 255, 255, 0.42)) !important;
+  }
+  /* Extra strong double halo glow hover only for thin/flat logos */
+  html.dark .footer-patrocinadores a:hover img[alt="Logo Ansys"],
+  html.dark .footer-patrocinadores a:hover img[alt="Logo RapidHarnest"],
+  html.dark .footer-patrocinadores a:hover img[alt="Logo Primera Plus"],
+  html.dark .footer-patrocinadores a:hover img[alt="Logo Departamento de Energía"],
+  html.dark .footer-patrocinadores a:hover img[alt="Logo Solidworks"] {
+    filter: invert(0) drop-shadow(0 0 12px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 3px rgba(255, 255, 255, 0.5)) !important;
   }
 </style>

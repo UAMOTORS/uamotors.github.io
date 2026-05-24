@@ -5,6 +5,7 @@ import { ClientRouter } from "astro:transitions";
 import Footer from "../components/Footer.astro";
 import Nav from "../components/Nav.astro";
 import Subscribe from "../components/Subscribe.astro";
+import SplashScreen from "../components/SplashScreen.astro";
 import { withBase } from "../utils/helpers";
 import siteConfig from "../site.config";
 import defaultOgImage from "../assets/images/OP01_2-transparent.png";
@@ -73,6 +74,7 @@ const ogImageURL = new URL(image || defaultOgImage.src, Astro.site);
     <ClientRouter />
   </head>
   <body>
+    <SplashScreen />
     <main class="max-w-3xl mx-auto min-h-screen flex flex-col">
       <Nav activePage={activePage} />
       <div transition:animate="slide" class="flex-grow w-full min-w-0">
