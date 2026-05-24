@@ -1,21 +1,44 @@
 ---
-import SpaceBar from "./SpaceBar";
+interface Props {
+  messages?: string[];
+}
 
-const messages = [
-  "🚀 To Infinity, And Beyond!",
-  "🌌 In a galaxy far far away...",
-  "⭐ May the force be with you!",
-  "☄️ Game Over",
-  "🌑 The Eagle has landed!",
-  "🛰️ 42",
-  "🤖 Wall-E",
-  "👽 E.T. Phone Home",
-  "🌠 We'll be Counting Stars",
-  "👾 Press Start",
-  "🌍 Powered by Astro & Preact",
-  "🖖 Live long and prosper!",
-  "☀️ Time is an illusion. Lunchtime doubly so.",
+const { messages: customMessages } = Astro.props;
+
+const defaultMessages = [
+  "Just an inchident. — Charles Leclerc",
+  "¡NOOOOOO! — Charles Leclerc, Francia 2022",
+  "¡Monaco is ours! — Charles Leclerc, 2024",
+  "I think we need to box. — Charles Leclerc",
+  "Understood, we are checking. — Ferrari Engineer",
+  "It is a beautiful day, baby! Let's go! — Charles Leclerc",
+  "Box, box, box! — Ingeniero de Carrera",
+  "Leave me alone, I know what to do! — Kimi",
+  "If you no longer go for a gap... — Ayrton Senna",
+  "Smooth operatorrr... — Carlos Sainz",
+  "Bono, my tyres are gone! — Lewis Hamilton",
+  "No, no, no, Michael! That was so not right! — Toto Wolff",
+  "Simply simply lovely. — Max Verstappen",
+  "GP2 engine, GP2! — Fernando Alonso",
+  "Karma! — Fernando Alonso",
+  "To finish first, first you must finish. — Michael Schumacher",
+  "It's lights out and away we go! — David Croft",
+  "El segundo es el primero de los perdedores. — Ayrton Senna",
+  "No me des más potencia, dame menos peso. — Colin Chapman",
+  "Llevando la ingeniería mexicana al límite.",
+  "Diseña con ingenio, crea con pasión. — UAMOTORS",
+  "No es solo velocidad, es ingeniería. — UAMOTORS",
+  "¡Bandera roja en pista! Dirección de carrera.",
+  "¡Push, push! Vuelta rápida.",
+  "¡Error 404: Fuera de la pista!",
+  "El éxito se construye milésima a milésima.",
+  "En la pista no hay suerte, solo preparación.",
+  "No limit to what we can build. — UAMOTORS",
+  "Feel the speed, respect the engineering. — UAMOTORS",
+  "Maximum attack! Vuelta de clasificación.",
 ];
+
+const messages = customMessages || defaultMessages;
 ---
 
 <div
@@ -39,11 +62,15 @@ const messages = [
   >
     ⌘
   </div>
-  <SpaceBar
-    client:load
-    messages={messages}
-    className="pl-2 pb-2 pt-4 pr-4 text-xs border border-dashed border-gray-500 rounded-2xl font-mono"
-  />
+  
+  <button
+    id="space-pop-culture"
+    class="flex-grow w-full text-center pl-2 pb-2 pt-4 pr-4 text-xs border border-dashed border-gray-500 rounded-2xl font-mono cursor-pointer hover:bg-black/5 dark:hover:bg-white/5 transition-colors duration-200 whitespace-nowrap"
+    title="¡Haz clic aquí!"
+  >
+    {messages[0]}
+  </button>
+
   <div
     id="alt-right"
     class="hidden sm:block pl-2 pb-2 pt-4 pr-4 text-xs border border-dashed border-gray-500 rounded-2xl font-mono"
@@ -58,18 +85,62 @@ const messages = [
   </div>
 </div>
 
-<script is:inline>
-  // Detect OS and show/hide elements
-  window.addEventListener("DOMContentLoaded", () => {
+<script is:inline define:vars={{ messages }}>
+  function setupKeyboard() {
+    const spaceBtn = document.getElementById("space-pop-culture");
+    if (!spaceBtn) return;
+
+    // Detectar OS para mostrar los caracteres correctos en las teclas
     const platform = navigator.userAgent.toLowerCase();
     const isWin = platform.includes("win");
 
+    const ctrlLeft = document.getElementById("ctrl-left");
+    const ctrlRight = document.getElementById("ctrl-right");
+    const altLeft = document.getElementById("alt-left");
+    const altRight = document.getElementById("alt-right");
+    const fnKey = document.getElementById("fn");
+
     if (isWin) {
-      document.getElementById("ctrl-left").textContent = "ctrl";
-      document.getElementById("ctrl-right").textContent = "ctrl";
-      document.getElementById("alt-left").textContent = "alt";
-      document.getElementById("alt-right").textContent = "alt";
-      document.getElementById("fn").textContent = "fn";
+      if (ctrlLeft) ctrlLeft.textContent = "ctrl";
+      if (ctrlRight) ctrlRight.textContent = "ctrl";
+      if (altLeft) altLeft.textContent = "alt";
+      if (altRight) altRight.textContent = "alt";
+      if (fnKey) fnKey.textContent = "fn";
+    } else {
+      if (ctrlLeft) ctrlLeft.textContent = "^";
+      if (ctrlRight) ctrlRight.textContent = "⌘";
+      if (altLeft) altLeft.textContent = "⌥";
+      if (altRight) altRight.textContent = "^";
+      if (fnKey) fnKey.textContent = "⌥";
     }
+
+    const getRandomMessage = () => messages[Math.floor(Math.random() * messages.length)];
+
+    const handleSpacebar = (e) => {
+      // Escuchar espacio siempre que no se esté escribiendo en formularios
+      if (e.code === "Space" && e.target.tagName !== "INPUT" && e.target.tagName !== "TEXTAREA") {
+        e.preventDefault();
+        spaceBtn.textContent = getRandomMessage();
+      }
+    };
+
+    const handleClick = () => {
+      spaceBtn.textContent = getRandomMessage();
+    };
+
+    window.addEventListener("keydown", handleSpacebar);
+    spaceBtn.addEventListener("click", handleClick);
+
+    // Retornar función de limpieza
+    return () => {
+      window.removeEventListener("keydown", handleSpacebar);
+    };
+  }
+
+  // Inicialización y compatibilidad con Astro View Transitions
+  let cleanup;
+  document.addEventListener("astro:page-load", () => {
+    if (cleanup) cleanup();
+    cleanup = setupKeyboard();
   });
 </script>

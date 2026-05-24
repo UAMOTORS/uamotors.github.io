@@ -18,7 +18,11 @@ const { page } = Astro.props;
 const allPosts = page.data;
 ---
 
-<MainLayout activePage="blog" pageTitle={siteConfig.title + " | Blog Archive"}>
+<MainLayout
+  activePage="blog"
+  pageTitle={siteConfig.title + " | Blog Archive"}
+  description="Explora las últimas noticias, artículos y novedades de UAMOTORS, la escudería Formula SAE de la UAM Azcapotzalco."
+>
   <div class="page-content py-8 text-center">
     <h1 class="sigmar-ff">Blog</h1>
     {

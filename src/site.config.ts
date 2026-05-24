@@ -113,16 +113,20 @@ const siteConfig: SiteConfig = {
     ],
     socialLinks: [
         {
-            text: 'Dribbble',
-            href: 'https://dribbble.com/'
-        },
-        {
             text: 'Instagram',
-            href: 'https://instagram.com/'
+            href: 'https://www.instagram.com/uamotors.fsae/'
         },
         {
-            text: 'X/Twitter',
-            href: 'https://twitter.com/'
+            text: 'Facebook',
+            href: 'https://www.facebook.com/uamotors'
+        },
+        {
+            text: 'TikTok',
+            href: 'https://www.tiktok.com/@uamotors.fsae'
+        },
+        {
+            text: 'LinkedIn',
+            href: 'https://www.linkedin.com/company/uamotors/'
         }
     ],
     hero: {

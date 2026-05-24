@@ -2,32 +2,68 @@
 import { Image } from "astro:assets";
 import MainLayout from "../layouts/MainLayout.astro";
 import { withBase } from "../utils/helpers";
-import heroImage from "../assets/images/pixeltrue-space-discovery.svg";
+import carImage from "../assets/images/OP01_2-transparent.png";
 import SpaceKeyboard from "../components/SpaceKeyboard.astro";
 import siteConfig from "../site.config";
+import Button from "../components/Button.astro";
 ---
 
 <MainLayout
   activePage="404"
-  pageTitle={siteConfig.title + " | 404"}
+  pageTitle={siteConfig.title + " | 404 - Fuera de Pista"}
+  description="Página no encontrada - UAMOTORS. La dirección solicitada no existe o ha sido movida."
   showSubscribeForm={false}
 >
-  <div class="flex flex-col items-center justify-center page-content">
-    <h1 class="sigmar-ff">404</h1>
-    <Image
-      class="cover-img"
-      src={heroImage}
-      alt={"Astronaut in space"}
-      width={400}
-      height={300}
-    />
-    <p>🧑‍🚀: Houston, we have a problem.</p>
-    <p>
-      We couldn't find that link. Verify the address or <a
-        class="font-medium underline"
-        href={withBase("/")}>Go Back Home</a
+  <div
+    class="flex flex-col items-center justify-center page-content py-12 text-center"
+  >
+    <h1
+      class="sigmar-ff text-8xl md:text-9xl mb-4 text-space-red dark:text-space-yellow"
+    >
+      404
+    </h1>
+
+    <div
+      class="relative w-full max-w-lg flex justify-center items-center my-6 group"
+    >
+      {/* Glow Effects */}
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 sm:w-72 sm:h-72 bg-space-red/30 dark:bg-space-yellow/10 rounded-full blur-[60px] sm:blur-[80px] -z-10 pointer-events-none"
       >
-    </p>
-    <SpaceKeyboard />
+      </div>
+
+      <Image
+        class="w-auto h-auto max-h-[220px] object-contain drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)] rotate-6 transition-transform duration-500 hover:rotate-12"
+        src={carImage}
+        alt="Vehículo UAMOTORS fuera de pista"
+        width={500}
+        height={300}
+      />
+    </div>
+
+    <div class="space-y-4 max-w-md mx-auto px-4 mt-6">
+      <!-- <p class="kanit-regular text-lg sm:text-xl text-space-red dark:text-space-yellow">
+        Piloto: "Just an inchident... nos salimos de la pista."
+      </p> -->
+      <p class="kanit-light text-base sm:text-lg">
+        La dirección a la que intentas acceder no existe, ha sido movida o está
+        en mantenimiento.
+      </p>
+      <div class="pt-6">
+        <Button href={withBase("/")} class="space-btn-filled px-8">
+          Regresar a los Pits
+        </Button>
+      </div>
+    </div>
+
+    <div class="w-full max-w-2xl mt-4">
+      <SpaceKeyboard />
+      <p class="text-xs opacity-60 mt-4 kanit-light">
+        Presiona <kbd
+          class="px-2 py-1 bg-black/10 dark:bg-white/10 rounded font-mono"
+          >Espacio</kbd
+        > en tu teclado para cambiar de frase
+      </p>
+    </div>
   </div>
 </MainLayout>
