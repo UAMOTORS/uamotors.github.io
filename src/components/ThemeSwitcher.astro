@@ -5,16 +5,14 @@ import Sun from "../assets/sun.svg";
 import Button from "./Button.astro";
 ---
 
-<Button
+<button
   id="themeToggle"
   title="Click to switch Theme"
-  class:list={[
-    "p-1! aspect-square border-gray-500 hover:border-space-red dark:hover:border-space-yellow hover:text-space-red dark:hover:text-space-yellow portrait:ml-auto",
-  ]}
+  class="flex items-center justify-center p-2 rounded-full border border-gray-500/30 hover:border-space-red dark:hover:border-space-yellow hover:text-space-red dark:hover:text-space-yellow transition-colors cursor-pointer"
 >
-  <Moon class="moon" sr-only="Click to Switch to Dark Theme" />
-  <Sun class="sun" sr-only="Click to Switch to Light Theme" />
-</Button>
+  <Moon class="moon w-5 h-5" sr-only="Click to Switch to Dark Theme" />
+  <Sun class="sun w-5 h-5" sr-only="Click to Switch to Light Theme" />
+</button>
 
 <style>
   .sun {

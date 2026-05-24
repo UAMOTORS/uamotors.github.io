@@ -7,7 +7,10 @@ const { class: className, ...props } = Astro.props;
 <svg
   xmlns="http://www.w3.org/2000/svg"
   viewBox="0 0 150 22"
-  class:list={[className]}
+  class:list={[
+    className,
+    "transition-all duration-300 opacity-70 hover:opacity-100 hover:scale-105 dark:opacity-60 dark:hover:opacity-100",
+  ]}
   {...props}
 >
   <g id="Vector">
@@ -49,7 +52,7 @@ const { class: className, ...props } = Astro.props;
 
 <style>
   .geely-path {
-    fill: var(--color-space-stone);
+    fill: black;
     transition: fill 0.3s ease-in-out;
   }
   :global(html.dark) .geely-path {

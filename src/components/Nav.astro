@@ -15,8 +15,10 @@ const { activePage } = Astro.props;
     <div class="hidden md:flex md:gap-8">
       {(<NavLinks activePage={activePage} links={siteConfig.headerNavLinks} />)}
     </div>
-    <ThemeSwitcher />
-    <Hamburger />
+    <div class="flex items-center gap-4">
+      <ThemeSwitcher />
+      <Hamburger />
+    </div>
   </nav>
   <div
     id="mobile-links"
