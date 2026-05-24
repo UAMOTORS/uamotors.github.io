@@ -30,3 +30,7 @@ path-tree.md
 
 # JetBrains IDE
 .idea/
+# --- JetBrains (WebStorm / PyCharm) ---
+.idea/
+*.iml
+.idea_modules/
