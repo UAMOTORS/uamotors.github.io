@@ -10,7 +10,10 @@ const { activePage } = Astro.props;
 ---
 
 <header>
-  <nav class="font-light w-full">
+  <nav
+    class="font-light w-full flex flex-row items-center justify-between gap-2 rounded-4xl px-5 py-2 text-xs sm:gap-8 sm:py-3 sm:text-base"
+    style="background-color: var(--glass-bg) !important; backdrop-filter: var(--glass-blur) !important; -webkit-backdrop-filter: var(--glass-blur) !important; border: var(--glass-border) !important; box-shadow: var(--glass-shadow) !important; transform: translate3d(0, 0, 0) !important; backface-visibility: hidden !important; will-change: transform, backdrop-filter !important;"
+  >
     <a id="nav-logo-link" href={withBase("/")} data-astro-reload><SiteIdentity /></a>
     <div class="hidden md:flex md:gap-8">
       {(<NavLinks activePage={activePage} links={siteConfig.headerNavLinks} />)}

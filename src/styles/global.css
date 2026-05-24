@@ -75,18 +75,6 @@ header {
   @apply sticky top-4 z-20 mr-auto ml-auto flex w-full max-w-3xl flex-col items-center justify-center px-0 py-0 text-base;
 }
 
-header>nav {
-  @apply flex flex-row items-center justify-between gap-2 rounded-4xl px-5 py-2 text-xs sm:gap-8 sm:py-3 sm:text-base;
-  background-color: var(--glass-bg) !important;
-  backdrop-filter: var(--glass-blur) !important;
-  -webkit-backdrop-filter: var(--glass-blur) !important;
-  border: var(--glass-border) !important;
-  box-shadow: var(--glass-shadow) !important;
-  /* GPU acceleration hack to resolve Chrome/Brave sticky backdrop-filter rendering bugs */
-  transform: translate3d(0, 0, 0) !important;
-  backface-visibility: hidden !important;
-  will-change: transform, backdrop-filter !important;
-}
 
 .nav-brand-text {
   font-size: 1.3rem !important;
