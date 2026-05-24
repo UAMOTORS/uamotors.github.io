@@ -7,14 +7,11 @@ import TiraUamotors from "./logos/TiraUamotors.astro";
   class="fixed inset-0 bg-black z-[100000] flex flex-col items-center justify-center transition-all duration-500 ease-in-out select-none pointer-events-none"
   style="opacity: 0; display: none;"
 >
-  <div class="relative w-[75%] max-w-xs sm:max-w-md flex flex-col items-center gap-6">
+  <div class="relative w-[75%] max-w-xs sm:max-w-md flex flex-col items-center justify-center">
     <TiraUamotors
-      class="w-full h-auto text-white filter drop-shadow-[0_0_15px_rgba(255,255,255,0.18)] transform scale-95 opacity-0 animate-splash-logo"
+      useSweep={true}
+      class="w-full h-auto text-white filter drop-shadow-[0_0_20px_rgba(255,255,255,0.22)] transform scale-95 opacity-0 animate-splash-logo"
     />
-    <!-- Subtle Loading Line under the logo -->
-    <div class="w-24 h-[1.5px] bg-white/10 rounded-full overflow-hidden relative mt-2">
-      <div class="absolute inset-y-0 left-0 bg-space-red w-1/2 rounded-full animate-splash-loader"></div>
-    </div>
   </div>
 </div>
 
@@ -65,20 +62,7 @@ import TiraUamotors from "./logos/TiraUamotors.astro";
     }
   }
 
-  @keyframes splashLoader {
-    0% {
-      left: -50%;
-    }
-    100% {
-      left: 100%;
-    }
-  }
-
   .animate-splash-logo {
     animation: splashLogo 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  }
-
-  .animate-splash-loader {
-    animation: splashLoader 1.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   }
 </style>
