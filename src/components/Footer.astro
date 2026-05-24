@@ -226,4 +226,13 @@ const currentYear = new Date().getFullYear();
   .footer-patrocinadores img {
     border-radius: 0 !important;
   }
+  .footer-patrocinadores svg,
+  .footer-patrocinadores img {
+    transition: filter 0.3s ease-in-out;
+    will-change: filter;
+  }
+  html.dark .footer-patrocinadores a:hover svg,
+  html.dark .footer-patrocinadores a:hover img {
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.42)) !important;
+  }
 </style>

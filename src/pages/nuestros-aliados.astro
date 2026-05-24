@@ -307,4 +307,21 @@ import LogoEscuadronUam from "../components/logos/bronze/LogoEscuadronUam.astro"
   #plata-bronce-grid img {
     border-radius: 0 !important;
   }
+  #diamante-grid svg,
+  #diamante-grid img,
+  #oro-grid svg,
+  #oro-grid img,
+  #plata-bronce-grid svg,
+  #plata-bronce-grid img {
+    transition: filter 0.3s ease-in-out;
+    will-change: filter;
+  }
+  html.dark #diamante-grid a:hover svg,
+  html.dark #diamante-grid a:hover img,
+  html.dark #oro-grid a:hover svg,
+  html.dark #oro-grid a:hover img,
+  html.dark #plata-bronce-grid a:hover svg,
+  html.dark #plata-bronce-grid a:hover img {
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.42)) !important;
+  }
 </style>
