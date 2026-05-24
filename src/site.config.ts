@@ -132,7 +132,6 @@ const siteConfig: SiteConfig = {
     hero: {
         eyebrowText: 'UAM Azcapotzalco | Formula SAE',
         title: 'Diseña con ingenio, crea con pasión.',
-        // En site.config.ts
         text: `Más que una escudería, somos un centro de innovación y talento. Únete a nuestro proyecto y ayúdanos a llevar la ingeniería mexicana a la competencia internacional <a href="${withBase('/proyecto#formula-sae')}" class="text-space-red font-medium hover:font-bold transition-all">Formula SAE</a>.`,
         image: {
             src: '/assets/images/pixeltrue-space-discovery.svg',

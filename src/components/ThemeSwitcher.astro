@@ -43,10 +43,10 @@ import Button from "./Button.astro";
     localStorage.setItem("theme", theme);
   };
 
-  // Prevenir parpadeo en la carga inicial
+  // prevenir parpadeo
   initTheme();
 
-  // Restaurar el tema si se navega a otra página (Astro ViewTransitions)
+  // restaurar tema al navegar
   document.addEventListener("astro:after-swap", initTheme);
 
   const handleToggleClick = () => {
@@ -58,7 +58,6 @@ import Button from "./Button.astro";
     localStorage.setItem("theme", isDark ? "dark" : "light");
   };
 
-  // Asignar el evento al botón en cada carga de página
   document.addEventListener("astro:page-load", () => {
     const toggle = document.getElementById("themeToggle");
     if (toggle) {

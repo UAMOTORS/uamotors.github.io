@@ -22,32 +22,30 @@ import TiraUamotors from "./logos/TiraUamotors.astro";
     const splash = document.getElementById("splash-screen");
     if (!splash) return;
 
-    const hasShown = sessionStorage.getItem("uamotors-splash-shown");
+    const hasShown = sessionStorage.getItem('uamotors-splash-shown');
     if (hasShown) {
-      splash.style.display = "none";
-      splash.style.opacity = "0";
+      splash.style.display = 'none';
+      splash.style.opacity = '0';
     } else {
-      // First visit in this session: make it visible and run the animation
-      splash.style.display = "flex";
-      // Force layout reflow so the browser registers the opacity transition
+      // ejecutar animacion una vez por sesion
+      splash.style.display = 'flex';
+      // forzar reflow
       splash.getBoundingClientRect();
-      splash.style.opacity = "1";
-      splash.classList.remove("pointer-events-none");
-      splash.classList.add("pointer-events-auto");
+      splash.style.opacity = '1';
+      splash.classList.remove('pointer-events-none');
+      splash.classList.add('pointer-events-auto');
 
-      // Schedule the fade-out and slide-up transition
       setTimeout(() => {
-        splash.style.opacity = "0";
-        splash.style.transform = "translateY(-15px)";
-        splash.classList.add("pointer-events-none");
-        splash.classList.remove("pointer-events-auto");
-
-        // Fully deactivate the splash element once transition finishes
+        splash.style.opacity = '0';
+        splash.style.transform = 'translateY(-15px)';
+        splash.classList.add('pointer-events-none');
+        splash.classList.remove('pointer-events-auto');
+        
         setTimeout(() => {
-          splash.style.display = "none";
-          sessionStorage.setItem("uamotors-splash-shown", "true");
+          splash.style.display = 'none';
+          sessionStorage.setItem('uamotors-splash-shown', 'true');
         }, 500);
-      }, 1200); // Display the logo centered for 1.2s
+      }, 1200);
     }
   })();
 </script>
