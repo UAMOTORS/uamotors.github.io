@@ -1,0 +1,84 @@
+---
+import TiraUamotors from "./logos/TiraUamotors.astro";
+---
+
+<div
+  id="splash-screen"
+  class="fixed inset-0 bg-black z-[100000] flex flex-col items-center justify-center transition-all duration-500 ease-in-out select-none pointer-events-none"
+  style="opacity: 0; display: none;"
+>
+  <div class="relative w-[75%] max-w-xs sm:max-w-md flex flex-col items-center gap-6">
+    <TiraUamotors
+      class="w-full h-auto text-white filter drop-shadow-[0_0_15px_rgba(255,255,255,0.18)] transform scale-95 opacity-0 animate-splash-logo"
+    />
+    <!-- Subtle Loading Line under the logo -->
+    <div class="w-24 h-[1.5px] bg-white/10 rounded-full overflow-hidden relative mt-2">
+      <div class="absolute inset-y-0 left-0 bg-space-red w-1/2 rounded-full animate-splash-loader"></div>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  (function() {
+    const splash = document.getElementById('splash-screen');
+    if (!splash) return;
+
+    const hasShown = sessionStorage.getItem('uamotors-splash-shown');
+    if (hasShown) {
+      splash.style.display = 'none';
+      splash.style.opacity = '0';
+    } else {
+      // First visit in this session: make it visible and run the animation
+      splash.style.display = 'flex';
+      // Force layout reflow so the browser registers the opacity transition
+      splash.getBoundingClientRect();
+      splash.style.opacity = '1';
+      splash.classList.remove('pointer-events-none');
+      splash.classList.add('pointer-events-auto');
+
+      // Schedule the fade-out and slide-up transition
+      setTimeout(() => {
+        splash.style.opacity = '0';
+        splash.style.transform = 'translateY(-15px)';
+        splash.classList.add('pointer-events-none');
+        splash.classList.remove('pointer-events-auto');
+        
+        // Fully deactivate the splash element once transition finishes
+        setTimeout(() => {
+          splash.style.display = 'none';
+          sessionStorage.setItem('uamotors-splash-shown', 'true');
+        }, 500);
+      }, 1200); // Display the logo centered for 1.2s
+    }
+  })();
+</script>
+
+<style>
+  @keyframes splashLogo {
+    0% {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes splashLoader {
+    0% {
+      left: -50%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+
+  .animate-splash-logo {
+    animation: splashLogo 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-splash-loader {
+    animation: splashLoader 1.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  }
+</style>

@@ -16,6 +16,7 @@ import LogoDitsa from "./logos/silver/LogoDitsa.astro";
 import LogoPrimeraPlus from "./logos/silver/LogoPrimeraPlus.astro";
 import LogoDepartamentoEnergia from "./logos/silver/LogoDepartamentoEnergia.astro";
 import LogoEscuadronUam from "./logos/bronze/LogoEscuadronUam.astro";
+import TiraUamotors from "./logos/TiraUamotors.astro";
 const currentYear = new Date().getFullYear();
 ---
 
@@ -211,14 +212,13 @@ const currentYear = new Date().getFullYear();
     </div>
   </div>
   <div
-    class="footer-identity text-center overflow-hidden w-full sticky bottom-0 flex items-end justify-center"
+    class="footer-identity text-center overflow-hidden w-full sticky bottom-0 flex items-end justify-center px-6 pb-2"
   >
-    <span
+    <TiraUamotors
       id="footer-logo-text"
-      class="sigmar-ff text-[16vw] sm:text-[6.5rem] leading-none text-whitesmoke/50 dark:text-gray-300/30 select-none cursor-pointer"
+      class="w-full max-w-[280px] sm:max-w-md md:max-w-lg lg:max-w-2xl h-auto text-whitesmoke/40 dark:text-white/10 select-none cursor-pointer hover:text-space-red dark:hover:text-space-yellow transition-all duration-500 transform hover:scale-[1.02]"
       style="touch-action: manipulation;"
-      >{siteConfig.title}</span
-    >
+    />
   </div>
 </footer>
 
