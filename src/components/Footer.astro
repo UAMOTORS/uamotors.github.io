@@ -1,11 +1,21 @@
 ---
+import { Image } from "astro:assets";
 import siteConfig from "../site.config";
 import SiteIdentity from "./SiteIdentity.astro";
 import InstagramIcon from "../icons/social_media/Instagram.astro";
 import FacebookIcon from "../icons/social_media/Facebook.astro";
 import TiktokIcon from "../icons/social_media/Tiktok.astro";
 import LinkedinIcon from "../icons/social_media/Linkedin.astro";
-
+import LogoFuam from "./logos/diamond/LogoFuam.astro";
+import LogoGeely from "./logos/diamond/LogoGeely.astro";
+import LogoSolidworks from "./logos/gold/LogoSolidworks.astro";
+import LogoAnsys from "./logos/gold/LogoAnsys.astro";
+import LogoEsss from "./logos/gold/LogoEsss.astro";
+import LogoRapidHarnest from "./logos/gold/LogoRapidHarnest.astro";
+import LogoDitsa from "./logos/silver/LogoDitsa.astro";
+import LogoPrimeraPlus from "./logos/silver/LogoPrimeraPlus.astro";
+import LogoDepartamentoEnergia from "./logos/silver/LogoDepartamentoEnergia.astro";
+import LogoEscuadronUam from "./logos/bronze/LogoEscuadronUam.astro";
 const currentYear = new Date().getFullYear();
 ---
 
@@ -16,28 +26,187 @@ const currentYear = new Date().getFullYear();
     <div
       class="flex flex-row items-center justify-around sm:justify-center gap-6 sm:gap-10 pt-8 pb-6 sm:px-6 text-center"
     >
-      <a href="https://www.instagram.com/uamotors.fsae/" target="_blank" title="Instagram" class="hover:text-space-red dark:hover:text-space-yellow transition-colors hover:scale-110 transform duration-200">
+      <a
+        href="https://www.instagram.com/uamotors.fsae/"
+        target="_blank"
+        title="Instagram"
+        class="hover:text-space-red dark:hover:text-space-yellow transition-colors hover:scale-110 transform duration-200"
+      >
         <InstagramIcon class="w-8 h-8 sm:w-10 sm:h-10" />
       </a>
-      <a href="https://www.facebook.com/uamotors" target="_blank" title="Facebook" class="hover:text-space-red dark:hover:text-space-yellow transition-colors hover:scale-110 transform duration-200">
+      <a
+        href="https://www.facebook.com/uamotors"
+        target="_blank"
+        title="Facebook"
+        class="hover:text-space-red dark:hover:text-space-yellow transition-colors hover:scale-110 transform duration-200"
+      >
         <FacebookIcon class="w-8 h-8 sm:w-10 sm:h-10" />
       </a>
-      <a href="https://www.tiktok.com/@uamotors.fsae" target="_blank" title="TikTok" class="hover:text-space-red dark:hover:text-space-yellow transition-colors hover:scale-110 transform duration-200">
+      <a
+        href="https://www.tiktok.com/@uamotors.fsae"
+        target="_blank"
+        title="TikTok"
+        class="hover:text-space-red dark:hover:text-space-yellow transition-colors hover:scale-110 transform duration-200"
+      >
         <TiktokIcon class="w-8 h-8 sm:w-10 sm:h-10" />
       </a>
-      <a href="https://www.linkedin.com/company/uamotors/" target="_blank" title="LinkedIn" class="hover:text-space-red dark:hover:text-space-yellow transition-colors hover:scale-110 transform duration-200">
+      <a
+        href="https://www.linkedin.com/company/uamotors/"
+        target="_blank"
+        title="LinkedIn"
+        class="hover:text-space-red dark:hover:text-space-yellow transition-colors hover:scale-110 transform duration-200"
+      >
         <LinkedinIcon class="w-8 h-8 sm:w-10 sm:h-10" />
       </a>
     </div>
   </div>
+
+  <div class="footer-patrocinadores w-full max-w-5xl mx-auto px-4 pb-8">
+    <div class="space-y-6">
+      <div
+        class="flex flex-row items-center justify-center gap-8 sm:gap-12 md:gap-16 w-full max-w-lg mx-auto"
+      >
+        <div class="h-10 sm:h-11 w-40 sm:w-44 flex items-center justify-center">
+          <a
+            href="https://www.geelymexico.com/"
+            target="_blank"
+            class="h-full w-full flex items-center justify-center"
+          >
+            <LogoGeely class="max-h-full max-w-full object-contain" />
+          </a>
+        </div>
+        <div class="h-10 sm:h-11 w-40 sm:w-44 flex items-center justify-center">
+          <a
+            href="https://www.fundacionuam.org/"
+            target="_blank"
+            class="h-full w-full flex items-center justify-center"
+          >
+            <LogoFuam class="max-h-full max-w-full object-contain" />
+          </a>
+        </div>
+      </div>
+
+      <div
+        class="grid grid-cols-4 md:grid-cols-8 gap-4 sm:gap-6 md:gap-8 items-center justify-center w-full"
+      >
+        {/* Solidworks */}
+        <div class="h-8 sm:h-10 w-full flex items-center justify-center">
+          <a
+            href="https://www.solidworks.com/"
+            target="_blank"
+            class="h-full w-full max-w-[90px] sm:max-w-[110px] flex items-center justify-center"
+          >
+            <LogoSolidworks class="max-h-full max-w-full object-contain" />
+          </a>
+        </div>
+
+        {/* Ansys */}
+        <div class="h-8 sm:h-10 w-full flex items-center justify-center">
+          <a
+            href="https://www.ansys.com/"
+            target="_blank"
+            class="h-full w-full max-w-[90px] sm:max-w-[110px] flex items-center justify-center"
+          >
+            <LogoAnsys class="max-h-full max-w-full object-contain" />
+          </a>
+        </div>
+
+        {/* ESSS */}
+        <div class="h-8 sm:h-10 w-full flex items-center justify-center">
+          <a
+            href="https://www.esss.com/es/"
+            target="_blank"
+            class="h-full w-full max-w-[90px] sm:max-w-[110px] flex items-center justify-center"
+          >
+            <LogoEsss class="max-h-full max-w-full object-contain" />
+          </a>
+        </div>
+
+        {/* RapidHarness */}
+        <div class="h-8 sm:h-10 w-full flex items-center justify-center">
+          <a
+            href="https://www.rapidharness.com/"
+            target="_blank"
+            class="h-full w-full max-w-[90px] sm:max-w-[110px] flex items-center justify-center"
+          >
+            <LogoRapidHarnest class="max-h-full max-w-full object-contain" />
+          </a>
+        </div>
+
+        {/* Escuadrón UAM */}
+        <div class="h-8 sm:h-10 w-full flex items-center justify-center">
+          <a
+            href="http://fenix.uam.mx/escuadron_uam/"
+            target="_blank"
+            class="h-full w-full max-w-[80px] sm:max-w-[100px] flex items-center justify-center"
+          >
+            <LogoEscuadronUam class="max-h-full max-w-full object-contain" />
+          </a>
+        </div>
+
+        {/* Ditsa */}
+        <div class="h-8 sm:h-10 w-full flex items-center justify-center">
+          <a
+            href="https://ditsa.com.mx/"
+            target="_blank"
+            class="h-full w-full max-w-[80px] sm:max-w-[100px] flex items-center justify-center"
+          >
+            <LogoDitsa class="max-h-full max-w-full object-contain" />
+          </a>
+        </div>
+
+        {/* Primera Plus */}
+        <div class="h-8 sm:h-10 w-full flex items-center justify-center">
+          <a
+            href="https://www.primeraplus.com.mx/"
+            target="_blank"
+            class="h-full w-full max-w-[80px] sm:max-w-[100px] flex items-center justify-center"
+          >
+            <LogoPrimeraPlus class="max-h-full max-w-full object-contain" />
+          </a>
+        </div>
+
+        {/* Departamento de Energía */}
+        <div class="h-8 sm:h-10 w-full flex items-center justify-center">
+          <a
+            href="https://energia.azc.uam.mx/en/"
+            target="_blank"
+            class="h-full w-full max-w-[80px] sm:max-w-[100px] flex items-center justify-center"
+          >
+            <LogoDepartamentoEnergia
+              class="max-h-full max-w-full object-contain"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Nota de derechos -->
   <div
     class="footer-secondary flex flex-col items-center justify-center gap-2 min-w-full pb-8"
   >
-    <div class="flex flex-col gap-1 items-center justify-center text-balance opacity-80 text-center">
-      <span>&copy; {currentYear} {siteConfig.title}. Todos los derechos reservados.</span>
+    <div
+      class="flex flex-col gap-1 items-center justify-center text-balance opacity-80 text-center"
+    >
+      <span
+        >&copy; {currentYear}
+        {siteConfig.title}. Todos los derechos reservados.</span
+      >
       <span class="text-xs opacity-75 mt-1">
-        Desarrollado por <a href="https://github.com/lexrammart" target="_blank" class="kanit-regular hover:text-space-red dark:hover:text-space-yellow transition-colors">Alejandro Ramírez</a> para UAMOTORS <span class="hidden sm:inline">|</span><br class="sm:hidden" />
-        Basado en el tema <a href="https://github.com/djsiddz/space-ahead" target="_blank" class="kanit-regular hover:text-space-red dark:hover:text-space-yellow transition-colors">Space Ahead</a>.
+        Desarrollado por <a
+          href="https://github.com/lexrammart"
+          target="_blank"
+          class="kanit-regular hover:text-space-red dark:hover:text-space-yellow transition-colors"
+          >Alejandro Ramírez</a
+        > para UAMOTORS <span class="hidden sm:inline">|</span><br
+          class="sm:hidden"
+        />
+        Basado en el tema <a
+          href="https://github.com/djsiddz/space-ahead"
+          target="_blank"
+          class="kanit-regular hover:text-space-red dark:hover:text-space-yellow transition-colors"
+          >Space Ahead</a
+        >.
       </span>
     </div>
   </div>
@@ -45,8 +214,16 @@ const currentYear = new Date().getFullYear();
     class="footer-identity text-center overflow-hidden w-full sticky bottom-0 flex items-end justify-center"
   >
     <span
-      class="sigmar-ff text-[16vw] sm:text-[6.5rem] leading-none text-whitesmoke/50 dark:text-gray-300/30"
+      id="footer-logo-text"
+      class="sigmar-ff text-[16vw] sm:text-[6.5rem] leading-none text-whitesmoke/50 dark:text-gray-300/30 select-none cursor-pointer"
+      style="touch-action: manipulation;"
       >{siteConfig.title}</span
     >
   </div>
 </footer>
+
+<style is:global>
+  .footer-patrocinadores img {
+    border-radius: 0 !important;
+  }
+</style>

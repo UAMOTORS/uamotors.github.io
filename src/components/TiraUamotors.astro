@@ -1,0 +1,31 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className = "h-10 w-auto" } = Astro.props;
+import LogoRaw from "../assets/logos/tira-uamotors.svg?raw";
+---
+
+<div 
+  class:list={[
+    "tira-logo-wrapper flex items-center justify-center text-black dark:text-white transition-colors duration-200", 
+    className
+  ]} 
+  set:html={LogoRaw} 
+/>
+
+<style is:global>
+  /* Hacemos que el SVG inyectado ocupe el tamaño de su contenedor */
+  .tira-logo-wrapper svg {
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+  /* Forzamos a que las partes negras (.cls-1) tomen el color del texto (currentColor),
+     que cambiará entre negro y blanco según el tema oscuro. */
+  .tira-logo-wrapper .cls-1 {
+    fill: currentColor !important;
+  }
+</style>

@@ -1,191 +1,164 @@
 ---
 import { Image } from "astro:assets";
 import MainLayout from "../layouts/MainLayout.astro";
-import LogoCarousel from "../components/LogoCarousel.astro";
+// import LogoCarousel from "../components/LogoCarousel.astro";
 import siteConfig from "../site.config";
 import EmailIcon from "../icons/social_media/Email.astro";
 import Eyes from "../icons/assets/Eyes.astro";
 import Mobile from "../icons/assets/Mobile.astro";
 import Document from "../icons/assets/Document.astro";
 import Event from "../icons/assets/Event.astro";
-import Pdf from "../icons/assets/Pdf.astro";
-import LogoUamotors from "../assets/logos/logo-uamotors.png";
-import logo1 from "../assets/logos/logo-1.png";
-import logo2 from "../assets/logos/logo-2.jpg";
-import logo3 from "../assets/logos/logo-3.jpg";
-import logo4 from "../assets/logos/logo-4.png";
-import logo5 from "../assets/logos/logo-5.png";
-import logo6 from "../assets/logos/logo-6.png";
-import logo7 from "../assets/logos/logo-7.jpg";
-import logo8 from "../assets/logos/logo-8.jpg";
-import logo9 from "../assets/logos/logo-9.webp";
-import logo10 from "../assets/logos/logo-10.webp";
-import logo11 from "../assets/logos/logo-11.jpeg";
-import logoFuam from "../assets/logos/logo-fuam.svg";
-import logoGeely from "../assets/logos/logo-geely.svg";
-import LocationPin from "../icons/assets/LocationPin.astro";
+// import TiraUamotors from "../components/TiraUamotors.astro";
+// import logo1 from "../assets/logos/logo-1.png";
+// import logo2 from "../assets/logos/logo-2.jpg";
+
+// logos diamante/diamond
+import LogoFuam from "../components/logos/diamond/LogoFuam.astro";
+import LogoGeely from "../components/logos/diamond/LogoGeely.astro";
+
+// logos oro/gold
+import LogoSolidworks from "../components/logos/gold/LogoSolidworks.astro";
+import LogoAnsys from "../components/logos/gold/LogoAnsys.astro";
+import LogoEsss from "../components/logos/gold/LogoEsss.astro";
+import LogoRapidHarnest from "../components/logos/gold/LogoRapidHarnest.astro";
+
+// logos plata/silver
+import LogoDitsa from "../components/logos/silver/LogoDitsa.astro";
+import LogoPrimeraPlus from "../components/logos/silver/LogoPrimeraPlus.astro";
+import LogoDepartamentoEnergia from "../components/logos/silver/LogoDepartamentoEnergia.astro";
+
+// logos bronce/bronze
+import LogoEscuadronUam from "../components/logos/bronze/LogoEscuadronUam.astro";
 ---
 
 <MainLayout
   activePage="nuestros aliados"
   pageTitle={siteConfig.title + " | Nuestros Aliados"}
+  description="Conoce a las empresas e instituciones que impulsan a UAMOTORS. Descubre los beneficios de patrocinar nuestro proyecto y acelerar el talento en ingeniería de la UAM."
 >
   <div class="page-content max-w-3xl mx-auto min-w-0">
     <h1 class="sigmar-ff text-balance mb-8">Nuestros Aliados</h1>
 
     <section id="nuestros-aliados" class="text-left space-y-16">
-      <div>
-        <div id="diamante-grid" class="mt-8 w-full">
+      <div class="space-y-20">
+        {/* Fila 1: Diamante */}
+        <div id="diamante-grid" class="w-full">
           <div
-            class="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-6 md:gap-12 items-center max-w-2xl mx-auto"
+            class="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-6 md:gap-12 items-center max-w-3xl mx-auto"
           >
-            <div class="h-8 sm:h-10 w-full flex items-center justify-center">
-              <a href="https://www.geelymexico.com/" target="_blank">
-                <Image
-                  src={logoGeely}
-                  alt="Geely"
-                  height={40}
-                  class="h-full w-40 object-contain dark:brightness-0 dark:invert transition-all"
-                />
+            <div class="h-14 sm:h-18 w-full flex items-center justify-center">
+              <a
+                href="https://www.geelymexico.com/"
+                target="_blank"
+                class="h-full w-56 sm:w-72 flex items-center justify-center"
+              >
+                <LogoGeely class="h-full w-full object-contain" />
               </a>
             </div>
-            <div class="h-8 sm:h-10 w-full flex items-center justify-center">
-              <a href="https://www.fundacionuam.org/" target="_blank">
-                <Image
-                  src={logoFuam}
-                  alt="Fundación UAM"
-                  height={40}
-                  class="h-full w-40 object-contain"
+            <div class="h-14 sm:h-18 w-full flex items-center justify-center">
+              <a
+                href="https://www.fundacionuam.org/"
+                target="_blank"
+                class="h-full w-56 sm:w-72 flex items-center justify-center"
+              >
+                <LogoFuam class="h-full w-full object-contain" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Fila 2: Oro */}
+        <div id="oro-grid" class="w-full">
+          <div
+            class="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-6 md:gap-12 items-center max-w-3xl mx-auto"
+          >
+            <div class="h-12 sm:h-16 w-full flex items-center justify-center">
+              <a
+                href="https://www.solidworks.com/"
+                target="_blank"
+                class="h-full w-full max-w-[140px] sm:max-w-[160px] flex items-center justify-center"
+              >
+                <LogoSolidworks class="max-h-full max-w-full object-contain" />
+              </a>
+            </div>
+            <div class="h-12 sm:h-16 w-full flex items-center justify-center">
+              <a
+                href="https://www.ansys.com/"
+                target="_blank"
+                class="h-full w-full max-w-[140px] sm:max-w-[160px] flex items-center justify-center"
+              >
+                <LogoAnsys class="max-h-full max-w-full object-contain" />
+              </a>
+            </div>
+            <div class="h-12 sm:h-16 w-full flex items-center justify-center">
+              <a
+                href="https://www.esss.com/es/"
+                target="_blank"
+                class="h-full w-full max-w-[140px] sm:max-w-[160px] flex items-center justify-center"
+              >
+                <LogoEsss class="max-h-full max-w-full object-contain" />
+              </a>
+            </div>
+            <div class="h-12 sm:h-16 w-full flex items-center justify-center">
+              <a
+                href="https://www.rapidharness.com/"
+                target="_blank"
+                class="h-full w-full max-w-[140px] sm:max-w-[160px] flex items-center justify-center"
+              >
+                <LogoRapidHarnest
+                  class="max-h-full max-w-full object-contain"
                 />
               </a>
             </div>
           </div>
         </div>
 
-        <div
-          id="carousel-oro"
-          class="mt-8 border-black/20 dark:border-white/20 rounded-3xl p-6 sm:p-12 overflow-hidden w-full relative"
-          style="contain: content;"
-        >
-          <LogoCarousel>
-            <Image
-              src={LogoUamotors}
-              alt="UAMOTORS"
-              height={40}
-              class="h-10 w-auto object-contain"
-            />
-            <Image
-              src={logo1}
-              alt="Socio"
-              height={40}
-              class="h-10 w-auto object-contain"
-            />
-            <Image
-              src={logo2}
-              alt="Socio"
-              height={40}
-              class="h-10 w-auto object-contain"
-            />
-            <Image
-              src={logo3}
-              alt="Socio"
-              height={40}
-              class="h-10 w-auto object-contain"
-            />
-            <Image
-              src={logo4}
-              alt="Socio"
-              height={40}
-              class="h-10 w-auto object-contain"
-            />
-            <Image
-              src={logo5}
-              alt="Socio"
-              height={40}
-              class="h-10 w-auto object-contain"
-            />
-            <Image
-              src={logo6}
-              alt="Socio"
-              height={40}
-              class="h-10 w-auto object-contain"
-            />
-          </LogoCarousel>
-        </div>
-
-        <div
-          id="carousel-bronce-plata"
-          class="mt-8 border-black/20 dark:border-white/20 rounded-3xl p-6 sm:p-12 overflow-hidden w-full relative"
-          style="contain: content;"
-        >
-          <LogoCarousel>
-            <Image
-              src={logo1}
-              alt="Socio"
-              height={40}
-              class="h-10 w-auto object-contain"
-            />
-            <Image
-              src={logo2}
-              alt="Socio"
-              height={40}
-              class="h-10 w-auto object-contain"
-            />
-            <Image
-              src={logo3}
-              alt="Socio"
-              height={40}
-              class="h-10 w-auto object-contain"
-            />
-            <Image
-              src={logo4}
-              alt="Socio"
-              height={40}
-              class="h-10 w-auto object-contain"
-            />
-            <Image
-              src={logo5}
-              alt="Socio"
-              height={40}
-              class="h-10 w-auto object-contain"
-            />
-            <Image
-              src={logo6}
-              alt="Socio"
-              height={40}
-              class="h-10 w-auto object-contain"
-            />
-            <Image
-              src={logo7}
-              alt="Socio"
-              height={40}
-              class="h-10 w-auto object-contain"
-            />
-            <Image
-              src={logo8}
-              alt="Socio"
-              height={40}
-              class="h-10 w-auto object-contain"
-            />
-            <Image
-              src={logo9}
-              alt="Socio"
-              height={40}
-              class="h-10 w-auto object-contain"
-            />
-            <Image
-              src={logo10}
-              alt="Socio"
-              height={40}
-              class="h-10 w-auto object-contain"
-            />
-            <Image
-              src={logo11}
-              alt="Socio"
-              height={40}
-              class="h-10 w-auto object-contain"
-            />
-          </LogoCarousel>
+        {/* Fila 3: Plata y Bronce */}
+        <div id="plata-bronce-grid" class="w-full">
+          <div
+            class="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-6 md:gap-12 items-center max-w-3xl mx-auto"
+          >
+            <div class="h-12 sm:h-16 w-full flex items-center justify-center">
+              <a
+                href="http://fenix.uam.mx/escuadron_uam/"
+                target="_blank"
+                class="h-full w-full max-w-[120px] sm:max-w-[140px] flex items-center justify-center"
+              >
+                <LogoEscuadronUam
+                  class="max-h-full max-w-full object-contain"
+                />
+              </a>
+            </div>
+            <div class="h-12 sm:h-16 w-full flex items-center justify-center">
+              <a
+                href="https://ditsa.com.mx/"
+                target="_blank"
+                class="h-full w-full max-w-[120px] sm:max-w-[140px] flex items-center justify-center"
+              >
+                <LogoDitsa class="max-h-full max-w-full object-contain" />
+              </a>
+            </div>
+            <div class="h-12 sm:h-16 w-full flex items-center justify-center">
+              <a
+                href="https://www.primeraplus.com.mx/"
+                target="_blank"
+                class="h-full w-full max-w-[120px] sm:max-w-[140px] flex items-center justify-center"
+              >
+                <LogoPrimeraPlus class="max-h-full max-w-full object-contain" />
+              </a>
+            </div>
+            <div class="h-12 sm:h-16 w-full flex items-center justify-center">
+              <a
+                href="https://energia.azc.uam.mx/en/"
+                target="_blank"
+                class="h-full w-full max-w-[120px] sm:max-w-[140px] flex items-center justify-center"
+              >
+                <LogoDepartamentoEnergia
+                  class="max-h-full max-w-full object-contain"
+                />
+              </a>
+            </div>
+          </div>
         </div>
       </div>
       <div>
@@ -329,10 +302,9 @@ import LocationPin from "../icons/assets/LocationPin.astro";
 </MainLayout>
 
 <style is:global>
-  /* Quitar redondeo global de las imágenes en las galerías de patrocinadores para no recortar los logos */
   #diamante-grid img,
-  #carousel-oro img,
-  #carousel-bronce-plata img {
+  #oro-grid img,
+  #plata-bronce-grid img {
     border-radius: 0 !important;
   }
 </style>

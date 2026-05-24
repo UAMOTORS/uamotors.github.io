@@ -7,17 +7,26 @@ import Nav from "../components/Nav.astro";
 import Subscribe from "../components/Subscribe.astro";
 import { withBase } from "../utils/helpers";
 import siteConfig from "../site.config";
+import defaultOgImage from "../assets/images/OP01_2-transparent.png";
 
 type LayoutProps = {
   pageTitle: string;
   activePage: string;
+  description?: string;
+  image?: string;
   showSubscribeForm?: boolean;
 };
 const {
   pageTitle,
   activePage,
+  description,
+  image,
   showSubscribeForm = false,
 } = Astro.props as LayoutProps;
+
+const metaDescription = description || siteConfig.description;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL(image || defaultOgImage.src, Astro.site);
 ---
 
 <!doctype html>
@@ -38,6 +47,25 @@ const {
       href={new URL(withBase("/rss.xml"), Astro.site)}
     />
     <title>{pageTitle}</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content={metaDescription} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={metaDescription} />
+    <meta property="og:image" content={ogImageURL} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={pageTitle} />
+    <meta property="twitter:description" content={metaDescription} />
+    <meta property="twitter:image" content={ogImageURL} />
+
     <ClientRouter />
   </head>
   <body>
@@ -49,5 +77,219 @@ const {
       </div>
       <Footer />
     </main>
+    <!-- PIT-WALL RADIO EASTER EGG WIDGET -->
+    <div
+      id="pit-radio-widget"
+      class="fixed z-[99999] opacity-0 translate-y-10 pointer-events-none transition-all duration-500 ease-out font-mono select-none"
+    >
+      <div class="relative bg-black/90 dark:bg-black/95 backdrop-blur-md border border-white/10 rounded-2xl p-6 shadow-2xl w-full max-w-sm md:max-w-md mx-auto">
+        <!-- Live Connection Header -->
+        <div class="flex items-center justify-between mb-4 border-b border-white/10 pb-2">
+          <div class="flex items-center gap-2">
+            <span class="relative flex h-2.5 w-2.5">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-space-red opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-space-red"></span>
+            </span>
+            <span class="text-[10px] font-semibold text-white/90 tracking-widest uppercase">PIT-WALL RADIO FEED</span>
+          </div>
+          <button
+            id="close-pit-radio"
+            class="text-white/40 hover:text-white transition-colors cursor-pointer text-xs font-semibold px-2 py-1"
+            aria-label="Cerrar"
+          >
+            ✕
+          </button>
+        </div>
+
+        <!-- Live Message Display -->
+        <div class="min-h-[70px] flex items-center justify-center text-center text-white py-2 px-1">
+          <p id="pit-radio-message" class="text-xs md:text-sm leading-relaxed whitespace-normal text-balance text-white/90"></p>
+        </div>
+
+        <!-- Sintonizar Interactive Button -->
+        <div class="mt-3 pt-3 border-t border-white/10 flex flex-col items-center gap-1.5">
+          <button
+            id="pit-space-button"
+            class="w-full text-center py-2.5 text-[10px] text-white/90 border border-dashed border-white/30 rounded-xl bg-white/5 hover:bg-white/10 active:scale-95 transition-all cursor-pointer font-mono tracking-wider"
+          >
+            SINTONIZAR
+          </button>
+          <span class="text-[9px] text-white/40 tracking-wider text-center block">
+            Presiona Espacio o toca el botón para cambiar de frase.
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      #pit-radio-widget {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: calc(100% - 3rem);
+        max-width: 24rem;
+      }
+      #pit-radio-widget.active {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        pointer-events: auto !important;
+      }
+      @media (max-width: 639px) {
+        #pit-radio-widget {
+          bottom: 0 !important;
+          right: 0 !important;
+          left: 0 !important;
+          width: 100% !important;
+          max-width: none !important;
+        }
+        #pit-radio-widget > div {
+          border-bottom-left-radius: 0 !important;
+          border-bottom-right-radius: 0 !important;
+          border-top-left-radius: 1.5rem !important;
+          border-top-right-radius: 1.5rem !important;
+          border-left: none !important;
+          border-right: none !important;
+          border-bottom: none !important;
+          padding-bottom: 2rem !important;
+        }
+      }
+    </style>
+
+    <script is:inline>
+      (function() {
+        const secretCodes = ["f1", "leclerc", "fsae", "pits"];
+        const messages = [
+          "Just an inchident. — Charles Leclerc",
+          "¡NOOOOOO! — Charles Leclerc, Francia 2022",
+          "¡Monaco is ours! — Charles Leclerc, 2024",
+          "I think we need to box. — Charles Leclerc",
+          "Understood, we are checking. — Ferrari Engineer",
+          "It is a beautiful day, baby! Let's go! — Charles Leclerc",
+          "Box, box, box! — Ingeniero de Carrera",
+          "Leave me alone, I know what to do! — Kimi",
+          "If you no longer go for a gap... — Ayrton Senna",
+          "Smooth operatorrr... — Carlos Sainz",
+          "Bono, my tyres are gone! — Lewis Hamilton",
+          "No, no, no, Michael! That was so not right! — Toto Wolff",
+          "Simply simply lovely. — Max Verstappen",
+          "GP2 engine, GP2! — Fernando Alonso",
+          "Karma! — Fernando Alonso",
+          "To finish first, first you must finish. — Michael Schumacher",
+          "It's lights out and away we go! — David Croft",
+          "El segundo es el primero de los perdedores. — Ayrton Senna",
+          "No me des más potencia, dame menos peso. — Colin Chapman",
+          "Llevando la ingeniería mexicana al límite.",
+          "Diseña con ingenio, crea con pasión. — UAMOTORS",
+          "No es solo velocidad, es ingeniería. — UAMOTORS",
+          "¡Bandera roja en pista! Dirección de carrera.",
+          "¡Push, push! Vuelta rápida.",
+          "¡Error 404: Fuera de la pista!",
+          "El éxito se construye milésima a milésima.",
+          "En la pista no hay suerte, solo preparación.",
+          "No limit to what we can build. — UAMOTORS",
+          "Feel the speed, respect the engineering. — UAMOTORS",
+          "Maximum attack! Vuelta de clasificación."
+        ];
+
+        let cleanup;
+
+        function initEasterEgg() {
+          const widget = document.getElementById("pit-radio-widget");
+          const msgEl = document.getElementById("pit-radio-message");
+          const closeBtn = document.getElementById("close-pit-radio");
+          const spaceBtn = document.getElementById("pit-space-button");
+          const logoLink = document.getElementById("footer-logo-text");
+          const eyebrowLink = document.getElementById("hero-eyebrow-text");
+
+          if (!widget || !msgEl || !closeBtn || !spaceBtn) return;
+
+          let isWidgetOpen = false;
+          let tapCount = 0;
+          let lastTapTime = 0;
+          let keyBuffer = "";
+
+          const getRandomMessage = () => messages[Math.floor(Math.random() * messages.length)];
+
+          const openRadioFeed = () => {
+            if (isWidgetOpen) return;
+            msgEl.textContent = getRandomMessage();
+            widget.classList.add("active");
+            isWidgetOpen = true;
+          };
+
+          const closeRadioFeed = () => {
+            widget.classList.remove("active");
+            isWidgetOpen = false;
+          };
+
+          const cycleMessage = () => {
+            msgEl.textContent = getRandomMessage();
+          };
+
+          // 1. Desktop typing detection
+          const handleTyping = (e) => {
+            if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") return;
+            
+            keyBuffer += e.key.toLowerCase();
+            if (keyBuffer.length > 20) {
+              keyBuffer = keyBuffer.slice(-20);
+            }
+
+            for (const code of secretCodes) {
+              if (keyBuffer.endsWith(code)) {
+                openRadioFeed();
+                keyBuffer = "";
+                break;
+              }
+            }
+          };
+
+          // 2. Mobile 5-taps logo/eyebrow detection
+          const handleLogoTap = () => {
+            const now = Date.now();
+            if (now - lastTapTime > 1500) {
+              tapCount = 1;
+            } else {
+              tapCount++;
+            }
+            lastTapTime = now;
+
+            if (tapCount >= 5) {
+              openRadioFeed();
+              tapCount = 0;
+            }
+          };
+
+          // 3. Global spacebar message trigger (only when open)
+          const handleSpacebar = (e) => {
+            if (isWidgetOpen && e.code === "Space") {
+              e.preventDefault();
+              cycleMessage();
+            }
+          };
+
+          // Bind listeners
+          window.addEventListener("keydown", handleTyping);
+          window.addEventListener("keydown", handleSpacebar);
+          if (logoLink) logoLink.addEventListener("click", handleLogoTap);
+          if (eyebrowLink) eyebrowLink.addEventListener("click", handleLogoTap);
+          closeBtn.addEventListener("click", closeRadioFeed);
+          spaceBtn.addEventListener("click", cycleMessage);
+
+          return () => {
+            window.removeEventListener("keydown", handleTyping);
+            window.removeEventListener("keydown", handleSpacebar);
+            if (logoLink) logoLink.removeEventListener("click", handleLogoTap);
+            if (eyebrowLink) eyebrowLink.removeEventListener("click", handleLogoTap);
+            closeBtn.removeEventListener("click", closeRadioFeed);
+            spaceBtn.removeEventListener("click", cycleMessage);
+          };
+        }
+
+        document.addEventListener("astro:page-load", () => {
+          if (cleanup) cleanup();
+          cleanup = initEasterEgg();
+        });
+      })();
+    </script>
   </body>
 </html>

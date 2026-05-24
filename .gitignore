@@ -28,6 +28,8 @@ pnpm-debug.log*
 .DS_Store
 path-tree.md
 
+# JetBrains IDE
+.idea/
 # --- JetBrains (WebStorm / PyCharm) ---
 .idea/
 *.iml
