@@ -147,28 +147,258 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
 </MainLayout>
 
 <style is:global>
-  /* 1. ESTADO BASE: Color gris (#434343) para todo el texto y links */
+  /* ==========================================================================
+     INTEGRACIÓN CURATOR.IO (FEED GRID & POPUP MODALS)
+     ========================================================================== */
+
+  /* 2. Tarjeta del Popup Principal (Tema Claro por defecto) - Liquid Glass */
+  .crt-popup {
+    background-color: rgba(253, 252, 251, 0.65) !important;
+    backdrop-filter: blur(24px) !important;
+    color: #434343 !important;
+    border-radius: 8px !important;
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    box-shadow:
+      inset 0 0 0.5px 1px hsla(0, 0%, 100%, 0.1),
+      0 0 0 1px hsla(0, 0%, 0%, 0.05),
+      0 0.3px 0.4px hsla(0, 0%, 0%, 0.02),
+      0 0.9px 1.5px hsla(0, 0%, 0%, 0.045),
+      0 3.5px 6px hsla(0, 0%, 0%, 0.09) !important;
+    overflow: hidden !important;
+  }
+
+  /* Redondear contenedores de multimedia y elementos del popup */
+  .crt-popup .crt-video-container,
+  .crt-popup .crt-image-container,
+  .crt-popup .crt-post-image,
+  .crt-popup img,
+  .crt-popup video {
+    border-radius: 8px !important;
+  }
+
+  /* Fondo de foto/video dentro del popup (Liquid Glass) */
+  .crt-popup .crt-video-container,
+  .crt-popup .crt-image-container,
+  .crt-popup .crt-post-image,
+  .crt-popup .crt-popup-left {
+    background-color: transparent !important;
+    backdrop-filter: none !important;
+  }
+
+  /* Redondear tarjetas e imágenes de la grilla del feed principal */
+  #curator-feed-default-feed-layout .crt-post,
+  #curator-feed-default-feed-layout .crt-post-c {
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    background-color: transparent !important;
+  }
+
+  /* Hover de tarjeta de grilla (Liquid Glass) */
+  #curator-feed-default-feed-layout .crt-post-hover {
+    background-color: rgba(253, 252, 251, 0.75) !important;
+    backdrop-filter: blur(12px) !important;
+  }
+
+  /* Evitar franja sólida en la parte inferior del hover card */
+  #curator-feed-default-feed-layout .crt-post-hover .crt-post-footer {
+    background-color: transparent !important;
+    border-top: none !important;
+  }
+
+  /* Eliminar brillo / degradado blanco de Curator en el hover */
+  .crt-no-touch .crt-grid-post:not(.crt-post-youtube) .crt-post-hover:after,
+  .crt-no-touch .crt-grid-post:not(.crt-post-youtube) .crt-post-hover:before,
+  #curator-feed-default-feed-layout .crt-post-hover:after,
+  #curator-feed-default-feed-layout .crt-post-hover:before,
+  .crt-post-hover:after,
+  .crt-post-hover:before,
+  .crt-post-hover .crt-post-text:after,
+  .crt-post-hover .crt-post-text-wrap:after,
+  .crt-grid-post .crt-post-hover:after {
+    background: none !important;
+    background-image: none !important;
+    content: none !important;
+    display: none !important;
+  }
+
+  /* Icono de red social de Curator (Instagram, etc.) */
+  #curator-feed-default-feed-layout .crt-social-icon,
+  #curator-feed-default-feed-layout .crt-social-icon i,
+  #curator-feed-default-feed-layout .crt-social-icon svg {
+    color: #434343 !important;
+    fill: #434343 !important;
+    opacity: 0.8 !important;
+  }
+
+  #curator-feed-default-feed-layout .crt-post-hover .crt-post-text,
+  #curator-feed-default-feed-layout .crt-post-hover .crt-post-text p,
+  #curator-feed-default-feed-layout .crt-post-hover .crt-post-text a,
+  #curator-feed-default-feed-layout .crt-post-hover .crt-post-fullname,
+  #curator-feed-default-feed-layout .crt-post-hover .crt-post-date,
+  #curator-feed-default-feed-layout .crt-post-hover .crt-post-date-link,
+  #curator-feed-default-feed-layout .crt-post-hover .crt-post-share p,
+  #curator-feed-default-feed-layout .crt-post-hover a,
+  #curator-feed-default-feed-layout .crt-post-hover span {
+    color: #434343 !important;
+  }
+
+  #curator-feed-default-feed-layout .crt-post-image,
+  #curator-feed-default-feed-layout .crt-post img {
+    border-radius: 12px !important;
+  }
+
+  /* 3. Textos y Links en Grilla y Popup (Tema Claro) */
   #curator-feed-default-feed-layout .crt-post-header span,
   #curator-feed-default-feed-layout .crt-post-header a,
   #curator-feed-default-feed-layout .crt-post-header div,
   #curator-feed-default-feed-layout .crt-date,
   #curator-feed-default-feed-layout .crt-post-date,
   #curator-feed-default-feed-layout .crt-time,
-  #curator-feed-default-feed-layout a {
+  #curator-feed-default-feed-layout a,
+  .crt-popup .crt-post-header span,
+  .crt-popup .crt-post-header a,
+  .crt-popup .crt-post-header div,
+  .crt-popup .crt-author-name,
+  .crt-popup .crt-post-content-text,
+  .crt-popup .crt-date,
+  .crt-popup .crt-post-date,
+  .crt-popup .crt-time,
+  .crt-popup a {
     color: #434343 !important;
     opacity: 1 !important;
     text-decoration: none !important;
-    transition: color 0.2s ease; /* Para que el cambio al rojo no sea tan brusco */
+    transition: color 0.2s ease !important;
   }
 
+  /* Hover de enlaces (Tema Claro) */
   #curator-feed-default-feed-layout a:hover,
   #curator-feed-default-feed-layout a:hover span,
   #curator-feed-default-feed-layout .crt-post-header a:hover,
   #curator-feed-default-feed-layout .crt-date:hover,
   #curator-feed-default-feed-layout .crt-post-date:hover,
-  #curator-feed-default-feed-layout .crt-time:hover {
+  #curator-feed-default-feed-layout .crt-time:hover,
+  .crt-popup a:hover,
+  .crt-popup a:hover span,
+  .crt-popup .crt-author-name:hover {
     color: #e31e24 !important;
-    opacity: 1 !important;
+  }
+
+  /* 4. Botones de Control del Popup (Cerrar y Navegación) */
+  .crt-popup .crt-close,
+  .crt-popup .crt-play,
+  .crt-popup .crt-nav-left,
+  .crt-popup .crt-nav-right,
+  .crt-popup .crt-icon-close {
+    color: #434343 !important;
+    background-color: transparent !important;
+  }
+
+  .crt-popup .crt-close:hover,
+  .crt-popup .crt-nav-left:hover,
+  .crt-popup .crt-nav-right:hover {
+    color: #e31e24 !important;
+  }
+
+  /* ==========================================================================
+     SOPORTE PARA TEMA OSCURO (HTML.DARK)
+     ========================================================================== */
+
+  /* Tarjeta del Popup en Tema Oscuro - Liquid Glass */
+  html.dark .crt-popup {
+    background-color: rgba(67, 67, 67, 0.6) !important;
+    backdrop-filter: blur(24px) !important;
+    color: #f5f5f5 !important; /* whitesmoke */
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow:
+      inset 0 0 0.5px 1px hsla(0, 0%, 100%, 0.075),
+      0 0 0 1px hsla(0, 0%, 0%, 0.15),
+      0 0.3px 0.4px hsla(0, 0%, 0%, 0.05),
+      0 0.9px 1.5px hsla(0, 0%, 0%, 0.15),
+      0 3.5px 6px hsla(0, 0%, 0%, 0.25) !important;
+  }
+
+  /* Hover de tarjeta de grilla en Tema Oscuro (Liquid Glass) */
+  html.dark #curator-feed-default-feed-layout .crt-post-hover {
+    background-color: rgba(0, 0, 0, 0.8) !important; /* Smoked dark glass */
+    backdrop-filter: blur(12px) !important;
+  }
+
+  html.dark #curator-feed-default-feed-layout .crt-post-hover .crt-post-text,
+  html.dark #curator-feed-default-feed-layout .crt-post-hover .crt-post-text p,
+  html.dark #curator-feed-default-feed-layout .crt-post-hover .crt-post-text a,
+  html.dark #curator-feed-default-feed-layout .crt-post-hover .crt-post-fullname,
+  html.dark #curator-feed-default-feed-layout .crt-post-hover .crt-post-date,
+  html.dark #curator-feed-default-feed-layout .crt-post-hover .crt-post-date-link,
+  html.dark #curator-feed-default-feed-layout .crt-post-hover .crt-post-share p,
+  html.dark #curator-feed-default-feed-layout .crt-post-hover a,
+  html.dark #curator-feed-default-feed-layout .crt-post-hover span {
+    color: #f5f5f5 !important;
+  }
+
+  /* Icono de red social de Curator en Tema Oscuro */
+  html.dark #curator-feed-default-feed-layout .crt-social-icon,
+  html.dark #curator-feed-default-feed-layout .crt-social-icon i,
+  html.dark #curator-feed-default-feed-layout .crt-social-icon svg {
+    color: #f5f5f5 !important;
+    fill: #f5f5f5 !important;
+    opacity: 0.9 !important;
+  }
+
+
+
+
+  /* Ajuste de Textos en Grilla y Popup (Tema Oscuro) */
+  html.dark #curator-feed-default-feed-layout .crt-post-header span,
+  html.dark #curator-feed-default-feed-layout .crt-post-header a,
+  html.dark #curator-feed-default-feed-layout .crt-post-header div,
+  html.dark #curator-feed-default-feed-layout .crt-date,
+  html.dark #curator-feed-default-feed-layout .crt-post-date,
+  html.dark #curator-feed-default-feed-layout .crt-time,
+  html.dark #curator-feed-default-feed-layout a,
+  html.dark .crt-popup .crt-post-header span,
+  html.dark .crt-popup .crt-post-header a,
+  html.dark .crt-popup .crt-post-header div,
+  html.dark .crt-popup .crt-author-name,
+  html.dark .crt-popup .crt-post-content-text,
+  html.dark .crt-popup .crt-date,
+  html.dark .crt-popup .crt-post-date,
+  html.dark .crt-popup .crt-time,
+  html.dark .crt-popup a {
+    color: #f5f5f5 !important;
+  }
+
+  /* Hover de enlaces en Tema Oscuro */
+  html.dark #curator-feed-default-feed-layout a:hover,
+  html.dark #curator-feed-default-feed-layout a:hover span,
+  html.dark #curator-feed-default-feed-layout .crt-post-header a:hover,
+  html.dark #curator-feed-default-feed-layout .crt-date:hover,
+  html.dark #curator-feed-default-feed-layout .crt-post-date:hover,
+  html.dark #curator-feed-default-feed-layout .crt-time:hover,
+  html.dark .crt-popup a:hover,
+  html.dark .crt-popup a:hover span,
+  html.dark .crt-popup .crt-author-name:hover {
+    color: #ff4046 !important; /* var(--space-yellow) */
+  }
+
+  /* Botones de Control del Popup en Tema Oscuro */
+  html.dark .crt-popup .crt-close,
+  html.dark .crt-popup .crt-play,
+  html.dark .crt-popup .crt-nav-left,
+  html.dark .crt-popup .crt-nav-right,
+  html.dark .crt-popup .crt-icon-close {
+    color: #f5f5f5 !important;
+  }
+
+  html.dark .crt-popup .crt-close:hover,
+  html.dark .crt-popup .crt-nav-left:hover,
+  html.dark .crt-popup .crt-nav-right:hover {
+    color: #ff4046 !important;
+  }
+
+  /* Asegurar que las flechas de navegación del popup estén al frente */
+  .crt-popup-wrapper .crt-popup .crt-previous,
+  .crt-popup-wrapper .crt-popup .crt-next {
+    z-index: 999999 !important;
   }
 
   /* Escáner Láser Animación (Escritorio) */
