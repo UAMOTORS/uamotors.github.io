@@ -6,19 +6,16 @@ import InstagramIcon from "../icons/social_media/Instagram.astro";
 import FacebookIcon from "../icons/social_media/Facebook.astro";
 import TiktokIcon from "../icons/social_media/Tiktok.astro";
 import LinkedinIcon from "../icons/social_media/Linkedin.astro";
-import LogoCarousel from "./LogoCarousel.astro";
-import TiraUamotors from "./TiraUamotors.astro";
-import logo1 from "../assets/logos/logo-1.png";
-import logo2 from "../assets/logos/logo-2.jpg";
-import logo3 from "../assets/logos/logo-3.jpg";
-import logo4 from "../assets/logos/logo-4.png";
-import logo5 from "../assets/logos/logo-5.png";
-import logo6 from "../assets/logos/logo-6.png";
-import logo7 from "../assets/logos/logo-7.jpg";
-import logo8 from "../assets/logos/logo-8.jpg";
-import logo9 from "../assets/logos/logo-9.webp";
-import logo10 from "../assets/logos/logo-10.webp";
-import logo11 from "../assets/logos/logo-11.jpeg";
+import LogoFuam from "./logos/diamond/LogoFuam.astro";
+import LogoGeely from "./logos/diamond/LogoGeely.astro";
+import LogoSolidworks from "./logos/gold/LogoSolidworks.astro";
+import LogoAnsys from "./logos/gold/LogoAnsys.astro";
+import LogoEsss from "./logos/gold/LogoEsss.astro";
+import LogoRapidHarnest from "./logos/gold/LogoRapidHarnest.astro";
+import LogoDitsa from "./logos/silver/LogoDitsa.astro";
+import LogoPrimeraPlus from "./logos/silver/LogoPrimeraPlus.astro";
+import LogoDepartamentoEnergia from "./logos/silver/LogoDepartamentoEnergia.astro";
+import LogoEscuadronUam from "./logos/bronze/LogoEscuadronUam.astro";
 const currentYear = new Date().getFullYear();
 ---
 
@@ -64,54 +61,123 @@ const currentYear = new Date().getFullYear();
     </div>
   </div>
 
-  <!-- Carousel de logos (patrocinios) -->
-  <!--
-    <div
-      id="carousel-footer"
-      class="mt-2 border-black/20 dark:border-white/20 rounded-3xl py-2 sm:py-4 overflow-hidden w-full relative"
-      style="contain: content;"
-    >
-      <LogoCarousel>
-        <TiraUamotors class="h-10 w-auto object-contain" />
-        <Image
-          src={logo1}
-          alt="Socio"
-          height={40}
-          class="h-10 w-auto object-contain"
-        />
-        <Image
-          src={logo2}
-          alt="Socio"
-          height={40}
-          class="h-10 w-auto object-contain"
-        />
-        <Image
-          src={logo3}
-          alt="Socio"
-          height={40}
-          class="h-10 w-auto object-contain"
-        />
-        <Image
-          src={logo4}
-          alt="Socio"
-          height={40}
-          class="h-10 w-auto object-contain"
-        />
-        <Image
-          src={logo5}
-          alt="Socio"
-          height={40}
-          class="h-10 w-auto object-contain"
-        />
-        <Image
-          src={logo6}
-          alt="Socio"
-          height={40}
-          class="h-10 w-auto object-contain"
-        />
-      </LogoCarousel>
+  <!-- Patrocinadores fijos -->
+  <div class="footer-patrocinadores w-full max-w-5xl mx-auto px-4 pb-8">
+    <div class="space-y-6">
+      {/* Fila 1: Diamante (Geely y Fundación UAM) */}
+      <div class="flex flex-row items-center justify-center gap-8 sm:gap-12 md:gap-16 w-full max-w-lg mx-auto">
+        <div class="h-10 sm:h-11 w-40 sm:w-44 flex items-center justify-center">
+          <a
+            href="https://www.geelymexico.com/"
+            target="_blank"
+            class="h-full w-full flex items-center justify-center"
+          >
+            <LogoGeely class="max-h-full max-w-full object-contain" />
+          </a>
+        </div>
+        <div class="h-10 sm:h-11 w-40 sm:w-44 flex items-center justify-center">
+          <a
+            href="https://www.fundacionuam.org/"
+            target="_blank"
+            class="h-full w-full flex items-center justify-center"
+          >
+            <LogoFuam class="max-h-full max-w-full object-contain" />
+          </a>
+        </div>
+      </div>
+
+      {/* Fila 2: Todos los demás patrocinadores */}
+      <div class="grid grid-cols-4 md:grid-cols-8 gap-4 sm:gap-6 md:gap-8 items-center justify-center w-full">
+        {/* Solidworks */}
+        <div class="h-8 sm:h-10 w-full flex items-center justify-center">
+          <a
+            href="https://www.solidworks.com/"
+            target="_blank"
+            class="h-full w-full max-w-[90px] sm:max-w-[110px] flex items-center justify-center"
+          >
+            <LogoSolidworks class="max-h-full max-w-full object-contain" />
+          </a>
+        </div>
+
+        {/* Ansys */}
+        <div class="h-8 sm:h-10 w-full flex items-center justify-center">
+          <a
+            href="https://www.ansys.com/"
+            target="_blank"
+            class="h-full w-full max-w-[90px] sm:max-w-[110px] flex items-center justify-center"
+          >
+            <LogoAnsys class="max-h-full max-w-full object-contain" />
+          </a>
+        </div>
+
+        {/* ESSS */}
+        <div class="h-8 sm:h-10 w-full flex items-center justify-center">
+          <a
+            href="https://www.esss.com/es/"
+            target="_blank"
+            class="h-full w-full max-w-[90px] sm:max-w-[110px] flex items-center justify-center"
+          >
+            <LogoEsss class="max-h-full max-w-full object-contain" />
+          </a>
+        </div>
+
+        {/* RapidHarness */}
+        <div class="h-8 sm:h-10 w-full flex items-center justify-center">
+          <a
+            href="https://www.rapidharness.com/"
+            target="_blank"
+            class="h-full w-full max-w-[90px] sm:max-w-[110px] flex items-center justify-center"
+          >
+            <LogoRapidHarnest class="max-h-full max-w-full object-contain" />
+          </a>
+        </div>
+
+        {/* Escuadrón UAM */}
+        <div class="h-8 sm:h-10 w-full flex items-center justify-center">
+          <a
+            href="http://fenix.uam.mx/escuadron_uam/"
+            target="_blank"
+            class="h-full w-full max-w-[80px] sm:max-w-[100px] flex items-center justify-center"
+          >
+            <LogoEscuadronUam class="max-h-full max-w-full object-contain" />
+          </a>
+        </div>
+
+        {/* Ditsa */}
+        <div class="h-8 sm:h-10 w-full flex items-center justify-center">
+          <a
+            href="https://ditsa.com.mx/"
+            target="_blank"
+            class="h-full w-full max-w-[80px] sm:max-w-[100px] flex items-center justify-center"
+          >
+            <LogoDitsa class="max-h-full max-w-full object-contain" />
+          </a>
+        </div>
+
+        {/* Primera Plus */}
+        <div class="h-8 sm:h-10 w-full flex items-center justify-center">
+          <a
+            href="https://www.primeraplus.com.mx/"
+            target="_blank"
+            class="h-full w-full max-w-[80px] sm:max-w-[100px] flex items-center justify-center"
+          >
+            <LogoPrimeraPlus class="max-h-full max-w-full object-contain" />
+          </a>
+        </div>
+
+        {/* Departamento de Energía */}
+        <div class="h-8 sm:h-10 w-full flex items-center justify-center">
+          <a
+            href="https://energia.azc.uam.mx/en/"
+            target="_blank"
+            class="h-full w-full max-w-[80px] sm:max-w-[100px] flex items-center justify-center"
+          >
+            <LogoDepartamentoEnergia class="max-h-full max-w-full object-contain" />
+          </a>
+        </div>
+      </div>
     </div>
-     -->
+  </div>
     <!-- Nota de derechos -->
   <div
     class="footer-secondary flex flex-col items-center justify-center gap-2 min-w-full pb-8"
@@ -150,3 +216,9 @@ const currentYear = new Date().getFullYear();
     >
   </div>
 </footer>
+
+<style is:global>
+  .footer-patrocinadores img {
+    border-radius: 0 !important;
+  }
+</style>
