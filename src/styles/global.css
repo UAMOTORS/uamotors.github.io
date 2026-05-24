@@ -9,7 +9,7 @@
   --space-stone: #434343;
 
   /* Apple Style Liquid Glass (Light Theme) */
-  --glass-bg: rgba(255, 255, 255, 0.22);
+  --glass-bg: rgba(255, 255, 255, 0.72);
   --glass-blur: blur(40px) saturate(210%);
   --glass-border: 1px solid rgba(255, 255, 255, 0.2);
   --glass-shadow: 
@@ -20,7 +20,7 @@
 
 html.dark {
   /* Apple Style Liquid Glass (Dark Theme) */
-  --glass-bg: rgba(0, 0, 0, 0.25);
+  --glass-bg: rgba(20, 20, 20, 0.75);
   --glass-blur: blur(40px) saturate(210%);
   --glass-border: 1px solid rgba(255, 255, 255, 0.08);
   --glass-shadow: 
@@ -82,6 +82,10 @@ header>nav {
   -webkit-backdrop-filter: var(--glass-blur) !important;
   border: var(--glass-border) !important;
   box-shadow: var(--glass-shadow) !important;
+  /* GPU acceleration hack to resolve Chrome/Brave sticky backdrop-filter rendering bugs */
+  transform: translate3d(0, 0, 0) !important;
+  backface-visibility: hidden !important;
+  will-change: transform, backdrop-filter !important;
 }
 
 .nav-brand-text {
