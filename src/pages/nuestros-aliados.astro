@@ -1,33 +1,25 @@
 ---
 import { Image } from "astro:assets";
 import MainLayout from "../layouts/MainLayout.astro";
-// import LogoCarousel from "../components/LogoCarousel.astro";
 import siteConfig from "../site.config";
 import EmailIcon from "../icons/social_media/Email.astro";
 import Eyes from "../icons/assets/Eyes.astro";
 import Mobile from "../icons/assets/Mobile.astro";
 import Document from "../icons/assets/Document.astro";
 import Event from "../icons/assets/Event.astro";
-// import TiraUamotors from "../components/TiraUamotors.astro";
-// import logo1 from "../assets/logos/logo-1.png";
-// import logo2 from "../assets/logos/logo-2.jpg";
 
-// logos diamante/diamond
 import LogoFuam from "../components/logos/diamond/LogoFuam.astro";
 import LogoGeely from "../components/logos/diamond/LogoGeely.astro";
 
-// logos oro/gold
 import LogoSolidworks from "../components/logos/gold/LogoSolidworks.astro";
 import LogoAnsys from "../components/logos/gold/LogoAnsys.astro";
 import LogoEsss from "../components/logos/gold/LogoEsss.astro";
 import LogoRapidHarnest from "../components/logos/gold/LogoRapidHarnest.astro";
 
-// logos plata/silver
 import LogoDitsa from "../components/logos/silver/LogoDitsa.astro";
 import LogoPrimeraPlus from "../components/logos/silver/LogoPrimeraPlus.astro";
 import LogoDepartamentoEnergia from "../components/logos/silver/LogoDepartamentoEnergia.astro";
 
-// logos bronce/bronze
 import LogoEscuadronUam from "../components/logos/bronze/LogoEscuadronUam.astro";
 ---
 
@@ -41,7 +33,6 @@ import LogoEscuadronUam from "../components/logos/bronze/LogoEscuadronUam.astro"
 
     <section id="nuestros-aliados" class="text-left space-y-16">
       <div class="space-y-20">
-        {/* Fila 1: Diamante */}
         <div id="diamante-grid" class="w-full">
           <div
             class="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-6 md:gap-12 items-center max-w-3xl mx-auto"
@@ -67,7 +58,6 @@ import LogoEscuadronUam from "../components/logos/bronze/LogoEscuadronUam.astro"
           </div>
         </div>
 
-        {/* Fila 2: Oro */}
         <div id="oro-grid" class="w-full">
           <div
             class="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-6 md:gap-12 items-center max-w-3xl mx-auto"
@@ -113,7 +103,6 @@ import LogoEscuadronUam from "../components/logos/bronze/LogoEscuadronUam.astro"
           </div>
         </div>
 
-        {/* Fila 3: Plata y Bronce */}
         <div id="plata-bronce-grid" class="w-full">
           <div
             class="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-6 md:gap-12 items-center max-w-3xl mx-auto"
@@ -316,7 +305,7 @@ import LogoEscuadronUam from "../components/logos/bronze/LogoEscuadronUam.astro"
     transition: filter 0.3s ease-in-out;
     will-change: filter;
   }
-  /* Page body sponsor grids hover: soft halo glow */
+  
   html.dark #diamante-grid a:hover svg,
   html.dark #diamante-grid a:hover img,
   html.dark #oro-grid a:hover svg,
@@ -326,18 +315,17 @@ import LogoEscuadronUam from "../components/logos/bronze/LogoEscuadronUam.astro"
     filter: invert(0) drop-shadow(0 0 12px rgba(255, 255, 255, 0.55)) !important;
   }
 
-  /* Force-reinforce the footer sponsor logos hover styles specifically on this page */
   .footer-patrocinadores svg,
   .footer-patrocinadores img {
     transition: filter 0.3s ease-in-out !important;
     will-change: filter !important;
   }
-  /* Base footer hover: soft drop-shadow */
+  
   html.dark .footer-patrocinadores a:hover svg,
   html.dark .footer-patrocinadores a:hover img {
     filter: invert(0) drop-shadow(0 0 12px rgba(255, 255, 255, 0.42)) !important;
   }
-  /* Strong double glow hover for the four thin/flat logos in footer */
+  
   html.dark .footer-patrocinadores a:hover img[alt="Logo Ansys"],
   html.dark .footer-patrocinadores a:hover img[alt="Logo RapidHarnest"],
   html.dark .footer-patrocinadores a:hover img[alt="Logo Primera Plus"],

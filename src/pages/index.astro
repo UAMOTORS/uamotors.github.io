@@ -122,8 +122,7 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
         </div>
 
         <script type="text/javascript" is:inline data-astro-rerun>
-          /* curator-feed-default-feed-layout */
-          (function () {
+                    (function () {
             var i,
               e,
               d = document,
@@ -151,11 +150,8 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
 </MainLayout>
 
 <style is:global>
-  /* ==========================================================================
-     INTEGRACIÓN CURATOR.IO (FEED GRID & POPUP MODALS)
-     ========================================================================== */
+  /* overrides for curator.io feed widget */
 
-  /* 2. Tarjeta del Popup Principal (Tema Claro por defecto) - Liquid Glass */
   .crt-popup {
     background-color: var(--glass-bg) !important;
     backdrop-filter: var(--glass-blur) !important;
@@ -167,7 +163,6 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
     overflow: hidden !important;
   }
 
-  /* Redondear contenedores de multimedia y elementos del popup */
   .crt-popup .crt-video-container,
   .crt-popup .crt-image-container,
   .crt-popup .crt-post-image,
@@ -176,7 +171,6 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
     border-radius: 8px !important;
   }
 
-  /* Fondo de foto/video dentro del popup (Liquid Glass) */
   .crt-popup .crt-video-container,
   .crt-popup .crt-image-container,
   .crt-popup .crt-post-image,
@@ -185,7 +179,6 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
     backdrop-filter: none !important;
   }
 
-  /* Redondear tarjetas e imágenes de la grilla del feed principal */
   #curator-feed-default-feed-layout .crt-post,
   #curator-feed-default-feed-layout .crt-post-c {
     border-radius: 12px !important;
@@ -193,20 +186,17 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
     background-color: transparent !important;
   }
 
-  /* Hover de tarjeta de grilla (Liquid Glass) */
   #curator-feed-default-feed-layout .crt-post-hover {
     background-color: rgba(255, 255, 255, 0.48) !important;
     backdrop-filter: var(--glass-blur) !important;
     -webkit-backdrop-filter: var(--glass-blur) !important;
   }
 
-  /* Evitar franja sólida en la parte inferior del hover card */
   #curator-feed-default-feed-layout .crt-post-hover .crt-post-footer {
     background-color: transparent !important;
     border-top: none !important;
   }
 
-  /* Eliminar brillo / degradado blanco de Curator en el hover */
   .crt-no-touch .crt-grid-post:not(.crt-post-youtube) .crt-post-hover:after,
   .crt-no-touch .crt-grid-post:not(.crt-post-youtube) .crt-post-hover:before,
   #curator-feed-default-feed-layout .crt-post-hover:after,
@@ -222,7 +212,6 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
     display: none !important;
   }
 
-  /* Icono de red social de Curator (Instagram, etc.) */
   #curator-feed-default-feed-layout .crt-social-icon,
   #curator-feed-default-feed-layout .crt-social-icon i,
   #curator-feed-default-feed-layout .crt-social-icon svg {
@@ -248,7 +237,6 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
     border-radius: 12px !important;
   }
 
-  /* 3. Textos y Links en Grilla y Popup (Tema Claro) */
   #curator-feed-default-feed-layout .crt-post-header span,
   #curator-feed-default-feed-layout .crt-post-header a,
   #curator-feed-default-feed-layout .crt-post-header div,
@@ -271,7 +259,6 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
     transition: color 0.2s ease !important;
   }
 
-  /* Hover de enlaces (Tema Claro) */
   #curator-feed-default-feed-layout a:hover,
   #curator-feed-default-feed-layout a:hover span,
   #curator-feed-default-feed-layout .crt-post-header a:hover,
@@ -284,7 +271,6 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
     color: #e31e24 !important;
   }
 
-  /* 4. Botones de Control del Popup (Cerrar y Navegación) */
   .crt-popup .crt-close,
   .crt-popup .crt-play,
   .crt-popup .crt-nav-left,
@@ -300,21 +286,15 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
     color: #e31e24 !important;
   }
 
-  /* ==========================================================================
-     SOPORTE PARA TEMA OSCURO (HTML.DARK)
-     ========================================================================== */
-
-  /* Tarjeta del Popup en Tema Oscuro - Liquid Glass */
   html.dark .crt-popup {
     background-color: var(--glass-bg) !important;
     backdrop-filter: var(--glass-blur) !important;
     -webkit-backdrop-filter: var(--glass-blur) !important;
-    color: #f5f5f5 !important; /* whitesmoke */
+    color: #f5f5f5 !important; 
     border: var(--glass-border) !important;
     box-shadow: var(--glass-shadow) !important;
   }
 
-  /* Hover de tarjeta de grilla en Tema Oscuro (Liquid Glass) */
   html.dark #curator-feed-default-feed-layout .crt-post-hover {
     background-color: rgba(0, 0, 0, 0.55) !important;
     backdrop-filter: var(--glass-blur) !important;
@@ -333,7 +313,6 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
     color: #f5f5f5 !important;
   }
 
-  /* Icono de red social de Curator en Tema Oscuro */
   html.dark #curator-feed-default-feed-layout .crt-social-icon,
   html.dark #curator-feed-default-feed-layout .crt-social-icon i,
   html.dark #curator-feed-default-feed-layout .crt-social-icon svg {
@@ -342,10 +321,6 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
     opacity: 0.9 !important;
   }
 
-
-
-
-  /* Ajuste de Textos en Grilla y Popup (Tema Oscuro) */
   html.dark #curator-feed-default-feed-layout .crt-post-header span,
   html.dark #curator-feed-default-feed-layout .crt-post-header a,
   html.dark #curator-feed-default-feed-layout .crt-post-header div,
@@ -365,7 +340,6 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
     color: #f5f5f5 !important;
   }
 
-  /* Hover de enlaces en Tema Oscuro */
   html.dark #curator-feed-default-feed-layout a:hover,
   html.dark #curator-feed-default-feed-layout a:hover span,
   html.dark #curator-feed-default-feed-layout .crt-post-header a:hover,
@@ -375,10 +349,9 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
   html.dark .crt-popup a:hover,
   html.dark .crt-popup a:hover span,
   html.dark .crt-popup .crt-author-name:hover {
-    color: #ff4046 !important; /* var(--space-yellow) */
+    color: #ff4046 !important; 
   }
 
-  /* Botones de Control del Popup en Tema Oscuro */
   html.dark .crt-popup .crt-close,
   html.dark .crt-popup .crt-play,
   html.dark .crt-popup .crt-nav-left,
@@ -393,13 +366,11 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
     color: #ff4046 !important;
   }
 
-  /* Asegurar que las flechas de navegación del popup estén al frente */
   .crt-popup-wrapper .crt-popup .crt-previous,
   .crt-popup-wrapper .crt-popup .crt-next {
     z-index: 999999 !important;
   }
 
-  /* Escáner Láser Animación (Escritorio) */
   @keyframes laser-scan-v4 {
     0% {
       top: 0%;
@@ -487,7 +458,6 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
     will-change: bottom, opacity, transform;
   }
 
-  /* Escáner Láser Animación (Móvil) */
   @media (max-width: 639px) {
     @keyframes laser-scan-mobile-v3 {
       0% {
@@ -575,7 +545,7 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
       height: 100% !important;
       top: 0 !important;
       bottom: auto !important;
-      /* Mantenemos el control sobre left para evitar conflictos con Tailwind */
+      
       transform: scaleY(0);
       animation: laser-scan-reverse-mobile-v3 12s ease-in-out infinite !important;
       will-change: left, opacity, transform !important;

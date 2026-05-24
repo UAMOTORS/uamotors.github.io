@@ -62,7 +62,7 @@ const messages = customMessages || defaultMessages;
   >
     ⌘
   </div>
-  
+
   <button
     id="space-pop-culture"
     class="flex-grow w-full text-center pl-2 pb-2 pt-4 pr-4 text-xs border border-dashed border-gray-500 rounded-2xl font-mono cursor-pointer hover:bg-black/5 dark:hover:bg-white/5 transition-colors duration-200 whitespace-nowrap"
@@ -114,11 +114,16 @@ const messages = customMessages || defaultMessages;
       if (fnKey) fnKey.textContent = "⌥";
     }
 
-    const getRandomMessage = () => messages[Math.floor(Math.random() * messages.length)];
+    const getRandomMessage = () =>
+      messages[Math.floor(Math.random() * messages.length)];
 
     const handleSpacebar = (e) => {
       // Escuchar espacio siempre que no se esté escribiendo en formularios
-      if (e.code === "Space" && e.target.tagName !== "INPUT" && e.target.tagName !== "TEXTAREA") {
+      if (
+        e.code === "Space" &&
+        e.target.tagName !== "INPUT" &&
+        e.target.tagName !== "TEXTAREA"
+      ) {
         e.preventDefault();
         spaceBtn.textContent = getRandomMessage();
       }

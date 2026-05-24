@@ -34,9 +34,23 @@ const ogImageURL = new URL(image || defaultOgImage.src, Astro.site);
 <html lang="es" class="antialiased break-words">
   <head>
     <meta charset="utf-8" />
-    <link rel="apple-touch-icon" sizes="180x180" href={withBase("favicon/apple-touch-icon.png")} />
-    <link rel="icon" type="image/png" sizes="32x32" href={withBase("favicon/favicon-32x32.png")} />
-    <link rel="icon" type="image/png" sizes="16x16" href={withBase("favicon/favicon-16x16.png")} />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href={withBase("favicon/apple-touch-icon.png")}
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href={withBase("favicon/favicon-32x32.png")}
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href={withBase("favicon/favicon-16x16.png")}
+    />
     <link rel="manifest" href={withBase("favicon/site.webmanifest")} />
     <link rel="shortcut icon" href={withBase("favicon/favicon.ico")} />
     <meta name="viewport" content="width=device-width" />
@@ -44,7 +58,10 @@ const ogImageURL = new URL(image || defaultOgImage.src, Astro.site);
     <link rel="sitemap" href={withBase(`/sitemap-index.xml`)} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;600;700&family=Heebo:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Teko:wght@400;600;700&family=Heebo:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="alternate"
       type="application/rss+xml"
@@ -88,15 +105,26 @@ const ogImageURL = new URL(image || defaultOgImage.src, Astro.site);
       id="pit-radio-widget"
       class="fixed z-[99999] opacity-0 translate-y-10 pointer-events-none transition-all duration-500 ease-out font-mono select-none"
     >
-      <div class="relative bg-black/90 dark:bg-black/95 backdrop-blur-md border border-white/10 rounded-2xl p-6 shadow-2xl w-full max-w-sm md:max-w-md mx-auto">
+      <div
+        class="relative bg-black/90 dark:bg-black/95 backdrop-blur-md border border-white/10 rounded-2xl p-6 shadow-2xl w-full max-w-sm md:max-w-md mx-auto"
+      >
         <!-- Live Connection Header -->
-        <div class="flex items-center justify-between mb-4 border-b border-white/10 pb-2">
+        <div
+          class="flex items-center justify-between mb-4 border-b border-white/10 pb-2"
+        >
           <div class="flex items-center gap-2">
             <span class="relative flex h-2.5 w-2.5">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-space-red opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-space-red"></span>
+              <span
+                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-space-red opacity-75"
+              ></span>
+              <span
+                class="relative inline-flex rounded-full h-2.5 w-2.5 bg-space-red"
+              ></span>
             </span>
-            <span class="text-[10px] font-semibold text-white/90 tracking-widest uppercase">PIT-WALL RADIO FEED</span>
+            <span
+              class="text-[10px] font-semibold text-white/90 tracking-widest uppercase"
+              >PIT-WALL RADIO FEED</span
+            >
           </div>
           <button
             id="close-pit-radio"
@@ -108,19 +136,29 @@ const ogImageURL = new URL(image || defaultOgImage.src, Astro.site);
         </div>
 
         <!-- Live Message Display -->
-        <div class="min-h-[70px] flex items-center justify-center text-center text-white py-2 px-1">
-          <p id="pit-radio-message" class="text-xs md:text-sm leading-relaxed whitespace-normal text-balance text-white/90"></p>
+        <div
+          class="min-h-[70px] flex items-center justify-center text-center text-white py-2 px-1"
+        >
+          <p
+            id="pit-radio-message"
+            class="text-xs md:text-sm leading-relaxed whitespace-normal text-balance text-white/90"
+          >
+          </p>
         </div>
 
         <!-- Sintonizar Interactive Button -->
-        <div class="mt-3 pt-3 border-t border-white/10 flex flex-col items-center gap-1.5">
+        <div
+          class="mt-3 pt-3 border-t border-white/10 flex flex-col items-center gap-1.5"
+        >
           <button
             id="pit-space-button"
             class="w-full text-center py-2.5 text-[10px] text-white/90 border border-dashed border-white/30 rounded-xl bg-white/5 hover:bg-white/10 active:scale-95 transition-all cursor-pointer font-mono tracking-wider"
           >
             SINTONIZAR
           </button>
-          <span class="text-[9px] text-white/40 tracking-wider text-center block">
+          <span
+            class="text-[9px] text-white/40 tracking-wider text-center block"
+          >
             Presiona Espacio o toca el botón para cambiar de frase.
           </span>
         </div>
@@ -161,7 +199,7 @@ const ogImageURL = new URL(image || defaultOgImage.src, Astro.site);
     </style>
 
     <script is:inline>
-      (function() {
+      (function () {
         const secretCodes = ["f1", "leclerc", "fsae", "pits"];
         const messages = [
           "Just an inchident. — Charles Leclerc",
@@ -193,7 +231,7 @@ const ogImageURL = new URL(image || defaultOgImage.src, Astro.site);
           "En la pista no hay suerte, solo preparación.",
           "No limit to what we can build. — UAMOTORS",
           "Feel the speed, respect the engineering. — UAMOTORS",
-          "Maximum attack! Vuelta de clasificación."
+          "Maximum attack! Vuelta de clasificación.",
         ];
 
         let cleanup;
@@ -213,7 +251,8 @@ const ogImageURL = new URL(image || defaultOgImage.src, Astro.site);
           let lastTapTime = 0;
           let keyBuffer = "";
 
-          const getRandomMessage = () => messages[Math.floor(Math.random() * messages.length)];
+          const getRandomMessage = () =>
+            messages[Math.floor(Math.random() * messages.length)];
 
           const openRadioFeed = () => {
             if (isWidgetOpen) return;
@@ -233,8 +272,9 @@ const ogImageURL = new URL(image || defaultOgImage.src, Astro.site);
 
           // 1. Desktop typing detection
           const handleTyping = (e) => {
-            if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") return;
-            
+            if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA")
+              return;
+
             keyBuffer += e.key.toLowerCase();
             if (keyBuffer.length > 20) {
               keyBuffer = keyBuffer.slice(-20);
@@ -285,7 +325,8 @@ const ogImageURL = new URL(image || defaultOgImage.src, Astro.site);
             window.removeEventListener("keydown", handleTyping);
             window.removeEventListener("keydown", handleSpacebar);
             if (logoLink) logoLink.removeEventListener("click", handleLogoTap);
-            if (eyebrowLink) eyebrowLink.removeEventListener("click", handleLogoTap);
+            if (eyebrowLink)
+              eyebrowLink.removeEventListener("click", handleLogoTap);
             closeBtn.removeEventListener("click", closeRadioFeed);
             spaceBtn.removeEventListener("click", cycleMessage);
           };
