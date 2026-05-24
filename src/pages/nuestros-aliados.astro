@@ -12,8 +12,8 @@ import Event from "../icons/assets/Event.astro";
 // import TiraUamotors from "../components/TiraUamotors.astro";
 // import logo1 from "../assets/logos/logo-1.png";
 // import logo2 from "../assets/logos/logo-2.jpg";
-import logoFuam from "../assets/logos/Diamond/logo-fuam.svg";
-import logoGeely from "../assets/logos/Diamond/logo-geely.svg";
+import LogoFuam from "../components/LogoFuam.astro";
+import LogoGeely from "../components/LogoGeely.astro";
 // import LocationPin from "../icons/assets/LocationPin.astro";
 ---
 
@@ -31,23 +31,13 @@ import logoGeely from "../assets/logos/Diamond/logo-geely.svg";
             class="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-6 md:gap-12 items-center max-w-2xl mx-auto"
           >
             <div class="h-8 sm:h-10 w-full flex items-center justify-center">
-              <a href="https://www.geelymexico.com/" target="_blank">
-                <Image
-                  src={logoGeely}
-                  alt="Geely"
-                  height={40}
-                  class="h-full w-40 object-contain dark:brightness-0 dark:invert transition-all"
-                />
+              <a href="https://www.geelymexico.com/" target="_blank" class="h-full w-40 flex items-center justify-center">
+                <LogoGeely class="h-full w-full object-contain" />
               </a>
             </div>
             <div class="h-8 sm:h-10 w-full flex items-center justify-center">
-              <a href="https://www.fundacionuam.org/" target="_blank">
-                <Image
-                  src={logoFuam}
-                  alt="Fundación UAM"
-                  height={40}
-                  class="h-full w-40 object-contain"
-                />
+              <a href="https://www.fundacionuam.org/" target="_blank" class="h-full w-40 flex items-center justify-center">
+                <LogoFuam class="h-full w-full object-contain" />
               </a>
             </div>
           </div>
