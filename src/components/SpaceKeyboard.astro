@@ -118,7 +118,6 @@ const messages = customMessages || defaultMessages;
       messages[Math.floor(Math.random() * messages.length)];
 
     const handleSpacebar = (e) => {
-      // Escuchar espacio siempre que no se esté escribiendo en formularios
       if (
         e.code === "Space" &&
         e.target.tagName !== "INPUT" &&
@@ -136,13 +135,11 @@ const messages = customMessages || defaultMessages;
     window.addEventListener("keydown", handleSpacebar);
     spaceBtn.addEventListener("click", handleClick);
 
-    // Retornar función de limpieza
     return () => {
       window.removeEventListener("keydown", handleSpacebar);
     };
   }
 
-  // Inicialización y compatibilidad con Astro View Transitions
   let cleanup;
   document.addEventListener("astro:page-load", () => {
     if (cleanup) cleanup();

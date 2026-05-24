@@ -10,7 +10,6 @@ const html = await Astro.slots.render("default");
 </section>
 
 <style is:global>
-  /* Carrusel Infinito */
   .logo-carousel-wrapper img {
     border-radius: 0 !important;
   }
@@ -20,7 +19,7 @@ const html = await Astro.slots.render("default");
     white-space: nowrap;
     width: 100%;
     max-width: 100%;
-    contain: content; /* Aisla el modelo de caja y previene que expanda al padre */
+    contain: content;
     position: relative;
     mask-image: linear-gradient(
       to right,
