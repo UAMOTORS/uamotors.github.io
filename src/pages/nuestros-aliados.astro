@@ -316,12 +316,33 @@ import LogoEscuadronUam from "../components/logos/bronze/LogoEscuadronUam.astro"
     transition: filter 0.3s ease-in-out;
     will-change: filter;
   }
+  /* Page body sponsor grids hover: soft halo glow */
   html.dark #diamante-grid a:hover svg,
   html.dark #diamante-grid a:hover img,
   html.dark #oro-grid a:hover svg,
   html.dark #oro-grid a:hover img,
   html.dark #plata-bronce-grid a:hover svg,
   html.dark #plata-bronce-grid a:hover img {
-    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.42)) !important;
+    filter: invert(0) drop-shadow(0 0 12px rgba(255, 255, 255, 0.55)) !important;
+  }
+
+  /* Force-reinforce the footer sponsor logos hover styles specifically on this page */
+  .footer-patrocinadores svg,
+  .footer-patrocinadores img {
+    transition: filter 0.3s ease-in-out !important;
+    will-change: filter !important;
+  }
+  /* Base footer hover: soft drop-shadow */
+  html.dark .footer-patrocinadores a:hover svg,
+  html.dark .footer-patrocinadores a:hover img {
+    filter: invert(0) drop-shadow(0 0 12px rgba(255, 255, 255, 0.42)) !important;
+  }
+  /* Strong double glow hover for the four thin/flat logos in footer */
+  html.dark .footer-patrocinadores a:hover img[alt="Logo Ansys"],
+  html.dark .footer-patrocinadores a:hover img[alt="Logo RapidHarnest"],
+  html.dark .footer-patrocinadores a:hover img[alt="Logo Primera Plus"],
+  html.dark .footer-patrocinadores a:hover img[alt="Logo Departamento de Energía"],
+  html.dark .footer-patrocinadores a:hover img[alt="Logo Solidworks"] {
+    filter: invert(0) drop-shadow(0 0 12px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 3px rgba(255, 255, 255, 0.5)) !important;
   }
 </style>
