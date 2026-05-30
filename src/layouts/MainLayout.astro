@@ -42,6 +42,18 @@ const ogImageURL = new URL(image || defaultOgImage.src, Astro.site);
     <link
       rel="icon"
       type="image/png"
+      sizes="96x96"
+      href={withBase("favicon/favicon-96x96.png")}
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="48x48"
+      href={withBase("favicon/favicon-48x48.png")}
+    />
+    <link
+      rel="icon"
+      type="image/png"
       sizes="32x32"
       href={withBase("favicon/favicon-32x32.png")}
     />
@@ -52,7 +64,7 @@ const ogImageURL = new URL(image || defaultOgImage.src, Astro.site);
       href={withBase("favicon/favicon-16x16.png")}
     />
     <link rel="manifest" href={withBase("favicon/site.webmanifest")} />
-    <link rel="shortcut icon" href={withBase("favicon/favicon.ico")} />
+    <link rel="shortcut icon" href={withBase("favicon.ico")} />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <link rel="sitemap" href={withBase(`/sitemap-index.xml`)} />
