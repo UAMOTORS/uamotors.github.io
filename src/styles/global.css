@@ -72,7 +72,7 @@ html.light body {
 }
 
 header {
-  @apply sticky top-4 z-20 mr-auto ml-auto flex w-full max-w-3xl flex-col items-center justify-center px-0 py-0 text-base;
+  @apply sticky top-4 z-20 mr-auto ml-auto flex w-full max-w-4xl flex-col items-center justify-center px-0 py-0 text-base;
 }
 
 
@@ -89,7 +89,7 @@ main {
 }
 
 footer {
-  @apply mx-auto mt-12 flex w-full max-w-3xl flex-col flex-wrap items-center justify-center gap-4;
+  @apply mx-auto mt-12 flex w-full max-w-4xl flex-col flex-wrap items-center justify-center gap-4;
 }
 
 h1,

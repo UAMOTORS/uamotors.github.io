@@ -101,7 +101,7 @@ const ogImageURL = new URL(image || defaultOgImage.src, Astro.site);
   </head>
   <body>
     <SplashScreen />
-    <main class="max-w-3xl mx-auto min-h-screen flex flex-col">
+    <main class="max-w-4xl mx-auto min-h-screen flex flex-col">
       <Nav activePage={activePage} />
       <div transition:animate="slide" class="flex-grow w-full min-w-0">
         <slot />
