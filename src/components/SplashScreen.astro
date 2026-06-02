@@ -28,6 +28,7 @@ import TiraUamotors from "./logos/TiraUamotors.astro";
       splash.style.opacity = '0';
     } else {
       // ejecutar animacion una vez por sesion
+      document.documentElement.classList.add('splash-active');
       splash.style.display = 'flex';
       // forzar reflow
       splash.getBoundingClientRect();
@@ -43,6 +44,7 @@ import TiraUamotors from "./logos/TiraUamotors.astro";
         
         setTimeout(() => {
           splash.style.display = 'none';
+          document.documentElement.classList.remove('splash-active');
           sessionStorage.setItem('uamotors-splash-shown', 'true');
         }, 500);
       }, 1200);

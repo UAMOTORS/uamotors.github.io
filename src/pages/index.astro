@@ -150,6 +150,15 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
 </MainLayout>
 
 <style is:global>
+  html.splash-active .animate-laser-scan,
+  html.splash-active .animate-laser-scan-reverse {
+    animation: none !important;
+    opacity: 0 !important;
+  }
+  html.splash-active .animate-car-levitate {
+    animation: none !important;
+  }
+
   /* overrides for curator.io feed widget */
 
   .crt-popup {
