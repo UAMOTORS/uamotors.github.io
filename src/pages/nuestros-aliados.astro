@@ -9,7 +9,7 @@ import Document from "../icons/assets/Document.astro";
 import Event from "../icons/assets/Event.astro";
 
 import LogoFuam from "../components/logos/diamond/LogoFuam.astro";
-import LogoGeely from "../components/logos/diamond/LogoGeely.astro";
+// import LogoGeely from "../components/logos/diamond/LogoGeely.astro";
 
 import LogoSolidworks from "../components/logos/gold/LogoSolidworks.astro";
 import LogoAnsys from "../components/logos/gold/LogoAnsys.astro";
@@ -28,72 +28,49 @@ import LogoEscuadronUam from "../components/logos/bronze/LogoEscuadronUam.astro"
   pageTitle={siteConfig.title + " | Nuestros Aliados"}
   description="Conoce a las empresas e instituciones que impulsan a UAMOTORS. Descubre los beneficios de patrocinar nuestro proyecto y acelerar el talento en ingeniería de la UAM."
 >
-  <div class="page-content max-w-3xl mx-auto min-w-0">
+  <div class="page-content max-w-5xl mx-auto min-w-0">
     <h1 class="sigmar-ff text-balance mb-8">Nuestros Aliados</h1>
 
     <section id="nuestros-aliados" class="text-left space-y-16">
       <div class="space-y-20">
-        <div id="diamante-grid" class="w-full">
-          <div
-            class="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-6 md:gap-12 items-center max-w-3xl mx-auto"
-          >
-            <div class="h-14 sm:h-18 w-full flex items-center justify-center">
-              <a
-                href="https://www.geelymexico.com/"
-                target="_blank"
-                class="h-full w-56 sm:w-72 flex items-center justify-center"
-              >
-                <LogoGeely class="h-full w-full object-contain" />
-              </a>
-            </div>
-            <div class="h-14 sm:h-18 w-full flex items-center justify-center">
-              <a
-                href="https://www.fundacionuam.org/"
-                target="_blank"
-                class="h-full w-56 sm:w-72 flex items-center justify-center"
-              >
-                <LogoFuam class="h-full w-full object-contain" />
-              </a>
-            </div>
-          </div>
-        </div>
-
         <div id="oro-grid" class="w-full">
           <div
-            class="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-6 md:gap-12 items-center max-w-3xl mx-auto"
+            class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-10 w-full max-w-3xl mx-auto"
           >
-            <div class="h-12 sm:h-16 w-full flex items-center justify-center">
+            <div class="h-16 md:h-20 w-44 sm:w-52 md:w-60 flex items-center justify-center">
               <a
                 href="https://www.solidworks.com/"
                 target="_blank"
-                class="h-full w-full max-w-[140px] sm:max-w-[160px] flex items-center justify-center"
+                class="h-full w-full flex items-center justify-center hover:scale-105 transition-transform duration-300"
               >
                 <LogoSolidworks class="max-h-full max-w-full object-contain" />
               </a>
             </div>
-            <div class="h-12 sm:h-16 w-full flex items-center justify-center">
-              <a
-                href="https://www.ansys.com/"
-                target="_blank"
-                class="h-full w-full max-w-[140px] sm:max-w-[160px] flex items-center justify-center"
-              >
-                <LogoAnsys class="max-h-full max-w-full object-contain" />
-              </a>
+            <div class="flex flex-row items-center justify-center gap-8 md:gap-10 w-full max-w-[240px] sm:max-w-[280px] md:max-w-none">
+              <div class="h-16 md:h-20 flex-1 flex items-center justify-center">
+                <a
+                  href="https://www.ansys.com/"
+                  target="_blank"
+                  class="h-full w-full max-w-[120px] md:max-w-[140px] flex items-center justify-center hover:scale-105 transition-transform duration-300"
+                >
+                  <LogoAnsys class="max-h-full max-w-full object-contain" />
+                </a>
+              </div>
+              <div class="h-16 md:h-20 flex-1 flex items-center justify-center">
+                <a
+                  href="https://www.esss.com/es/"
+                  target="_blank"
+                  class="h-full w-full max-w-[120px] md:max-w-[140px] flex items-center justify-center hover:scale-105 transition-transform duration-300"
+                >
+                  <LogoEsss class="max-h-full max-w-full object-contain" />
+                </a>
+              </div>
             </div>
-            <div class="h-12 sm:h-16 w-full flex items-center justify-center">
-              <a
-                href="https://www.esss.com/es/"
-                target="_blank"
-                class="h-full w-full max-w-[140px] sm:max-w-[160px] flex items-center justify-center"
-              >
-                <LogoEsss class="max-h-full max-w-full object-contain" />
-              </a>
-            </div>
-            <div class="h-12 sm:h-16 w-full flex items-center justify-center">
+            <div class="h-16 md:h-20 w-44 sm:w-52 md:w-60 flex items-center justify-center">
               <a
                 href="https://www.rapidharness.com/"
                 target="_blank"
-                class="h-full w-full max-w-[140px] sm:max-w-[160px] flex items-center justify-center"
+                class="h-full w-full flex items-center justify-center hover:scale-105 transition-transform duration-300"
               >
                 <LogoRapidHarnest
                   class="max-h-full max-w-full object-contain"
@@ -103,44 +80,60 @@ import LogoEscuadronUam from "../components/logos/bronze/LogoEscuadronUam.astro"
           </div>
         </div>
 
-        <div id="plata-bronce-grid" class="w-full">
+        <div id="plata-grid" class="w-full">
           <div
-            class="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-6 md:gap-12 items-center max-w-3xl mx-auto"
+            class="flex flex-row justify-center gap-8 sm:gap-12 md:gap-16 items-center max-w-xl mx-auto opacity-80 hover:opacity-100 transition-opacity duration-300"
           >
-            <div class="h-12 sm:h-16 w-full flex items-center justify-center">
+            <div class="h-10 md:h-12 w-24 sm:w-28 flex items-center justify-center">
+              <a
+                href="https://ditsa.com.mx/"
+                target="_blank"
+                class="h-full w-full flex items-center justify-center"
+              >
+                <LogoDitsa class="max-h-full max-w-full object-contain" />
+              </a>
+            </div>
+            <div class="h-10 md:h-12 w-24 sm:w-28 flex items-center justify-center">
+              <a
+                href="https://www.primeraplus.com.mx/"
+                target="_blank"
+                class="h-full w-full flex items-center justify-center"
+              >
+                <LogoPrimeraPlus class="max-h-full max-w-full object-contain" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div id="bronce-grid" class="w-full">
+          <div
+            class="flex flex-row flex-nowrap items-center justify-center gap-3 sm:gap-8 md:gap-12 max-w-2xl mx-auto opacity-60 hover:opacity-100 transition-opacity duration-300"
+          >
+            <div class="h-8 md:h-10 w-20 sm:w-28 md:w-32 flex items-center justify-center">
+              <a
+                href="https://www.fundacionuam.org/"
+                target="_blank"
+                class="h-full w-full flex items-center justify-center"
+              >
+                <LogoFuam class="max-h-full max-w-full object-contain" />
+              </a>
+            </div>
+            <div class="h-8 md:h-10 w-20 sm:w-28 md:w-32 flex items-center justify-center">
               <a
                 href="http://fenix.uam.mx/escuadron_uam/"
                 target="_blank"
-                class="h-full w-full max-w-[120px] sm:max-w-[140px] flex items-center justify-center"
+                class="h-full w-full flex items-center justify-center"
               >
                 <LogoEscuadronUam
                   class="max-h-full max-w-full object-contain"
                 />
               </a>
             </div>
-            <div class="h-12 sm:h-16 w-full flex items-center justify-center">
-              <a
-                href="https://ditsa.com.mx/"
-                target="_blank"
-                class="h-full w-full max-w-[120px] sm:max-w-[140px] flex items-center justify-center"
-              >
-                <LogoDitsa class="max-h-full max-w-full object-contain" />
-              </a>
-            </div>
-            <div class="h-12 sm:h-16 w-full flex items-center justify-center">
-              <a
-                href="https://www.primeraplus.com.mx/"
-                target="_blank"
-                class="h-full w-full max-w-[120px] sm:max-w-[140px] flex items-center justify-center"
-              >
-                <LogoPrimeraPlus class="max-h-full max-w-full object-contain" />
-              </a>
-            </div>
-            <div class="h-12 sm:h-16 w-full flex items-center justify-center">
+            <div class="h-8 md:h-10 w-20 sm:w-28 md:w-32 flex items-center justify-center">
               <a
                 href="https://energia.azc.uam.mx/en/"
                 target="_blank"
-                class="h-full w-full max-w-[120px] sm:max-w-[140px] flex items-center justify-center"
+                class="h-full w-full flex items-center justify-center"
               >
                 <LogoDepartamentoEnergia
                   class="max-h-full max-w-full object-contain"
@@ -291,27 +284,27 @@ import LogoEscuadronUam from "../components/logos/bronze/LogoEscuadronUam.astro"
 </MainLayout>
 
 <style is:global>
-  #diamante-grid img,
   #oro-grid img,
-  #plata-bronce-grid img {
+  #plata-grid img,
+  #bronce-grid img {
     border-radius: 0 !important;
   }
-  #diamante-grid svg,
-  #diamante-grid img,
   #oro-grid svg,
   #oro-grid img,
-  #plata-bronce-grid svg,
-  #plata-bronce-grid img {
+  #plata-grid svg,
+  #plata-grid img,
+  #bronce-grid svg,
+  #bronce-grid img {
     transition: filter 0.3s ease-in-out;
     will-change: filter;
   }
-  
-  html.dark #diamante-grid a:hover svg,
-  html.dark #diamante-grid a:hover img,
+
   html.dark #oro-grid a:hover svg,
   html.dark #oro-grid a:hover img,
-  html.dark #plata-bronce-grid a:hover svg,
-  html.dark #plata-bronce-grid a:hover img {
+  html.dark #plata-grid a:hover svg,
+  html.dark #plata-grid a:hover img,
+  html.dark #bronce-grid a:hover svg,
+  html.dark #bronce-grid a:hover img {
     filter: invert(0) drop-shadow(0 0 12px rgba(255, 255, 255, 0.55)) !important;
   }
 
@@ -320,17 +313,21 @@ import LogoEscuadronUam from "../components/logos/bronze/LogoEscuadronUam.astro"
     transition: filter 0.3s ease-in-out !important;
     will-change: filter !important;
   }
-  
+
   html.dark .footer-patrocinadores a:hover svg,
   html.dark .footer-patrocinadores a:hover img {
     filter: invert(0) drop-shadow(0 0 12px rgba(255, 255, 255, 0.42)) !important;
   }
-  
+
   html.dark .footer-patrocinadores a:hover img[alt="Logo Ansys"],
   html.dark .footer-patrocinadores a:hover img[alt="Logo RapidHarnest"],
   html.dark .footer-patrocinadores a:hover img[alt="Logo Primera Plus"],
-  html.dark .footer-patrocinadores a:hover img[alt="Logo Departamento de Energía"],
+  html.dark
+    .footer-patrocinadores
+    a:hover
+    img[alt="Logo Departamento de Energía"],
   html.dark .footer-patrocinadores a:hover img[alt="Logo Solidworks"] {
-    filter: invert(0) drop-shadow(0 0 12px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 3px rgba(255, 255, 255, 0.5)) !important;
+    filter: invert(0) drop-shadow(0 0 12px rgba(255, 255, 255, 0.8))
+      drop-shadow(0 0 3px rgba(255, 255, 255, 0.5)) !important;
   }
 </style>
