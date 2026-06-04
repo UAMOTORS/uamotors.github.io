@@ -324,26 +324,28 @@ import LogoEscuadronUam from "../components/logos/bronze/LogoEscuadronUam.astro"
     filter: drop-shadow(0 0 5px rgba(0, 0, 0, 1)) !important;
   } */
 
-  /* Passive state in dark mode: apply grayscale, invert and drop-shadow to the images/SVGs directly to fix Safari/iOS rendering bug */
+  /* Passive state in dark mode: apply filters directly to child svg/img elements to fix Safari rendering bug, using filter-level opacity before drop-shadow to keep shadow at 100% intensity */
   html.dark #oro-grid svg,
   html.dark #oro-grid img,
   html.dark #plata-grid svg,
   html.dark #plata-grid img,
   html.dark #bronce-grid svg,
   html.dark #bronce-grid img {
-    filter: grayscale(1) invert(1)
+    opacity: 1 !important;
+    filter: grayscale(1) invert(1) opacity(0.6)
       drop-shadow(0 0 2px rgba(0, 0, 0, 1))
       drop-shadow(0 0 6px rgba(0, 0, 0, 1))
       drop-shadow(0 0 16px rgba(0, 0, 0, 1)) !important;
   }
 
-  /* In dark mode on hover, logos go back to grayscale(0) and invert(0) (their original colors) with NO drop-shadow */
+  /* In dark mode on hover, revert child svg/img filters to show original colors and remove drop shadow */
   html.dark #oro-grid a:hover svg,
   html.dark #oro-grid a:hover img,
   html.dark #plata-grid a:hover svg,
   html.dark #plata-grid a:hover img,
   html.dark #bronce-grid a:hover svg,
   html.dark #bronce-grid a:hover img {
-    filter: grayscale(0) invert(0) !important;
+    opacity: 1 !important;
+    filter: grayscale(0) invert(0) opacity(1) !important;
   }
 </style>
