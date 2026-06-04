@@ -13,7 +13,7 @@ import OP_image_vertical from "../assets/images/OP01_2-transparent.png";
 const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
 ---
 
-<MainLayout activePage="home" pageTitle={"UAMOTORS"}>
+<MainLayout activePage="home" pageTitle={siteConfig.title + " | Escudería Formula SAE UAM Azcapotzalco"}>
   <div
     class="jumbo-banner relative flex flex-col sm:flex-row sm:items-center sm:justify-between w-full px-4 my-12 gap-6"
   >
