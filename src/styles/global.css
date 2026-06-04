@@ -8,7 +8,6 @@
   --space-sand: #e2d1c3;
   --space-stone: #434343;
 
-  /* Apple Style Liquid Glass (Light Theme) */
   --glass-bg: rgba(253, 251, 249, 0.6);
   --glass-blur: blur(50px) saturate(230%);
   --glass-border: 1px solid rgba(0, 0, 0, 0.08);
@@ -20,7 +19,6 @@
 }
 
 html.dark {
-  /* Apple Style Liquid Glass (Dark Theme) */
   --glass-bg: rgba(0, 0, 0, 0.25);
   --glass-blur: blur(40px) saturate(210%);
   --glass-border: 1px solid rgba(255, 255, 255, 0.08);
@@ -30,8 +28,6 @@ html.dark {
     0 6px 16px -3px rgba(0, 0, 0, 0.25);
 }
 
-/* Required to ensure dark: modifiers work when manually toggling mode */
-/* REF: https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually */
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
@@ -67,7 +63,6 @@ html.dark body {
 }
 
 html.light body {
-  /* background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); */
   background-image: linear-gradient(180deg, #fdfcfb 0%, #e2d1c3 100%);
   @apply bg-space-sand bg-cover bg-no-repeat text-black;
 }
@@ -97,7 +92,6 @@ h1,
 h2,
 h3 {
   font-family: "Teko", sans-serif !important;
-  /* text-transform: uppercase; */
 }
 
 h1 {

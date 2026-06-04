@@ -43,10 +43,8 @@ import Button from "./Button.astro";
     localStorage.setItem("theme", theme);
   };
 
-  // prevenir parpadeo
   initTheme();
 
-  // restaurar tema al navegar
   document.addEventListener("astro:after-swap", initTheme);
 
   const handleToggleClick = () => {

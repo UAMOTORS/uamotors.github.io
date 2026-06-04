@@ -27,10 +27,8 @@ import TiraUamotors from "./logos/TiraUamotors.astro";
       splash.style.display = 'none';
       splash.style.opacity = '0';
     } else {
-      // ejecutar animacion una vez por sesion
       document.documentElement.classList.add('splash-active');
       splash.style.display = 'flex';
-      // forzar reflow
       splash.getBoundingClientRect();
       splash.style.opacity = '1';
       splash.classList.remove('pointer-events-none');
