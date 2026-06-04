@@ -331,7 +331,7 @@ import LogoEscuadronUam from "../components/logos/bronze/LogoEscuadronUam.astro"
   html.dark #bronce-grid svg,
   html.dark #bronce-grid img {
     opacity: 1 !important;
-    filter: grayscale(1) invert(1) opacity(0.6)
+    filter: grayscale(1) invert(1) opacity(0.7)
       drop-shadow(0 0 2px rgba(0, 0, 0, 1))
       drop-shadow(0 0 6px rgba(0, 0, 0, 1))
       drop-shadow(0 0 16px rgba(0, 0, 0, 1)) !important;
@@ -345,5 +345,26 @@ import LogoEscuadronUam from "../components/logos/bronze/LogoEscuadronUam.astro"
   html.dark #bronce-grid a:hover img {
     opacity: 1 !important;
     filter: grayscale(0) invert(0) opacity(1) !important;
+  }
+
+  html.light #oro-grid svg,
+  html.light #oro-grid img,
+  html.light #plata-grid svg,
+  html.light #plata-grid img,
+  html.light #bronce-grid svg,
+  html.light #bronce-grid img {
+    opacity: 1 !important;
+    filter: grayscale(1) opacity(1) drop-shadow(0 0 2px rgba(255, 255, 255, 1))
+      drop-shadow(0 4px 10px rgba(100, 85, 75, 0.8)) !important;
+  }
+
+  html.light #oro-grid a:hover svg,
+  html.light #oro-grid a:hover img,
+  html.light #plata-grid a:hover svg,
+  html.light #plata-grid a:hover img,
+  html.light #bronce-grid a:hover svg,
+  html.light #bronce-grid a:hover img {
+    opacity: 1 !important;
+    filter: grayscale(0) opacity(1) !important;
   }
 </style>
