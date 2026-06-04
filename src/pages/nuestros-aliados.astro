@@ -282,7 +282,9 @@ import LogoEscuadronUam from "../components/logos/bronze/LogoEscuadronUam.astro"
           Tu respaldo es el motor que nos permite llevar la ingeniería de la <a
             href="https://www.azc.uam.mx/"><strong>UAM Azcapotzalco</strong></a
           > al siguiente nivel. Para conocer nuestros esquemas de colaboración y sus
-          <strong>beneficios</strong>, contáctanos y trabajemos <strong>juntos</strong>.
+          <strong>beneficios</strong>, contáctanos y trabajemos <strong
+            >juntos</strong
+          >.
         </p>
         <div
           class="mt-8 pt-8 border-t border-space-red/20 dark:border-white/10 flex flex-col sm:flex-row justify-center gap-6 sm:gap-12 kanit-light text-lg"
@@ -322,31 +324,26 @@ import LogoEscuadronUam from "../components/logos/bronze/LogoEscuadronUam.astro"
     filter: drop-shadow(0 0 5px rgba(0, 0, 0, 1)) !important;
   } */
 
-  html.dark #oro-grid a,
-  html.dark #plata-grid a,
-  html.dark #bronce-grid a {
-    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 1))
+  /* Passive state in dark mode: apply grayscale, invert and drop-shadow to the images/SVGs directly to fix Safari/iOS rendering bug */
+  html.dark #oro-grid svg,
+  html.dark #oro-grid img,
+  html.dark #plata-grid svg,
+  html.dark #plata-grid img,
+  html.dark #bronce-grid svg,
+  html.dark #bronce-grid img {
+    filter: grayscale(1) invert(1)
+      drop-shadow(0 0 2px rgba(0, 0, 0, 1))
       drop-shadow(0 0 6px rgba(0, 0, 0, 1))
       drop-shadow(0 0 16px rgba(0, 0, 0, 1)) !important;
   }
 
-  /* Hover state: passive black glow disappears */
-  #oro-grid a:hover,
-  #plata-grid a:hover,
-  #bronce-grid a:hover,
-  html.dark #oro-grid a:hover,
-  html.dark #plata-grid a:hover,
-  html.dark #bronce-grid a:hover {
-    filter: drop-shadow(0 0 0px rgba(0, 0, 0, 0)) !important;
-  }
-
-  /* In dark mode on hover, logos go back to invert(0) (their original colors) with NO white drop-shadow glare */
+  /* In dark mode on hover, logos go back to grayscale(0) and invert(0) (their original colors) with NO drop-shadow */
   html.dark #oro-grid a:hover svg,
   html.dark #oro-grid a:hover img,
   html.dark #plata-grid a:hover svg,
   html.dark #plata-grid a:hover img,
   html.dark #bronce-grid a:hover svg,
   html.dark #bronce-grid a:hover img {
-    filter: invert(0) !important;
+    filter: grayscale(0) invert(0) !important;
   }
 </style>
