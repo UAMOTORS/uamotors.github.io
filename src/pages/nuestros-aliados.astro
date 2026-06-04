@@ -324,47 +324,48 @@ import LogoEscuadronUam from "../components/logos/bronze/LogoEscuadronUam.astro"
     filter: drop-shadow(0 0 5px rgba(0, 0, 0, 1)) !important;
   } */
 
-  html.dark #oro-grid svg,
-  html.dark #oro-grid img,
-  html.dark #plata-grid svg,
-  html.dark #plata-grid img,
-  html.dark #bronce-grid svg,
-  html.dark #bronce-grid img {
-    opacity: 1 !important;
-    filter: grayscale(1) invert(1) opacity(0.7)
+  html.light {
+    --logo-filter: grayscale(1) opacity(1) drop-shadow(0 0 2px rgba(255, 255, 255, 1))
+      drop-shadow(0 4px 10px rgba(100, 85, 75, 0.8));
+    --logo-hover-filter: grayscale(0) opacity(1);
+  }
+
+  html.dark {
+    --logo-filter: grayscale(1) invert(1) opacity(0.7)
       drop-shadow(0 0 2px rgba(0, 0, 0, 1))
       drop-shadow(0 0 6px rgba(0, 0, 0, 1))
-      drop-shadow(0 0 16px rgba(0, 0, 0, 1)) !important;
+      drop-shadow(0 0 16px rgba(0, 0, 0, 1));
+    --logo-hover-filter: grayscale(0) invert(0) opacity(1);
   }
 
-  html.dark #oro-grid a:hover svg,
-  html.dark #oro-grid a:hover img,
-  html.dark #plata-grid a:hover svg,
-  html.dark #plata-grid a:hover img,
-  html.dark #bronce-grid a:hover svg,
-  html.dark #bronce-grid a:hover img {
+  #oro-grid svg,
+  #oro-grid img,
+  #plata-grid svg,
+  #plata-grid img,
+  #bronce-grid svg,
+  #bronce-grid img {
     opacity: 1 !important;
-    filter: grayscale(0) invert(0) opacity(1) !important;
+    filter: var(--logo-filter) !important;
   }
 
-  html.light #oro-grid svg,
-  html.light #oro-grid img,
-  html.light #plata-grid svg,
-  html.light #plata-grid img,
-  html.light #bronce-grid svg,
-  html.light #bronce-grid img {
+  #oro-grid a:hover svg,
+  #oro-grid a:hover img,
+  #plata-grid a:hover svg,
+  #plata-grid a:hover img,
+  #bronce-grid a:hover svg,
+  #bronce-grid a:hover img {
     opacity: 1 !important;
-    filter: grayscale(1) opacity(1) drop-shadow(0 0 2px rgba(255, 255, 255, 1))
-      drop-shadow(0 4px 10px rgba(100, 85, 75, 0.8)) !important;
-  }
-
-  html.light #oro-grid a:hover svg,
-  html.light #oro-grid a:hover img,
-  html.light #plata-grid a:hover svg,
-  html.light #plata-grid a:hover img,
-  html.light #bronce-grid a:hover svg,
-  html.light #bronce-grid a:hover img {
-    opacity: 1 !important;
-    filter: grayscale(0) opacity(1) !important;
+    filter: var(--logo-hover-filter) !important;
   }
 </style>
+
+<script is:inline>
+  document.addEventListener("astro:page-load", () => {
+    const logos = document.querySelectorAll("#oro-grid img, #plata-grid img, #bronce-grid img, #oro-grid svg, #plata-grid svg, #bronce-grid svg");
+    logos.forEach(logo => {
+      logo.style.setProperty("filter", "none", "important");
+      logo.offsetHeight;
+      logo.style.removeProperty("filter");
+    });
+  });
+</script>
