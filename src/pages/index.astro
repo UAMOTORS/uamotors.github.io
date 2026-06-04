@@ -64,7 +64,7 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
       class="w-full sm:flex-1 min-w-0 flex justify-center items-center mt-4 sm:mt-0 relative group"
     >
       <div
-        class="absolute inset-0 bg-[linear-gradient(to_right,#80808020_1px,transparent_1px),linear-gradient(to_bottom,#80808020_1px,transparent_1px)] bg-[size:40px_40px] opacity-40 dark:opacity-20 pointer-events-none rounded-2xl [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_70%)]"
+        class="absolute inset-0 bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:40px_40px] opacity-15 dark:opacity-25 pointer-events-none rounded-2xl [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_70%)]"
       >
       </div>
 
@@ -78,7 +78,7 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
       >
         <div class="absolute inset-0 pointer-events-none overflow-hidden z-0">
           <div
-            class="absolute bottom-0 left-0 w-full h-[2px] bg-[#ffb703] shadow-[0_0_20px_5px_rgba(255,183,3,0.8)] animate-laser-scan-reverse"
+            class="absolute bottom-0 left-0 w-full h-[2px] bg-space-red shadow-[0_0_20px_5px_rgba(227,30,36,0.8)] animate-laser-scan-reverse"
           >
           </div>
         </div>
@@ -87,7 +87,7 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
           class="absolute sm:relative z-10 animate-car-levitate flex justify-center items-center"
         >
           <Image
-            class="w-auto h-auto max-h-[300px] sm:max-h-[650px] object-contain drop-shadow-[0_15px_25px_rgba(0,0,0,0.6)] dark:drop-shadow-[0_15px_25px_rgba(0,0,0,0.8)] -rotate-90 sm:rotate-0"
+            class="w-auto h-auto max-h-[300px] sm:max-h-[650px] object-contain drop-shadow-[0_15px_25px_rgba(0,0,0,0.6)] dark:drop-shadow-[0_15px_25px_rgba(0,0,0,0.8)] -rotate-90 sm:rotate-0 rounded-4xl"
             src={OP_image_vertical}
             alt={"UAMOTORS Vehicle"}
             transition:name="hero-image"
@@ -96,7 +96,7 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
 
         <div class="absolute inset-0 pointer-events-none overflow-hidden z-20">
           <div
-            class="absolute top-0 left-0 w-full h-[2px] bg-space-red shadow-[0_0_20px_5px_rgba(227,30,36,0.8)] animate-laser-scan"
+            class="absolute top-0 left-0 w-full h-[2px] bg-[#9b0c10] shadow-[0_0_20px_5px_rgba(155,12,16,0.8)] animate-laser-scan"
           >
           </div>
         </div>
