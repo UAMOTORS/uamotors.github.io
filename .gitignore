@@ -23,6 +23,7 @@ pnpm-debug.log*
 # environment variables
 .env
 .env.production
+.env*.local       
 
 # macOS-specific files
 .DS_Store
@@ -30,7 +31,9 @@ path-tree.md
 
 # JetBrains IDE
 .idea/
-# --- JetBrains (WebStorm / PyCharm) ---
-.idea/
 *.iml
 .idea_modules/
+
+# VS Code
+.vscode/
+
