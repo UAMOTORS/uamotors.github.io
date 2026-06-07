@@ -98,6 +98,22 @@ const ogImageURL = new URL(image || defaultOgImage.src, Astro.site);
     <meta property="twitter:image" content={ogImageURL} />
 
     <ClientRouter />
+
+    <!-- GoatCounter Analytics -->
+    <script
+      is:inline
+      data-goatcounter="https://uamotors.goatcounter.com/count"
+      async
+      src="//gc.zgo.at/count.js"
+    ></script>
+    <script is:inline>
+      // Registra visitas secundarias al navegar dentro de la página (Astro View Transitions)
+      document.addEventListener("astro:after-swap", () => {
+        if (window.goatcounter && typeof window.goatcounter.count === 'function') {
+          window.goatcounter.count();
+        }
+      });
+    </script>
   </head>
   <body>
     <SplashScreen />
