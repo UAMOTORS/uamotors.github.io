@@ -6,16 +6,17 @@ import InstagramIcon from "../icons/social_media/Instagram.astro";
 import FacebookIcon from "../icons/social_media/Facebook.astro";
 import TiktokIcon from "../icons/social_media/Tiktok.astro";
 import LinkedinIcon from "../icons/social_media/Linkedin.astro";
-import LogoFuam from "./logos/diamond/LogoFuam.astro";
+import LogoFuam from "./logos/bronze/LogoFuam.astro";
 import LogoSolidworks from "./logos/gold/LogoSolidworks.astro";
 import LogoAnsys from "./logos/gold/LogoAnsys.astro";
 import LogoEsss from "./logos/gold/LogoEsss.astro";
 import LogoRapidHarnest from "./logos/gold/LogoRapidHarnest.astro";
 import LogoDitsa from "./logos/silver/LogoDitsa.astro";
 import LogoPrimeraPlus from "./logos/silver/LogoPrimeraPlus.astro";
-import LogoDepartamentoEnergia from "./logos/silver/LogoDepartamentoEnergia.astro";
+import LogoDepartamentoEnergia from "./logos/bronze/LogoDepartamentoEnergia.astro";
 import LogoEscuadronUam from "./logos/bronze/LogoEscuadronUam.astro";
 import TiraUamotors from "./logos/TiraUamotors.astro";
+import LogoDewesoft from "./logos/silver/LogoDewesoft.astro";
 const currentYear = new Date().getFullYear();
 ---
 
@@ -66,6 +67,7 @@ const currentYear = new Date().getFullYear();
       <div
         class="flex flex-col md:flex-row items-center justify-center gap-4 sm:gap-6 md:gap-8 w-full"
       >
+        <!-- Gold sponsors -->
         <div class="h-9 sm:h-11 flex items-center justify-center">
           <a
             href="https://www.solidworks.com/"
@@ -108,9 +110,19 @@ const currentYear = new Date().getFullYear();
         </div>
       </div>
 
+      <!-- Silver sponsors -->
       <div
-        class="flex flex-row flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-8 w-full"
+        class="flex flex-row flex-wrap items-center justify-center gap-6 sm:gap-10 md:gap-30 w-full"
       >
+        <div class="h-7 sm:h-8 flex items-center justify-center">
+          <a
+            href="https://dewesoft.com/es"
+            target="_blank"
+            class="h-full w-20 sm:w-24 flex items-center justify-center"
+          >
+            <LogoDewesoft class="max-h-full max-w-full object-contain" />
+          </a>
+        </div>
         <div class="h-7 sm:h-8 flex items-center justify-center">
           <a
             href="https://ditsa.com.mx/"
@@ -131,8 +143,9 @@ const currentYear = new Date().getFullYear();
         </div>
       </div>
 
+      <!-- Bronze sponsors -->
       <div
-        class="flex flex-row flex-nowrap items-center justify-center gap-5 sm:gap-6 md:gap-8 w-full"
+        class="flex flex-row flex-nowrap items-center justify-center gap-8 sm:gap-12 md:gap-20 w-full"
       >
         <div class="h-5 sm:h-6 flex items-center justify-center">
           <a
