@@ -73,7 +73,7 @@ const siteConfig: SiteConfig = {
     description: 'Conoce UAMOTORS, el equipo de Fórmula SAE de la UAM. Diseño, manufactura y pasión que lleva la ingeniería mexicana al límite.',
     image: {
         src: '/tira-uamotors.svg',
-        alt: 'UAMOTORS - Escudería Formula SAE de la UAM Azcapotzalco'
+        alt: 'UAMOTORS - Escudería Formula SAE de la UAM'
     },
     headerNavLinks: [
         {
@@ -130,7 +130,7 @@ const siteConfig: SiteConfig = {
         }
     ],
     hero: {
-        eyebrowText: 'UAM Azcapotzalco | Formula SAE',
+        eyebrowText: 'UAM | Formula SAE',
         title: 'Diseña con ingenio, crea con pasión.',
         text: `Más que una escudería, somos un centro de innovación y talento. Únete a nuestro proyecto y ayúdanos a llevar la ingeniería mexicana a la competencia internacional <a href="${withBase('/proyecto#formula-sae')}" class="text-space-red font-medium hover:font-bold transition-all">Formula SAE</a>.`,
         image: {
