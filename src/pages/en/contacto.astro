@@ -1,0 +1,268 @@
+---
+import { Image } from "astro:assets";
+import MainLayout from "../../layouts/MainLayout.astro";
+import siteConfig from "../../site.config";
+import coverImage from "../../assets/images/pixeltrue-space-discovery.svg";
+import EmailIcon from "../../icons/social_media/Email.astro";
+import LinkedinIcon from "../../icons/social_media/Linkedin.astro";
+import InstagramIcon from "../../icons/social_media/Instagram.astro";
+import TiktokIcon from "../../icons/social_media/Tiktok.astro";
+import FacebookIcon from "../../icons/social_media/Facebook.astro";
+import Handshake from "../../icons/assets/Handshake.astro";
+import Gift from "../../icons/assets/Gift.astro";
+import Rocket from "../../icons/assets/Rocket.astro";
+import LocationPin from "../../icons/assets/LocationPin.astro";
+import Building from "../../icons/assets/Building.astro";
+---
+
+<MainLayout
+  activePage="contacto"
+  pageTitle={siteConfig.title + " | Contact"}
+  description="Want to collaborate, sponsor, or join the UAMOTORS racing team? Get in touch with us through our official channels and representatives."
+>
+  <div class="page-content max-w-4xl mx-auto">
+    <h1 class="sigmar-ff text-balance mb-8">Contact</h1>
+
+    <section class="text-left space-y-16">
+      <div>
+        <h2
+          class="sigmar-ff text-3xl mb-6 text-space-red dark:text-space-yellow"
+        >
+          Why Contact Us?
+        </h2>
+        <ul class="space-y-6 kanit-light text-lg sm:text-xl">
+          <li class="flex items-start gap-4">
+            <Handshake class="w-8 h-8 shrink-0 mt-1" />
+            <div>
+              <strong
+                class="kanit-regular text-space-red dark:text-space-yellow"
+                >Sponsorships:</strong
+              ><br />
+              To establish <strong>strategic partnerships</strong> and foster industry-academy links.
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <Gift class="w-8 h-8 shrink-0 mt-1" />
+            <div>
+              <strong
+                class="kanit-regular text-space-red dark:text-space-yellow"
+                >Donations:</strong
+              ><br />
+              Support through financial contributions, in-kind donations, or parts for our race car <a href="/en/proyecto"><strong>"OP"</strong></a>.
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <Rocket class="w-8 h-8 shrink-0 mt-1" />
+            <div>
+              <strong
+                class="kanit-regular text-space-red dark:text-space-yellow"
+                >Recruitment:</strong
+              ><br />
+              Information on how to join the <strong>UAMOTORS</strong> family.
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div id="canales-oficiales">
+        <h2
+          class="sigmar-ff text-3xl mb-6 text-space-red dark:text-space-yellow"
+        >
+          Official Channels
+        </h2>
+        <div class="flex flex-col gap-4 kanit-light text-lg sm:text-xl">
+          <a
+            href="mailto:uamotors.fsae@azc.uam.mx?subject=Interest%20in%20Sponsorship%20Proposal"
+            class="flex items-center gap-4 hover:text-space-red dark:hover:text-space-yellow transition-colors group w-fit"
+          >
+            <div
+              class="p-3 bg-black/5 dark:bg-white/5 rounded-2xl group-hover:bg-space-red/10 dark:group-hover:bg-space-yellow/10 transition-colors"
+            >
+              <EmailIcon class="w-6 h-6" />
+            </div>
+            <span
+              ><strong class="kanit-regular">
+                uamotors.fsae@azc.uam.mx</strong
+              ></span
+            >
+          </a>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <a
+              href="https://instagram.com/uamotors.fsae"
+              target="_blank"
+              class="flex items-center gap-4 hover:text-space-red dark:hover:text-space-yellow transition-colors group w-fit"
+            >
+              <div
+                class="p-3 bg-black/5 dark:bg-white/5 rounded-2xl group-hover:bg-space-red/10 dark:group-hover:bg-space-yellow/10 transition-colors"
+              >
+                <InstagramIcon class="w-6 h-6" />
+              </div>
+              <span><strong class="kanit-regular"> uamotors.fsae</strong></span>
+            </a>
+
+            <a
+              href="https://www.facebook.com/uamotors"
+              target="_blank"
+              class="flex items-center gap-4 hover:text-space-red dark:hover:text-space-yellow transition-colors group w-fit"
+            >
+              <div
+                class="p-3 bg-black/5 dark:bg-white/5 rounded-2xl group-hover:bg-space-red/10 dark:group-hover:bg-space-yellow/10 transition-colors"
+              >
+                <FacebookIcon class="w-6 h-6" />
+              </div>
+              <span><strong class="kanit-regular"> UAMOTORS</strong></span>
+            </a>
+
+            <a
+              href="https://tiktok.com/@uamotors.fsae"
+              target="_blank"
+              class="flex items-center gap-4 hover:text-space-red dark:hover:text-space-yellow transition-colors group w-fit"
+            >
+              <div
+                class="p-3 bg-black/5 dark:bg-white/5 rounded-2xl group-hover:bg-space-red/10 dark:group-hover:bg-space-yellow/10 transition-colors"
+              >
+                <TiktokIcon class="w-6 h-6" />
+              </div>
+              <span><strong class="kanit-regular"> uamotors.fsae</strong></span>
+            </a>
+
+            <a
+              href="https://www.linkedin.com/company/uamotors/"
+              target="_blank"
+              class="flex items-center gap-4 hover:text-space-red dark:hover:text-space-yellow transition-colors group w-fit"
+            >
+              <div
+                class="p-3 bg-black/5 dark:bg-white/5 rounded-2xl group-hover:bg-space-red/10 dark:group-hover:bg-space-yellow/10 transition-colors"
+              >
+                <LinkedinIcon class="w-6 h-6" />
+              </div>
+              <span><strong class="kanit-regular"> UAMOTORS</strong></span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 gap-8 bg-black/5 dark:bg-white/5 p-8 rounded-3xl border border-black/10 dark:border-white/10"
+      >
+        <div class="md:col-span-2">
+          <h3
+            class="sigmar-ff text-2xl mb-2 text-center text-space-red dark:text-space-yellow"
+          >
+            Official Representatives
+          </h3>
+        </div>
+        <div
+          class="bg-white dark:bg-black/20 p-6 rounded-2xl border border-black/5 dark:border-white/5 shadow-sm h-full flex flex-col justify-start gap-2"
+        >
+          <div>
+            <h4 class="sigmar-ff text-xl mb-1">Team Captain</h4>
+            <p class="kanit-light text-lg leading-relaxed mb-0">
+              <strong class="kanit-regular"
+                >Jehoshua Alberto<br />Soto Benavides</strong
+              >
+            </p>
+          </div>
+          <ul class="space-y-1.5 text-base kanit-light">
+            <li class="flex items-center gap-2.5">
+              <EmailIcon
+                class="w-5 h-5 text-space-red dark:text-space-yellow shrink-0"
+              />
+              <a
+                href="mailto:al2222003583@azc.uam.mx"
+                class="hover:underline break-all text-sm md:text-base"
+              >
+                al2222003583@azc.uam.mx
+              </a>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <LinkedinIcon
+                class="w-5 h-5 text-space-red dark:text-space-yellow shrink-0"
+              />
+              <a
+                href="https://www.linkedin.com/in/jehoshua-alberto-soto-benavides-92146836a/"
+                target="_blank"
+                class="hover:underline text-sm md:text-base"
+              >
+                View profile
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="bg-white dark:bg-black/20 p-6 rounded-2xl border border-black/5 dark:border-white/5 shadow-sm h-full flex flex-col justify-start gap-2"
+        >
+          <div>
+            <h4 class="sigmar-ff text-xl mb-1">Faculty Advisor</h4>
+            <p class="kanit-light text-lg leading-relaxed mb-0">
+              <strong class="kanit-regular">Ing. Romy<br />Pérez Moreno</strong>
+            </p>
+          </div>
+          <ul class="space-y-1.5 text-base kanit-light">
+            <li class="flex items-center gap-2.5">
+              <EmailIcon
+                class="w-5 h-5 text-space-red dark:text-space-yellow shrink-0"
+              />
+              <a
+                href="mailto:romy@azc.uam.mx"
+                class="hover:underline break-all text-sm md:text-base"
+              >
+                romy@azc.uam.mx
+              </a>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <LinkedinIcon
+                class="w-5 h-5 text-space-red dark:text-space-yellow shrink-0"
+              />
+              <a
+                href="https://www.linkedin.com/in/romyperez/"
+                target="_blank"
+                class="hover:underline text-sm md:text-base"
+              >
+                View profile
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div
+        class="bg-space-red/10 dark:bg-space-yellow/10 p-8 sm:p-12 rounded-3xl border border-space-red/20 dark:border-space-yellow/20"
+      >
+        <h2
+          class="sigmar-ff text-3xl mb-6 text-space-red dark:text-space-yellow"
+        >
+          Physical Location
+        </h2>
+        <div class="flex flex-col gap-6 kanit-light text-lg">
+          <div
+            class="flex items-start gap-4 bg-white dark:bg-black/40 p-6 rounded-2xl shadow-sm border border-black/5 dark:border-white/5"
+          >
+            <LocationPin class="w-8 h-8 shrink-0 mt-1" />
+            <div>
+              <strong class="kanit-regular">Address (Azcapotzalco Campus):</strong><br />
+              <a
+                href="https://maps.app.goo.gl/EyxHEjW32biqcbMV6"
+                target="_blank"
+                >Av. San Pablo No. 420, Col. Nueva el Rosario, Azcapotzalco,
+                C.P. 02128, CDMX.</a
+              >
+            </div>
+          </div>
+          <div
+            class="flex items-center gap-4 bg-white dark:bg-black/40 p-6 rounded-2xl shadow-sm border border-black/5 dark:border-white/5"
+          >
+            <Building class="w-8 h-8 shrink-0 mt-1" />
+            <div>
+              <strong class="kanit-regular">Institution:</strong><br />
+              <a href="https://www.uam.mx/" target="_blank"
+                >Universidad Autónoma Metropolitana</a
+              >.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</MainLayout>
