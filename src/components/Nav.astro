@@ -6,8 +6,8 @@ import SiteIdentity from "./SiteIdentity.astro";
 import NavLinks from "./NavLinks.astro";
 import CloseIcon from "../icons/Close.astro";
 import { withBase } from "../utils/helpers";
-const { activePage } = Astro.props;
 
+const { activePage } = Astro.props;
 const currentPath = Astro.url.pathname;
 const isEnglish = currentPath.startsWith("/en") || currentPath.startsWith("/en/");
 let targetUrl = "/";
@@ -16,6 +16,27 @@ if (isEnglish) {
 } else {
   targetUrl = "/en" + (currentPath === "/" ? "" : currentPath);
 }
+
+const englishNavLinks = [
+  {
+    text: "About Us",
+    href: withBase("/en/nosotros")
+  },
+  {
+    text: "Project",
+    href: withBase("/en/proyecto")
+  },
+  {
+    text: "Our Partners",
+    href: withBase("/en/nuestros-aliados")
+  },
+  {
+    text: "Contact",
+    href: withBase("/en/contacto")
+  }
+];
+
+const navLinks = isEnglish ? englishNavLinks : siteConfig.headerNavLinks;
 ---
 
 <header>
@@ -23,9 +44,9 @@ if (isEnglish) {
     class="font-light w-full flex flex-row items-center justify-between gap-2 rounded-4xl px-5 py-2 text-xs sm:gap-8 sm:py-3 sm:text-base"
     style="background-color: var(--glass-bg) !important; backdrop-filter: var(--glass-blur) !important; -webkit-backdrop-filter: var(--glass-blur) !important; border: var(--glass-border) !important; box-shadow: var(--glass-shadow) !important; transform: translate3d(0, 0, 0) !important; backface-visibility: hidden !important; will-change: transform, backdrop-filter !important;"
   >
-    <a id="nav-logo-link" href={withBase("/")}><SiteIdentity /></a>
+    <a id="nav-logo-link" href={withBase(isEnglish ? "/en" : "/")}><SiteIdentity /></a>
     <div class="hidden md:flex md:gap-8">
-      {(<NavLinks activePage={activePage} links={siteConfig.headerNavLinks} />)}
+      {(<NavLinks activePage={activePage} links={navLinks} />)}
     </div>
     <div class="flex items-center gap-4">
       <a href={targetUrl} class="px-2 py-1 border border-black/10 dark:border-white/10 rounded hover:bg-black/5 dark:hover:bg-white/5 transition-all text-xs font-semibold">
@@ -42,7 +63,7 @@ if (isEnglish) {
     <span class="close-menu cursor-pointer hover:text-space-red dark:hover:text-space-yellow transition-colors mb-4"><CloseIcon class="w-6 h-6" /></span>
     <NavLinks
       activePage={activePage}
-      links={siteConfig.headerNavLinks}
+      links={navLinks}
       isMobileLink={true}
     />
   </div>
