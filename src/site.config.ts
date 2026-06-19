@@ -70,7 +70,7 @@ export type SiteConfig = {
 const siteConfig: SiteConfig = {
     website: 'https://uamotors.github.io',
     title: 'UAMOTORS',
-    description: 'Llevando la ingeniería mexicana al límite. Escudería Formula SAE de la UAM Azcapotzalco dedicada al diseño, manufactura y validación de un vehículo tipo Fórmula.',
+    description: 'Conoce UAMOTORS, el equipo de Fórmula SAE de la UAM. Diseño, manufactura y pasión que lleva la ingeniería mexicana al límite.',
     image: {
         src: '/tira-uamotors.svg',
         alt: 'UAMOTORS - Escudería Formula SAE de la UAM Azcapotzalco'
