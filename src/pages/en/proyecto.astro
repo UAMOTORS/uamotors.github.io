@@ -29,16 +29,18 @@ import Dynamics from "../../icons/assets/dynamics-icon.astro";
       >
       </div>
 
-      <Image
-        width={1024}
-        height={600}
-        loading="eager"
-        layout="constrained"
-        class="w-full h-auto max-h-[400px] object-contain drop-shadow-[0_15px_25px_rgba(0,0,0,0.6)] dark:drop-shadow-[0_20px_30px_rgba(0,0,0,0.9)] z-10"
-        src={OP_image}
-        alt="OP01 Prototype"
-        transition:name="hero-image"
-      />
+      <div class="w-full flex justify-center items-center drop-shadow-[0_15px_25px_rgba(0,0,0,0.6)] dark:drop-shadow-[0_20px_30px_rgba(0,0,0,0.9)] z-10">
+        <Image
+          width={1024}
+          height={600}
+          loading="eager"
+          layout="constrained"
+          class="w-full h-auto max-h-[380px] object-contain"
+          src={OP_image}
+          alt="OP01 Prototype"
+          transition:name="hero-image"
+        />
+      </div>
     </div>
 
     <section class="text-left space-y-16">
