@@ -5,18 +5,17 @@ import {
   getPostsByTag,
   sortItemsByDateDesc,
   createSlugFromTitle,
-} from "../../../utils/helpers";
+} from "../../../../utils/helpers";
 import type { GetStaticPathsOptions, Page } from "astro";
-import siteConfig from "../../../site.config";
+import siteConfig from "../../../../site.config";
 import type { CollectionEntry } from "astro:content";
-import MainLayout from "../../../layouts/MainLayout.astro";
-import Pagination from "../../../components/Pagination.astro";
-import Subscribe from "../../../components/Subscribe.astro";
-import PostListPreview from "../../../components/PostListPreview.astro";
+import MainLayout from "../../../../layouts/MainLayout.astro";
+import Pagination from "../../../../components/Pagination.astro";
+import PostListPreview from "../../../../components/PostListPreview.astro";
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
   const posts = (await getCollection("blogs"))
-    .filter((post) => !post.id.startsWith("en/"))
+    .filter((post) => post.id.startsWith("en/"))
     .sort(sortItemsByDateDesc);
   const tags = getAllTags(posts);
 
@@ -35,7 +34,7 @@ const { page } = Astro.props;
 const blog = page.data;
 const params = Astro.params;
 const allPosts = await getCollection("blogs", (post) =>
-  !post.id.startsWith("en/") && (post.data.tags || []).some(t => createSlugFromTitle(t) === params.id)
+  post.id.startsWith("en/") && (post.data.tags || []).some(t => createSlugFromTitle(t) === params.id)
 );
 const allTags = getAllTags(allPosts);
 const currentTag = allTags.find((tag) => {
@@ -45,7 +44,7 @@ const currentTag = allTags.find((tag) => {
 
 <MainLayout
   pageTitle={siteConfig.title + "| " + currentTag?.name + " posts"}
-  description={`Artículos y noticias de UAMOTORS relacionados con la categoría o tema: ${currentTag?.name}.`}
+  description={`UAMOTORS articles and news related to the category or topic: ${currentTag?.name}.`}
 >
   <div class="page-content">
     <h2>Posts tagged with <span class="sigmar-ff">{currentTag?.name}</span></h2>

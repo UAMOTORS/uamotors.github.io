@@ -1,25 +1,25 @@
 ---
-import "../../styles/global.css";
+import "../../../styles/global.css";
 import { Image } from "astro:assets";
 import {
   sortItemsByDateDesc,
   createSlugFromTitle,
   withBase,
-} from "../../utils/helpers";
+} from "../../../utils/helpers";
 import { type CollectionEntry, getCollection, render } from "astro:content";
-import Button from "../../components/Button.astro";
-import MainLayout from "../../layouts/MainLayout.astro";
-import ArrowLeft from "../../icons/ArrowLeft.astro";
-import ArrowRight from "../../icons/ArrowRight.astro";
-import siteConfig from "../../site.config";
+import Button from "../../../components/Button.astro";
+import MainLayout from "../../../layouts/MainLayout.astro";
+import ArrowLeft from "../../../icons/ArrowLeft.astro";
+import ArrowRight from "../../../icons/ArrowRight.astro";
+import siteConfig from "../../../site.config";
 
 export async function getStaticPaths() {
   const posts = (await getCollection("blogs"))
-    .filter((post) => !post.id.startsWith("en/"))
+    .filter((post) => post.id.startsWith("en/"))
     .sort(sortItemsByDateDesc);
   const postCount = posts.length;
   return posts.map((post, index) => ({
-    params: { id: post.id },
+    params: { id: post.id.replace(/^en\//, "") },
     props: {
       post,
       prevPost: index + 1 !== postCount ? posts[index + 1] : null,
@@ -64,7 +64,7 @@ const { Content } = await render(post);
         tags.map((tag) => (
           <Button
             class="px-4! m-2"
-            href={withBase("/tags/" + createSlugFromTitle(tag))}
+            href={withBase("/en/tags/" + createSlugFromTitle(tag))}
           >
             {tag}
           </Button>
@@ -74,14 +74,14 @@ const { Content } = await render(post);
     <div
       class="flex flex-col sm:flex-row items-center justify-center gap-4 my-8"
     >
-      <Button class="back-link" href={withBase("/blog")}>
+      <Button class="back-link" href={withBase("/en/blog")}>
         <ArrowLeft class="w-5 h-5 fill-current mr-4" /> Back to All Stories
       </Button>
       {
         (prevPost || nextPost) && nextPost && (
           <Button
             class="back-link text-balance"
-            href={withBase("/blog/" + nextPost.id)}
+            href={withBase("/en/blog/" + nextPost.id.replace(/^en\//, ""))}
           >
             Next Post: {nextPost.data.title}{" "}
             <ArrowRight class="w-5 h-5 fill-current ml-4" />

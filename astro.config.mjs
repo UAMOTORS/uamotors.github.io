@@ -8,6 +8,13 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   site: "https://uamotors.github.io",
   base: "/",
+  i18n: {
+    defaultLocale: "es",
+    locales: ["es", "en"],
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
   integrations: [
     preact(),
     sitemap(),

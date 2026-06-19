@@ -1,0 +1,97 @@
+---
+import { Image } from "astro:assets";
+import MainLayout from "../../layouts/MainLayout.astro";
+import { withBase } from "../../utils/helpers";
+import carImage from "../../assets/images/OP01_2-transparent.png";
+import SpaceKeyboard from "../../components/SpaceKeyboard.astro";
+import siteConfig from "../../site.config";
+import Button from "../../components/Button.astro";
+
+const englishMessages = [
+  "Just an inchident. — Charles Leclerc",
+  "NOOOOOO! — Charles Leclerc, France 2022",
+  "Monaco is ours! — Charles Leclerc, 2024",
+  "I think we need to box. — Charles Leclerc",
+  "Understood, we are checking. — Ferrari Engineer",
+  "It is a beautiful day, baby! Let's go! — Charles Leclerc",
+  "Box, box, box! — Race Engineer",
+  "Leave me alone, I know what to do! — Kimi",
+  "If you no longer go for a gap... — Ayrton Senna",
+  "Smooth operatorrr... — Carlos Sainz",
+  "Bono, my tyres are gone! — Lewis Hamilton",
+  "No, no, no, Michael! That was so not right! — Toto Wolff",
+  "Simply simply lovely. — Max Verstappen",
+  "GP2 engine, GP2! — Fernando Alonso",
+  "Karma! — Fernando Alonso",
+  "To finish first, first you must finish. — Michael Schumacher",
+  "It's lights out and away we go! — David Croft",
+  "Second is the first of the losers. — Ayrton Senna",
+  "Simplify, then add lightness. — Colin Chapman",
+  "Pushing Mexican engineering to the limit.",
+  "Design with ingenuity, create with passion. — UAMOTORS",
+  "It's not just speed, it's engineering. — UAMOTORS",
+  "Red flag on track! Race control.",
+  "Push, push! Fastest lap.",
+  "Error 404: Off track!",
+  "Success is built thousandth by thousandth.",
+  "On the track there is no luck, only preparation.",
+  "No limit to what we can build. — UAMOTORS",
+  "Feel the speed, respect the engineering. — UAMOTORS",
+  "Maximum attack! Qualifying lap.",
+];
+---
+
+<MainLayout
+  activePage="404"
+  pageTitle={siteConfig.title + " | 404 - Off Track"}
+  description="Page not found - UAMOTORS. The requested address does not exist or has been moved."
+  showSubscribeForm={false}
+>
+  <div
+    class="flex flex-col items-center justify-center page-content py-12 text-center"
+  >
+    <h1
+      class="sigmar-ff text-8xl md:text-9xl mb-4 text-space-red dark:text-space-yellow"
+    >
+      404
+    </h1>
+
+    <div
+      class="relative w-full max-w-lg flex justify-center items-center my-6 group"
+    >
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 sm:w-72 sm:h-72 bg-space-red/30 dark:bg-space-yellow/10 rounded-full blur-[60px] sm:blur-[80px] -z-10 pointer-events-none"
+      >
+      </div>
+
+      <Image
+        class="w-auto h-auto max-h-[220px] object-contain drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)] rotate-6 transition-transform duration-500 hover:rotate-12"
+        src={carImage}
+        alt="UAMOTORS vehicle off track"
+        width={500}
+        height={300}
+      />
+    </div>
+
+    <div class="space-y-4 max-w-md mx-auto px-4 mt-6">
+      <p class="kanit-light text-base sm:text-lg">
+        The address you are trying to access does not exist, has been moved, or is under maintenance.
+      </p>
+      <div class="pt-6">
+        <Button href={withBase("/en")} class="space-btn-filled px-8">
+          Back to the Pits
+        </Button>
+      </div>
+    </div>
+
+    <div class="w-full max-w-2xl mt-4">
+      <SpaceKeyboard messages={englishMessages} />
+      <p class="text-xs opacity-60 mt-4 kanit-light">
+        Press <kbd
+          class="px-2 py-1 bg-black/10 dark:bg-white/10 rounded font-mono"
+          >Space</kbd
+        > on your keyboard to change the quote
+      </p>
+    </div>
+  </div>
+</MainLayout>

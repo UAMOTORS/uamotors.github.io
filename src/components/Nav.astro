@@ -7,6 +7,15 @@ import NavLinks from "./NavLinks.astro";
 import CloseIcon from "../icons/Close.astro";
 import { withBase } from "../utils/helpers";
 const { activePage } = Astro.props;
+
+const currentPath = Astro.url.pathname;
+const isEnglish = currentPath.startsWith("/en") || currentPath.startsWith("/en/");
+let targetUrl = "/";
+if (isEnglish) {
+  targetUrl = currentPath.replace(/^\/en(\/|$)/, "/");
+} else {
+  targetUrl = "/en" + (currentPath === "/" ? "" : currentPath);
+}
 ---
 
 <header>
@@ -19,6 +28,9 @@ const { activePage } = Astro.props;
       {(<NavLinks activePage={activePage} links={siteConfig.headerNavLinks} />)}
     </div>
     <div class="flex items-center gap-4">
+      <a href={targetUrl} class="px-2 py-1 border border-black/10 dark:border-white/10 rounded hover:bg-black/5 dark:hover:bg-white/5 transition-all text-xs font-semibold">
+        {isEnglish ? "ES" : "EN"}
+      </a>
       <ThemeSwitcher />
       <Hamburger />
     </div>

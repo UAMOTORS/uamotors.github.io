@@ -13,11 +13,15 @@ type Props = {
 const { post, class: className, headingLevel = "h2" } = Astro.props;
 const { title, pubDate, description } = post.data;
 const TitleTag = headingLevel;
+
+const postUrl = post.id.startsWith("en/")
+  ? withBase("/en/blog/" + post.id.replace(/^en\//, ""))
+  : withBase("/blog/" + post.id);
 ---
 
 <a
   class:list={["flex justify-between items-start gap-8 group", className]}
-  href={withBase("/blog/" + post.id)}
+  href={postUrl}
 >
   <div class="grow">
     <TitleTag class="sigmar-ff">{title}</TitleTag>

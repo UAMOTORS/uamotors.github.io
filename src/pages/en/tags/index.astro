@@ -4,14 +4,14 @@ import {
   getPostsByTag,
   sortItemsByDateDesc,
   withBase,
-} from "../../utils/helpers";
+} from "../../../utils/helpers";
 import { getCollection } from "astro:content";
-import Button from "../../components/Button.astro";
-import MainLayout from "../../layouts/MainLayout.astro";
-import siteConfig from "../../site.config";
+import Button from "../../../components/Button.astro";
+import MainLayout from "../../../layouts/MainLayout.astro";
+import siteConfig from "../../../site.config";
 
 const posts = (await getCollection("blogs"))
-  .filter((post) => !post.id.startsWith("en/"))
+  .filter((post) => post.id.startsWith("en/"))
   .sort(sortItemsByDateDesc);
 const tags = getAllTags(posts).sort((tagA, tagB) => {
   const postCountTagA = getPostsByTag(posts, tagA.id).length;
@@ -23,7 +23,7 @@ const tags = getAllTags(posts).sort((tagA, tagB) => {
 <MainLayout
   activePage="tags"
   pageTitle={siteConfig.title + " | " + "Tags Index"}
-  description="Busca y explora artículos de UAMOTORS organizados por categorías y etiquetas de interés."
+  description="Search and explore UAMOTORS articles organized by categories and tags of interest."
 >
   <div class="page-content">
     <h1 class="sigmar-ff text-balance">Tags</h1>
@@ -33,7 +33,7 @@ const tags = getAllTags(posts).sort((tagA, tagB) => {
         tags.map((tag) => {
           const postCount = getPostsByTag(posts, tag.id).length;
           return (
-            <Button href={`${withBase("/tags/" + tag.id)}`} class="px-4! m-2">
+            <Button href={`${withBase("/en/tags/" + tag.id)}`} class="px-4! m-2">
               {tag.name} ({postCount})
             </Button>
           );

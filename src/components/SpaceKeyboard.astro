@@ -1,9 +1,10 @@
 ---
 interface Props {
   messages?: string[];
+  enMessages?: string[];
 }
 
-const { messages: customMessages } = Astro.props;
+const { messages: customMessages, enMessages: customEnMessages } = Astro.props;
 
 const defaultMessages = [
   "Just an inchident. — Charles Leclerc",
@@ -38,7 +39,41 @@ const defaultMessages = [
   "Maximum attack! Vuelta de clasificación.",
 ];
 
+const defaultEnMessages = [
+  "Just an inchident. — Charles Leclerc",
+  "NOOOOOO! — Charles Leclerc, France 2022",
+  "Monaco is ours! — Charles Leclerc, 2024",
+  "I think we need to box. — Charles Leclerc",
+  "Understood, we are checking. — Ferrari Engineer",
+  "It is a beautiful day, baby! Let's go! — Charles Leclerc",
+  "Box, box, box! — Race Engineer",
+  "Leave me alone, I know what to do! — Kimi",
+  "If you no longer go for a gap... — Ayrton Senna",
+  "Smooth operatorrr... — Carlos Sainz",
+  "Bono, my tyres are gone! — Lewis Hamilton",
+  "No, no, no, Michael! That was so not right! — Toto Wolff",
+  "Simply simply lovely. — Max Verstappen",
+  "GP2 engine, GP2! — Fernando Alonso",
+  "Karma! — Fernando Alonso",
+  "To finish first, first you must finish. — Michael Schumacher",
+  "It's lights out and away we go! — David Croft",
+  "Second is the first of the losers. — Ayrton Senna",
+  "Simplify, then add lightness. — Colin Chapman",
+  "Pushing Mexican engineering to the limit.",
+  "Design with ingenuity, create with passion. — UAMOTORS",
+  "It's not just speed, it's engineering. — UAMOTORS",
+  "Red flag on track! Race control.",
+  "Push, push! Fastest lap.",
+  "Error 404: Off track!",
+  "Success is built thousandth by thousandth.",
+  "On the track there is no luck, only preparation.",
+  "No limit to what we can build. — UAMOTORS",
+  "Feel the speed, respect the engineering. — UAMOTORS",
+  "Maximum attack! Qualifying lap.",
+];
+
 const messages = customMessages || defaultMessages;
+const enMessages = customEnMessages || defaultEnMessages;
 ---
 
 <div
@@ -85,10 +120,13 @@ const messages = customMessages || defaultMessages;
   </div>
 </div>
 
-<script is:inline define:vars={{ messages }}>
+<script is:inline define:vars={{ messages, enMessages }}>
   function setupKeyboard() {
     const spaceBtn = document.getElementById("space-pop-culture");
     if (!spaceBtn) return;
+
+    const isEn = window.location.pathname.startsWith('/en/') || window.location.pathname === '/en';
+    const activeMessages = isEn ? enMessages : messages;
 
     const platform = navigator.userAgent.toLowerCase();
     const isWin = platform.includes("win");
@@ -113,8 +151,10 @@ const messages = customMessages || defaultMessages;
       if (fnKey) fnKey.textContent = "⌥";
     }
 
+    spaceBtn.textContent = activeMessages[0];
+
     const getRandomMessage = () =>
-      messages[Math.floor(Math.random() * messages.length)];
+      activeMessages[Math.floor(Math.random() * activeMessages.length)];
 
     const handleSpacebar = (e) => {
       if (
