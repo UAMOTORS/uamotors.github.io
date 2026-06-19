@@ -1,10 +1,10 @@
 ---
-title: "May the Fourth be with you"
-author: "Astro-naut Sid"
-description: "This post will show up on its own!"
+title: "Que la Fuerza te acompañe"
+author: "Astro-nauta Sid"
+description: "¡Esta publicación aparecerá por sí sola!"
 image:
   url: "../../assets/images/4.jpg"
-  alt: "The word astro against an illustration of planets and stars."
+  alt: "La palabra astro contra una ilustración de planetas y estrellas."
 pubDate: 2024-02-07
 tags:
   [
@@ -20,9 +20,9 @@ tags:
   ]
 ---
 
-This is my fourth post should show up with my other blog posts, because `import.meta.glob()` is returning a list of all my posts in order to create my list.
+Esta es mi cuarta publicación y debería aparecer con mis otras publicaciones de blog, porque `import.meta.glob()` devuelve una lista de todas mis publicaciones para crear mi lista.
 
-What movie would you want to watch, where the movie is affected by the gravity on the Moon?
-Every fast-paced movie would become a mime act! 😂 Imagine that!
+¿Qué película te gustaría ver donde la trama se vea afectada por la gravedad de la Luna?
+¡Cualquier película de acción rápida se convertiría en un acto de mimo! 😂 ¡Imagínate eso!
 
-I'll pick one: Mission Impossible! 🙅‍♂️😂
+Yo elijo una: ¡Misión Imposible! 🙅‍♂️😂

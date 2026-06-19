@@ -31,7 +31,7 @@ const ogImageURL = new URL(image || defaultOgImage.src, Astro.site);
 ---
 
 <!doctype html>
-<html lang="es" class="antialiased break-words">
+<html lang={Astro.currentLocale || "es"} class="antialiased break-words">
   <head>
     <meta charset="utf-8" />
     <link

@@ -14,6 +14,30 @@ import Button from "../components/Button.astro";
   description="Página no encontrada - UAMOTORS. La dirección solicitada no existe o ha sido movida."
   showSubscribeForm={false}
 >
+  <script is:inline>
+    (function() {
+      const isEn = window.location.pathname.startsWith('/en/') || window.location.pathname === '/en';
+      if (isEn) {
+        document.documentElement.classList.add('route-en');
+        document.documentElement.setAttribute('lang', 'en');
+        document.title = "UAMOTORS | 404 - Off Track";
+        const desc = document.querySelector('meta[name="description"]');
+        if (desc) desc.setAttribute('content', 'Page not found - UAMOTORS. The requested address does not exist or has been moved.');
+      } else {
+        document.documentElement.classList.add('route-es');
+      }
+    })();
+  </script>
+
+  <style>
+    html.route-en .lang-es {
+      display: none !important;
+    }
+    html:not(.route-en) .lang-en {
+      display: none !important;
+    }
+  </style>
+
   <div
     class="flex flex-col items-center justify-center page-content py-12 text-center"
   >
@@ -32,34 +56,54 @@ import Button from "../components/Button.astro";
       </div>
 
       <Image
-        class="w-auto h-auto max-h-[220px] object-contain drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)] rotate-6 transition-transform duration-500 hover:rotate-12"
+        class="w-auto h-auto max-h-[220px] object-contain drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)] rotate-6 transition-transform duration-500 hover:rotate-12 lang-es"
         src={carImage}
         alt="Vehículo UAMOTORS fuera de pista"
+        width={500}
+        height={300}
+      />
+      <Image
+        class="w-auto h-auto max-h-[220px] object-contain drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)] rotate-6 transition-transform duration-500 hover:rotate-12 lang-en"
+        src={carImage}
+        alt="UAMOTORS vehicle off track"
         width={500}
         height={300}
       />
     </div>
 
     <div class="space-y-4 max-w-md mx-auto px-4 mt-6">
-
-      <p class="kanit-light text-base sm:text-lg">
+      <p class="kanit-light text-base sm:text-lg lang-es">
         La dirección a la que intentas acceder no existe, ha sido movida o está
         en mantenimiento.
       </p>
-      <div class="pt-6">
+      <p class="kanit-light text-base sm:text-lg lang-en">
+        The address you are trying to access does not exist, has been moved, or is under maintenance.
+      </p>
+      <div class="pt-6 lang-es">
         <Button href={withBase("/")} class="space-btn-filled px-8">
           Regresar a los Pits
+        </Button>
+      </div>
+      <div class="pt-6 lang-en">
+        <Button href={withBase("/en")} class="space-btn-filled px-8">
+          Back to the Pits
         </Button>
       </div>
     </div>
 
     <div class="w-full max-w-2xl mt-4">
       <SpaceKeyboard />
-      <p class="text-xs opacity-60 mt-4 kanit-light">
+      <p class="text-xs opacity-60 mt-4 kanit-light lang-es">
         Presiona <kbd
           class="px-2 py-1 bg-black/10 dark:bg-white/10 rounded font-mono"
           >Espacio</kbd
         > en tu teclado para cambiar de frase
+      </p>
+      <p class="text-xs opacity-60 mt-4 kanit-light lang-en">
+        Press <kbd
+          class="px-2 py-1 bg-black/10 dark:bg-white/10 rounded font-mono"
+          >Space</kbd
+        > on your keyboard to change the quote
       </p>
     </div>
   </div>

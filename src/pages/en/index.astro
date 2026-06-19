@@ -1,19 +1,37 @@
 ---
 import { getCollection } from "astro:content";
-import MainLayout from "../layouts/MainLayout.astro";
-import siteConfig from "../site.config";
-import { sortItemsByDateDesc, withBase } from "../utils/helpers";
-import PostCardPreview from "../components/PostCardPreview.astro";
-import Button from "../components/Button.astro";
+import MainLayout from "../../layouts/MainLayout.astro";
+import siteConfig from "../../site.config";
+import { sortItemsByDateDesc, withBase } from "../../utils/helpers";
+import PostCardPreview from "../../components/PostCardPreview.astro";
+import Button from "../../components/Button.astro";
 import { Image } from "astro:assets";
-import heroImage from "../assets/images/pixeltrue-space-discovery.svg";
-import ArrowRight from "../icons/ArrowRight.astro";
-import OP_image_vertical from "../assets/images/OP01_2-transparent.png";
+import heroImage from "../../assets/images/pixeltrue-space-discovery.svg";
+import ArrowRight from "../../icons/ArrowRight.astro";
+import OP_image_vertical from "../../assets/images/OP01_2-transparent.png";
 
-const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
+const allPosts = (await getCollection("blogs"))
+  .filter((post) => post.id.startsWith("en/"))
+  .sort(sortItemsByDateDesc);
+
+const enHero = {
+  eyebrowText: "UAM | Formula SAE",
+  title: "Engineered with ingenuity, driven by passion.",
+  text: `More than a racing team, we are a hub of innovation and talent. Join our project and help us elevate Mexican engineering at the international <a href="${withBase('/en/proyecto#formula-sae')}" class="text-space-red font-medium hover:font-bold transition-all">Formula SAE</a> competition.`,
+  actions: [
+    {
+      text: "Explore project",
+      href: withBase("/en/proyecto")
+    },
+    {
+      text: "Support our team",
+      href: withBase("/en/nuestros-aliados")
+    }
+  ]
+};
 ---
 
-<MainLayout activePage="home" pageTitle={siteConfig.title + " | Escudería Formula SAE UAM"}>
+<MainLayout activePage="home" pageTitle={siteConfig.title + " | UAM Formula SAE Racing Team"}>
   <div
     class="jumbo-banner relative flex flex-col sm:flex-row sm:items-center sm:justify-between w-full px-4 my-12 gap-6"
   >
@@ -28,28 +46,28 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
 
     <div class="w-full sm:flex-1 min-w-0 relative z-30">
       {
-        siteConfig.hero?.eyebrowText && (
+        enHero.eyebrowText && (
           <span
             id="hero-eyebrow-text"
             class="tag inline-block mb-2 rounded-full text-sm sm:text-base px-3 py-1 border border-gray-500 kanit-light select-none cursor-pointer"
             style="touch-action: manipulation;"
           >
-            {siteConfig.hero?.eyebrowText}
+            {enHero.eyebrowText}
           </span>
         )
       }
       <h1 class="sigmar-ff-italic leading-tight text-balance sm:pt-0!">
-        {siteConfig.hero?.title}
+        {enHero.title}
       </h1>
       <p
         class="kanit-regular text-balance text-base sm:text-lg"
-        set:html={siteConfig.hero?.text}
+        set:html={enHero.text}
       />
       <div
         class="flex flex-wrap items-center text-xs sm:text-base gap-3 mt-3 sm:mt-12"
       >
         {
-          siteConfig.hero?.actions?.map((action, index) => (
+          enHero.actions.map((action, index) => (
             <Button
               href={action.href}
               class={index === 0 ? "space-btn-filled" : "space-btn-outlined"}
@@ -105,13 +123,12 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
   </div>
   <div class="page-content">
     <div
-      id="instagram-feed"
       class="flex flex-col items-center justify-center w-full"
     >
       <h2
         class="sigmar-ff text-balance pt-0! pb-8! text-space-red dark:text-space-yellow"
       >
-        ¡Síguenos en Instagram!
+        Follow us on Instagram!
       </h2>
 
       <div class="w-full max-w-4xl mx-auto mt-4 overflow-hidden">
@@ -122,7 +139,7 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
         </div>
 
         <script type="text/javascript" is:inline data-astro-rerun>
-                    (function () {
+          (function () {
             var i,
               e,
               d = document,
@@ -297,7 +314,7 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
     background-color: var(--glass-bg) !important;
     backdrop-filter: var(--glass-blur) !important;
     -webkit-backdrop-filter: var(--glass-blur) !important;
-    color: #f5f5f5 !important; 
+    color: #f5f5f5 !important;
     border: var(--glass-border) !important;
     box-shadow: var(--glass-shadow) !important;
   }
@@ -356,7 +373,7 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
   html.dark .crt-popup a:hover,
   html.dark .crt-popup a:hover span,
   html.dark .crt-popup .crt-author-name:hover {
-    color: #ff4046 !important; 
+    color: #ff4046 !important;
   }
 
   html.dark .crt-popup .crt-close,
@@ -552,7 +569,7 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
       height: 100% !important;
       top: 0 !important;
       bottom: auto !important;
-      
+
       transform: scaleY(0);
       animation: laser-scan-reverse-mobile-v3 12s ease-in-out infinite !important;
       will-change: left, opacity, transform !important;

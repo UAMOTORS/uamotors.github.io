@@ -18,6 +18,7 @@ import LogoEscuadronUam from "./logos/bronze/LogoEscuadronUam.astro";
 import TiraUamotors from "./logos/TiraUamotors.astro";
 import LogoDewesoft from "./logos/silver/LogoDewesoft.astro";
 const currentYear = new Date().getFullYear();
+const isEnglish = Astro.currentLocale === "en";
 ---
 
 <footer class="kanit-light text-xs sm:text-sm">
@@ -186,19 +187,18 @@ const currentYear = new Date().getFullYear();
       class="flex flex-col gap-1 items-center justify-center text-balance opacity-80 text-center"
     >
       <span
-        >&copy; {currentYear}
-        {siteConfig.title}. Todos los derechos reservados.</span
+        >&copy; {currentYear} {siteConfig.title}. {isEnglish ? "All rights reserved." : "Todos los derechos reservados."}</span
       >
       <span class="text-xs opacity-75 mt-1">
-        Desarrollado por <a
+        {isEnglish ? "Developed by" : "Desarrollado por"} <a
           href="https://github.com/lexrammart"
           target="_blank"
           class="kanit-regular hover:text-space-red dark:hover:text-space-yellow transition-colors"
           >Alejandro Ramírez</a
-        > para UAMOTORS <span class="hidden sm:inline">|</span><br
+        > {isEnglish ? "for UAMOTORS" : "para UAMOTORS"} <span class="hidden sm:inline">|</span><br
           class="sm:hidden"
         />
-        Basado en el tema <a
+        {isEnglish ? "Based on the theme" : "Basado en el tema"} <a
           href="https://github.com/djsiddz/space-ahead"
           target="_blank"
           class="kanit-regular hover:text-space-red dark:hover:text-space-yellow transition-colors"

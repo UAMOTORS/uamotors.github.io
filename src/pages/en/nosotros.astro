@@ -1,0 +1,123 @@
+---
+import { Image } from "astro:assets";
+import MainLayout from "../../layouts/MainLayout.astro";
+import siteConfig from "../../site.config";
+import coverImage from "../../assets/images/1.png";
+import RacingCar from "../../icons/assets/RacingCar.astro";
+import Trophy from "../../icons/assets/Trophy.astro";
+import Globe from "../../icons/assets/Globe.astro";
+import teamPhoto from "../../assets/images/uamotors-team.webp";
+---
+
+<MainLayout
+  activePage="nosotros"
+  pageTitle={siteConfig.title + " | About Us"}
+  description="Get to know UAMOTORS: the multidisciplinary UAM team designing, manufacturing, and validating a Formula-style single-seater to compete in Formula SAE."
+>
+  <div class="page-content max-w-4xl mx-auto">
+    <h1 class="sigmar-ff text-balance mb-8">About Us</h1>
+
+    <Image
+      width={1024}
+      height={600}
+      loading="eager"
+      layout="constrained"
+      class="rounded-4xl mb-12 mx-auto"
+      src={teamPhoto}
+      alt="UAMOTORS Team"
+    />
+
+    <section class="text-left space-y-16">
+      <div>
+        <h2
+          class="sigmar-ff text-3xl mb-4 text-space-red dark:text-space-yellow"
+        >
+          Who Are We?
+        </h2>
+        <p class="kanit-light text-lg sm:text-xl leading-relaxed">
+          <strong>UAMOTORS</strong> is a multidisciplinary student team from the <a href="https://www.uam.mx/" target="_blank"
+            ><strong>Universidad Autónoma Metropolitana</strong></a
+          >, founded at Unidad Azcapotzalco in March 2025 by student initiative. We are more than an engineering group; we integrate knowledge from our unit's three academic divisions: <strong>CBI</strong> (Basic Sciences and Engineering), <strong>CSH</strong> (Social Sciences and Humanities), and <strong>CAD</strong> (Sciences and Arts for Design).
+        </p>
+        <p class="kanit-light text-lg sm:text-xl leading-relaxed mt-4">
+          Our core purpose is to tackle real-world technological development challenges through the design and construction of a Formula-style race car that complies with <a
+            href="https://www.sae.org/"
+            target="_blank"
+            ><strong>Society of Automotive Engineers (SAE)</strong></a
+          > guidelines.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div
+          class="bg-black/5 dark:bg-white/5 p-8 rounded-3xl border border-black/10 dark:border-white/10 hover:-translate-y-2 hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300"
+        >
+          <h3 class="sigmar-ff text-2xl mb-3">Our Mission</h3>
+          <p class="kanit-light text-base sm:text-lg leading-relaxed">
+            We aim to generate a profound educational impact on every member by establishing strategic partnerships with the industry that strengthen technological development in Mexico.
+          </p>
+        </div>
+        <div
+          class="bg-black/5 dark:bg-white/5 p-8 rounded-3xl border border-black/10 dark:border-white/10 hover:-translate-y-2 hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300"
+        >
+          <h3 class="sigmar-ff text-2xl mb-3">Design Vision</h3>
+          <p class="kanit-light text-base sm:text-lg leading-relaxed">
+            Our focus is on building a reliable, cost-effective single-seater optimized for novice drivers, prioritizing manufacturable designs and decisions backed by technical criteria.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2
+          class="sigmar-ff text-3xl mb-6 text-space-red dark:text-space-yellow"
+        >
+          Strategic Objectives
+        </h2>
+        <p class="kanit-light text-lg sm:text-xl leading-relaxed mb-8">
+          To establish UAMOTORS as a benchmark, we operate under clear goals:
+        </p>
+
+        <ul class="space-y-6 kanit-light text-lg sm:text-xl">
+          <li class="flex items-start gap-4">
+            <RacingCar class="w-8 h-8 shrink-0 mt-1" />
+            <div>
+              <strong
+                class="kanit-regular text-space-red dark:text-space-yellow"
+                >Safety and Integrity:</strong
+              ><br />
+              Prioritize driver protection and the reliability of all vehicle systems.
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <Trophy class="w-8 h-8 shrink-0 mt-1" />
+            <div>
+              <strong
+                class="kanit-regular text-space-red dark:text-space-yellow"
+                >Competitiveness:</strong
+              ><br />
+              Build a solid foundation to ensure future UAM generations have a legacy of success in the competition.
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <Globe class="w-8 h-8 shrink-0 mt-1" />
+            <div>
+              <strong
+                class="kanit-regular text-space-red dark:text-space-yellow"
+                >International Projection:</strong
+              ><br />
+              Our roadmap includes participating in <a
+                href="https://www.saemx.org/formula-sae-mx"
+                target="_blank"><strong>FSAE México</strong></a
+              >
+              <strong>2027</strong> as well as qualifying and competing in <a
+                href="https://www.fsaeonline.com/"
+                target="_blank"><strong>Formula SAE International</strong></a
+              >
+              <strong>2027</strong>.
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</MainLayout>
