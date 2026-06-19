@@ -386,6 +386,11 @@ import LogoDewesoft from "../components/logos/silver/LogoDewesoft.astro";
     const ctx = canvas.getContext("2d");
     let animationId;
     let isAnimating = false;
+    let autoStopTimer;
+    let pressTimer;
+    let isLongPress = false;
+    let touchStartX = 0;
+    let touchStartY = 0;
     const chars = "01RPMTEMPDAQ0x1F0CANVOLTSPEEDACCEL".split("");
     const fontSize = 18;
     let columns;
@@ -401,7 +406,10 @@ import LogoDewesoft from "../components/logos/silver/LogoDewesoft.astro";
     function initRain() {
       resizeCanvas();
       columns = Math.floor(canvas.width / fontSize);
-      drops = Array(columns).fill(1);
+      drops = [];
+      for (let i = 0; i < columns; i++) {
+        drops[i] = Math.floor(Math.random() * -30);
+      }
     }
 
     function draw() {
@@ -431,7 +439,7 @@ import LogoDewesoft from "../components/logos/silver/LogoDewesoft.astro";
     function startAnimation() {
       if (isAnimating) return;
       isAnimating = true;
-      canvas.style.opacity = "0.06";
+      canvas.style.opacity = "0.35";
       initRain();
       lastTime = 0;
       function loop(timestamp) {
@@ -449,6 +457,7 @@ import LogoDewesoft from "../components/logos/silver/LogoDewesoft.astro";
     function stopAnimation() {
       if (!isAnimating) return;
       isAnimating = false;
+      clearTimeout(autoStopTimer);
       cancelAnimationFrame(animationId);
       canvas.style.opacity = "0";
       setTimeout(() => {
@@ -458,24 +467,29 @@ import LogoDewesoft from "../components/logos/silver/LogoDewesoft.astro";
       }, 500);
     }
 
-    link.addEventListener("mouseenter", startAnimation);
-    link.addEventListener("mouseleave", stopAnimation);
+    link.addEventListener("pointerenter", (e) => {
+      if (e.pointerType === "mouse") {
+        startAnimation();
+      }
+    });
 
-    let pressTimer;
-    let isLongPress = false;
-    let touchStartX = 0;
-    let touchStartY = 0;
-
+    link.addEventListener("pointerleave", (e) => {
+      if (e.pointerType === "mouse") {
+        stopAnimation();
+      }
+    });
     link.addEventListener("touchstart", (e) => {
       isLongPress = false;
       touchStartX = e.touches[0].clientX;
       touchStartY = e.touches[0].clientY;
+      clearTimeout(pressTimer);
       pressTimer = setTimeout(() => {
         isLongPress = true;
         startAnimation();
-        setTimeout(stopAnimation, 5000);
+        clearTimeout(autoStopTimer);
+        autoStopTimer = setTimeout(stopAnimation, 5000);
       }, 800);
-    }, { passive: false });
+    }, { passive: true });
 
     link.addEventListener("touchmove", (e) => {
       const dx = e.touches[0].clientX - touchStartX;
@@ -492,9 +506,18 @@ import LogoDewesoft from "../components/logos/silver/LogoDewesoft.astro";
       }
     }, { passive: false });
 
-    link.addEventListener("touchcancel", () => clearTimeout(pressTimer));
+    link.addEventListener("touchcancel", () => {
+      clearTimeout(pressTimer);
+    });
 
-    window.addEventListener("touchend", (e) => {
+    link.addEventListener("click", (e) => {
+      if (isLongPress) {
+        e.preventDefault();
+        isLongPress = false;
+      }
+    });
+
+    window.addEventListener("click", (e) => {
       if (isAnimating && e.target !== link && !link.contains(e.target)) {
         stopAnimation();
       }
