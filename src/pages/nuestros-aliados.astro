@@ -431,8 +431,7 @@ import LogoDewesoft from "../components/logos/silver/LogoDewesoft.astro";
     function startAnimation() {
       if (isAnimating) return;
       isAnimating = true;
-      canvas.classList.remove("opacity-0");
-      canvas.classList.add("opacity-15");
+      canvas.style.opacity = "0.06";
       initRain();
       lastTime = 0;
       function loop(timestamp) {
@@ -451,8 +450,7 @@ import LogoDewesoft from "../components/logos/silver/LogoDewesoft.astro";
       if (!isAnimating) return;
       isAnimating = false;
       cancelAnimationFrame(animationId);
-      canvas.classList.remove("opacity-15");
-      canvas.classList.add("opacity-0");
+      canvas.style.opacity = "0";
       setTimeout(() => {
         if (!isAnimating) {
           ctx.clearRect(0, 0, canvas.width, canvas.height);
