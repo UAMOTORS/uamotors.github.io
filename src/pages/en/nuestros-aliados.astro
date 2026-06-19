@@ -1,0 +1,514 @@
+---
+import { Image } from "astro:assets";
+import MainLayout from "../../layouts/MainLayout.astro";
+import siteConfig from "../../site.config";
+import EmailIcon from "../../icons/social_media/Email.astro";
+import Eyes from "../../icons/assets/Eyes.astro";
+import Mobile from "../../icons/assets/Mobile.astro";
+import Document from "../../icons/assets/Document.astro";
+import Event from "../../icons/assets/Event.astro";
+import LogoFuam from "../../components/logos/bronze/LogoFuam.astro";
+import LogoSolidworks from "../../components/logos/gold/LogoSolidworks.astro";
+import LogoAnsys from "../../components/logos/gold/LogoAnsys.astro";
+import LogoEsss from "../../components/logos/gold/LogoEsss.astro";
+import LogoRapidHarnest from "../../components/logos/gold/LogoRapidHarnest.astro";
+import LogoDitsa from "../../components/logos/silver/LogoDitsa.astro";
+import LogoPrimeraPlus from "../../components/logos/silver/LogoPrimeraPlus.astro";
+import LogoDepartamentoEnergia from "../../components/logos/bronze/LogoDepartamentoEnergia.astro";
+import LogoEscuadronUam from "../../components/logos/bronze/LogoEscuadronUam.astro";
+import LogoDewesoft from "../../components/logos/silver/LogoDewesoft.astro";
+---
+
+<MainLayout
+  activePage="nuestros aliados"
+  pageTitle={siteConfig.title + " | Our Partners"}
+  description="Meet the companies and institutions powering UAMOTORS. Discover the benefits of sponsoring our project and accelerating UAM engineering talent."
+>
+  <div class="page-content max-w-5xl mx-auto min-w-0">
+    <h1 class="sigmar-ff text-balance mb-8">Our Partners</h1>
+
+    <section id="nuestros-aliados" class="text-left space-y-16">
+      <div class="space-y-12 md:space-y-20">
+        <!-- Gold -->
+        <div id="oro-grid" class="w-full">
+          <div
+            class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-10 w-full max-w-3xl mx-auto"
+          >
+            <div
+              class="h-[58px] sm:h-16 md:h-20 w-[168px] sm:w-56 md:w-64 flex items-center justify-center"
+            >
+              <a
+                href="https://www.solidworks.com/"
+                target="_blank"
+                class="h-full w-full flex items-center justify-center hover:scale-105 transition-transform duration-300"
+              >
+                <LogoSolidworks class="max-h-full max-w-full object-contain" />
+              </a>
+            </div>
+            <div
+              class="flex flex-row items-center justify-center gap-8 md:gap-10 w-full max-w-[250px] sm:max-w-[280px] md:max-w-none"
+            >
+              <div class="h-[58px] sm:h-16 md:h-20 flex-1 flex items-center justify-center">
+                <a
+                  href="https://www.ansys.com/"
+                  target="_blank"
+                  class="h-full w-full max-w-[108px] sm:max-w-[120px] md:max-w-[140px] flex items-center justify-center hover:scale-105 transition-transform duration-300"
+                >
+                  <LogoAnsys class="max-h-[44%] max-w-full object-contain" />
+                </a>
+              </div>
+              <div class="h-[58px] sm:h-16 md:h-20 flex-1 flex items-center justify-center">
+                <a
+                  href="https://www.esss.com/es/"
+                  target="_blank"
+                  class="h-full w-full max-w-[108px] sm:max-w-[120px] md:max-w-[140px] flex items-center justify-center hover:scale-105 transition-transform duration-300"
+                >
+                  <LogoEsss class="max-h-[80%] max-w-full object-contain" />
+                </a>
+              </div>
+            </div>
+            <div
+              class="h-[58px] sm:h-16 md:h-20 w-[168px] sm:w-56 md:w-64 flex items-center justify-center"
+            >
+              <a
+                href="https://www.rapidharness.com/"
+                target="_blank"
+                class="h-full w-full flex items-center justify-center hover:scale-105 transition-transform duration-300"
+              >
+                <LogoRapidHarnest
+                  class="max-h-full max-w-full object-contain"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Silver -->
+        <div id="plata-grid" class="w-full">
+          <div
+            class="flex flex-row justify-center gap-4 sm:gap-12 md:gap-16 items-center max-w-xl mx-auto"
+          >
+            <div
+              class="h-11 md:h-12 w-32 sm:w-32 md:w-36 flex items-center justify-center"
+            >
+              <a
+                id="dewesoft-link"
+                href="https://dewesoft.com/es"
+                target="_blank"
+                class="h-full w-full flex items-center justify-center"
+              >
+                <LogoDewesoft class="max-h-full max-w-full object-contain" />
+              </a>
+            </div>
+            <div
+              class="h-11 md:h-12 w-32 sm:w-32 md:w-36 flex items-center justify-center"
+            >
+              <a
+                href="https://ditsa.com.mx/"
+                target="_blank"
+                class="h-full w-full flex items-center justify-center"
+              >
+                <LogoDitsa class="max-h-full max-w-full object-contain" />
+              </a>
+            </div>
+            <div
+              class="h-11 md:h-12 w-32 sm:w-32 md:w-36 flex items-center justify-center"
+            >
+              <a
+                href="https://www.primeraplus.com.mx/"
+                target="_blank"
+                class="h-full w-full flex items-center justify-center"
+              >
+                <LogoPrimeraPlus class="max-h-full max-w-full object-contain" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bronze -->
+        <div id="bronce-grid" class="w-full">
+          <div
+            class="flex flex-row flex-nowrap items-center justify-center gap-6 sm:gap-8 md:gap-12 max-w-2xl mx-auto"
+          >
+            <div
+              class="h-8 md:h-8 w-20 sm:w-22 md:w-26 flex items-center justify-center"
+            >
+              <a
+                href="https://www.fundacionuam.org/"
+                target="_blank"
+                class="h-full w-full flex items-center justify-center"
+              >
+                <LogoFuam class="max-h-full max-w-full object-contain" />
+              </a>
+            </div>
+            <div
+              class="h-10 md:h-11 w-10 sm:w-12 md:w-15 flex items-center justify-center"
+            >
+              <a
+                href="http://fenix.uam.mx/escuadron_uam/"
+                target="_blank"
+                class="h-full w-full flex items-center justify-center"
+              >
+                <LogoEscuadronUam
+                  class="max-h-full max-w-full object-contain"
+                />
+              </a>
+            </div>
+            <div
+              class="h-8 md:h-8 w-20 sm:w-22 md:w-26 flex items-center justify-center"
+            >
+              <a
+                href="https://energia.azc.uam.mx/en/"
+                target="_blank"
+                class="h-full w-full flex items-center justify-center"
+              >
+                <LogoDepartamentoEnergia
+                  class="max-h-full max-w-full object-contain"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p
+          class="kanit-light text-lg sm:text-xl leading-relaxed mb-8 text-center sm:text-left"
+        >
+          <strong>UAMOTORS</strong> is an initiative that seeks to demonstrate the high caliber of <a href="https://www.uam.mx/" target="_blank">
+            <strong>UAM</strong></a> in global technological arenas. To realize our vision and push Mexican engineering to the limit, we seek strategic partners to provide the <strong>technical and financial support</strong> necessary to turn this development into a competitive reality.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-black/5 dark:bg-white/5 p-8 rounded-3xl border border-black/10 dark:border-white/10 hover:-translate-y-2 hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300"
+          >
+            <h4
+              class="sigmar-ff text-xl mb-3 text-space-red dark:text-space-yellow"
+            >
+              Strategic Partnership
+            </h4>
+            <p class="kanit-light text-base sm:text-lg leading-relaxed">
+              We do not seek merely a sponsor, but a strategic partner to drive student talent growth and strengthen technological development in Mexico.
+            </p>
+          </div>
+          <div
+            class="bg-black/5 dark:bg-white/5 p-8 rounded-3xl border border-black/10 dark:border-white/10 hover:-translate-y-2 hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300"
+          >
+            <h4
+              class="sigmar-ff text-xl mb-3 text-space-red dark:text-space-yellow"
+            >
+              Academy-Industry Link
+            </h4>
+            <p class="kanit-light text-base sm:text-lg leading-relaxed">
+              The project positions companies as champions of young talent, providing a direct connection platform with the <a
+                href="https://www.uam.mx/"
+                target="_blank"><strong>UAM</strong></a> university community.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h2
+          class="sigmar-ff text-3xl mb-8 text-space-red dark:text-space-yellow"
+        >
+          Key Benefits
+        </h2>
+        <ul
+          class="grid grid-cols-1 md:grid-cols-2 gap-8 gap-y-12 kanit-light text-lg sm:text-xl"
+        >
+          <li class="flex items-start gap-4">
+            <Eyes class="w-8 h-8 shrink-0 mt-1" />
+            <div>
+              <strong
+                class="kanit-regular text-space-red dark:text-space-yellow"
+                >Brand Visibility:</strong
+              ><br />
+              Logo placement on our race car <a href="/en/proyecto"
+                ><strong>"OP"</strong></a
+              >, uniforms, and promotional material.
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <Mobile class="w-8 h-8 shrink-0 mt-1" />
+            <div>
+              <strong
+                class="kanit-regular text-space-red dark:text-space-yellow"
+                >Digital Impact:</strong
+              ><br />
+              Continuous presence on our <a href="/en/contacto/#canales-oficiales"
+                ><strong>social platforms</strong></a
+              > with a dynamic, growing reach.
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <Document class="w-8 h-8 shrink-0 mt-1" />
+            <div>
+              <strong
+                class="kanit-regular text-space-red dark:text-space-yellow"
+                >Tax Benefit:</strong
+              ><br />
+              Tax-deductible receipts provided with the support of <a href="https://www.fundacionuam.org/" target="_blank"
+                ><strong>Fundación UAM</strong></a
+              >.
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <Event class="w-8 h-8 shrink-0 mt-1" />
+            <div>
+              <strong
+                class="kanit-regular text-space-red dark:text-space-yellow"
+                >Event Presence:</strong
+              ><br />
+              Brand exposure at university community events and team exhibitions.
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div
+        id="unete"
+        class="bg-space-red/10 dark:bg-space-yellow/10 p-8 sm:p-12 rounded-3xl text-center border border-space-red/20 dark:border-space-yellow/20"
+      >
+        <h2
+          class="sigmar-ff text-3xl sm:text-4xl mb-4 text-space-red dark:text-space-yellow"
+        >
+          Accelerate Our Goal!
+        </h2>
+        <p
+          class="kanit-light text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl mx-auto opacity-90"
+        >
+          Your support is the engine that drives UAM engineering to the next level. To learn about our collaboration models and their <strong>benefits</strong>, get in touch and let's work <strong>together</strong>.
+        </p>
+        <div
+          class="mt-8 pt-8 border-t border-space-red/20 dark:border-white/10 flex flex-col sm:flex-row justify-center gap-6 sm:gap-12 kanit-light text-lg"
+        >
+          <a
+            href="mailto:uamotors.fsae@azc.uam.mx?subject=Interest%20in%20Sponsorship%20Proposal"
+            class="flex items-center justify-center gap-2 hover:text-space-red dark:hover:text-space-yellow transition-colors group"
+          >
+            <EmailIcon class="w-5 h-5" /> uamotors.fsae@azc.uam.mx
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+  <canvas
+    id="daq-canvas"
+    class="fixed inset-0 w-full h-full pointer-events-none opacity-0 transition-opacity duration-500 z-[99]"
+  ></canvas>
+</MainLayout>
+
+<style is:global>
+  #oro-grid img,
+  #plata-grid img,
+  #bronce-grid img {
+    border-radius: 0 !important;
+  }
+  #oro-grid svg,
+  #oro-grid img,
+  #plata-grid svg,
+  #plata-grid img,
+  #bronce-grid svg,
+  #bronce-grid img {
+    transition: all 0.15s ease-in-out !important;
+    will-change: filter, transform, opacity;
+  }
+
+  html.light {
+    --logo-filter: grayscale(1) opacity(1)
+      drop-shadow(0 0 2px rgba(255, 255, 255, 1))
+      drop-shadow(0 4px 10px rgba(100, 85, 75, 0.8));
+    --logo-hover-filter: grayscale(0) opacity(1);
+  }
+
+  html.dark {
+    --logo-filter: grayscale(1) invert(1) opacity(0.7)
+      drop-shadow(0 0 2px rgba(0, 0, 0, 1))
+      drop-shadow(0 0 6px rgba(0, 0, 0, 1))
+      drop-shadow(0 0 16px rgba(0, 0, 0, 1));
+    --logo-hover-filter: grayscale(0) invert(0) opacity(1);
+  }
+
+  #oro-grid svg,
+  #oro-grid img,
+  #plata-grid svg,
+  #plata-grid img,
+  #bronce-grid svg,
+  #bronce-grid img {
+    opacity: 1 !important;
+    filter: var(--logo-filter) !important;
+  }
+
+  #oro-grid a:hover svg,
+  #oro-grid a:hover img,
+  #plata-grid a:hover svg,
+  #plata-grid a:hover img,
+  #bronce-grid a:hover svg,
+  #bronce-grid a:hover img {
+    opacity: 1 !important;
+    filter: var(--logo-hover-filter) !important;
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener("astro:page-load", () => {
+    const logos = document.querySelectorAll(
+      "#oro-grid img, #plata-grid img, #bronce-grid img, #oro-grid svg, #plata-grid svg, #bronce-grid svg",
+    );
+    logos.forEach((logo) => {
+      logo.style.setProperty("filter", "none", "important");
+      logo.offsetHeight;
+      logo.style.removeProperty("filter");
+    });
+
+    const link = document.getElementById("dewesoft-link");
+    const canvas = document.getElementById("daq-canvas");
+    if (!link || !canvas) return;
+
+    const ctx = canvas.getContext("2d");
+    let animationId;
+    let isAnimating = false;
+    let autoStopTimer;
+    let pressTimer;
+    let isLongPress = false;
+    let touchStartX = 0;
+    let touchStartY = 0;
+    const chars = "01RPMTEMPDAQ0x1F0CANVOLTSPEEDACCEL".split("");
+    const fontSize = 18;
+    let columns;
+    let drops;
+    let lastTime = 0;
+    const interval = 1000 / 15;
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+
+    function initRain() {
+      resizeCanvas();
+      columns = Math.floor(canvas.width / fontSize);
+      drops = [];
+      for (let i = 0; i < columns; i++) {
+        drops[i] = Math.floor(Math.random() * -30);
+      }
+    }
+
+    function draw() {
+      const themeColor = getComputedStyle(document.documentElement)
+        .getPropertyValue('--space-red')
+        .trim() || '#E31E24';
+
+      ctx.fillStyle = document.documentElement.classList.contains("dark")
+        ? "rgba(0, 0, 0, 0.08)"
+        : "rgba(253, 252, 251, 0.08)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = themeColor;
+      ctx.font = fontSize + "px monospace";
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = chars[Math.floor(Math.random() * chars.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+    }
+
+    function startAnimation() {
+      if (isAnimating) return;
+      isAnimating = true;
+      canvas.style.opacity = "0.35";
+      initRain();
+      lastTime = 0;
+      function loop(timestamp) {
+        if (!isAnimating) return;
+        const elapsed = timestamp - lastTime;
+        if (elapsed > interval) {
+          draw();
+          lastTime = timestamp - (elapsed % interval);
+        }
+        animationId = requestAnimationFrame(loop);
+      }
+      requestAnimationFrame(loop);
+    }
+
+    function stopAnimation() {
+      if (!isAnimating) return;
+      isAnimating = false;
+      clearTimeout(autoStopTimer);
+      cancelAnimationFrame(animationId);
+      canvas.style.opacity = "0";
+      setTimeout(() => {
+        if (!isAnimating) {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+      }, 500);
+    }
+
+    link.addEventListener("pointerenter", (e) => {
+      if (e.pointerType === "mouse") {
+        startAnimation();
+      }
+    });
+
+    link.addEventListener("pointerleave", (e) => {
+      if (e.pointerType === "mouse") {
+        stopAnimation();
+      }
+    });
+    link.addEventListener("touchstart", (e) => {
+      isLongPress = false;
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+      clearTimeout(pressTimer);
+      pressTimer = setTimeout(() => {
+        isLongPress = true;
+        startAnimation();
+        clearTimeout(autoStopTimer);
+        autoStopTimer = setTimeout(stopAnimation, 5000);
+      }, 800);
+    }, { passive: true });
+
+    link.addEventListener("touchmove", (e) => {
+      const dx = e.touches[0].clientX - touchStartX;
+      const dy = e.touches[0].clientY - touchStartY;
+      if (Math.sqrt(dx * dx + dy * dy) > 10) {
+        clearTimeout(pressTimer);
+      }
+    }, { passive: true });
+
+    link.addEventListener("touchend", (e) => {
+      clearTimeout(pressTimer);
+      if (isLongPress) {
+        e.preventDefault();
+      }
+    }, { passive: false });
+
+    link.addEventListener("touchcancel", () => {
+      clearTimeout(pressTimer);
+    });
+
+    link.addEventListener("click", (e) => {
+      if (isLongPress) {
+        e.preventDefault();
+        isLongPress = false;
+      }
+    });
+
+    window.addEventListener("click", (e) => {
+      if (isAnimating && e.target !== link && !link.contains(e.target)) {
+        stopAnimation();
+      }
+    });
+
+    window.addEventListener("resize", () => {
+      if (isAnimating) {
+        initRain();
+      }
+    });
+  });
+</script>
