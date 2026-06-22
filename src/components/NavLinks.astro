@@ -12,11 +12,12 @@ const {
 
 {
   links?.map((link) => {
+    const cleanActive = activePage.toLowerCase().replace(/\s+/g, "-");
+    const cleanHref = link.href.replace(/\/$/, "");
+    const isActive = activePage === link.text.toLowerCase() || cleanHref.endsWith("/" + cleanActive);
     const classNames = [
       isMobileLink ? "close-menu text-2xl py-1 font-normal" : "whitespace-nowrap",
-      activePage === link.text.toLowerCase()
-        ? "text-space-red! dark:text-space-yellow!"
-        : "",
+      isActive ? "text-space-red! dark:text-space-yellow!" : "",
     ]
       .join(" ")
       .trim();
