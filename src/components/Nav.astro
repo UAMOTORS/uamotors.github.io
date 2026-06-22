@@ -49,37 +49,12 @@ const navLinks = isEnglish ? englishNavLinks : siteConfig.headerNavLinks;
       {(<NavLinks activePage={activePage} links={navLinks} />)}
     </div>
     <div class="flex items-center gap-4">
-      <div class="hidden md:flex items-center p-0.5 rounded-full border border-gray-500/30 bg-black/5 dark:bg-white/5 h-[38px] text-xs font-semibold select-none">
-        {isEnglish ? (
-          <>
-            <a
-              href={targetUrl}
-              class="h-full flex items-center justify-center px-3 rounded-full text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5 transition-all uppercase tracking-wider"
-            >
-              ES
-            </a>
-            <span
-              class="h-full flex items-center justify-center px-3 rounded-full bg-space-red text-white dark:bg-space-yellow dark:text-black shadow-sm uppercase tracking-wider"
-            >
-              EN
-            </span>
-          </>
-        ) : (
-          <>
-            <span
-              class="h-full flex items-center justify-center px-3 rounded-full bg-space-red text-white dark:bg-space-yellow dark:text-black shadow-sm uppercase tracking-wider"
-            >
-              ES
-            </span>
-            <a
-              href={targetUrl}
-              class="h-full flex items-center justify-center px-3 rounded-full text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5 transition-all uppercase tracking-wider"
-            >
-              EN
-            </a>
-          </>
-        )}
-      </div>
+      <a
+        href={targetUrl}
+        class="flex items-center justify-center w-[38px] h-[38px] text-xs font-semibold rounded-full border border-gray-500/30 hover:border-space-red dark:hover:border-space-yellow hover:text-space-red dark:hover:text-space-yellow transition-colors cursor-pointer select-none"
+      >
+        {isEnglish ? "ES" : "EN"}
+      </a>
       <ThemeSwitcher />
       <Hamburger />
     </div>
@@ -94,39 +69,7 @@ const navLinks = isEnglish ? englishNavLinks : siteConfig.headerNavLinks;
       links={navLinks}
       isMobileLink={true}
     />
-    <div class="mt-6 pt-6 border-t border-black/10 dark:border-white/10 w-full flex justify-end">
-      <div class="flex items-center p-0.5 rounded-full border border-gray-500/30 bg-black/5 dark:bg-white/5 h-[38px] text-xs font-semibold select-none">
-        {isEnglish ? (
-          <>
-            <a
-              href={targetUrl}
-              class="h-full flex items-center justify-center px-3 rounded-full text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5 transition-all uppercase tracking-wider"
-            >
-              ES
-            </a>
-            <span
-              class="h-full flex items-center justify-center px-3 rounded-full bg-space-red text-white dark:bg-space-yellow dark:text-black shadow-sm uppercase tracking-wider"
-            >
-              EN
-            </span>
-          </>
-        ) : (
-          <>
-            <span
-              class="h-full flex items-center justify-center px-3 rounded-full bg-space-red text-white dark:bg-space-yellow dark:text-black shadow-sm uppercase tracking-wider"
-            >
-              ES
-            </span>
-            <a
-              href={targetUrl}
-              class="h-full flex items-center justify-center px-3 rounded-full text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5 transition-all uppercase tracking-wider"
-            >
-              EN
-            </a>
-          </>
-        )}
-      </div>
-    </div>
+
   </div>
 </header>
 <script is:inline>
