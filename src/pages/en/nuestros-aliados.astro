@@ -315,14 +315,6 @@ import LogoDewesoft from "../../components/logos/silver/LogoDewesoft.astro";
       </div>
     </section>
   </div>
-  <canvas
-    id="daq-canvas"
-    class="fixed inset-0 w-full h-full pointer-events-none opacity-0 transition-opacity duration-500 z-[99]"
-  ></canvas>
-  <canvas
-    id="harness-canvas"
-    class="fixed inset-0 w-full h-full pointer-events-none opacity-0 transition-opacity duration-500 z-[99]"
-  ></canvas>
 </MainLayout>
 
 <style is:global>
@@ -590,7 +582,7 @@ import LogoDewesoft from "../../components/logos/silver/LogoDewesoft.astro";
         const logoImg = harnessLink.querySelector("img, svg");
         const rect = logoImg ? logoImg.getBoundingClientRect() : harnessLink.getBoundingClientRect();
         
-        const padding = 16;
+        const padding = 36;
         targetBox = {
           left: rect.left - padding,
           right: rect.right + padding,
