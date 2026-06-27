@@ -172,6 +172,11 @@ function initHarness() {
   const hCtx = harnessCanvas.getContext("2d");
   let hAnimationId;
   let hIsAnimating = false;
+  let hAutoStopTimer;
+  let hPressTimer;
+  let hIsLongPress = false;
+  let hTouchStartX = 0;
+  let hTouchStartY = 0;
   let lines = [];
   let intersections = [];
   let collidedPairs = new Set();
@@ -366,6 +371,7 @@ function initHarness() {
   function stopHarnessAnimation() {
     if (!hIsAnimating) return;
     hIsAnimating = false;
+    clearTimeout(hAutoStopTimer);
     cancelAnimationFrame(hAnimationId);
     harnessCanvas.style.opacity = "0";
     setTimeout(() => { if (!hIsAnimating) hCtx.clearRect(0, 0, window.innerWidth, window.innerHeight); }, 500);
@@ -375,13 +381,52 @@ function initHarness() {
   const handlePointerLeave = (e) => { if (e.pointerType === "mouse") stopHarnessAnimation(); };
   const handleWindowResize = () => { if (hIsAnimating) resizeHarnessCanvas(); };
 
+  const handleTouchStart = (e) => {
+    hIsLongPress = false;
+    hTouchStartX = e.touches[0].clientX;
+    hTouchStartY = e.touches[0].clientY;
+    clearTimeout(hPressTimer);
+    hPressTimer = setTimeout(() => {
+      hIsLongPress = true;
+      startHarnessAnimation();
+      clearTimeout(hAutoStopTimer);
+      hAutoStopTimer = setTimeout(stopHarnessAnimation, 5000);
+    }, 800);
+  };
+  const handleTouchMove = (e) => {
+    const dx = e.touches[0].clientX - hTouchStartX;
+    const dy = e.touches[0].clientY - hTouchStartY;
+    if (Math.sqrt(dx * dx + dy * dy) > 10) clearTimeout(hPressTimer);
+  };
+  const handleTouchEnd = (e) => {
+    clearTimeout(hPressTimer);
+    if (hIsLongPress) e.preventDefault();
+  };
+  const handleTouchCancel = () => clearTimeout(hPressTimer);
+  const handleClick = (e) => {
+    if (hIsLongPress) {
+      e.preventDefault();
+      hIsLongPress = false;
+    }
+  };
+
   harnessLink.addEventListener("pointerenter", handlePointerEnter);
   harnessLink.addEventListener("pointerleave", handlePointerLeave);
+  harnessLink.addEventListener("touchstart", handleTouchStart, { passive: true });
+  harnessLink.addEventListener("touchmove", handleTouchMove, { passive: true });
+  harnessLink.addEventListener("touchend", handleTouchEnd, { passive: false });
+  harnessLink.addEventListener("touchcancel", handleTouchCancel);
+  harnessLink.addEventListener("click", handleClick);
   window.addEventListener("resize", handleWindowResize);
 
   return () => {
     harnessLink.removeEventListener("pointerenter", handlePointerEnter);
     harnessLink.removeEventListener("pointerleave", handlePointerLeave);
+    harnessLink.removeEventListener("touchstart", handleTouchStart);
+    harnessLink.removeEventListener("touchmove", handleTouchMove);
+    harnessLink.removeEventListener("touchend", handleTouchEnd);
+    harnessLink.removeEventListener("touchcancel", handleTouchCancel);
+    harnessLink.removeEventListener("click", handleClick);
     window.removeEventListener("resize", handleWindowResize);
     stopHarnessAnimation();
   };
