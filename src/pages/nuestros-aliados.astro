@@ -564,7 +564,9 @@ import LogoDewesoft from "../components/logos/silver/LogoDewesoft.astro";
       let hAnimationId;
       let hIsAnimating = false;
       let lines = [];
-      const lineCount = 14;
+      let intersections = [];
+      let collidedPairs = new Set();
+      const lineCount = 20;
       const speed = 7; // pixels per frame
       let targetBox = null;
 
@@ -606,11 +608,12 @@ import LogoDewesoft from "../components/logos/silver/LogoDewesoft.astro";
         const logoImg = harnessLink.querySelector("img, svg");
         const rect = logoImg ? logoImg.getBoundingClientRect() : harnessLink.getBoundingClientRect();
         
+        const padding = 16;
         targetBox = {
-          left: rect.left - 4,
-          right: rect.right + 4,
-          top: rect.top - 4,
-          bottom: rect.bottom + 4
+          left: rect.left - padding,
+          right: rect.right + padding,
+          top: rect.top - padding,
+          bottom: rect.bottom + padding
         };
         
         const targetX = rect.left + rect.width / 2;
@@ -620,13 +623,15 @@ import LogoDewesoft from "../components/logos/silver/LogoDewesoft.astro";
         const h = harnessCanvas.height;
         
         lines = [];
+        intersections = [];
+        collidedPairs.clear();
         const isDark = document.documentElement.classList.contains("dark");
         const colors = isDark 
           ? ["#40C057", "#7A50F3", "#FB5252", "#FB7E15", "#FCC419"] 
           : ["#2f9e44", "#6741d9", "#e03131", "#e8590c", "#f08c00"]; 
           
         for (let i = 0; i < lineCount; i++) {
-          const border = Math.floor(Math.random() * 4);
+          const border = i % 4;
           let startX, startY;
           if (border === 0) {
             startX = Math.random() * w;
@@ -645,6 +650,7 @@ import LogoDewesoft from "../components/logos/silver/LogoDewesoft.astro";
           const path = generateOrthogonalPath(startX, startY, targetX, targetY);
           
           lines.push({
+            id: i,
             path: path,
             color: colors[i % colors.length],
             currentSegment: 0,
@@ -656,8 +662,60 @@ import LogoDewesoft from "../components/logos/silver/LogoDewesoft.astro";
         }
       }
 
+      function checkIntersections() {
+        lines.forEach((lineA, indexA) => {
+          if (lineA.finished) return;
+          const ax = lineA.currX;
+          const ay = lineA.currY;
+          lines.forEach((lineB, indexB) => {
+            if (indexA === indexB || lineA.color !== lineB.color) return;
+            const points = [...lineB.drawnPoints];
+            if (!lineB.finished) {
+              points.push({ x: lineB.currX, y: lineB.currY });
+            }
+            for (let i = 0; i < points.length - 1; i++) {
+              const p1 = points[i];
+              const p2 = points[i + 1];
+              let intersected = false;
+              let ix = 0;
+              let iy = 0;
+              const isHorizontal = Math.abs(p1.y - p2.y) < 0.1;
+              const isVertical = Math.abs(p1.x - p2.x) < 0.1;
+              if (isHorizontal) {
+                const minX = Math.min(p1.x, p2.x);
+                const maxX = Math.max(p1.x, p2.x);
+                if (Math.abs(ay - p1.y) < 2 && ax >= minX + 5 && ax <= maxX - 5) {
+                  intersected = true;
+                  ix = ax;
+                  iy = p1.y;
+                }
+              } else if (isVertical) {
+                const minY = Math.min(p1.y, p2.y);
+                const maxY = Math.max(p1.y, p2.y);
+                if (Math.abs(ax - p1.x) < 2 && ay >= minY + 5 && ay <= maxY - 5) {
+                  intersected = true;
+                  ix = p1.x;
+                  iy = ay;
+                }
+              }
+              if (intersected) {
+                const pairKey = lineA.id < lineB.id 
+                  ? `${lineA.id}-${lineB.id}` 
+                  : `${lineB.id}-${lineA.id}`;
+                  
+                if (!collidedPairs.has(pairKey)) {
+                  collidedPairs.add(pairKey);
+                  intersections.push({ x: ix, y: iy, color: lineA.color });
+                }
+              }
+            }
+          });
+        });
+      }
+
       function updateAndDrawHarness() {
         hCtx.clearRect(0, 0, harnessCanvas.width, harnessCanvas.height);
+        checkIntersections();
         let allFinished = true;
         
         lines.forEach(line => {
@@ -718,6 +776,14 @@ import LogoDewesoft from "../components/logos/silver/LogoDewesoft.astro";
             hCtx.fill();
           }
         });
+
+        // Dibujar puntos de intersección entre líneas del mismo color
+        intersections.forEach(pt => {
+          hCtx.beginPath();
+          hCtx.arc(pt.x, pt.y, 3.5, 0, 2 * Math.PI);
+          hCtx.fillStyle = pt.color;
+          hCtx.fill();
+        });
         
         if (!allFinished && hIsAnimating) {
           hAnimationId = requestAnimationFrame(updateAndDrawHarness);
@@ -727,7 +793,7 @@ import LogoDewesoft from "../components/logos/silver/LogoDewesoft.astro";
       function startHarnessAnimation() {
         if (hIsAnimating) return;
         hIsAnimating = true;
-        harnessCanvas.style.opacity = "0.8";
+        harnessCanvas.style.opacity = "1";
         initHarnessLines();
         updateAndDrawHarness();
       }
