@@ -31,13 +31,15 @@ function initDewesoft() {
   const interval = 1000 / 15;
 
   function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = window.innerWidth * dpr;
+    canvas.height = window.innerHeight * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
   }
 
   function initRain() {
     resizeCanvas();
-    columns = Math.floor(canvas.width / fontSize);
+    columns = Math.floor(window.innerWidth / fontSize);
     drops = [];
     for (let i = 0; i < columns; i++) {
       drops[i] = Math.floor(Math.random() * -30);
@@ -52,7 +54,7 @@ function initDewesoft() {
     ctx.fillStyle = document.documentElement.classList.contains("dark")
       ? "rgba(0, 0, 0, 0.08)"
       : "rgba(253, 252, 251, 0.08)";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
 
     ctx.fillStyle = themeColor;
     ctx.font = fontSize + "px monospace";
@@ -94,7 +96,7 @@ function initDewesoft() {
     canvas.style.opacity = "0";
     setTimeout(() => {
       if (!isAnimating) {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
       }
     }, 500);
   }
@@ -178,8 +180,10 @@ function initHarness() {
   let targetBox = null;
 
   function resizeHarnessCanvas() {
-    harnessCanvas.width = window.innerWidth;
-    harnessCanvas.height = window.innerHeight;
+    const dpr = window.devicePixelRatio || 1;
+    harnessCanvas.width = window.innerWidth * dpr;
+    harnessCanvas.height = window.innerHeight * dpr;
+    hCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
   }
 
   function generateOrthogonalPath(startX, startY, targetX, targetY) {
@@ -220,8 +224,8 @@ function initHarness() {
     const targetX = rect.left + rect.width / 2;
     const targetY = rect.top + rect.height / 2;
     
-    const w = harnessCanvas.width;
-    const h = harnessCanvas.height;
+    const w = window.innerWidth;
+    const h = window.innerHeight;
     
     lines = [];
     intersections = [];
@@ -288,7 +292,7 @@ function initHarness() {
   }
 
   function updateAndDrawHarness() {
-    hCtx.clearRect(0, 0, harnessCanvas.width, harnessCanvas.height);
+    hCtx.clearRect(0, 0, window.innerWidth, window.innerHeight);
     checkIntersections();
     let allFinished = true;
     
@@ -364,7 +368,7 @@ function initHarness() {
     hIsAnimating = false;
     cancelAnimationFrame(hAnimationId);
     harnessCanvas.style.opacity = "0";
-    setTimeout(() => { if (!hIsAnimating) hCtx.clearRect(0, 0, harnessCanvas.width, harnessCanvas.height); }, 500);
+    setTimeout(() => { if (!hIsAnimating) hCtx.clearRect(0, 0, window.innerWidth, window.innerHeight); }, 500);
   }
 
   const handlePointerEnter = (e) => { if (e.pointerType === "mouse") startHarnessAnimation(); };
