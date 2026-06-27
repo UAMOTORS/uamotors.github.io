@@ -11,6 +11,7 @@ import LogoFuam from "../../components/logos/bronze/LogoFuam.astro";
 import LogoSolidworks from "../../components/logos/gold/LogoSolidworks.astro";
 import LogoAnsys from "../../components/logos/gold/LogoAnsys.astro";
 import LogoEsss from "../../components/logos/gold/LogoEsss.astro";
+import LogoHarnessDesign from "../../components/logos/gold/LogoHarnessDesign.astro";
 import LogoRapidHarnest from "../../components/logos/gold/LogoRapidHarnest.astro";
 import LogoDitsa from "../../components/logos/silver/LogoDitsa.astro";
 import LogoPrimeraPlus from "../../components/logos/silver/LogoPrimeraPlus.astro";
@@ -32,10 +33,11 @@ import LogoDewesoft from "../../components/logos/silver/LogoDewesoft.astro";
         <!-- Gold -->
         <div id="oro-grid" class="w-full">
           <div
-            class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-10 w-full max-w-3xl mx-auto"
+            class="flex flex-col md:flex-row md:flex-wrap items-center justify-center gap-8 md:gap-10 w-full max-w-4xl mx-auto"
           >
+            <!-- 1. Solidworks -->
             <div
-              class="h-[58px] sm:h-16 md:h-20 w-[168px] sm:w-56 md:w-64 flex items-center justify-center"
+              class="order-1 md:order-2 h-[58px] sm:h-16 md:h-20 w-[168px] sm:w-48 md:w-56 flex items-center justify-center"
             >
               <a
                 href="https://www.solidworks.com/"
@@ -45,30 +47,49 @@ import LogoDewesoft from "../../components/logos/silver/LogoDewesoft.astro";
                 <LogoSolidworks class="max-h-full max-w-full object-contain" />
               </a>
             </div>
-            <div
-              class="flex flex-row items-center justify-center gap-8 md:gap-10 w-full max-w-[250px] sm:max-w-[280px] md:max-w-none"
-            >
-              <div class="h-[58px] sm:h-16 md:h-20 flex-1 flex items-center justify-center">
-                <a
-                  href="https://www.ansys.com/"
-                  target="_blank"
-                  class="h-full w-full max-w-[108px] sm:max-w-[120px] md:max-w-[140px] flex items-center justify-center hover:scale-105 transition-transform duration-300"
-                >
-                  <LogoAnsys class="max-h-[44%] max-w-full object-contain" />
-                </a>
-              </div>
-              <div class="h-[58px] sm:h-16 md:h-20 flex-1 flex items-center justify-center">
-                <a
-                  href="https://www.esss.com/es/"
-                  target="_blank"
-                  class="h-full w-full max-w-[108px] sm:max-w-[120px] md:max-w-[140px] flex items-center justify-center hover:scale-105 transition-transform duration-300"
-                >
-                  <LogoEsss class="max-h-[80%] max-w-full object-contain" />
-                </a>
+
+            <!-- 2. Ansys & ESSS -->
+            <div class="order-2 md:order-1 md:w-full flex justify-center w-full">
+              <div
+                class="flex flex-row items-center justify-center gap-8 md:gap-10 w-full max-w-[250px] sm:max-w-[280px] md:max-w-[320px]"
+              >
+                <div class="h-[58px] sm:h-16 md:h-20 flex-1 flex items-center justify-center">
+                  <a
+                    href="https://www.ansys.com/"
+                    target="_blank"
+                    class="h-full w-full max-w-[108px] sm:max-w-[120px] md:max-w-[140px] flex items-center justify-center hover:scale-105 transition-transform duration-300"
+                  >
+                    <LogoAnsys class="max-h-[44%] max-w-full object-contain" />
+                  </a>
+                </div>
+                <div class="h-[58px] sm:h-16 md:h-20 flex-1 flex items-center justify-center">
+                  <a
+                    href="https://www.esss.com/es/"
+                    target="_blank"
+                    class="h-full w-full max-w-[108px] sm:max-w-[120px] md:max-w-[140px] flex items-center justify-center hover:scale-105 transition-transform duration-300"
+                  >
+                    <LogoEsss class="max-h-[80%] max-w-full object-contain" />
+                  </a>
+                </div>
               </div>
             </div>
+
+            <!-- 3. Harness Design -->
             <div
-              class="h-[58px] sm:h-16 md:h-20 w-[168px] sm:w-56 md:w-64 flex items-center justify-center"
+              class="order-3 md:order-3 h-[58px] sm:h-16 md:h-20 w-[168px] sm:w-48 md:w-56 flex items-center justify-center"
+            >
+              <a
+                href="https://www.harnessdesign.com/"
+                target="_blank"
+                class="h-full w-full flex items-center justify-center hover:scale-105 transition-transform duration-300"
+              >
+                <LogoHarnessDesign class="max-h-full max-w-full object-contain" />
+              </a>
+            </div>
+
+            <!-- 4. Rapid Harness -->
+            <div
+              class="order-4 md:order-4 h-[58px] sm:h-16 md:h-20 w-[168px] sm:w-48 md:w-56 flex items-center justify-center"
             >
               <a
                 href="https://www.rapidharness.com/"
