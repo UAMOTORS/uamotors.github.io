@@ -30,9 +30,9 @@ import LogoDewesoft from "../../components/logos/silver/LogoDewesoft.astro";
 
     <section id="nuestros-aliados" class="text-left space-y-16">
       <div class="space-y-12 md:space-y-20">
-        <!-- Gold -->
+        {/* Gold */}
         <div id="oro-grid" class="w-full space-y-8 md:space-y-12">
-          <!-- Row 1: Ansys & ESSS -->
+          {/* Row 1: Ansys & ESSS */}
           <div class="flex justify-center w-full">
             <div
               class="flex flex-row items-center justify-center gap-8 md:gap-10 w-full max-w-[250px] sm:max-w-[280px] md:max-w-[320px]"
@@ -58,11 +58,11 @@ import LogoDewesoft from "../../components/logos/silver/LogoDewesoft.astro";
             </div>
           </div>
 
-          <!-- Row 2: Solidworks, Harness Design, Rapid Harness -->
+          {/* Row 2: Solidworks, Harness Design, Rapid Harness */}
           <div
             class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-x-8 lg:gap-x-14 w-full max-w-4xl mx-auto"
           >
-            <!-- 1. Solidworks -->
+            {/* 1. Solidworks */}
             <div
               class="h-[58px] sm:h-16 md:h-20 w-[178px] sm:w-48 md:w-48 lg:w-60 flex items-center justify-center"
             >
@@ -75,7 +75,7 @@ import LogoDewesoft from "../../components/logos/silver/LogoDewesoft.astro";
               </a>
             </div>
 
-            <!-- 2. Harness Design -->
+            {/* 2. Harness Design */}
             <div
               class="h-[58px] sm:h-16 md:h-20 w-[178px] sm:w-48 md:w-48 lg:w-60 flex items-center justify-center"
             >
@@ -89,7 +89,7 @@ import LogoDewesoft from "../../components/logos/silver/LogoDewesoft.astro";
               </a>
             </div>
 
-            <!-- 3. Rapid Harness -->
+            {/* 3. Rapid Harness */}
             <div
               class="h-[58px] sm:h-16 md:h-20 w-[178px] sm:w-48 md:w-48 lg:w-60 flex items-center justify-center"
             >
@@ -106,7 +106,7 @@ import LogoDewesoft from "../../components/logos/silver/LogoDewesoft.astro";
           </div>
         </div>
 
-        <!-- Silver -->
+        {/* Silver */}
         <div id="plata-grid" class="w-full">
           <div
             class="flex flex-row justify-center gap-6 sm:gap-16 md:gap-24 lg:gap-32 items-center max-w-4xl mx-auto"
@@ -148,7 +148,7 @@ import LogoDewesoft from "../../components/logos/silver/LogoDewesoft.astro";
           </div>
         </div>
 
-        <!-- Bronze -->
+        {/* Bronze */}
         <div id="bronce-grid" class="w-full">
           <div
             class="flex flex-row flex-nowrap items-center justify-center gap-6 sm:gap-16 md:gap-24 lg:gap-32 max-w-4xl mx-auto"
@@ -369,438 +369,4 @@ import LogoDewesoft from "../../components/logos/silver/LogoDewesoft.astro";
   }
 </style>
 
-<script is:inline>
-  document.addEventListener("astro:page-load", () => {
-    const logos = document.querySelectorAll(
-      "#oro-grid img, #plata-grid img, #bronce-grid img, #oro-grid svg, #plata-grid svg, #bronce-grid svg",
-    );
-    logos.forEach((logo) => {
-      logo.style.setProperty("filter", "none", "important");
-      logo.offsetHeight;
-      logo.style.removeProperty("filter");
-    });
-
-    const link = document.getElementById("dewesoft-link");
-    const canvas = document.getElementById("daq-canvas");
-    if (!link || !canvas) return;
-
-    const ctx = canvas.getContext("2d");
-    let animationId;
-    let isAnimating = false;
-    let autoStopTimer;
-    let pressTimer;
-    let isLongPress = false;
-    let touchStartX = 0;
-    let touchStartY = 0;
-    const chars = "01RPMTEMPDAQ0x1F0CANVOLTSPEEDACCEL".split("");
-    const fontSize = 18;
-    let columns;
-    let drops;
-    let lastTime = 0;
-    const interval = 1000 / 15;
-
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-
-    function initRain() {
-      resizeCanvas();
-      columns = Math.floor(canvas.width / fontSize);
-      drops = [];
-      for (let i = 0; i < columns; i++) {
-        drops[i] = Math.floor(Math.random() * -30);
-      }
-    }
-
-    function draw() {
-      const themeColor = getComputedStyle(document.documentElement)
-        .getPropertyValue('--space-red')
-        .trim() || '#E31E24';
-
-      ctx.fillStyle = document.documentElement.classList.contains("dark")
-        ? "rgba(0, 0, 0, 0.08)"
-        : "rgba(253, 252, 251, 0.08)";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      ctx.fillStyle = themeColor;
-      ctx.font = fontSize + "px monospace";
-
-      for (let i = 0; i < drops.length; i++) {
-        const text = chars[Math.floor(Math.random() * chars.length)];
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-          drops[i] = 0;
-        }
-        drops[i]++;
-      }
-    }
-
-    function startAnimation() {
-      if (isAnimating) return;
-      isAnimating = true;
-      canvas.style.opacity = "0.35";
-      initRain();
-      lastTime = 0;
-      function loop(timestamp) {
-        if (!isAnimating) return;
-        const elapsed = timestamp - lastTime;
-        if (elapsed > interval) {
-          draw();
-          lastTime = timestamp - (elapsed % interval);
-        }
-        animationId = requestAnimationFrame(loop);
-      }
-      requestAnimationFrame(loop);
-    }
-
-    function stopAnimation() {
-      if (!isAnimating) return;
-      isAnimating = false;
-      clearTimeout(autoStopTimer);
-      cancelAnimationFrame(animationId);
-      canvas.style.opacity = "0";
-      setTimeout(() => {
-        if (!isAnimating) {
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
-        }
-      }, 500);
-    }
-
-    link.addEventListener("pointerenter", (e) => {
-      if (e.pointerType === "mouse") {
-        startAnimation();
-      }
-    });
-
-    link.addEventListener("pointerleave", (e) => {
-      if (e.pointerType === "mouse") {
-        stopAnimation();
-      }
-    });
-    link.addEventListener("touchstart", (e) => {
-      isLongPress = false;
-      touchStartX = e.touches[0].clientX;
-      touchStartY = e.touches[0].clientY;
-      clearTimeout(pressTimer);
-      pressTimer = setTimeout(() => {
-        isLongPress = true;
-        startAnimation();
-        clearTimeout(autoStopTimer);
-        autoStopTimer = setTimeout(stopAnimation, 5000);
-      }, 800);
-    }, { passive: true });
-
-    link.addEventListener("touchmove", (e) => {
-      const dx = e.touches[0].clientX - touchStartX;
-      const dy = e.touches[0].clientY - touchStartY;
-      if (Math.sqrt(dx * dx + dy * dy) > 10) {
-        clearTimeout(pressTimer);
-      }
-    }, { passive: true });
-
-    link.addEventListener("touchend", (e) => {
-      clearTimeout(pressTimer);
-      if (isLongPress) {
-        e.preventDefault();
-      }
-    }, { passive: false });
-
-    link.addEventListener("touchcancel", () => {
-      clearTimeout(pressTimer);
-    });
-
-    link.addEventListener("click", (e) => {
-      if (isLongPress) {
-        e.preventDefault();
-        isLongPress = false;
-      }
-    });
-
-    window.addEventListener("click", (e) => {
-      if (isAnimating && e.target !== link && !link.contains(e.target)) {
-        stopAnimation();
-      }
-    });
-
-    window.addEventListener("resize", () => {
-      if (isAnimating) {
-        initRain();
-      }
-    });
-
-    // === Harness Design Easter Egg ===
-    const harnessLink = document.getElementById("harness-link");
-    const harnessCanvas = document.getElementById("harness-canvas");
-    if (harnessLink && harnessCanvas) {
-      const hCtx = harnessCanvas.getContext("2d");
-      let hAnimationId;
-      let hIsAnimating = false;
-      let lines = [];
-      let intersections = [];
-      let collidedPairs = new Set();
-      const lineCount = 20;
-      const speed = 7; // pixels per frame
-      let targetBox = null;
-
-      function resizeHarnessCanvas() {
-        harnessCanvas.width = window.innerWidth;
-        harnessCanvas.height = window.innerHeight;
-      }
-
-      function generateOrthogonalPath(startX, startY, targetX, targetY) {
-        const path = [{ x: startX, y: startY }];
-        const goHorizontalFirst = Math.random() > 0.5;
-        
-        if (goHorizontalFirst) {
-          const midX = startX + (targetX - startX) * (0.3 + Math.random() * 0.4);
-          path.push({ x: midX, y: startY });
-          
-          const midY = startY + (targetY - startY) * (0.3 + Math.random() * 0.4);
-          path.push({ x: midX, y: midY });
-          
-          path.push({ x: targetX, y: midY });
-        } else {
-          const midY = startY + (targetY - startY) * (0.3 + Math.random() * 0.4);
-          path.push({ x: startX, y: midY });
-          
-          const midX = startX + (targetX - startX) * (0.3 + Math.random() * 0.4);
-          path.push({ x: midX, y: midY });
-          
-          path.push({ x: midX, y: targetY });
-        }
-        
-        path.push({ x: targetX, y: targetY });
-        return path;
-      }
-
-      function initHarnessLines() {
-        resizeHarnessCanvas();
-        
-        // Buscar el elemento de imagen interno para obtener sus dimensiones visuales reales
-        const logoImg = harnessLink.querySelector("img, svg");
-        const rect = logoImg ? logoImg.getBoundingClientRect() : harnessLink.getBoundingClientRect();
-        
-        const padding = 36;
-        targetBox = {
-          left: rect.left - padding,
-          right: rect.right + padding,
-          top: rect.top - padding,
-          bottom: rect.bottom + padding
-        };
-        
-        const targetX = rect.left + rect.width / 2;
-        const targetY = rect.top + rect.height / 2;
-        
-        const w = harnessCanvas.width;
-        const h = harnessCanvas.height;
-        
-        lines = [];
-        intersections = [];
-        collidedPairs.clear();
-        const isDark = document.documentElement.classList.contains("dark");
-        const colors = isDark 
-          ? ["#40C057", "#7A50F3", "#FB5252", "#FB7E15", "#FCC419"] 
-          : ["#2f9e44", "#6741d9", "#e03131", "#e8590c", "#f08c00"]; 
-          
-        for (let i = 0; i < lineCount; i++) {
-          const border = i % 4;
-          let startX, startY;
-          if (border === 0) {
-            startX = Math.random() * w;
-            startY = -10;
-          } else if (border === 1) {
-            startX = w + 10;
-            startY = Math.random() * h;
-          } else if (border === 2) {
-            startX = Math.random() * w;
-            startY = h + 10;
-          } else {
-            startX = -10;
-            startY = Math.random() * h;
-          }
-          
-          const path = generateOrthogonalPath(startX, startY, targetX, targetY);
-          
-          lines.push({
-            id: i,
-            path: path,
-            color: colors[i % colors.length],
-            currentSegment: 0,
-            currX: startX,
-            currY: startY,
-            drawnPoints: [{ x: startX, y: startY }],
-            finished: false
-          });
-        }
-      }
-
-      function checkIntersections() {
-        lines.forEach((lineA, indexA) => {
-          if (lineA.finished) return;
-          const ax = lineA.currX;
-          const ay = lineA.currY;
-          lines.forEach((lineB, indexB) => {
-            if (indexA === indexB || lineA.color !== lineB.color) return;
-            const points = [...lineB.drawnPoints];
-            if (!lineB.finished) {
-              points.push({ x: lineB.currX, y: lineB.currY });
-            }
-            for (let i = 0; i < points.length - 1; i++) {
-              const p1 = points[i];
-              const p2 = points[i + 1];
-              let intersected = false;
-              let ix = 0;
-              let iy = 0;
-              const isHorizontal = Math.abs(p1.y - p2.y) < 0.1;
-              const isVertical = Math.abs(p1.x - p2.x) < 0.1;
-              if (isHorizontal) {
-                const minX = Math.min(p1.x, p2.x);
-                const maxX = Math.max(p1.x, p2.x);
-                if (Math.abs(ay - p1.y) < 2 && ax >= minX + 5 && ax <= maxX - 5) {
-                  intersected = true;
-                  ix = ax;
-                  iy = p1.y;
-                }
-              } else if (isVertical) {
-                const minY = Math.min(p1.y, p2.y);
-                const maxY = Math.max(p1.y, p2.y);
-                if (Math.abs(ax - p1.x) < 2 && ay >= minY + 5 && ay <= maxY - 5) {
-                  intersected = true;
-                  ix = p1.x;
-                  iy = ay;
-                }
-              }
-              if (intersected) {
-                const pairKey = lineA.id < lineB.id 
-                  ? `${lineA.id}-${lineB.id}` 
-                  : `${lineB.id}-${lineA.id}`;
-                  
-                if (!collidedPairs.has(pairKey)) {
-                  collidedPairs.add(pairKey);
-                  intersections.push({ x: ix, y: iy, color: lineA.color });
-                }
-              }
-            }
-          });
-        });
-      }
-
-      function updateAndDrawHarness() {
-        hCtx.clearRect(0, 0, harnessCanvas.width, harnessCanvas.height);
-        checkIntersections();
-        let allFinished = true;
-        
-        lines.forEach(line => {
-          if (!line.finished) {
-            allFinished = false;
-            
-            if (line.currX >= targetBox.left && line.currX <= targetBox.right &&
-                line.currY >= targetBox.top && line.currY <= targetBox.bottom) {
-              line.finished = true;
-              line.drawnPoints.push({ x: line.currX, y: line.currY });
-            } else {
-              const targetNode = line.path[line.currentSegment + 1];
-              if (targetNode) {
-                const dx = targetNode.x - line.currX;
-                const dy = targetNode.y - line.currY;
-                const distance = Math.sqrt(dx * dx + dy * dy);
-                
-                if (distance <= speed) {
-                  line.currX = targetNode.x;
-                  line.currY = targetNode.y;
-                  line.drawnPoints.push({ x: line.currX, y: line.currY });
-                  line.currentSegment++;
-                  
-                  if (line.currentSegment >= line.path.length - 1) {
-                    line.finished = true;
-                  }
-                } else {
-                  line.currX += (dx / distance) * speed;
-                  line.currY += (dy / distance) * speed;
-                }
-              } else {
-                line.finished = true;
-              }
-            }
-          }
-          
-          hCtx.beginPath();
-          hCtx.moveTo(line.drawnPoints[0].x, line.drawnPoints[0].y);
-          for (let p = 1; p < line.drawnPoints.length; p++) {
-            hCtx.lineTo(line.drawnPoints[p].x, line.drawnPoints[p].y);
-          }
-          if (!line.finished) {
-            hCtx.lineTo(line.currX, line.currY);
-          }
-          
-          hCtx.strokeStyle = line.color;
-          hCtx.lineWidth = 2.5;
-          hCtx.lineCap = "round";
-          hCtx.lineJoin = "round";
-          hCtx.stroke();
-
-          // Dibujar punto de conexión (junction dot) al terminar
-          if (line.finished && line.drawnPoints.length > 0) {
-            const lastPoint = line.drawnPoints[line.drawnPoints.length - 1];
-            hCtx.beginPath();
-            hCtx.arc(lastPoint.x, lastPoint.y, 4, 0, 2 * Math.PI);
-            hCtx.fillStyle = line.color;
-            hCtx.fill();
-          }
-        });
-
-        // Dibujar puntos de intersección entre líneas del mismo color
-        intersections.forEach(pt => {
-          hCtx.beginPath();
-          hCtx.arc(pt.x, pt.y, 3.5, 0, 2 * Math.PI);
-          hCtx.fillStyle = pt.color;
-          hCtx.fill();
-        });
-        
-        if (!allFinished && hIsAnimating) {
-          hAnimationId = requestAnimationFrame(updateAndDrawHarness);
-        }
-      }
-
-      function startHarnessAnimation() {
-        if (hIsAnimating) return;
-        hIsAnimating = true;
-        harnessCanvas.style.opacity = "1";
-        initHarnessLines();
-        updateAndDrawHarness();
-      }
-
-      function stopHarnessAnimation() {
-        if (!hIsAnimating) return;
-        hIsAnimating = false;
-        cancelAnimationFrame(hAnimationId);
-        harnessCanvas.style.opacity = "0";
-        setTimeout(() => {
-          if (!hIsAnimating) {
-            hCtx.clearRect(0, 0, harnessCanvas.width, harnessCanvas.height);
-          }
-        }, 500);
-      }
-
-      harnessLink.addEventListener("pointerenter", (e) => {
-        if (e.pointerType === "mouse") {
-          startHarnessAnimation();
-        }
-      });
-
-      harnessLink.addEventListener("pointerleave", (e) => {
-        if (e.pointerType === "mouse") {
-          stopHarnessAnimation();
-        }
-      });
-      
-      window.addEventListener("resize", () => {
-        if (hIsAnimating) {
-          resizeHarnessCanvas();
-        }
-      });
-    }
-  });
-</script>
+<script src="../../scripts/aliados-animations.js"></script>
