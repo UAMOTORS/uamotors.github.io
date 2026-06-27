@@ -31,13 +31,40 @@ import LogoDewesoft from "../components/logos/silver/LogoDewesoft.astro";
     <section id="nuestros-aliados" class="text-left space-y-16">
       <div class="space-y-12 md:space-y-20">
         <!-- Gold -->
-        <div id="oro-grid" class="w-full">
+        <div id="oro-grid" class="w-full space-y-8 md:space-y-12">
+          <!-- Row 1: Ansys & ESSS -->
+          <div class="flex justify-center w-full">
+            <div
+              class="flex flex-row items-center justify-center gap-8 md:gap-10 w-full max-w-[250px] sm:max-w-[280px] md:max-w-[320px]"
+            >
+              <div class="h-[58px] sm:h-16 md:h-20 flex-1 flex items-center justify-center">
+                <a
+                  href="https://www.ansys.com/"
+                  target="_blank"
+                  class="h-full w-full max-w-[108px] sm:max-w-[120px] md:max-w-[140px] flex items-center justify-center hover:scale-105 transition-transform duration-300"
+                >
+                  <LogoAnsys class="max-h-[44%] max-w-full object-contain" />
+                </a>
+              </div>
+              <div class="h-[58px] sm:h-16 md:h-20 flex-1 flex items-center justify-center">
+                <a
+                  href="https://www.esss.com/es/"
+                  target="_blank"
+                  class="h-full w-full max-w-[108px] sm:max-w-[120px] md:max-w-[140px] flex items-center justify-center hover:scale-105 transition-transform duration-300"
+                >
+                  <LogoEsss class="max-h-[80%] max-w-full object-contain" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 2: Solidworks, Harness Design, Rapid Harness -->
           <div
-            class="flex flex-col md:flex-row md:flex-wrap items-center justify-center gap-8 md:gap-10 w-full max-w-4xl mx-auto"
+            class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-x-8 lg:gap-x-14 w-full max-w-4xl mx-auto"
           >
             <!-- 1. Solidworks -->
             <div
-              class="order-1 md:order-2 h-[58px] sm:h-16 md:h-20 w-[178px] sm:w-52 md:w-60 flex items-center justify-center"
+              class="h-[58px] sm:h-16 md:h-20 w-[178px] sm:w-48 md:w-48 lg:w-60 flex items-center justify-center"
             >
               <a
                 href="https://www.solidworks.com/"
@@ -48,35 +75,9 @@ import LogoDewesoft from "../components/logos/silver/LogoDewesoft.astro";
               </a>
             </div>
 
-            <!-- 2. Ansys & ESSS -->
-            <div class="order-2 md:order-1 md:w-full flex justify-center w-full">
-              <div
-                class="flex flex-row items-center justify-center gap-8 md:gap-10 w-full max-w-[250px] sm:max-w-[280px] md:max-w-[320px]"
-              >
-                <div class="h-[58px] sm:h-16 md:h-20 flex-1 flex items-center justify-center">
-                  <a
-                    href="https://www.ansys.com/"
-                    target="_blank"
-                    class="h-full w-full max-w-[108px] sm:max-w-[120px] md:max-w-[140px] flex items-center justify-center hover:scale-105 transition-transform duration-300"
-                  >
-                    <LogoAnsys class="max-h-[44%] max-w-full object-contain" />
-                  </a>
-                </div>
-                <div class="h-[58px] sm:h-16 md:h-20 flex-1 flex items-center justify-center">
-                  <a
-                    href="https://www.esss.com/es/"
-                    target="_blank"
-                    class="h-full w-full max-w-[108px] sm:max-w-[120px] md:max-w-[140px] flex items-center justify-center hover:scale-105 transition-transform duration-300"
-                  >
-                    <LogoEsss class="max-h-[80%] max-w-full object-contain" />
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- 3. Harness Design -->
+            <!-- 2. Harness Design -->
             <div
-              class="order-3 md:order-3 h-[58px] sm:h-16 md:h-20 w-[178px] sm:w-52 md:w-60 flex items-center justify-center"
+              class="h-[58px] sm:h-16 md:h-20 w-[178px] sm:w-48 md:w-48 lg:w-60 flex items-center justify-center"
             >
               <a
                 href="https://www.harness.design/"
@@ -87,14 +88,14 @@ import LogoDewesoft from "../components/logos/silver/LogoDewesoft.astro";
               </a>
             </div>
 
-            <!-- 4. Rapid Harness -->
+            <!-- 3. Rapid Harness -->
             <div
-              class="order-4 md:order-4 h-[58px] sm:h-16 md:h-20 w-[148px] sm:w-44 md:w-52 flex items-center justify-center"
+              class="h-[58px] sm:h-16 md:h-20 w-[178px] sm:w-48 md:w-48 lg:w-60 flex items-center justify-center"
             >
               <a
                 href="https://www.rapidharness.com/"
                 target="_blank"
-                class="h-full w-full flex items-center justify-center hover:scale-105 transition-transform duration-300"
+                class="h-full w-[82%] flex items-center justify-center hover:scale-105 transition-transform duration-300"
               >
                 <LogoRapidHarnest
                   class="max-h-full max-w-full object-contain"
@@ -107,7 +108,7 @@ import LogoDewesoft from "../components/logos/silver/LogoDewesoft.astro";
         <!-- Silver -->
         <div id="plata-grid" class="w-full">
           <div
-            class="flex flex-row justify-center gap-4 sm:gap-12 md:gap-16 items-center max-w-xl mx-auto"
+            class="flex flex-row justify-center gap-6 sm:gap-16 md:gap-24 lg:gap-32 items-center max-w-4xl mx-auto"
           >
             <div
               class="h-11 md:h-12 w-32 sm:w-32 md:w-36 flex items-center justify-center"
@@ -149,7 +150,7 @@ import LogoDewesoft from "../components/logos/silver/LogoDewesoft.astro";
         <!-- Bronze -->
         <div id="bronce-grid" class="w-full">
           <div
-            class="flex flex-row flex-nowrap items-center justify-center gap-6 sm:gap-8 md:gap-12 max-w-2xl mx-auto"
+            class="flex flex-row flex-nowrap items-center justify-center gap-6 sm:gap-16 md:gap-24 lg:gap-32 max-w-4xl mx-auto"
           >
             <div
               class="h-8 md:h-8 w-20 sm:w-22 md:w-26 flex items-center justify-center"
