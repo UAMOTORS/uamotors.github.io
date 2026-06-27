@@ -80,6 +80,7 @@ import LogoDewesoft from "../../components/logos/silver/LogoDewesoft.astro";
               class="h-[58px] sm:h-16 md:h-20 w-[178px] sm:w-48 md:w-48 lg:w-60 flex items-center justify-center"
             >
               <a
+                id="harness-link"
                 href="https://www.harness.design/"
                 target="_blank"
                 class="h-full w-full flex items-center justify-center hover:scale-105 transition-transform duration-300"
@@ -318,6 +319,10 @@ import LogoDewesoft from "../../components/logos/silver/LogoDewesoft.astro";
     id="daq-canvas"
     class="fixed inset-0 w-full h-full pointer-events-none opacity-0 transition-opacity duration-500 z-[99]"
   ></canvas>
+  <canvas
+    id="harness-canvas"
+    class="fixed inset-0 w-full h-full pointer-events-none opacity-0 transition-opacity duration-500 z-[99]"
+  ></canvas>
 </MainLayout>
 
 <style is:global>
@@ -532,5 +537,212 @@ import LogoDewesoft from "../../components/logos/silver/LogoDewesoft.astro";
         initRain();
       }
     });
+
+    // === Harness Design Easter Egg ===
+    const harnessLink = document.getElementById("harness-link");
+    const harnessCanvas = document.getElementById("harness-canvas");
+    if (harnessLink && harnessCanvas) {
+      const hCtx = harnessCanvas.getContext("2d");
+      let hAnimationId;
+      let hIsAnimating = false;
+      let lines = [];
+      const lineCount = 14;
+      const speed = 7; // pixels per frame
+      let targetBox = null;
+
+      function resizeHarnessCanvas() {
+        harnessCanvas.width = window.innerWidth;
+        harnessCanvas.height = window.innerHeight;
+      }
+
+      function generateOrthogonalPath(startX, startY, targetX, targetY) {
+        const path = [{ x: startX, y: startY }];
+        const goHorizontalFirst = Math.random() > 0.5;
+        
+        if (goHorizontalFirst) {
+          const midX = startX + (targetX - startX) * (0.3 + Math.random() * 0.4);
+          path.push({ x: midX, y: startY });
+          
+          const midY = startY + (targetY - startY) * (0.3 + Math.random() * 0.4);
+          path.push({ x: midX, y: midY });
+          
+          path.push({ x: targetX, y: midY });
+        } else {
+          const midY = startY + (targetY - startY) * (0.3 + Math.random() * 0.4);
+          path.push({ x: startX, y: midY });
+          
+          const midX = startX + (targetX - startX) * (0.3 + Math.random() * 0.4);
+          path.push({ x: midX, y: midY });
+          
+          path.push({ x: midX, y: targetY });
+        }
+        
+        path.push({ x: targetX, y: targetY });
+        return path;
+      }
+
+      function initHarnessLines() {
+        resizeHarnessCanvas();
+        
+        // Buscar el elemento de imagen interno para obtener sus dimensiones visuales reales
+        const logoImg = harnessLink.querySelector("img, svg");
+        const rect = logoImg ? logoImg.getBoundingClientRect() : harnessLink.getBoundingClientRect();
+        
+        targetBox = {
+          left: rect.left - 4,
+          right: rect.right + 4,
+          top: rect.top - 4,
+          bottom: rect.bottom + 4
+        };
+        
+        const targetX = rect.left + rect.width / 2;
+        const targetY = rect.top + rect.height / 2;
+        
+        const w = harnessCanvas.width;
+        const h = harnessCanvas.height;
+        
+        lines = [];
+        const isDark = document.documentElement.classList.contains("dark");
+        const colors = isDark 
+          ? ["#40C057", "#7A50F3", "#FB5252", "#FB7E15", "#FCC419"] 
+          : ["#2f9e44", "#6741d9", "#e03131", "#e8590c", "#f08c00"]; 
+          
+        for (let i = 0; i < lineCount; i++) {
+          const border = Math.floor(Math.random() * 4);
+          let startX, startY;
+          if (border === 0) {
+            startX = Math.random() * w;
+            startY = -10;
+          } else if (border === 1) {
+            startX = w + 10;
+            startY = Math.random() * h;
+          } else if (border === 2) {
+            startX = Math.random() * w;
+            startY = h + 10;
+          } else {
+            startX = -10;
+            startY = Math.random() * h;
+          }
+          
+          const path = generateOrthogonalPath(startX, startY, targetX, targetY);
+          
+          lines.push({
+            path: path,
+            color: colors[i % colors.length],
+            currentSegment: 0,
+            currX: startX,
+            currY: startY,
+            drawnPoints: [{ x: startX, y: startY }],
+            finished: false
+          });
+        }
+      }
+
+      function updateAndDrawHarness() {
+        hCtx.clearRect(0, 0, harnessCanvas.width, harnessCanvas.height);
+        let allFinished = true;
+        
+        lines.forEach(line => {
+          if (!line.finished) {
+            allFinished = false;
+            
+            if (line.currX >= targetBox.left && line.currX <= targetBox.right &&
+                line.currY >= targetBox.top && line.currY <= targetBox.bottom) {
+              line.finished = true;
+              line.drawnPoints.push({ x: line.currX, y: line.currY });
+            } else {
+              const targetNode = line.path[line.currentSegment + 1];
+              if (targetNode) {
+                const dx = targetNode.x - line.currX;
+                const dy = targetNode.y - line.currY;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                
+                if (distance <= speed) {
+                  line.currX = targetNode.x;
+                  line.currY = targetNode.y;
+                  line.drawnPoints.push({ x: line.currX, y: line.currY });
+                  line.currentSegment++;
+                  
+                  if (line.currentSegment >= line.path.length - 1) {
+                    line.finished = true;
+                  }
+                } else {
+                  line.currX += (dx / distance) * speed;
+                  line.currY += (dy / distance) * speed;
+                }
+              } else {
+                line.finished = true;
+              }
+            }
+          }
+          
+          hCtx.beginPath();
+          hCtx.moveTo(line.drawnPoints[0].x, line.drawnPoints[0].y);
+          for (let p = 1; p < line.drawnPoints.length; p++) {
+            hCtx.lineTo(line.drawnPoints[p].x, line.drawnPoints[p].y);
+          }
+          if (!line.finished) {
+            hCtx.lineTo(line.currX, line.currY);
+          }
+          
+          hCtx.strokeStyle = line.color;
+          hCtx.lineWidth = 2.5;
+          hCtx.lineCap = "round";
+          hCtx.lineJoin = "round";
+          hCtx.stroke();
+
+          // Dibujar punto de conexión (junction dot) al terminar
+          if (line.finished && line.drawnPoints.length > 0) {
+            const lastPoint = line.drawnPoints[line.drawnPoints.length - 1];
+            hCtx.beginPath();
+            hCtx.arc(lastPoint.x, lastPoint.y, 4, 0, 2 * Math.PI);
+            hCtx.fillStyle = line.color;
+            hCtx.fill();
+          }
+        });
+        
+        if (!allFinished && hIsAnimating) {
+          hAnimationId = requestAnimationFrame(updateAndDrawHarness);
+        }
+      }
+
+      function startHarnessAnimation() {
+        if (hIsAnimating) return;
+        hIsAnimating = true;
+        harnessCanvas.style.opacity = "0.8";
+        initHarnessLines();
+        updateAndDrawHarness();
+      }
+
+      function stopHarnessAnimation() {
+        if (!hIsAnimating) return;
+        hIsAnimating = false;
+        cancelAnimationFrame(hAnimationId);
+        harnessCanvas.style.opacity = "0";
+        setTimeout(() => {
+          if (!hIsAnimating) {
+            hCtx.clearRect(0, 0, harnessCanvas.width, harnessCanvas.height);
+          }
+        }, 500);
+      }
+
+      harnessLink.addEventListener("pointerenter", (e) => {
+        if (e.pointerType === "mouse") {
+          startHarnessAnimation();
+        }
+      });
+
+      harnessLink.addEventListener("pointerleave", (e) => {
+        if (e.pointerType === "mouse") {
+          stopHarnessAnimation();
+        }
+      });
+      
+      window.addEventListener("resize", () => {
+        if (hIsAnimating) {
+          resizeHarnessCanvas();
+        }
+      });
+    }
   });
 </script>
