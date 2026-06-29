@@ -23,7 +23,7 @@ function initDewesoft() {
   let isLongPress = false;
   let touchStartX = 0;
   let touchStartY = 0;
-  const chars = "01RPMTEMPDAQ0x1F0CANVOLTSPEEDACCEL".split("");
+  const chars = "0123456789RPMTEMPDAQ0x1F0CANVOLTSPEEDACCEL".split("");
   const fontSize = 18;
   let columns;
   let drops;
@@ -59,11 +59,24 @@ function initDewesoft() {
     ctx.fillStyle = themeColor;
     ctx.font = fontSize + "px monospace";
 
-    for (let i = 0; i < drops.length; i++) {
-      const text = chars[Math.floor(Math.random() * chars.length)];
-      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+    const rect = link.getBoundingClientRect();
+    const padding = 10;
+    const leftBound = rect.left - padding;
+    const rightBound = rect.right + padding;
+    const topBound = rect.top - padding;
+    const bottomBound = rect.bottom + padding;
 
-      if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+    for (let i = 0; i < drops.length; i++) {
+      const x = i * fontSize;
+      const y = drops[i] * fontSize;
+
+      const text = chars[Math.floor(Math.random() * chars.length)];
+      
+      if (!(x >= leftBound && x <= rightBound && y >= topBound && y <= bottomBound)) {
+        ctx.fillText(text, x, y);
+      }
+
+      if (y > canvas.height && Math.random() > 0.975) {
         drops[i] = 0;
       }
       drops[i]++;
@@ -180,7 +193,7 @@ function initHarness() {
   let lines = [];
   let intersections = [];
   let collidedPairs = new Set();
-  const lineCount = 20;
+  const lineCount = 25;
   const speed = 7;
   let targetBox = null;
 
@@ -191,33 +204,31 @@ function initHarness() {
     hCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
   }
 
-  function generateOrthogonalPath(startX, startY, targetX, targetY) {
-    const path = [{ x: startX, y: startY }];
-    const goHorizontalFirst = Math.random() > 0.5;
-    
-    if (goHorizontalFirst) {
-      const midX = startX + (targetX - startX) * (0.3 + Math.random() * 0.4);
-      path.push({ x: midX, y: startY });
-      const midY = startY + (targetY - startY) * (0.3 + Math.random() * 0.4);
-      path.push({ x: midX, y: midY });
-      path.push({ x: targetX, y: midY });
+  function generateCustomPath(border, startX, startY, tx, ty) {
+    if (border === 0 || border === 2) {
+      const midY = startY + (ty - startY) * (0.3 + Math.random() * 0.4);
+      return [
+        { x: startX, y: startY },
+        { x: startX, y: midY },
+        { x: tx, y: midY },
+        { x: tx, y: ty }
+      ];
     } else {
-      const midY = startY + (targetY - startY) * (0.3 + Math.random() * 0.4);
-      path.push({ x: startX, y: midY });
-      const midX = startX + (targetX - startX) * (0.3 + Math.random() * 0.4);
-      path.push({ x: midX, y: midY });
-      path.push({ x: midX, y: targetY });
+      const midX = startX + (tx - startX) * (0.3 + Math.random() * 0.4);
+      return [
+        { x: startX, y: startY },
+        { x: midX, y: startY },
+        { x: midX, y: ty },
+        { x: tx, y: ty }
+      ];
     }
-    
-    path.push({ x: targetX, y: targetY });
-    return path;
   }
 
   function initHarnessLines() {
     resizeHarnessCanvas();
     const logoImg = harnessLink.querySelector("img, svg");
     const rect = logoImg ? logoImg.getBoundingClientRect() : harnessLink.getBoundingClientRect();
-    
+
     const padding = 36;
     targetBox = {
       left: rect.left - padding,
@@ -225,35 +236,113 @@ function initHarness() {
       top: rect.top - padding,
       bottom: rect.bottom + padding
     };
-    
-    const targetX = rect.left + rect.width / 2;
-    const targetY = rect.top + rect.height / 2;
-    
+
     const w = window.innerWidth;
     const h = window.innerHeight;
-    
+
     lines = [];
     intersections = [];
     collidedPairs.clear();
     const isDark = document.documentElement.classList.contains("dark");
-    const colors = isDark 
-      ? ["#40C057", "#7A50F3", "#FB5252", "#FB7E15", "#FCC419"] 
-      : ["#2f9e44", "#6741d9", "#e03131", "#e8590c", "#f08c00"]; 
-      
-    for (let i = 0; i < lineCount; i++) {
-      const border = i % 4;
+    const colors = isDark
+      ? ["#40C057", "#7A50F3", "#FB5252", "#FB7E15", "#FCC419"]
+      : ["#2f9e44", "#6741d9", "#e03131", "#e8590c", "#f08c00"];
+
+    const mainLines = [];
+
+    for (let i = 0; i < 20; i++) {
+      const border = i % 4; 
+      const j = Math.floor(i / 4); 
+      const color = colors[i % colors.length];
+
       let startX, startY;
-      if (border === 0) { startX = Math.random() * w; startY = -10; } 
-      else if (border === 1) { startX = w + 10; startY = Math.random() * h; } 
-      else if (border === 2) { startX = Math.random() * w; startY = h + 10; } 
-      else { startX = -10; startY = Math.random() * h; }
-      
-      const path = generateOrthogonalPath(startX, startY, targetX, targetY);
-      
+      let tx, ty;
+
+      const boxW = targetBox.right - targetBox.left;
+      const boxH = targetBox.bottom - targetBox.top;
+
+      if (border === 0) {
+        startX = Math.random() * w;
+        startY = -10;
+        tx = targetBox.left + (j + 0.5) * boxW / 5;
+        ty = targetBox.top;
+      } else if (border === 1) {
+        startX = w + 10;
+        startY = Math.random() * h;
+        tx = targetBox.right;
+        ty = targetBox.top + (j + 0.5) * boxH / 5;
+      } else if (border === 2) {
+        startX = Math.random() * w;
+        startY = h + 10;
+        tx = targetBox.left + (j + 0.5) * boxW / 5;
+        ty = targetBox.bottom;
+      } else {
+        startX = -10;
+        startY = Math.random() * h;
+        tx = targetBox.left;
+        ty = targetBox.top + (j + 0.5) * boxH / 5;
+      }
+
+      const path = generateCustomPath(border, startX, startY, tx, ty);
+
+      const lineObj = {
+        id: i,
+        path: path,
+        color: color,
+        currentSegment: 0,
+        currX: startX,
+        currY: startY,
+        drawnPoints: [{ x: startX, y: startY }],
+        finished: false,
+        isSecondary: false,
+        border: border
+      };
+      lines.push(lineObj);
+      mainLines.push(lineObj);
+    }
+
+    for (let i = 20; i < lineCount; i++) {
+      const color = colors[i % colors.length];
+
+      const sameColorMains = mainLines.filter(l => l.color === color);
+      const targetMain = sameColorMains[Math.floor(Math.random() * sameColorMains.length)];
+
+      const p1 = targetMain.path[1];
+      const p2 = targetMain.path[2];
+
+      const t = 0.2 + Math.random() * 0.6;
+      const tx = p1.x + (p2.x - p1.x) * t;
+      const ty = p1.y + (p2.y - p1.y) * t;
+
+      const secondaryBorder = targetMain.border;
+
+      let startX, startY;
+      if (secondaryBorder === 0) {
+        startX = Math.random() * w;
+        startY = -10;
+      } else if (secondaryBorder === 1) {
+        startX = w + 10;
+        startY = Math.random() * h;
+      } else if (secondaryBorder === 2) {
+        startX = Math.random() * w;
+        startY = h + 10;
+      } else {
+        startX = -10;
+        startY = Math.random() * h;
+      }
+
+      const path = generateCustomPath(secondaryBorder, startX, startY, tx, ty);
+
       lines.push({
-        id: i, path: path, color: colors[i % colors.length],
-        currentSegment: 0, currX: startX, currY: startY,
-        drawnPoints: [{ x: startX, y: startY }], finished: false
+        id: i,
+        path: path,
+        color: color,
+        currentSegment: 0,
+        currX: startX,
+        currY: startY,
+        drawnPoints: [{ x: startX, y: startY }],
+        finished: false,
+        isSecondary: true
       });
     }
   }
@@ -266,13 +355,13 @@ function initHarness() {
         if (indexA === indexB || lineA.color !== lineB.color) return;
         const points = [...lineB.drawnPoints];
         if (!lineB.finished) points.push({ x: lineB.currX, y: lineB.currY });
-        
+
         for (let i = 0; i < points.length - 1; i++) {
           const p1 = points[i], p2 = points[i + 1];
           let intersected = false, ix = 0, iy = 0;
           const isHorizontal = Math.abs(p1.y - p2.y) < 0.1;
           const isVertical = Math.abs(p1.x - p2.x) < 0.1;
-          
+
           if (isHorizontal) {
             const minX = Math.min(p1.x, p2.x), maxX = Math.max(p1.x, p2.x);
             if (Math.abs(ay - p1.y) < 2 && ax >= minX + 5 && ax <= maxX - 5) {
@@ -300,41 +389,93 @@ function initHarness() {
     hCtx.clearRect(0, 0, window.innerWidth, window.innerHeight);
     checkIntersections();
     let allFinished = true;
-    
+
     lines.forEach(line => {
       if (!line.finished) {
         allFinished = false;
+
         if (line.currX >= targetBox.left && line.currX <= targetBox.right &&
-            line.currY >= targetBox.top && line.currY <= targetBox.bottom) {
+          line.currY >= targetBox.top && line.currY <= targetBox.bottom) {
           line.finished = true;
           line.drawnPoints.push({ x: line.currX, y: line.currY });
-        } else {
-          const targetNode = line.path[line.currentSegment + 1];
-          if (targetNode) {
-            const dx = targetNode.x - line.currX;
-            const dy = targetNode.y - line.currY;
-            const distance = Math.sqrt(dx * dx + dy * dy);
-            
-            if (distance <= speed) {
-              line.currX = targetNode.x; line.currY = targetNode.y;
-              line.drawnPoints.push({ x: line.currX, y: line.currY });
-              line.currentSegment++;
-              if (line.currentSegment >= line.path.length - 1) line.finished = true;
-            } else {
-              line.currX += (dx / distance) * speed;
-              line.currY += (dy / distance) * speed;
+          return;
+        }
+
+        if (line.isSecondary) {
+          let collided = false;
+          let colX = 0, colY = 0;
+
+          lines.forEach(otherLine => {
+            if (otherLine.id === line.id || otherLine.color !== line.color || otherLine.isSecondary) return;
+
+            const points = [...otherLine.drawnPoints];
+            if (!otherLine.finished) {
+              points.push({ x: otherLine.currX, y: otherLine.currY });
             }
-          } else {
+
+            for (let k = 0; k < points.length - 1; k++) {
+              const p1 = points[k];
+              const p2 = points[k + 1];
+              const isHorizontal = Math.abs(p1.y - p2.y) < 0.1;
+              const isVertical = Math.abs(p1.x - p2.x) < 0.1;
+
+              if (isHorizontal) {
+                const minX = Math.min(p1.x, p2.x);
+                const maxX = Math.max(p1.x, p2.x);
+                if (Math.abs(line.currY - p1.y) < 4 && line.currX >= minX && line.currX <= maxX) {
+                  collided = true;
+                  colX = line.currX;
+                  colY = p1.y;
+                  break;
+                }
+              } else if (isVertical) {
+                const minY = Math.min(p1.y, p2.y);
+                const maxY = Math.max(p1.y, p2.y);
+                if (Math.abs(line.currX - p1.x) < 4 && line.currY >= minY && line.currY <= maxY) {
+                  collided = true;
+                  colX = p1.x;
+                  colY = line.currY;
+                  break;
+                }
+              }
+            }
+            if (collided) return;
+          });
+
+          if (collided) {
             line.finished = true;
+            line.currX = colX;
+            line.currY = colY;
+            line.drawnPoints.push({ x: colX, y: colY });
+            return;
           }
         }
+
+        const targetNode = line.path[line.currentSegment + 1];
+        if (targetNode) {
+          const dx = targetNode.x - line.currX;
+          const dy = targetNode.y - line.currY;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance <= speed) {
+            line.currX = targetNode.x; line.currY = targetNode.y;
+            line.drawnPoints.push({ x: line.currX, y: line.currY });
+            line.currentSegment++;
+            if (line.currentSegment >= line.path.length - 1) line.finished = true;
+          } else {
+            line.currX += (dx / distance) * speed;
+            line.currY += (dy / distance) * speed;
+          }
+        } else {
+          line.finished = true;
+        }
       }
-      
+
       hCtx.beginPath();
       hCtx.moveTo(line.drawnPoints[0].x, line.drawnPoints[0].y);
       for (let p = 1; p < line.drawnPoints.length; p++) hCtx.lineTo(line.drawnPoints[p].x, line.drawnPoints[p].y);
       if (!line.finished) hCtx.lineTo(line.currX, line.currY);
-      
+
       hCtx.strokeStyle = line.color;
       hCtx.lineWidth = 2.5;
       hCtx.lineCap = "round";
@@ -356,7 +497,7 @@ function initHarness() {
       hCtx.fillStyle = pt.color;
       hCtx.fill();
     });
-    
+
     if (!allFinished && hIsAnimating) hAnimationId = requestAnimationFrame(updateAndDrawHarness);
   }
 
