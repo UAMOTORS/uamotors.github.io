@@ -59,37 +59,28 @@ function initDewesoft() {
     ctx.fillStyle = themeColor;
     ctx.font = fontSize + "px monospace";
 
-    for (let i = 0; i < drops.length; i++) {
-      const text = chars[Math.floor(Math.random() * chars.length)];
-      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+    const rect = link.getBoundingClientRect();
+    const padding = 10;
+    const leftBound = rect.left - padding;
+    const rightBound = rect.right + padding;
+    const topBound = rect.top - padding;
+    const bottomBound = rect.bottom + padding;
 
-      if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+    for (let i = 0; i < drops.length; i++) {
+      const x = i * fontSize;
+      const y = drops[i] * fontSize;
+
+      const text = chars[Math.floor(Math.random() * chars.length)];
+      
+      if (!(x >= leftBound && x <= rightBound && y >= topBound && y <= bottomBound)) {
+        ctx.fillText(text, x, y);
+      }
+
+      if (y > canvas.height && Math.random() > 0.975) {
         drops[i] = 0;
       }
       drops[i]++;
     }
-
-    const rect = link.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
-    const radiusX = rect.width / 2 + 10;
-    const radiusY = rect.height / 2 + 10;
-
-    ctx.save();
-    ctx.globalCompositeOperation = 'destination-out';
-    ctx.translate(centerX, centerY);
-    ctx.scale(1, radiusY / radiusX);
-
-    const gradient = ctx.createRadialGradient(0, 0, 0, 0, 0, radiusX);
-    gradient.addColorStop(0, 'rgba(0, 0, 0, 1)');
-    gradient.addColorStop(0.5, 'rgba(0, 0, 0, 1)');
-    gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
-
-    ctx.fillStyle = gradient;
-    ctx.beginPath();
-    ctx.arc(0, 0, radiusX, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.restore();
   }
 
   function startAnimation() {
