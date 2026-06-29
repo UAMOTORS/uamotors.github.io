@@ -23,7 +23,7 @@ function initDewesoft() {
   let isLongPress = false;
   let touchStartX = 0;
   let touchStartY = 0;
-  const chars = "01RPMTEMPDAQ0x1F0CANVOLTSPEEDACCEL".split("");
+  const chars = "0123456789RPMTEMPDAQ0x1F0CANVOLTSPEEDACCEL".split("");
   const fontSize = 18;
   let columns;
   let drops;
