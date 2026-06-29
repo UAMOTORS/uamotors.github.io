@@ -68,6 +68,28 @@ function initDewesoft() {
       }
       drops[i]++;
     }
+
+    const rect = link.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    const radiusX = rect.width / 2 + 10;
+    const radiusY = rect.height / 2 + 10;
+
+    ctx.save();
+    ctx.globalCompositeOperation = 'destination-out';
+    ctx.translate(centerX, centerY);
+    ctx.scale(1, radiusY / radiusX);
+
+    const gradient = ctx.createRadialGradient(0, 0, 0, 0, 0, radiusX);
+    gradient.addColorStop(0, 'rgba(0, 0, 0, 1)');
+    gradient.addColorStop(0.5, 'rgba(0, 0, 0, 1)');
+    gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
+
+    ctx.fillStyle = gradient;
+    ctx.beginPath();
+    ctx.arc(0, 0, radiusX, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
   }
 
   function startAnimation() {
