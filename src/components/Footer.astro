@@ -18,6 +18,7 @@ import LogoDepartamentoEnergia from "./logos/bronze/LogoDepartamentoEnergia.astr
 import LogoEscuadronUam from "./logos/bronze/LogoEscuadronUam.astro";
 import TiraUamotors from "./logos/TiraUamotors.astro";
 import LogoDewesoft from "./logos/silver/LogoDewesoft.astro";
+import LogoRealisSimulation from "./logos/gold/LogoRealisSimulation.astro";
 const currentYear = new Date().getFullYear();
 const isEnglish = Astro.currentLocale === "en";
 ---
@@ -64,133 +65,58 @@ const isEnglish = Astro.currentLocale === "en";
     </div>
   </div>
 
-  <div class="footer-patrocinadores w-full max-w-5xl mx-auto px-4 pb-8">
-    <div class="space-y-6">
-      {/* Gold Row 1: Ansys & ESSS */}
-      <div class="flex justify-center w-full">
-        <div
-          class="flex flex-row items-center justify-center gap-6 sm:gap-6 md:gap-8 w-full max-w-[240px] sm:max-w-[260px] md:max-w-[280px]"
-        >
-          <div class="h-10 sm:h-11 flex-1 flex items-center justify-center">
-            <a
-              href="https://www.ansys.com/"
-              target="_blank"
-              class="h-full w-full flex items-center justify-center hover:scale-105 transition-transform duration-300"
-            >
-              <LogoAnsys class="max-h-[55%] max-w-full object-contain" />
-            </a>
-          </div>
-          <div class="h-10 sm:h-11 flex-1 flex items-center justify-center">
-            <a
-              href="https://www.esss.com/es/"
-              target="_blank"
-              class="h-full w-full flex items-center justify-center hover:scale-105 transition-transform duration-300"
-            >
-              <LogoEsss class="max-h-[90%] max-w-full object-contain" />
-            </a>
-          </div>
-        </div>
+  <div class="footer-patrocinadores w-full max-w-4xl mx-auto px-4 pb-8 mt-2">
+    <div class="space-y-6 sm:space-y-8">
+      {/* Gold Row 1: Ansys & ESSS & Realis Simulation */}
+      <div class="flex flex-row items-center justify-center gap-6 sm:gap-10 w-full">
+        <a href="https://www.ansys.com/" target="_blank" class="flex items-center justify-center hover:scale-105 transition-transform duration-300">
+          <LogoAnsys class="h-auto w-14 sm:w-16 md:w-16 object-contain" />
+        </a>
+        <a href="https://www.esss.com/es/" target="_blank" class="flex items-center justify-center hover:scale-105 transition-transform duration-300">
+          <LogoEsss class="h-auto w-14 sm:w-16 md:w-16 object-contain" />
+        </a>
+        <a href="https://realissimulation.com/" target="_blank" class="flex items-center justify-center hover:scale-105 transition-transform duration-300">
+          <LogoRealisSimulation class="h-auto w-16 sm:w-20 md:w-20 object-contain" />
+        </a>
       </div>
 
       {/* Gold Row 2: Solidworks, Harness Design, Rapid Harness */}
-      <div
-        class="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-x-10 w-full"
-      >
-        <div class="h-10 sm:h-11 w-[130px] sm:w-[150px] flex items-center justify-center">
-          <a
-            href="https://www.solidworks.com/"
-            target="_blank"
-            class="h-full w-full flex items-center justify-center hover:scale-105 transition-transform duration-300"
-          >
-            <LogoSolidworks class="max-h-full max-w-full object-contain" />
-          </a>
-        </div>
-        <div class="h-10 sm:h-11 w-[150px] sm:w-[175px] flex items-center justify-center">
-          <a
-            href="https://www.harness.design/"
-            target="_blank"
-            class="h-full w-full flex items-center justify-center hover:scale-105 transition-transform duration-300"
-          >
-            <LogoHarnessDesign class="max-h-full max-w-full object-contain" />
-          </a>
-        </div>
-        <div class="h-10 sm:h-11 w-[130px] sm:w-[150px] flex items-center justify-center">
-          <a
-            href="https://www.rapidharness.com/"
-            target="_blank"
-            class="h-full w-[82%] flex items-center justify-center hover:scale-105 transition-transform duration-300"
-          >
-            <LogoRapidHarnest class="max-h-full max-w-full object-contain" />
-          </a>
-        </div>
+      <div class="flex flex-row items-center justify-center gap-4 sm:gap-10 w-full">
+        <a href="https://www.solidworks.com/" target="_blank" class="flex items-center justify-center hover:scale-105 transition-transform duration-300">
+          <LogoSolidworks class="h-auto w-24 sm:w-28 md:w-32 object-contain" />
+        </a>
+        <a href="https://www.harness.design/" target="_blank" class="flex items-center justify-center hover:scale-105 transition-transform duration-300">
+          <LogoHarnessDesign class="h-auto w-28 sm:w-36 md:w-40 object-contain" />
+        </a>
+        <a href="https://www.rapidharness.com/" target="_blank" class="flex items-center justify-center hover:scale-105 transition-transform duration-300">
+          <LogoRapidHarnest class="h-auto w-24 sm:w-28 md:w-32 object-contain" />
+        </a>
       </div>
 
       {/* Silver sponsors */}
-      <div
-        class="flex flex-row flex-nowrap items-center justify-center gap-6 sm:gap-10 md:gap-x-16 w-full"
-      >
-        <div class="h-7 sm:h-8 flex items-center justify-center">
-          <a
-            href="https://dewesoft.com/es"
-            target="_blank"
-            class="h-full w-24 sm:w-26 flex items-center justify-center"
-          >
-            <LogoDewesoft class="max-h-full max-w-full object-contain" />
-          </a>
-        </div>
-        <div class="h-7 sm:h-8 flex items-center justify-center">
-          <a
-            href="https://ditsa.com.mx/"
-            target="_blank"
-            class="h-full w-24 sm:w-26 flex items-center justify-center"
-          >
-            <LogoDitsa class="max-h-full max-w-full object-contain" />
-          </a>
-        </div>
-        <div class="h-7 sm:h-8 flex items-center justify-center">
-          <a
-            href="https://www.primeraplus.com.mx/"
-            target="_blank"
-            class="h-full w-24 sm:w-26 flex items-center justify-center"
-          >
-            <LogoPrimeraPlus class="max-h-full max-w-full object-contain" />
-          </a>
-        </div>
+      <div class="flex flex-row items-center justify-center gap-6 sm:gap-12 w-full">
+        <a href="https://dewesoft.com/es" target="_blank" class="flex items-center justify-center hover:scale-105 transition-transform duration-300">
+          <LogoDewesoft class="h-auto w-20 sm:w-24 md:w-28 object-contain" />
+        </a>
+        <a href="https://ditsa.com.mx/" target="_blank" class="flex items-center justify-center hover:scale-105 transition-transform duration-300">
+          <LogoDitsa class="h-auto w-8 sm:w-9 md:w-9 object-contain" />
+        </a>
+        <a href="https://www.primeraplus.com.mx/" target="_blank" class="flex items-center justify-center hover:scale-105 transition-transform duration-300">
+          <LogoPrimeraPlus class="h-auto w-16 sm:w-20 md:w-24 object-contain" />
+        </a>
       </div>
 
       {/* Bronze sponsors */}
-      <div
-        class="flex flex-row flex-nowrap items-center justify-center gap-6 sm:gap-12 md:gap-x-20 w-full"
-      >
-        <div class="h-6 sm:h-6 flex items-center justify-center">
-          <a
-            href="https://www.fundacionuam.org/"
-            target="_blank"
-            class="h-full w-16 sm:w-20 flex items-center justify-center"
-          >
-            <LogoFuam class="max-h-full max-w-full object-contain" />
-          </a>
-        </div>
-        <div class="h-7 sm:h-8 w-7 sm:w-8 flex items-center justify-center">
-          <a
-            href="http://fenix.uam.mx/escuadron_uam/"
-            target="_blank"
-            class="h-full w-full flex items-center justify-center"
-          >
-            <LogoEscuadronUam class="max-h-full max-w-full object-contain" />
-          </a>
-        </div>
-        <div class="h-6 sm:h-6 flex items-center justify-center">
-          <a
-            href="https://energia.azc.uam.mx/en/"
-            target="_blank"
-            class="h-full w-16 sm:w-20 flex items-center justify-center"
-          >
-            <LogoDepartamentoEnergia
-              class="max-h-full max-w-full object-contain"
-            />
-          </a>
-        </div>
+      <div class="flex flex-row items-center justify-center gap-6 sm:gap-12 w-full">
+        <a href="https://www.fundacionuam.org/" target="_blank" class="flex items-center justify-center hover:scale-105 transition-transform duration-300">
+          <LogoFuam class="h-auto w-10 sm:w-12 md:w-12 object-contain" />
+        </a>
+        <a href="http://fenix.uam.mx/escuadron_uam/" target="_blank" class="flex items-center justify-center hover:scale-105 transition-transform duration-300">
+          <LogoEscuadronUam class="h-auto w-6 sm:w-8 md:w-8 object-contain" />
+        </a>
+        <a href="https://energia.azc.uam.mx/en/" target="_blank" class="flex items-center justify-center hover:scale-105 transition-transform duration-300">
+          <LogoDepartamentoEnergia class="h-auto w-12 sm:w-14 md:w-16 object-contain" />
+        </a>
       </div>
     </div>
   </div>
@@ -257,5 +183,18 @@ const isEnglish = Astro.currentLocale === "en";
   html.dark .footer-patrocinadores a:hover img[alt="Logo Solidworks"] {
     filter: invert(0) drop-shadow(0 0 4px rgba(255, 255, 255, 0.9))
       drop-shadow(0 0 4px rgba(67, 67, 67, 0.9)) !important;
+  }
+
+  .footer-patrocinadores img[alt="Logo Realis Simulation"] {
+    filter: brightness(0) opacity(0.7) !important;
+  }
+  .footer-patrocinadores a:hover img[alt="Logo Realis Simulation"] {
+    filter: brightness(0.45) opacity(1) !important;
+  }
+  html.dark .footer-patrocinadores img[alt="Logo Realis Simulation"] {
+    filter: brightness(0) invert(1) opacity(0.6) !important;
+  }
+  html.dark .footer-patrocinadores a:hover img[alt="Logo Realis Simulation"] {
+    filter: brightness(1) invert(0) opacity(1) drop-shadow(0 0 4px rgba(255, 255, 255, 0.9)) !important;
   }
 </style>

@@ -18,6 +18,7 @@ import LogoPrimeraPlus from "../components/logos/silver/LogoPrimeraPlus.astro";
 import LogoDepartamentoEnergia from "../components/logos/bronze/LogoDepartamentoEnergia.astro";
 import LogoEscuadronUam from "../components/logos/bronze/LogoEscuadronUam.astro";
 import LogoDewesoft from "../components/logos/silver/LogoDewesoft.astro";
+import LogoRealisSimulation from "../components/logos/gold/LogoRealisSimulation.astro";
 ---
 
 <MainLayout
@@ -31,78 +32,67 @@ import LogoDewesoft from "../components/logos/silver/LogoDewesoft.astro";
     <section id="nuestros-aliados" class="text-left space-y-16">
       <div class="space-y-12 md:space-y-20">
         {/* Gold */}
-        <div id="oro-grid" class="w-full space-y-8 md:space-y-12">
-          {/* Row 1: Ansys & ESSS */}
-          <div class="flex justify-center w-full">
-            <div
-              class="flex flex-row items-center justify-center gap-8 md:gap-10 w-full max-w-[250px] sm:max-w-[280px] md:max-w-[320px]"
+        <div id="oro-grid" class="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 w-full max-w-4xl mx-auto place-items-center">
+          {/* 1. Ansys */}
+          <div class="w-full flex items-center justify-center h-16 sm:h-20">
+            <a
+              href="https://www.ansys.com/"
+              target="_blank"
+              class="h-full w-full flex items-center justify-center hover:scale-105 transition-transform duration-300"
             >
-              <div class="h-[58px] sm:h-16 md:h-20 flex-1 flex items-center justify-center">
-                <a
-                  href="https://www.ansys.com/"
-                  target="_blank"
-                  class="h-full w-full max-w-[108px] sm:max-w-[120px] md:max-w-[140px] flex items-center justify-center hover:scale-105 transition-transform duration-300"
-                >
-                  <LogoAnsys class="max-h-[44%] max-w-full object-contain" />
-                </a>
-              </div>
-              <div class="h-[58px] sm:h-16 md:h-20 flex-1 flex items-center justify-center">
-                <a
-                  href="https://www.esss.com/es/"
-                  target="_blank"
-                  class="h-full w-full max-w-[108px] sm:max-w-[120px] md:max-w-[140px] flex items-center justify-center hover:scale-105 transition-transform duration-300"
-                >
-                  <LogoEsss class="max-h-[80%] max-w-full object-contain" />
-                </a>
-              </div>
-            </div>
+              <LogoAnsys class="h-auto w-20 sm:w-24 md:w-28 max-w-full object-contain" />
+            </a>
           </div>
-
-          {/* Row 2: Solidworks, Harness Design, Rapid Harness */}
-          <div
-            class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-x-8 lg:gap-x-14 w-full max-w-4xl mx-auto"
-          >
-            {/* 1. Solidworks */}
-            <div
-              class="h-[58px] sm:h-16 md:h-20 w-[178px] sm:w-48 md:w-48 lg:w-60 flex items-center justify-center"
+          {/* 2. ESSS */}
+          <div class="w-full flex items-center justify-center h-16 sm:h-20">
+            <a
+              href="https://www.esss.com/es/"
+              target="_blank"
+              class="h-full w-full flex items-center justify-center hover:scale-105 transition-transform duration-300"
             >
-              <a
-                href="https://www.solidworks.com/"
-                target="_blank"
-                class="h-full w-full flex items-center justify-center hover:scale-105 transition-transform duration-300"
-              >
-                <LogoSolidworks class="max-h-full max-w-full object-contain" />
-              </a>
-            </div>
-
-            {/* 2. Harness Design */}
-            <div
-              class="h-[58px] sm:h-16 md:h-20 w-[178px] sm:w-48 md:w-48 lg:w-60 flex items-center justify-center"
+              <LogoEsss class="max-h-[75%] max-w-full object-contain" />
+            </a>
+          </div>
+          {/* 3. Realis Simulation */}
+          <div class="w-full flex items-center justify-center h-16 sm:h-20">
+            <a
+              href="https://realissimulation.com/"
+              target="_blank"
+              class="h-full w-full flex items-center justify-center hover:scale-105 transition-transform duration-300"
             >
-              <a
-                id="harness-link"
-                href="https://www.harness.design/"
-                target="_blank"
-                class="h-full w-full flex items-center justify-center hover:scale-105 transition-transform duration-300"
-              >
-                <LogoHarnessDesign class="max-h-full max-w-full object-contain" />
-              </a>
-            </div>
-
-            {/* 3. Rapid Harness */}
-            <div
-              class="h-[58px] sm:h-16 md:h-20 w-[178px] sm:w-48 md:w-48 lg:w-60 flex items-center justify-center"
+              <LogoRealisSimulation class="h-auto w-24 sm:w-28 md:w-32 max-w-full object-contain" />
+            </a>
+          </div>
+          {/* 4. Solidworks */}
+          <div class="w-full flex items-center justify-center h-16 sm:h-20">
+            <a
+              href="https://www.solidworks.com/"
+              target="_blank"
+              class="h-full w-full flex items-center justify-center hover:scale-105 transition-transform duration-300"
             >
-              <a
-                href="https://www.rapidharness.com/"
-                target="_blank"
-                class="h-full w-[82%] flex items-center justify-center hover:scale-105 transition-transform duration-300"
-              >
-                <LogoRapidHarnest
-                  class="max-h-full max-w-full object-contain"
-                />
-              </a>
-            </div>
+              <LogoSolidworks class="h-auto w-36 sm:w-44 md:w-52 max-w-full object-contain" />
+            </a>
+          </div>
+          {/* 5. Harness Design */}
+          <div class="w-full flex items-center justify-center h-16 sm:h-20">
+            <a
+              id="harness-link"
+              href="https://www.harness.design/"
+              target="_blank"
+              class="h-full w-full flex items-center justify-center hover:scale-105 transition-transform duration-300"
+            >
+              <LogoHarnessDesign class="h-auto w-40 sm:w-48 md:w-56 max-w-full object-contain" />
+            </a>
+          </div>
+          {/* 6. Rapid Harness */}
+          <div class="w-full flex items-center justify-center h-16 sm:h-20">
+            <a
+              href="https://www.rapidharness.com/"
+              target="_blank"
+              class="h-full w-full flex items-center justify-center hover:scale-105 transition-transform duration-300"
+            >
+              <LogoRapidHarnest class="h-auto w-32 sm:w-40 md:w-48 max-w-full object-contain" />
+            </a>
           </div>
         </div>
 
@@ -356,6 +346,12 @@ import LogoDewesoft from "../components/logos/silver/LogoDewesoft.astro";
       drop-shadow(0 0 2px rgba(255, 255, 255, 1))
       drop-shadow(0 4px 10px rgba(100, 85, 75, 0.8));
     --logo-hover-filter: grayscale(0) opacity(1);
+    --realis-filter: brightness(0) opacity(0.7)
+      drop-shadow(0 0 2px rgba(255, 255, 255, 1))
+      drop-shadow(0 4px 10px rgba(100, 85, 75, 0.8));
+    --realis-hover-filter: brightness(0.45) opacity(1)
+      drop-shadow(0 0 2px rgba(255, 255, 255, 1))
+      drop-shadow(0 4px 10px rgba(100, 85, 75, 0.8));
   }
 
   html.dark {
@@ -364,6 +360,14 @@ import LogoDewesoft from "../components/logos/silver/LogoDewesoft.astro";
       drop-shadow(0 0 6px rgba(0, 0, 0, 1))
       drop-shadow(0 0 16px rgba(0, 0, 0, 1));
     --logo-hover-filter: grayscale(0) invert(0) opacity(1);
+    --realis-filter: brightness(0) invert(1) opacity(0.6)
+      drop-shadow(0 0 2px rgba(0, 0, 0, 1))
+      drop-shadow(0 0 6px rgba(0, 0, 0, 1))
+      drop-shadow(0 0 16px rgba(0, 0, 0, 1));
+    --realis-hover-filter: brightness(1) invert(0) opacity(1)
+      drop-shadow(0 0 2px rgba(0, 0, 0, 1))
+      drop-shadow(0 0 6px rgba(0, 0, 0, 1))
+      drop-shadow(0 0 16px rgba(0, 0, 0, 1));
   }
 
   #oro-grid svg,
@@ -376,6 +380,10 @@ import LogoDewesoft from "../components/logos/silver/LogoDewesoft.astro";
     filter: var(--logo-filter) !important;
   }
 
+  #oro-grid img[alt="Logo Realis Simulation"] {
+    filter: var(--realis-filter) !important;
+  }
+
   #oro-grid a:hover svg,
   #oro-grid a:hover img,
   #plata-grid a:hover svg,
@@ -384,6 +392,10 @@ import LogoDewesoft from "../components/logos/silver/LogoDewesoft.astro";
   #bronce-grid a:hover img {
     opacity: 1 !important;
     filter: var(--logo-hover-filter) !important;
+  }
+
+  #oro-grid a:hover img[alt="Logo Realis Simulation"] {
+    filter: var(--realis-hover-filter) !important;
   }
 </style>
 
