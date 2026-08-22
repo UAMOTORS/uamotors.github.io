@@ -103,15 +103,8 @@ const ogImageURL = new URL(image || defaultOgImage.src, Astro.site);
       is:inline
       data-goatcounter="https://uamotors.goatcounter.com/count"
       async
-      src="/js/metrics.js"
+      src="//gc.zgo.at/count.js"
     ></script>
-    <script is:inline>
-      document.addEventListener("astro:after-swap", () => {
-        if (window.goatcounter && typeof window.goatcounter.count === 'function') {
-          window.goatcounter.count();
-        }
-      });
-    </script>
   </head>
   <body>
     <SplashScreen />
