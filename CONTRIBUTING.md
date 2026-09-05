@@ -44,6 +44,14 @@ Para trabajar en este proyecto, necesitas nociones básicas de:
 - **Artículos del Blog (`src/content/blogs/`):** Si te pidieron publicar una nueva noticia, aquí es donde creas el archivo `.md`.
 - **Imágenes e Íconos (`src/assets/` y `public/`):** Las fotografías, fondos (Canvas/SVGs) y logos van en estas carpetas.
 
+### Plantillas de GitHub (Issues y Pull Requests)
+
+Para mantener el orden en el proyecto, GitHub te pedirá que uses nuestros formatos predeterminados:
+
+- **¿Encontraste un error visual o de código?** Ve a la pestaña de _Issues_, dale a _New Issue_ y selecciona **Reporte de Bug**. Llenarás un formato con los pasos para reproducir el error.
+- **¿Tienes una idea para una nueva sección?** Selecciona **Nueva Función / Mejora** para proponerla.
+- **Pull Requests:** Al proponer tus cambios de código, se pre-llenará automáticamente una lista de verificación (checklist). Asegúrate de marcar todas las casillas aplicables para que tu código sea revisado y aprobado más rápido.
+
 ### Flujo de Trabajo (Cómo subir tus cambios)
 
 Para mantener el código limpio y sin errores en la rama principal (`main`), sigue este proceso:
