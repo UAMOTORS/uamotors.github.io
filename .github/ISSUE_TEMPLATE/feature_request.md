@@ -1,9 +1,9 @@
 ---
-name: Nueva Función / Mejora 🚀
+name: Nueva Función / Mejora
 about: Sugiere una nueva idea, sección o herramienta para el sitio web
 title: "[FEATURE] "
 labels: enhancement
-assignees: ''
+assignees: ""
 ---
 
 **Describe la solución o mejora que te gustaría**
