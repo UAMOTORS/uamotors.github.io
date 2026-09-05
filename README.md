@@ -4,14 +4,13 @@
   <img alt="UAMOTORS Logo" src="src/assets/logos/tira-uamotors.svg" width="250" align="left">
 </picture>
 
-# UAMOTORS
-### Sitio Web Oficial
+# UAMOTORS | Sitio Web Oficial
 
 <br clear="both"/>
 <br />
 
 [**UAMOTORS**](https://uamotors.github.io/) es el equipo oficial de Formula SAE de la [**Universidad Autónoma Metropolitana**](https://www.uam.mx/).
-Este repositorio contiene el código fuente de nuestra página web oficial, donde compartimos nuestra historia, el desarrollo de nuestro monoplaza **OP01**, y nuestra colaboración con aliados estratégicos.
+Este repositorio contiene el código fuente de nuestra página web oficial, donde compartimos nuestra historia, el desarrollo de nuestro monoplaza, y nuestra colaboración con aliados estratégicos.
 
 ## Tech Stack
 
