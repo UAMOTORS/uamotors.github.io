@@ -13,6 +13,32 @@
     },
     "lideres": [
         {
+            "id": "project",
+            "departamento": "Project",
+            "nombre": "Ximena Janeth Baeza Angeles ",
+            "fotoPath": "src/assets/profiles/svg/user-avatar.astro",
+            "linkedin": "https://www.linkedin.com/in/ximena-janeth-baeza-angeles-56670536a/",
+            "integrantes": [
+                "Integrante 1",
+                "Integrante 2",
+                "Integrante 3"
+            ]
+        },
+
+        {
+            "id": "marketing",
+            "departamento": "Marketing",
+            "nombre": "Esmeralda Apolinar",
+            "fotoPath": "src/assets/profiles/svg/user-avatar.astro",
+            "linkedin": "https://www.linkedin.com/in/esmeralda-apolinar-3782223a9/",
+            "integrantes": [
+                "Integrante 1",
+                "Integrante 2",
+                "Integrante 3"
+            ]
+        },
+        
+        {
             "id":  "aerodynamics",
             "departamento": "Aerodynamics",
             "nombre": "Aldo Ricardo Juárez Arias",
@@ -59,32 +85,6 @@
             "nombre": "Alán Olivares González",
             "fotoPath": "src/assets/profiles/svg/user-avatar.astro",
             "linkedin": "https://www.linkedin.com/in/alan-olivares-gonz%C3%A1lez-51346a377/",
-            "integrantes": [
-                "Integrante 1",
-                "Integrante 2",
-                "Integrante 3"
-            ]
-        },
-
-        {
-            "id": "project",
-            "departamento": "Project",
-            "nombre": "Ximena Janeth Baeza Angeles ",
-            "fotoPath": "src/assets/profiles/svg/user-avatar.astro",
-            "linkedin": "https://www.linkedin.com/in/ximena-janeth-baeza-angeles-56670536a/",
-            "integrantes": [
-                "Integrante 1",
-                "Integrante 2",
-                "Integrante 3"
-            ]
-        },
-
-        {
-            "id": "marketing",
-            "departamento": "Marketing",
-            "nombre": "Esmeralda Apolinar",
-            "fotoPath": "src/assets/profiles/svg/user-avatar.astro",
-            "linkedin": "https://www.linkedin.com/in/esmeralda-apolinar-3782223a9/",
             "integrantes": [
                 "Integrante 1",
                 "Integrante 2",
