@@ -2,12 +2,12 @@
     "facultyAdvisor": {
         "nombre": "Romy Pérez Moreno", 
         "puesto": "Faculty Advisor",
-        "fotoPath": "src/assets/profiles/svg/user-avatar.astro",
+        "fotoPath": "/profiles/svg/user-avatar.svg", 
         "linkedin": "https://www.linkedin.com/in/romyperez/" 
     },
     "capitan": {
         "nombre": "Jehoshua Alberto Soto Benavides",
-        "puesto": "Team Captain & Lider de Powertrain",
+        "puesto": "Team Captain & Powertrain",
         "fotoPath": "src/assets/profiles/svg/user-avatar.astro",
         "linkedin": "https://www.linkedin.com/in/jehoshua-alberto-soto-benavides-92146836a/"
     },
