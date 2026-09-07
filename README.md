@@ -1,12 +1,11 @@
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="src/assets/logos/tira-uamotors-white.svg">
-  <source media="(prefers-color-scheme: light)" srcset="src/assets/logos/tira-uamotors.svg">
-  <img alt="UAMOTORS Logo" src="src/assets/logos/tira-uamotors.svg" width="250" align="left">
-</picture>
-
-# UAMOTORS | Sitio Web Oficial
-
-<br clear="both"/>
+<h1>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="src/assets/logos/tira-uamotors-white.svg">
+    <source media="(prefers-color-scheme: light)" srcset="src/assets/logos/tira-uamotors.svg">
+    <img alt="UAMOTORS Logo" src="src/assets/logos/tira-uamotors.svg" width="250" align="absmiddle">
+  </picture>
+  &nbsp;UAMOTORS&nbsp;|&nbsp;Sitio&nbsp;Web&nbsp;Oficial
+</h1>
 
 [**UAMOTORS**](https://uamotors.github.io/) es el equipo oficial de Formula SAE de la [**Universidad Autónoma Metropolitana**](https://www.uam.mx/).
 Este repositorio contiene el código fuente de nuestra página web oficial, donde compartimos nuestra historia, el desarrollo de nuestro monoplaza, y nuestra colaboración con aliados estratégicos.
