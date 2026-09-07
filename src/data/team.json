@@ -2,13 +2,13 @@
     "facultyAdvisor": {
         "nombre": "Romy Pérez Moreno", 
         "puesto": "Faculty Advisor",
-        "fotoPath": "src/assets/profiles/user-avatar.svg",
+        "fotoPath": "src/assets/profiles/svg/user-avatar.astro",
         "linkedin": "https://www.linkedin.com/in/romyperez/" 
     },
     "capitan": {
         "nombre": "Jehoshua Alberto Soto Benavides",
         "puesto": "Team Captain & Lider de Powertrain",
-        "fotoPath": "src/assets/profiles/user-avatar.svg",
+        "fotoPath": "src/assets/profiles/svg/user-avatar.astro",
         "linkedin": "https://www.linkedin.com/in/jehoshua-alberto-soto-benavides-92146836a/"
     },
     "lideres": [
@@ -16,7 +16,7 @@
             "id":  "aerodynamics",
             "departamento": "Aerodynamics",
             "nombre": "Aldo Ricardo Juárez Arias",
-            "fotoPath": "src/assets/profiles/user-avatar.svg",
+            "fotoPath": "src/assets/profiles/svg/user-avatar.astro",
             "linkedin": "https://www.linkedin.com/in/aldo-ricardo-ju%C3%A1rez-arias-7357801bb/",
             "integrantes": [
                 "Integrante 1",
@@ -29,7 +29,7 @@
             "id": "electronics",
             "departamento": "Electronics",
             "nombre": "Andrés Montiel Albañil",
-            "fotoPath": "src/assets/profiles/user-avatar.svg", 
+            "fotoPath": "src/assets/profiles/svg/user-avatar.astro",
             "linkedin": "https://www.linkedin.com/in/andres-montiel-alba%C3%B1il-6218bb340/",
             "integrantes": [
                 "Integrante 1",
@@ -42,7 +42,7 @@
             "id": "dynamics",
             "departamento": "Dynamics",
             "nombre": "Ángel Christian Rodríguez Villamares",
-            "fotoPath": "src/assets/profiles/user-avatar.svg", 
+            "fotoPath": "src/assets/profiles/svg/user-avatar.astro",
             "linkedin": "https://www.linkedin.com/in/angel-christian-rodriguez-villamares/",
             "integrantes": [
                 "Integrante 1",
@@ -55,7 +55,7 @@
             "id": "chassis",
             "departamento": "Chassis",
             "nombre": "Alán Olivares González",
-            "fotoPath": "src/assets/profiles/user-avatar.svg", 
+            "fotoPath": "src/assets/profiles/svg/user-avatar.astro",
             "linkedin": "https://www.linkedin.com/in/alan-olivares-gonz%C3%A1lez-51346a377/",
             "integrantes": [
                 "Integrante 1",
@@ -68,7 +68,7 @@
             "id": "project",
             "departamento": "Project",
             "nombre": "Ximena Janeth Baeza Angeles ",
-            "fotoPath": "src/assets/profiles/user-avatar.svg", 
+            "fotoPath": "src/assets/profiles/svg/user-avatar.astro",
             "linkedin": "https://www.linkedin.com/in/ximena-janeth-baeza-angeles-56670536a/",
             "integrantes": [
                 "Integrante 1",
@@ -81,7 +81,7 @@
             "id": "marketing",
             "departamento": "Marketing",
             "nombre": "Esmeralda Apolinar",
-            "fotoPath": "src/assets/profiles/user-avatar.svg", 
+            "fotoPath": "src/assets/profiles/svg/user-avatar.astro",
             "linkedin": "https://www.linkedin.com/in/esmeralda-apolinar-3782223a9/",
             "integrantes": [
                 "Integrante 1",
