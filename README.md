@@ -4,7 +4,7 @@
     <source media="(prefers-color-scheme: light)" srcset="src/assets/logos/tira-uamotors.svg">
     <img alt="UAMOTORS Logo" src="src/assets/logos/tira-uamotors.svg" width="250" align="absmiddle">
   </picture>
-  &nbsp;UAMOTORS:&nbsp;Sitio&nbsp;Web&nbsp;Oficial
+  &nbsp;UAMOTORS | Sitio&nbsp;Web&nbsp;Oficial
 </h1>
 
 [**UAMOTORS**](https://uamotors.github.io/) es el equipo oficial de Formula SAE de la [**Universidad Autónoma Metropolitana**](https://www.uam.mx/).
