@@ -1,0 +1,68 @@
+---
+import teamData from "../data/team.json";
+---
+
+<!--- contenedor general -->
+<section class="flex flex-col items-center gap-8 p-4">
+  <!-- Tarjeta faculty advisor-->
+  <div
+    class="border border-gray-200 rounded-lg p-6 text-center shadow-sm bg-white"
+  >
+    <p class="font-bold text-gray-600 uppercase text-sm">
+      {teamData.facultyAdvisor.puesto}
+    </p>
+    <h3 class="text-xl font-semibold mt-2">{teamData.facultyAdvisor.nombre}</h3>
+    <a
+      href={teamData.facultyAdvisor.linkedin}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="text-blue-600 underline text-sm">LinkedIn</a
+    >
+  </div>
+
+  <!-- Tarjeta capitán-->
+  <div
+    class="border border-gray-200 rounded-lg p-6 text-center shadow-sm bg-white"
+  >
+    <p class="font-bold text-gray-600 uppercase text-sm">
+      {teamData.capitan.puesto}
+    </p>
+    <h3 class="text-xl font-semibold mt-2">{teamData.capitan.nombre}</h3>
+    <a
+      href={teamData.capitan.linkedin}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="text-blue-600 underline text-sm">LinkedIn</a
+    >
+  </div>
+
+  <!-- Contenedores líderes -->
+    <div class="flex flex-col md:flex-row gap-6 w-full justify-center flex-wraps">
+        {teamData.lideres.map((lider) => (
+            <div class="border border-gray-200 rounded-lg p-5 text-center shadow-sm bg-white w-full md:w-64">
+
+                <p class="font-bold text-gray-500 uppercase text-xs mb-1">{lider.departamento}</p>
+                <h3 class="text-lg font-semibold">{lider.nombre}</h3>
+                <a href={lider.linkedin} target="_blank" rel="noopener noreferrer" class="text-blue-600 underline text-sm block mb-4">LinkedIn</a>
+                
+                <button onclick={`document.getElementById('modal-${lider.id}').showModal()`}
+                class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">Ver integrantes</button>
+
+                <dialog id={`modal-${lider.id}`} class="p-6 rounder-xl shadow-2xl open:animate-fade-in">
+                    <h4 class="text-xl font-bold mb-4 text-center">Equipo {lider.departamento}</h4>
+
+                    <!-- Lista de integrantes -->
+                    <ul class="text-left mb-6 divide-y divide-gray-100">
+                        {lider.integrantes.map((integrante) => (
+                            <li class="py-2 text-gray-700">{integrante}</li>
+                        ))}
+                    </ul>
+
+                    <form method="dialog">
+                        <button class="bg-gray-100 text-gray-800 px-4 py-2 rounded-md hover:bg-gray-200 w-full font-medium">Cerrar</button>
+                    </form>
+                </dialog>
+            </div>
+        ))}
+    </div>
+</section>
