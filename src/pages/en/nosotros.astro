@@ -7,6 +7,7 @@ import RacingCar from "../../icons/assets/RacingCar.astro";
 import Trophy from "../../icons/assets/Trophy.astro";
 import Globe from "../../icons/assets/Globe.astro";
 import teamPhoto from "../../assets/images/uamotors-team.webp";
+import Team from "../../components/TeamEng.astro";
 ---
 
 <MainLayout
@@ -35,14 +36,20 @@ import teamPhoto from "../../assets/images/uamotors-team.webp";
           Who Are We?
         </h2>
         <p class="kanit-light text-lg sm:text-xl leading-relaxed">
-          <strong>UAMOTORS</strong> is a multidisciplinary student team from the <a href="https://www.uam.mx/" target="_blank"
+          <strong>UAMOTORS</strong> is a multidisciplinary student team from the <a
+            href="https://www.uam.mx/"
+            target="_blank"
             ><strong>Universidad Autónoma Metropolitana</strong></a
-          >, founded at Unidad Azcapotzalco in March 2025 by student initiative. We are more than an engineering group; we integrate knowledge from our unit's three academic divisions: <strong>CBI</strong> (Basic Sciences and Engineering), <strong>CSH</strong> (Social Sciences and Humanities), and <strong>CAD</strong> (Sciences and Arts for Design).
+          >, founded at Unidad Azcapotzalco in March 2025 by student initiative.
+          We are more than an engineering group; we integrate knowledge from our
+          unit's three academic divisions: <strong>CBI</strong> (Basic Sciences and
+          Engineering), <strong>CSH</strong> (Social Sciences and Humanities), and
+          <strong>CAD</strong> (Sciences and Arts for Design).
         </p>
         <p class="kanit-light text-lg sm:text-xl leading-relaxed mt-4">
-          Our core purpose is to tackle real-world technological development challenges through the design and construction of a Formula-style race car that complies with <a
-            href="https://www.sae.org/"
-            target="_blank"
+          Our core purpose is to tackle real-world technological development
+          challenges through the design and construction of a Formula-style race
+          car that complies with <a href="https://www.sae.org/" target="_blank"
             ><strong>Society of Automotive Engineers (SAE)</strong></a
           > guidelines.
         </p>
@@ -54,7 +61,9 @@ import teamPhoto from "../../assets/images/uamotors-team.webp";
         >
           <h3 class="sigmar-ff text-2xl mb-3">Our Mission</h3>
           <p class="kanit-light text-base sm:text-lg leading-relaxed">
-            We aim to generate a profound educational impact on every member by establishing strategic partnerships with the industry that strengthen technological development in Mexico.
+            We aim to generate a profound educational impact on every member by
+            establishing strategic partnerships with the industry that
+            strengthen technological development in Mexico.
           </p>
         </div>
         <div
@@ -62,7 +71,9 @@ import teamPhoto from "../../assets/images/uamotors-team.webp";
         >
           <h3 class="sigmar-ff text-2xl mb-3">Design Vision</h3>
           <p class="kanit-light text-base sm:text-lg leading-relaxed">
-            Our focus is on building a reliable, cost-effective single-seater optimized for novice drivers, prioritizing manufacturable designs and decisions backed by technical criteria.
+            Our focus is on building a reliable, cost-effective single-seater
+            optimized for novice drivers, prioritizing manufacturable designs
+            and decisions backed by technical criteria.
           </p>
         </div>
       </div>
@@ -95,7 +106,8 @@ import teamPhoto from "../../assets/images/uamotors-team.webp";
                 class="kanit-regular text-space-red dark:text-space-yellow"
                 >Competitiveness:</strong
               ><br />
-              Build a solid foundation to ensure future UAM generations have a legacy of success in the competition.
+              Build a solid foundation to ensure future UAM generations have a legacy
+              of success in the competition.
             </div>
           </li>
           <li class="flex items-start gap-4">
@@ -117,6 +129,15 @@ import teamPhoto from "../../assets/images/uamotors-team.webp";
             </div>
           </li>
         </ul>
+      </div>
+
+      <div id="Equipo">
+        <h2
+          class="sigmar-ff text-3xl mb-6 text-space-red dark:text-space-yellow"
+        >
+          Equipo
+        </h2>
+        <Team />
       </div>
     </section>
   </div>
