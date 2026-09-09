@@ -24,7 +24,7 @@
             "fotoPath": "/profiles/pictures/project-ximena.webp",
             "linkedin": "https://www.linkedin.com/in/ximena-janeth-baeza-angeles-56670536a/",
             "integrantes": [
-                {"nombre": "Integrante 1", "linkedin": ""}
+                
             ]
         },
 
@@ -35,7 +35,7 @@
             "fotoPath": "/profiles/pictures/marketing-esmeralda.webp",
             "linkedin": "https://www.linkedin.com/in/esmeralda-apolinar-3782223a9/",
             "integrantes": [
-                {"nombre": "Integrante 1", "linkedin": ""}
+                
             ]
         },
         
@@ -46,7 +46,7 @@
             "fotoPath": "/profiles/pictures/dynamics-angel.webp",
             "linkedin": "https://www.linkedin.com/in/angel-christian-rodriguez-villamares/",
             "integrantes": [
-                {"nombre": "Integrante 1", "linkedin": ""}
+                
             ]
         },
 
@@ -83,7 +83,7 @@
             "fotoPath": "/profiles/pictures/chassis-alan.webp",
             "linkedin": "https://www.linkedin.com/in/alan-olivares-gonz%C3%A1lez-51346a377/",
             "integrantes": [
-                {"nombre": "Integrante 1", "linkedin": ""}
+                
             ]
         }
     ]
