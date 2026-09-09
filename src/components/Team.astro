@@ -1,6 +1,7 @@
 ---
 import teamData from "../data/team.json";
 import UserAvatar from "../icons/assets/userAvatar.astro";
+import LinkedinIcon from "../icons/social_media/Linkedin.astro";
 ---
 
 <section class="flex flex-col items-center gap-8 p-4 mt-4">
@@ -9,7 +10,7 @@ import UserAvatar from "../icons/assets/userAvatar.astro";
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl mx-auto justify-items-center auto-rows-fr">
     
     <!-- Tarjeta Faculty Advisor -->
-    <div class="bg-black/5 dark:bg-white/5 p-6 rounded-3xl border border-black/10 dark:border-white/10 hover:-translate-y-2 hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300 flex flex-col w-full h-full max-w-[400px]">
+    <div class="bg-black/5 dark:bg-white/5 p-5 md:p-6 rounded-3xl border border-black/10 dark:border-white/10 hover:-translate-y-2 hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300 flex flex-col w-full h-full max-w-[400px]">
       <div class="flex items-center gap-4">
         {
           teamData.facultyAdvisor.fotoPath.includes("user-avatar") ? (
@@ -44,7 +45,7 @@ import UserAvatar from "../icons/assets/userAvatar.astro";
     </div>
 
     <!-- Tarjeta Capitán -->
-    <div class="bg-black/5 dark:bg-white/5 p-6 rounded-3xl border border-black/10 dark:border-white/10 hover:-translate-y-2 hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300 flex flex-col w-full h-full max-w-[400px]">
+    <div class="bg-black/5 dark:bg-white/5 p-5 md:p-6 rounded-3xl border border-black/10 dark:border-white/10 hover:-translate-y-2 hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300 flex flex-col w-full h-full max-w-[400px]">
       <div class="flex items-center gap-4">
         {
           teamData.capitan.fotoPath.includes("user-avatar") ? (
@@ -76,28 +77,33 @@ import UserAvatar from "../icons/assets/userAvatar.astro";
           LinkedIn
         </a>
         <button
-          onclick="document.getElementById('modal-capitan').showModal()"
+          onclick="toggleDepto('depto-capitan', this, 'Departamento', 'Cerrar')"
           class="kanit-regular px-4 py-1.5 rounded-full border-1 border-space-red dark:border-space-yellow text-space-red dark:text-space-yellow hover:bg-space-red hover:text-white dark:hover:bg-space-yellow dark:hover:text-black transition-all duration-300 text-sm md:text-base"
         >
           Departamento
         </button>
       </div>
 
-      <!-- dialogo integrantes capitan -->
-      <dialog
-        id="modal-capitan"
-        class="p-8 rounded-3xl shadow-2xl bg-white dark:bg-neutral-900 text-black dark:text-white border border-black/10 dark:border-white/10 backdrop:bg-black/80 backdrop:backdrop-blur-md open:animate-fade-in w-11/12 max-w-md m-auto"
-      >
-        <h4 class="sigmar-ff text-3xl mb-6 text-center text-space-red dark:text-space-yellow">
-          {teamData.capitan.puesto}
-        </h4>
-        <p class="kanit-regular text-center mb-6">Información del departamento próximamente...</p>
-        <form method="dialog" class="flex justify-center">
-          <button class="kanit-regular px-8 py-2 rounded-full bg-black/10 dark:bg-white/10 hover:bg-black/20 dark:hover:bg-white/20 transition-all duration-300">
-            Cerrar
-          </button>
-        </form>
-      </dialog>
+      <!-- Acordeon integrantes capitan -->
+      <div id="depto-capitan" class="w-full max-h-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out">
+        <div class="mt-6 pt-6 border-t border-black/10 dark:border-white/10">
+          <ul class="text-left space-y-3 kanit-light text-base md:text-lg w-full">
+            {teamData.capitan.integrantes.map((integrante) => (
+              <li class="flex items-start justify-between gap-3 w-full">
+                <div class="flex items-start gap-3 mt-1.5">
+                  <span class="w-2 h-2 mt-2 rounded-full bg-space-red dark:bg-space-yellow shrink-0" />
+                  <span>{integrante.nombre}</span>
+                </div>
+                {integrante.linkedin && (
+                  <a href={integrante.linkedin} target="_blank" rel="noopener noreferrer" class="p-2 text-black dark:text-white hover:text-space-red dark:hover:text-space-yellow transition-colors duration-300">
+                    <LinkedinIcon class="w-5 h-5" />
+                  </a>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -105,7 +111,7 @@ import UserAvatar from "../icons/assets/userAvatar.astro";
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl mx-auto justify-items-center auto-rows-fr">
     {
       teamData.lideres.map((lider) => (
-        <div class="bg-black/5 dark:bg-white/5 p-6 rounded-3xl border border-black/10 dark:border-white/10 hover:-translate-y-2 hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300 flex flex-col w-full h-full max-w-[400px]">
+        <div class="bg-black/5 dark:bg-white/5 p-5 md:p-6 rounded-3xl border border-black/10 dark:border-white/10 hover:-translate-y-2 hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300 flex flex-col w-full h-full max-w-[400px]">
           
           <div class="flex items-center gap-4">
             {lider.fotoPath.includes("user-avatar") ? (
@@ -137,39 +143,53 @@ import UserAvatar from "../icons/assets/userAvatar.astro";
             </a>
 
             <button
-              onclick={`document.getElementById('modal-${lider.id}').showModal()`}
+              onclick={`toggleDepto('depto-${lider.id}', this, 'Departamento', 'Cerrar')`}
               class="kanit-regular px-4 py-1.5 rounded-full border-1 border-space-red dark:border-space-yellow text-space-red dark:text-space-yellow hover:bg-space-red hover:text-white dark:hover:bg-space-yellow dark:hover:text-black transition-all duration-300 text-sm md:text-base"
             >
               Departamento
             </button>
           </div>
 
-          <!-- dialogo integrantes -->
-          <dialog
-            id={`modal-${lider.id}`}
-            class="p-8 rounded-3xl shadow-2xl bg-white dark:bg-neutral-900 text-black dark:text-white border border-black/10 dark:border-white/10 backdrop:bg-black/80 backdrop:backdrop-blur-md open:animate-fade-in w-11/12 max-w-md m-auto"
-          >
-            <h4 class="sigmar-ff text-3xl mb-6 text-center text-space-red dark:text-space-yellow">
-              {lider.departamento}
-            </h4>
+          <!-- Acordeon integrantes -->
+          <div id={`depto-${lider.id}`} class="w-full max-h-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out">
+            <div class="mt-6 pt-6 border-t border-black/10 dark:border-white/10">
+              <ul class="text-left space-y-3 kanit-light text-base md:text-lg w-full">
+                {lider.integrantes.map((integrante) => (
+                  <li class="flex items-start justify-between gap-3 w-full">
+                    <div class="flex items-start gap-3 mt-1.5">
+                      <span class="w-2 h-2 mt-2 rounded-full bg-space-red dark:bg-space-yellow shrink-0" />
+                      <span>{integrante.nombre ? integrante.nombre : integrante}</span>
+                    </div>
+                    {integrante.linkedin && (
+                      <a href={integrante.linkedin} target="_blank" rel="noopener noreferrer" class="p-2 text-black dark:text-white hover:text-space-red dark:hover:text-space-yellow transition-colors duration-300">
+                        <LinkedinIcon class="w-5 h-5" />
+                      </a>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
 
-            <ul class="text-left mb-8 space-y-3 kanit-light text-lg">
-              {lider.integrantes.map((integrante) => (
-                <li class="flex items-center gap-3">
-                  <span class="w-2 h-2 rounded-full bg-space-red dark:bg-space-yellow shrink-0" />
-                  {integrante}
-                </li>
-              ))}
-            </ul>
-
-            <form method="dialog" class="flex justify-center">
-              <button class="kanit-regular px-8 py-2 rounded-full bg-black/10 dark:bg-white/10 hover:bg-black/20 dark:hover:bg-white/20 transition-all duration-300">
-                Cerrar
-              </button>
-            </form>
-          </dialog>
         </div>
       ))
     }
   </div>
 </section>
+
+<script is:inline>
+  function toggleDepto(id, btn, textOpen, textClose) {
+    const el = document.getElementById(id);
+    const isClosed = el.classList.contains('max-h-0');
+    
+    if (isClosed) {
+      el.classList.remove('max-h-0', 'opacity-0');
+      el.classList.add('max-h-[1000px]', 'opacity-100');
+      btn.innerText = textClose;
+    } else {
+      el.classList.add('max-h-0', 'opacity-0');
+      el.classList.remove('max-h-[1000px]', 'opacity-100');
+      btn.innerText = textOpen;
+    }
+  }
+</script>

@@ -8,8 +8,13 @@
     "capitan": {
         "nombre": "Jehoshua Alberto Soto Benavides",
         "puesto": "Team Captain & Powertrain",
+        "departamento": "Powertrain",
         "fotoPath": "src/assets/profiles/svg/user-avatar.astro",
-        "linkedin": "https://www.linkedin.com/in/jehoshua-alberto-soto-benavides-92146836a/"
+        "linkedin": "https://www.linkedin.com/in/jehoshua-alberto-soto-benavides-92146836a/",
+        "integrantes": [
+            {"nombre": "Ángel Rodrigo Sanabria López", "linkedin": "https://www.linkedin.com/in/angel-rodrigo-sanabria-l%C3%B3pez-5535a3402/"},
+            {"nombre": "Gabriel Domínguez Poblano", "linkedin": ""}
+        ]
     },
     "lideres": [
         {
@@ -19,9 +24,7 @@
             "fotoPath": "src/assets/profiles/svg/user-avatar.astro",
             "linkedin": "https://www.linkedin.com/in/ximena-janeth-baeza-angeles-56670536a/",
             "integrantes": [
-                "Integrante 1",
-                "Integrante 2",
-                "Integrante 3"
+                {"nombre": "Integrante 1", "linkedin": ""}
             ]
         },
 
@@ -32,9 +35,7 @@
             "fotoPath": "src/assets/profiles/svg/user-avatar.astro",
             "linkedin": "https://www.linkedin.com/in/esmeralda-apolinar-3782223a9/",
             "integrantes": [
-                "Integrante 1",
-                "Integrante 2",
-                "Integrante 3"
+                {"nombre": "Integrante 1", "linkedin": ""}
             ]
         },
         
@@ -45,9 +46,7 @@
             "fotoPath": "src/assets/profiles/svg/user-avatar.astro",
             "linkedin": "https://www.linkedin.com/in/aldo-ricardo-ju%C3%A1rez-arias-7357801bb/",
             "integrantes": [
-                "Integrante 1",
-                "Integrante 2",
-                "Integrante 3"
+                {"nombre": "Integrante 1", "linkedin": ""}
             ]
         },
 
@@ -58,11 +57,11 @@
             "fotoPath": "src/assets/profiles/svg/user-avatar.astro",
             "linkedin": "https://www.linkedin.com/in/andres-montiel-alba%C3%B1il-6218bb340/",
             "integrantes": [
-                "Andrés Montiel Albañil",
-                "Martín Elías Velázquez Benítez",
-                "Oswaldo Omar García Bernal",
-                "Rafael Palacios Valdéz",
-                "J. Alejandro Ramírez Martínez"
+                {"nombre": "Andrés Montiel Albañil", "linkedin": "https://www.linkedin.com/in/andres-montiel-alba%C3%B1il-6218bb340/"},
+                {"nombre": "Martín Elías Velázquez Benítez", "linkedin": ""},
+                {"nombre": "Oswaldo Omar García Bernal", "linkedin": "https://www.linkedin.com/in/oswaldo-omar-garcia-bernal-339579435/"},
+                {"nombre": "Rafael Palacios Valdéz", "linkedin": "https://www.linkedin.com/in/rafael-palacios-valdez-3b4232369/"},
+                {"nombre": "Alejandro Ramírez Martínez", "linkedin": "https://www.linkedin.com/in/lexrammart/"}
             ]
         },
 
@@ -73,22 +72,18 @@
             "fotoPath": "src/assets/profiles/svg/user-avatar.astro",
             "linkedin": "https://www.linkedin.com/in/angel-christian-rodriguez-villamares/",
             "integrantes": [
-                "Integrante 1",
-                "Integrante 2",
-                "Integrante 3"
+                {"nombre": "Integrante 1", "linkedin": ""}
             ]
         },
 
         {
             "id": "chassis",
             "departamento": "Chassis",
-            "nombre": "Alán Olivares González",
+            "nombre": "Alan Olivares González",
             "fotoPath": "src/assets/profiles/svg/user-avatar.astro",
             "linkedin": "https://www.linkedin.com/in/alan-olivares-gonz%C3%A1lez-51346a377/",
             "integrantes": [
-                "Integrante 1",
-                "Integrante 2",
-                "Integrante 3"
+                {"nombre": "Integrante 1", "linkedin": ""}
             ]
         }
     ]
