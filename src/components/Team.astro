@@ -3,42 +3,40 @@ import teamData from "../data/team.json";
 import UserAvatar from "../icons/assets/userAvatar.astro";
 ---
 
-<!--- contenedor general -->
 <section class="flex flex-col items-center gap-8 p-4 mt-4">
   
-  <div class="flex flex-col md:flex-row gap-6 justify-center w-full max-w-4xl flex-wrap">
+  <!-- Top Cards (Advisor & Captain) -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl mx-auto justify-items-center auto-rows-fr">
     
     <!-- Tarjeta Faculty Advisor -->
-    <div
-      class="bg-black/5 dark:bg-white/5 p-5 rounded-3xl border border-black/10 dark:border-white/10 hover:-translate-y-2 hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300 flex flex-col w-full md:w-[340px]"
-    >
+    <div class="bg-black/5 dark:bg-white/5 p-6 rounded-3xl border border-black/10 dark:border-white/10 hover:-translate-y-2 hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300 flex flex-col w-full h-full max-w-[400px]">
       <div class="flex items-center gap-4">
         {
           teamData.facultyAdvisor.fotoPath.includes("user-avatar") ? (
-            <UserAvatar class="w-20 h-20 text-black dark:text-white opacity-20 shrink-0" />
+            <UserAvatar class="w-18 h-18 text-black dark:text-white opacity-20 shrink-0" />
           ) : (
             <img
               src={teamData.facultyAdvisor.fotoPath}
               alt="Faculty Advisor"
-              class="w-20 h-20 rounded-full object-cover border-2 border-space-red dark:border-space-yellow shrink-0"
+              class="w-18 h-18 rounded-full object-cover border-2 border-space-red dark:border-space-yellow shrink-0"
             />
           )
         }
-        <p class="kanit-regular text-space-red dark:text-space-yellow uppercase tracking-widest text-base text-left">
-          <br />{teamData.facultyAdvisor.puesto}
+        <p class="kanit-regular text-space-red dark:text-space-yellow uppercase tracking-widest text-sm text-left my-auto">
+          {teamData.facultyAdvisor.puesto}
         </p>
       </div>
 
-      <h3 class="sigmar-ff text-sm md:text-base leading-tight text-left mt-2 mb-1">
+      <h4 class="sigmar-ff text-xl md:text-2xl leading-tight text-left mt-5 mb-5">
         {teamData.facultyAdvisor.nombre}
-      </h3>
+      </h4>
       
-      <div class="mt-auto pt-3 flex flex-row items-center justify-start gap-3">
+      <div class="mt-auto flex flex-row items-center justify-start gap-3">
         <a
           href={teamData.facultyAdvisor.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-block px-4 py-1.5 rounded-full bg-black/10 dark:bg-white/10 hover:bg-black/20 dark:hover:bg-white/20 transition-all duration-300 kanit-regular text-base"
+          class="inline-block px-4 py-2 rounded-full bg-black/10 dark:bg-white/10 hover:bg-black/20 dark:hover:bg-white/20 transition-all duration-300 kanit-regular text-sm md:text-base"
         >
           LinkedIn
         </a>
@@ -46,83 +44,103 @@ import UserAvatar from "../icons/assets/userAvatar.astro";
     </div>
 
     <!-- Tarjeta Capitán -->
-    <div
-      class="bg-black/5 dark:bg-white/5 p-5 rounded-3xl border border-black/10 dark:border-white/10 hover:-translate-y-2 hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300 flex flex-col w-full md:w-[340px]"
-    >
+    <div class="bg-black/5 dark:bg-white/5 p-6 rounded-3xl border border-black/10 dark:border-white/10 hover:-translate-y-2 hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300 flex flex-col w-full h-full max-w-[400px]">
       <div class="flex items-center gap-4">
         {
           teamData.capitan.fotoPath.includes("user-avatar") ? (
-            <UserAvatar class="w-20 h-20 text-black dark:text-white opacity-20 shrink-0" />
+            <UserAvatar class="w-18 h-18 text-black dark:text-white opacity-20 shrink-0" />
           ) : (
             <img
               src={teamData.capitan.fotoPath}
               alt="Capitán"
-              class="w-20 h-20 rounded-full object-cover border-2 border-space-red dark:border-space-yellow shrink-0"
+              class="w-18 h-18 rounded-full object-cover border-2 border-space-red dark:border-space-yellow shrink-0"
             />
           )
         }
-        <p class="kanit-regular text-space-red dark:text-space-yellow uppercase tracking-widest text-base text-left">
-          <br />{teamData.capitan.puesto}
+        <p class="kanit-regular text-space-red dark:text-space-yellow uppercase tracking-widest text-sm text-left my-auto">
+          {teamData.capitan.puesto}
         </p>
       </div>
 
-      <h3 class="sigmar-ff text-sm md:text-base leading-tight text-left mt-2 mb-1">
+      <h4 class="sigmar-ff text-xl md:text-2xl leading-tight text-left mt-5 mb-5">
         {teamData.capitan.nombre}
-      </h3>
+      </h4>
       
-      <div class="mt-auto pt-3 flex flex-row items-center justify-start gap-3">
+      <div class="mt-auto flex flex-row items-center justify-start gap-3">
         <a
           href={teamData.capitan.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-block px-4 py-1.5 rounded-full bg-black/10 dark:bg-white/10 hover:bg-black/20 dark:hover:bg-white/20 transition-all duration-300 kanit-regular text-base"
+          class="inline-block px-4 py-2 rounded-full bg-black/10 dark:bg-white/10 hover:bg-black/20 dark:hover:bg-white/20 transition-all duration-300 kanit-regular text-sm md:text-base"
         >
           LinkedIn
         </a>
+        <button
+          onclick="document.getElementById('modal-capitan').showModal()"
+          class="kanit-regular px-4 py-1.5 rounded-full border-1 border-space-red dark:border-space-yellow text-space-red dark:text-space-yellow hover:bg-space-red hover:text-white dark:hover:bg-space-yellow dark:hover:text-black transition-all duration-300 text-sm md:text-base"
+        >
+          Departamento
+        </button>
       </div>
+
+      <!-- dialogo integrantes capitan -->
+      <dialog
+        id="modal-capitan"
+        class="p-8 rounded-3xl shadow-2xl bg-white dark:bg-neutral-900 text-black dark:text-white border border-black/10 dark:border-white/10 backdrop:bg-black/80 backdrop:backdrop-blur-md open:animate-fade-in w-11/12 max-w-md m-auto"
+      >
+        <h4 class="sigmar-ff text-3xl mb-6 text-center text-space-red dark:text-space-yellow">
+          {teamData.capitan.puesto}
+        </h4>
+        <p class="kanit-regular text-center mb-6">Información del departamento próximamente...</p>
+        <form method="dialog" class="flex justify-center">
+          <button class="kanit-regular px-8 py-2 rounded-full bg-black/10 dark:bg-white/10 hover:bg-black/20 dark:hover:bg-white/20 transition-all duration-300">
+            Cerrar
+          </button>
+        </form>
+      </dialog>
     </div>
   </div>
 
   <!-- Líderes de Departamento -->
-  <div class="flex flex-col md:flex-row gap-5 w-full justify-center flex-wrap">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl mx-auto justify-items-center auto-rows-fr">
     {
       teamData.lideres.map((lider) => (
-        <div class="bg-black/5 dark:bg-white/5 p-5 rounded-3xl border border-black/10 dark:border-white/10 hover:-translate-y-2 hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300 flex flex-col w-full md:w-[340px]">
+        <div class="bg-black/5 dark:bg-white/5 p-6 rounded-3xl border border-black/10 dark:border-white/10 hover:-translate-y-2 hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300 flex flex-col w-full h-full max-w-[400px]">
           
           <div class="flex items-center gap-4">
             {lider.fotoPath.includes("user-avatar") ? (
-              <UserAvatar class="w-20 h-20 text-black dark:text-white opacity-20 shrink-0" />
+              <UserAvatar class="w-18 h-18 text-black dark:text-white opacity-20 shrink-0" />
             ) : (
               <img
                 src={lider.fotoPath}
                 alt={`Líder de ${lider.departamento}`}
-                class="w-20 h-20 rounded-full object-cover border-2 border-space-red dark:border-space-yellow shrink-0"
+                class="w-18 h-18 rounded-full object-cover border-2 border-space-red dark:border-space-yellow shrink-0"
               />
             )}
-            <p class="kanit-regular text-space-red dark:text-space-yellow uppercase tracking-widest text-base text-left">
-              <br />Líder<br />{lider.departamento}
+            <p class="kanit-regular text-space-red dark:text-space-yellow uppercase tracking-widest text-sm text-left my-auto">
+              Líder<br />{lider.departamento}
             </p>
           </div>
 
-          <h3 class="sigmar-ff text-sm md:text-base leading-tight text-left mt-2 mb-1">
+          <h4 class="sigmar-ff text-xl md:text-2xl leading-tight text-left mt-5 mb-5">
             {lider.nombre}
-          </h3>
+          </h4>
 
-          <div class="mt-auto pt-3 flex flex-row items-center justify-start gap-3">
+          <div class="mt-auto flex flex-row items-center justify-start gap-3">
             <a
               href={lider.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-block px-4 py-1.5 rounded-full bg-black/10 dark:bg-white/10 hover:bg-black/20 dark:hover:bg-white/20 transition-all duration-300 kanit-regular text-base"
+              class="inline-block px-4 py-2 rounded-full bg-black/10 dark:bg-white/10 hover:bg-black/20 dark:hover:bg-white/20 transition-all duration-300 kanit-regular text-sm md:text-base"
             >
               LinkedIn
             </a>
 
             <button
               onclick={`document.getElementById('modal-${lider.id}').showModal()`}
-              class="kanit-regular px-4 py-1.5 rounded-full border-1 border-space-red dark:border-space-yellow text-space-red dark:text-space-yellow hover:bg-space-red hover:text-white dark:hover:bg-space-yellow dark:hover:text-black transition-all duration-300 text-base"
+              class="kanit-regular px-4 py-1.5 rounded-full border-1 border-space-red dark:border-space-yellow text-space-red dark:text-space-yellow hover:bg-space-red hover:text-white dark:hover:bg-space-yellow dark:hover:text-black transition-all duration-300 text-sm md:text-base"
             >
-              Ver Equipo
+              Departamento
             </button>
           </div>
 
