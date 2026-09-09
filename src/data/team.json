@@ -43,7 +43,7 @@
             "id": "dynamics",
             "departamento": "Dynamics",
             "nombre": "Ángel Christian Rodríguez Villamares",
-            "fotoPath": "/public/profiles/pictures/dynamics-angel.webp",
+            "fotoPath": "/profiles/pictures/dynamics-angel.webp",
             "linkedin": "https://www.linkedin.com/in/angel-christian-rodriguez-villamares/",
             "integrantes": [
                 {"nombre": "Integrante 1", "linkedin": ""}
