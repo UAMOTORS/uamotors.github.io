@@ -2,14 +2,14 @@
     "facultyAdvisor": {
         "nombre": "Romy Pérez Moreno", 
         "puesto": "Faculty Advisor",
-        "fotoPath": "/profiles/svg/user-avatar.svg", 
+        "fotoPath": "/profiles/pictures/faacultyadvisor-romy.webp", 
         "linkedin": "https://www.linkedin.com/in/romyperez/" 
     },
     "capitan": {
         "nombre": "Jehoshua Alberto Soto Benavides",
         "puesto": "Team Captain & Powertrain",
         "departamento": "Powertrain",
-        "fotoPath": "src/assets/profiles/svg/user-avatar.astro",
+        "fotoPath": "/profiles/pictures/powertrain-jehoshua.webp",
         "linkedin": "https://www.linkedin.com/in/jehoshua-alberto-soto-benavides-92146836a/",
         "integrantes": [
             {"nombre": "Ángel Rodrigo Sanabria López", "linkedin": "https://www.linkedin.com/in/angel-rodrigo-sanabria-l%C3%B3pez-5535a3402/"},
@@ -21,7 +21,7 @@
             "id": "project",
             "departamento": "Project",
             "nombre": "Ximena Janeth Baeza Angeles ",
-            "fotoPath": "src/assets/profiles/svg/user-avatar.astro",
+            "fotoPath": "/profiles/pictures/project-ximena.webp",
             "linkedin": "https://www.linkedin.com/in/ximena-janeth-baeza-angeles-56670536a/",
             "integrantes": [
                 {"nombre": "Integrante 1", "linkedin": ""}
@@ -32,7 +32,7 @@
             "id": "marketing",
             "departamento": "Marketing",
             "nombre": "Esmeralda Apolinar",
-            "fotoPath": "src/assets/profiles/svg/user-avatar.astro",
+            "fotoPath": "/profiles/pictures/marketing-esmeralda.webp",
             "linkedin": "https://www.linkedin.com/in/esmeralda-apolinar-3782223a9/",
             "integrantes": [
                 {"nombre": "Integrante 1", "linkedin": ""}
@@ -40,11 +40,11 @@
         },
         
         {
-            "id":  "aerodynamics",
-            "departamento": "Aerodynamics",
-            "nombre": "Aldo Ricardo Juárez Arias",
-            "fotoPath": "src/assets/profiles/svg/user-avatar.astro",
-            "linkedin": "https://www.linkedin.com/in/aldo-ricardo-ju%C3%A1rez-arias-7357801bb/",
+            "id": "dynamics",
+            "departamento": "Dynamics",
+            "nombre": "Ángel Christian Rodríguez Villamares",
+            "fotoPath": "/public/profiles/pictures/dynamics-angel.webp",
+            "linkedin": "https://www.linkedin.com/in/angel-christian-rodriguez-villamares/",
             "integrantes": [
                 {"nombre": "Integrante 1", "linkedin": ""}
             ]
@@ -65,11 +65,11 @@
         },
 
         {
-            "id": "dynamics",
-            "departamento": "Dynamics",
-            "nombre": "Ángel Christian Rodríguez Villamares",
-            "fotoPath": "src/assets/profiles/svg/user-avatar.astro",
-            "linkedin": "https://www.linkedin.com/in/angel-christian-rodriguez-villamares/",
+            "id":  "aerodynamics",
+            "departamento": "Aerodynamics",
+            "nombre": "Aldo Ricardo Juárez Arias",
+            "fotoPath": "/profiles/pictures/aerodynamics-aldo.webp",
+            "linkedin": "https://www.linkedin.com/in/aldo-ricardo-ju%C3%A1rez-arias-7357801bb/",
             "integrantes": [
                 {"nombre": "Integrante 1", "linkedin": ""}
             ]
@@ -79,7 +79,7 @@
             "id": "chassis",
             "departamento": "Chassis",
             "nombre": "Alan Olivares González",
-            "fotoPath": "src/assets/profiles/svg/user-avatar.astro",
+            "fotoPath": "/profiles/pictures/chassis-alan.webp",
             "linkedin": "https://www.linkedin.com/in/alan-olivares-gonz%C3%A1lez-51346a377/",
             "integrantes": [
                 {"nombre": "Integrante 1", "linkedin": ""}
