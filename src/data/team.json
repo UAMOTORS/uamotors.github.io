@@ -54,10 +54,9 @@
             "id": "electronics",
             "departamento": "Electronics",
             "nombre": "Andrés Montiel Albañil",
-            "fotoPath": "src/assets/profiles/svg/user-avatar.astro",
+            "fotoPath": "/profiles/pictures/electronics-andres.webp",
             "linkedin": "https://www.linkedin.com/in/andres-montiel-alba%C3%B1il-6218bb340/",
             "integrantes": [
-                {"nombre": "Andrés Montiel Albañil", "linkedin": "https://www.linkedin.com/in/andres-montiel-alba%C3%B1il-6218bb340/"},
                 {"nombre": "Martín Elías Velázquez Benítez", "linkedin": ""},
                 {"nombre": "Oswaldo Omar García Bernal", "linkedin": "https://www.linkedin.com/in/oswaldo-omar-garcia-bernal-339579435/"},
                 {"nombre": "Rafael Palacios Valdéz", "linkedin": "https://www.linkedin.com/in/rafael-palacios-valdez-3b4232369/"},
