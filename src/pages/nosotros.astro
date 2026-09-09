@@ -7,6 +7,7 @@ import RacingCar from "../icons/assets/RacingCar.astro";
 import Trophy from "../icons/assets/Trophy.astro";
 import Globe from "../icons/assets/Globe.astro";
 import teamPhoto from "../assets/images/uamotors-team.webp";
+import Team from "../components/Team.astro";
 ---
 
 <MainLayout
@@ -38,11 +39,12 @@ import teamPhoto from "../assets/images/uamotors-team.webp";
           <strong>UAMOTORS</strong> es un equipo multidisciplinario de estudiantes
           de la <a href="https://www.uam.mx/" target="_blank"
             ><strong>Universidad Autónoma Metropolitana</strong></a
-          >, fundado en la Unidad Azcapotzalco en marzo de 2025 por iniciativa del propio alumnado. No
-          somos solo un grupo de ingeniería; integramos conocimientos de las
-          tres divisiones académicas de nuestra unidad: <strong>CBI</strong> (Ciencias
-          Básicas e Ingeniería), <strong>CSH</strong> (Ciencias Sociales y Humanidades)
-          y <strong>CAD</strong> (Ciencias y Artes para el Diseño).
+          >, fundado en la Unidad Azcapotzalco en marzo de 2025 por iniciativa
+          del propio alumnado. No somos solo un grupo de ingeniería; integramos
+          conocimientos de las tres divisiones académicas de nuestra unidad: <strong
+            >CBI</strong
+          > (Ciencias Básicas e Ingeniería), <strong>CSH</strong> (Ciencias Sociales
+          y Humanidades) y <strong>CAD</strong> (Ciencias y Artes para el Diseño).
         </p>
         <p class="kanit-light text-lg sm:text-xl leading-relaxed mt-4">
           Nuestra razón de ser es enfrentar retos reales de desarrollo
@@ -132,6 +134,15 @@ import teamPhoto from "../assets/images/uamotors-team.webp";
             </div>
           </li>
         </ul>
+      </div>
+
+      <div id="Equipo">
+        <h2
+          class="sigmar-ff text-3xl mb-6 text-space-red dark:text-space-yellow"
+        >
+          Equipo
+        </h2>
+        <Team />
       </div>
     </section>
   </div>

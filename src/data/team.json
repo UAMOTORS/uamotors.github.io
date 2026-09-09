@@ -1,0 +1,90 @@
+{
+    "facultyAdvisor": {
+        "nombre": "Romy Pérez Moreno", 
+        "puesto": "Faculty Advisor",
+        "fotoPath": "/profiles/pictures/faacultyadvisor-romy.webp", 
+        "linkedin": "https://www.linkedin.com/in/romyperez/" 
+    },
+    "capitan": {
+        "nombre": "Jehoshua Alberto Soto Benavides",
+        "puesto": "Team Captain & Powertrain",
+        "departamento": "Powertrain",
+        "fotoPath": "/profiles/pictures/powertrain-jehoshua.webp",
+        "linkedin": "https://www.linkedin.com/in/jehoshua-alberto-soto-benavides-92146836a/",
+        "integrantes": [
+            {"nombre": "Ángel Rodrigo Sanabria López", "linkedin": "https://www.linkedin.com/in/angel-rodrigo-sanabria-l%C3%B3pez-5535a3402/"},
+            {"nombre": "Gabriel Domínguez Poblano", "linkedin": ""}
+        ]
+    },
+    "lideres": [
+        {
+            "id": "project",
+            "departamento": "Project",
+            "nombre": "Ximena Janeth Baeza Angeles ",
+            "fotoPath": "/profiles/pictures/project-ximena.webp",
+            "linkedin": "https://www.linkedin.com/in/ximena-janeth-baeza-angeles-56670536a/",
+            "integrantes": [
+                
+            ]
+        },
+
+        {
+            "id": "marketing",
+            "departamento": "Marketing",
+            "nombre": "Esmeralda Apolinar",
+            "fotoPath": "/profiles/pictures/marketing-esmeralda.webp",
+            "linkedin": "https://www.linkedin.com/in/esmeralda-apolinar-3782223a9/",
+            "integrantes": [
+                
+            ]
+        },
+        
+        {
+            "id": "dynamics",
+            "departamento": "Dynamics",
+            "nombre": "Ángel Christian Rodríguez Villamares",
+            "fotoPath": "/profiles/pictures/dynamics-angel.webp",
+            "linkedin": "https://www.linkedin.com/in/angel-christian-rodriguez-villamares/",
+            "integrantes": [
+                
+            ]
+        },
+
+        {
+            "id": "electronics",
+            "departamento": "Electronics",
+            "nombre": "Andrés Montiel Albañil",
+            "fotoPath": "/profiles/pictures/electronics-andres.webp",
+            "linkedin": "https://www.linkedin.com/in/andres-montiel-alba%C3%B1il-6218bb340/",
+            "integrantes": [
+                {"nombre": "Martín Elías Velázquez Benítez", "linkedin": ""},
+                {"nombre": "Oswaldo Omar García Bernal", "linkedin": "https://www.linkedin.com/in/oswaldo-omar-garcia-bernal-339579435/"},
+                {"nombre": "Rafael Palacios Valdéz", "linkedin": "https://www.linkedin.com/in/rafael-palacios-valdez-3b4232369/"},
+                {"nombre": "Alejandro Ramírez Martínez", "linkedin": "https://www.linkedin.com/in/lexrammart/"}
+            ]
+        },
+
+        {
+            "id":  "aerodynamics",
+            "departamento": "Aerodynamics",
+            "nombre": "Aldo Ricardo Juárez Arias",
+            "fotoPath": "/profiles/pictures/aerodynamics-aldo.webp",
+            "linkedin": "https://www.linkedin.com/in/aldo-ricardo-ju%C3%A1rez-arias-7357801bb/",
+            "integrantes": [
+                {"nombre": "Irving Lorenzo Galindo", "linkedin": "https://www.linkedin.com/in/irving-lorenzo-galindo-4b2314296/"},
+                {"nombre": "Ian Arturo Kaled Berdeja Cabañas", "linkedin": "https://www.linkedin.com/in/ian-berdeja-caba%C3%B1as-5268a6432/"}
+            ]
+        },
+
+        {
+            "id": "chassis",
+            "departamento": "Chassis",
+            "nombre": "Alan Olivares González",
+            "fotoPath": "/profiles/pictures/chassis-alan.webp",
+            "linkedin": "https://www.linkedin.com/in/alan-olivares-gonz%C3%A1lez-51346a377/",
+            "integrantes": [
+                
+            ]
+        }
+    ]
+}
