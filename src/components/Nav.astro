@@ -39,7 +39,7 @@ const englishNavLinks = [
 const navLinks = isEnglish ? englishNavLinks : siteConfig.headerNavLinks;
 ---
 
-<header>
+<header class="relative z-50">
   <nav
     class="nav-glass font-light w-full flex flex-row items-center justify-between gap-2 rounded-4xl px-5 py-2 text-xs sm:gap-8 sm:py-3 sm:text-base"
   >
@@ -73,6 +73,8 @@ const navLinks = isEnglish ? englishNavLinks : siteConfig.headerNavLinks;
   </div>
 </header>
 <script>
+  import { navigate } from 'astro:transitions/client';
+
   document.addEventListener('astro:page-load', () => {
     const hamburger = document.querySelector("#hamburger-menu");
     const mobileLinks = document.querySelector("#mobile-links");
@@ -80,7 +82,8 @@ const navLinks = isEnglish ? englishNavLinks : siteConfig.headerNavLinks;
     if (hamburger && mobileLinks) {
       if (!hamburger.dataset.listenerAttached) {
         hamburger.addEventListener("click", () => {
-          mobileLinks.classList.remove("slideOutUp");
+          mobileLinks.style.display = "";
+          mobileLinks.classList.remove("slideOutUp", "no-glass", "fast-out");
           mobileLinks.classList.add("expanded");
           mobileLinks.classList.add("slideInDown");
         });
@@ -101,10 +104,42 @@ const navLinks = isEnglish ? englishNavLinks : siteConfig.headerNavLinks;
         }
       });
     }
+
+    const mobileNavLinks = document.querySelectorAll(".mobile-nav-link");
+    if (mobileNavLinks.length > 0 && mobileLinks) {
+      mobileNavLinks.forEach(link => {
+        if (!link.dataset.listenerAttached) {
+          link.addEventListener("click", (e) => {
+            e.preventDefault();
+            const targetHref = link.getAttribute('href');
+            
+            // Remove blur effect instantly to prevent GPU lag
+            mobileLinks.classList.add("no-glass", "fast-out", "slideOutUp");
+            mobileLinks.classList.remove("slideInDown");
+            
+            // Wait for fast animation before navigating
+            setTimeout(() => {
+              if (targetHref) {
+                navigate(targetHref);
+              }
+            }, 200);
+          });
+          link.dataset.listenerAttached = "true";
+        }
+      });
+    }
   });
 </script>
 
 <style>
+  .no-glass {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  .fast-out {
+    animation-duration: 200ms !important;
+  }
+
   .nav-glass {
     background-color: var(--glass-bg) !important;
     backdrop-filter: var(--glass-blur) !important;
