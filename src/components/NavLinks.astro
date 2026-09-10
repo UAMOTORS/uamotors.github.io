@@ -18,13 +18,13 @@ const {
       ? (activePage === link.text.toLowerCase() || cleanHref.endsWith("/" + cleanActive))
       : false;
     const classNames = [
-      isMobileLink ? "close-menu text-2xl py-1 font-normal" : "whitespace-nowrap",
+      isMobileLink ? "mobile-nav-link text-2xl py-1 font-normal" : "whitespace-nowrap",
       isActive ? "text-space-red! dark:text-space-yellow!" : "",
     ]
       .join(" ")
       .trim();
     return (
-      <a class={classNames} href={link.href}>
+      <a class={classNames} href={link.href} data-astro-prefetch="tap">
         {link.text}
       </a>
     );

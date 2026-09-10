@@ -11,7 +11,7 @@ const { class: className, ...props } = Astro.props;
   alt="Logo Realis Simulation"
   class:list={[
     className,
-    "transition-all duration-300 filter grayscale opacity-70 hover:grayscale-0 hover:opacity-100 hover:scale-105 dark:invert dark:opacity-60 dark:hover:invert-0 dark:hover:opacity-100",
+    "transition-[opacity,transform] duration-300 filter grayscale opacity-70 hover:grayscale-0 hover:opacity-100 hover:scale-105 dark:brightness-0 dark:invert dark:opacity-60 dark:hover:brightness-100 dark:hover:invert-0 dark:hover:opacity-100",
   ]}
   {...props}
 />
