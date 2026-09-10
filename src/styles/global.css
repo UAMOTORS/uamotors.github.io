@@ -9,7 +9,7 @@
   --space-stone: #434343;
 
   --glass-bg: rgb(255, 255, 255, 0.15);
-  --glass-blur: blur(40px) saturate(210%);
+  --glass-blur: blur(40px);
   --glass-border: 0px solid rgba(255, 255, 255, 0.04);
   --glass-shadow:
     inset 0 1px 1px 0 rgba(255, 255, 255, 0.8),
@@ -20,7 +20,7 @@
 
 html.dark {
   --glass-bg: rgba(0, 0, 0, 0.25);
-  --glass-blur: blur(40px) saturate(210%);
+  --glass-blur: blur(40px);
   --glass-border: 0px solid rgba(255, 255, 255, 0.08);
   --glass-shadow:
     inset 0 1px 1px 0 rgba(255, 255, 255, 0.12),
@@ -129,6 +129,11 @@ button.button-link.space-btn-outlined:not(:disabled) {
   @apply border border-black bg-transparent text-black dark:border-whitesmoke dark:bg-transparent dark:text-whitesmoke;
 }
 
+a.button-link.space-btn-red-outlined:not(:disabled),
+button.button-link.space-btn-red-outlined:not(:disabled) {
+  @apply border border-space-red bg-transparent text-space-red dark:border-space-yellow dark:bg-transparent dark:text-space-yellow;
+}
+
 html.dark a:not(.button-link) {
   @apply text-whitesmoke;
 }
@@ -152,6 +157,11 @@ html.light a:not(.button-link) {
   a.button-link.space-btn-outlined:not(:disabled):hover,
   button.button-link.space-btn-outlined:not(:disabled):hover {
     @apply border-space-red text-space-red dark:border-space-yellow dark:text-space-yellow;
+  }
+
+  a.button-link.space-btn-red-outlined:not(:disabled):hover,
+  button.button-link.space-btn-red-outlined:not(:disabled):hover {
+    @apply bg-space-red text-whitesmoke dark:bg-space-yellow dark:text-black;
   }
 
   html.light a:not(.button-link):hover {

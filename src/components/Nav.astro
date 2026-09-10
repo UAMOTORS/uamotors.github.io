@@ -83,7 +83,7 @@ const navLinks = isEnglish ? englishNavLinks : siteConfig.headerNavLinks;
       if (!hamburger.dataset.listenerAttached) {
         hamburger.addEventListener("click", () => {
           mobileLinks.style.display = "";
-          mobileLinks.classList.remove("slideOutUp", "no-glass", "fast-out");
+          mobileLinks.classList.remove("slideOutUp", "no-glass");
           mobileLinks.classList.add("expanded");
           mobileLinks.classList.add("slideInDown");
         });
@@ -113,16 +113,16 @@ const navLinks = isEnglish ? englishNavLinks : siteConfig.headerNavLinks;
             e.preventDefault();
             const targetHref = link.getAttribute('href');
             
-            // Remove blur effect instantly to prevent GPU lag
-            mobileLinks.classList.add("no-glass", "fast-out", "slideOutUp");
+            // Remove blur effect instantly to prevent GPU lag, but animate out slowly
+            mobileLinks.classList.add("no-glass", "slideOutUp");
             mobileLinks.classList.remove("slideInDown");
             
-            // Wait for fast animation before navigating
+            // Wait for elegant animation before navigating
             setTimeout(() => {
               if (targetHref) {
                 navigate(targetHref);
               }
-            }, 200);
+            }, 500);
           });
           link.dataset.listenerAttached = "true";
         }
@@ -136,9 +136,6 @@ const navLinks = isEnglish ? englishNavLinks : siteConfig.headerNavLinks;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
   }
-  .fast-out {
-    animation-duration: 200ms !important;
-  }
 
   .nav-glass {
     background-color: var(--glass-bg) !important;
@@ -148,7 +145,6 @@ const navLinks = isEnglish ? englishNavLinks : siteConfig.headerNavLinks;
     box-shadow: var(--glass-shadow) !important;
     transform: translate3d(0, 0, 0) !important;
     backface-visibility: hidden !important;
-    will-change: transform, backdrop-filter !important;
   }
 
   @media (orientation: portrait) {

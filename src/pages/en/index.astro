@@ -35,14 +35,25 @@ const enHero = {
   <div
     class="jumbo-banner relative flex flex-col sm:flex-row sm:items-center sm:justify-between w-full px-4 my-12 gap-6"
   >
-    <div
-      class="absolute top-0 left-0 sm:left-[-10%] w-64 h-64 sm:w-80 sm:h-80 bg-space-red/20 dark:bg-white/10 rounded-full blur-[100px] -z-10 pointer-events-none"
+    <svg 
+      class="absolute -top-24 -left-24 sm:-top-36 sm:-left-4 w-[450px] h-[450px] sm:w-[600px] sm:h-[600px] -z-10 pointer-events-none"
+      viewBox="0 0 100 100" 
+      xmlns="http://www.w3.org/2000/svg"
+      pointer-events="none"
     >
-    </div>
-    <div
-      class="absolute bottom-0 right-0 sm:right-[-10%] w-72 h-72 sm:w-96 sm:h-96 bg-space-red/10 dark:bg-white/5 rounded-full blur-[120px] -z-10 pointer-events-none"
-    >
-    </div>
+      <defs>
+        <radialGradient id="glow-text-light" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#E31E24" stop-opacity="0.25" />
+          <stop offset="100%" stop-color="#E31E24" stop-opacity="0" />
+        </radialGradient>
+        <radialGradient id="glow-text-dark" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#FF4046" stop-opacity="0.10" />
+          <stop offset="100%" stop-color="#FF4046" stop-opacity="0" />
+        </radialGradient>
+      </defs>
+      <circle cx="50" cy="50" r="50" class="fill-[url(#glow-text-light)] dark:fill-[url(#glow-text-dark)]" />
+    </svg>
+    
 
     <div class="w-full sm:flex-1 min-w-0 relative z-30">
       {
@@ -70,7 +81,7 @@ const enHero = {
           enHero.actions.map((action, index) => (
             <Button
               href={action.href}
-              class={index === 0 ? "space-btn-filled" : "space-btn-outlined"}
+              class={index === 0 ? "space-btn-filled !py-2.5" : "space-btn-red-outlined !py-2"}
             >
               {action.text}
             </Button>
@@ -105,7 +116,7 @@ const enHero = {
           class="absolute sm:relative z-10 animate-car-levitate flex justify-center items-center"
         >
           <Image
-            class="w-auto h-auto max-h-[300px] sm:max-h-[650px] object-contain drop-shadow-[0_15px_25px_rgba(0,0,0,0.6)] dark:drop-shadow-[0_15px_25px_rgba(0,0,0,0.8)] -rotate-90 sm:rotate-0 rounded-4xl"
+            class="w-auto h-auto max-h-[300px] sm:max-h-[650px] object-contain drop-shadow-[0_15px_25px_rgba(0,0,0,0.6)] dark:drop-shadow-[0_15px_25px_rgba(0,0,0,0.8)] -rotate-90 sm:rotate-0"
             src={OP_image_vertical}
             alt={"UAMOTORS Vehicle"}
             transition:name="hero-image"
