@@ -32,7 +32,13 @@ import Button from "./Button.astro";
 
 <script is:inline>
   const initTheme = () => {
-    const theme = localStorage?.getItem("theme") || "dark";
+    const storedTheme = localStorage?.getItem("theme");
+    const systemPrefersDark =
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    const theme = storedTheme || (systemPrefersDark ? "dark" : "light");
+
     if (theme === "light") {
       document.documentElement.classList.add("light");
       document.documentElement.classList.remove("dark");
@@ -40,12 +46,23 @@ import Button from "./Button.astro";
       document.documentElement.classList.add("dark");
       document.documentElement.classList.remove("light");
     }
-    localStorage.setItem("theme", theme);
   };
 
   initTheme();
 
   document.addEventListener("astro:after-swap", initTheme);
+
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
+    if (!localStorage.getItem("theme")) {
+      if (e.matches) {
+        document.documentElement.classList.add("dark");
+        document.documentElement.classList.remove("light");
+      } else {
+        document.documentElement.classList.add("light");
+        document.documentElement.classList.remove("dark");
+      }
+    }
+  });
 
   const handleToggleClick = () => {
     const element = document.documentElement;
