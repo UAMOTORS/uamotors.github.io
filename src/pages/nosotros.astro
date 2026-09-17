@@ -6,7 +6,7 @@ import coverImage from "../assets/images/1.png";
 import RacingCar from "../icons/general/RacingCar.astro";
 import Trophy from "../icons/general/Trophy.astro";
 import Globe from "../icons/general/Globe.astro";
-import teamPhoto from "../assets/images/uamotors-team.webp";
+import TeamPhoto from "../assets/images/uamotors-team.webp";
 import Team from "../components/Team.astro";
 ---
 
@@ -18,15 +18,19 @@ import Team from "../components/Team.astro";
   <div class="page-content max-w-4xl mx-auto">
     <h1 class="sigmar-ff text-balance mb-8">Nosotros</h1>
 
-    <Image
-      width={1024}
-      height={600}
-      loading="eager"
-      layout="constrained"
-      class="rounded-4xl mb-12 mx-auto"
-      src={teamPhoto}
-      alt="Equipo UAMOTORS"
-    />
+    <div
+      class="w-full drop-shadow-[0_10px_25px_rgba(0,0,0,0.8)] dark:drop-shadow-[0_10px_30px_rgba(0,0,0,0.7)] z-10"
+    >
+      <Image
+        width={1024}
+        height={600}
+        loading="eager"
+        layout="constrained"
+        class="rounded-4xl mb-12 mx-auto"
+        src={TeamPhoto}
+        alt="Equipo UAMOTORS"
+      />
+    </div>
 
     <section class="text-left space-y-16">
       <div>
