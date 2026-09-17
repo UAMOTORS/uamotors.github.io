@@ -17,25 +17,28 @@ const allPosts = (await getCollection("blogs"))
 const enHero = {
   eyebrowText: "UAM | Formula SAE",
   title: "Engineered with ingenuity, driven by passion.",
-  text: `More than a racing team, we are a hub of innovation and talent. Join our project and help us elevate Mexican engineering at the international <a href="${withBase('/en/proyecto#formula-sae')}" class="text-space-red font-medium hover:font-bold transition-all">Formula SAE</a> competition.`,
+  text: `More than a racing team, we are a hub of innovation and talent. Join our project and help us elevate Mexican engineering at the international <a href="${withBase("/en/proyecto#formula-sae")}" class="text-space-red font-medium hover:font-bold transition-all">Formula SAE</a> competition.`,
   actions: [
     {
       text: "Explore project",
-      href: withBase("/en/proyecto")
+      href: withBase("/en/proyecto"),
     },
     {
       text: "Support our team",
-      href: withBase("/en/nuestros-aliados")
-    }
-  ]
+      href: withBase("/en/nuestros-aliados"),
+    },
+  ],
 };
 ---
 
-<MainLayout activePage="home" pageTitle={siteConfig.title + " | UAM Formula SAE Racing Team"}>
+<MainLayout
+  activePage="home"
+  pageTitle={siteConfig.title + " | UAM Formula SAE Racing Team"}
+>
   <div
     class="jumbo-banner relative flex flex-col sm:flex-row sm:items-center sm:justify-between w-full px-4 my-12 gap-6"
   >
-    <svg 
+    <!-- <svg 
       class="absolute -top-24 -left-24 sm:-top-36 sm:-left-4 w-[450px] h-[450px] sm:w-[600px] sm:h-[600px] -z-10 pointer-events-none"
       viewBox="0 0 100 100" 
       xmlns="http://www.w3.org/2000/svg"
@@ -52,8 +55,7 @@ const enHero = {
         </radialGradient>
       </defs>
       <circle cx="50" cy="50" r="50" class="fill-[url(#glow-text-light)] dark:fill-[url(#glow-text-dark)]" />
-    </svg>
-    
+    </svg> -->
 
     <div class="w-full sm:flex-1 min-w-0 relative z-30">
       {
@@ -81,7 +83,11 @@ const enHero = {
           enHero.actions.map((action, index) => (
             <Button
               href={action.href}
-              class={index === 0 ? "space-btn-filled !py-2.5" : "space-btn-red-outlined !py-2"}
+              class={
+                index === 0
+                  ? "space-btn-filled !py-2.5"
+                  : "space-btn-outlined !py-2"
+              }
             >
               {action.text}
             </Button>
@@ -96,8 +102,6 @@ const enHero = {
         class="absolute inset-0 bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:40px_40px] opacity-15 dark:opacity-25 pointer-events-none rounded-2xl [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_70%)]"
       >
       </div>
-
-      
 
       <div
         class="relative w-full h-[150px] sm:h-auto flex justify-center items-center transition-transform duration-700"
@@ -130,9 +134,7 @@ const enHero = {
     </div>
   </div>
   <div class="page-content">
-    <div
-      class="flex flex-col items-center justify-center w-full"
-    >
+    <div class="flex flex-col items-center justify-center w-full">
       <h2
         class="sigmar-ff text-balance pt-0! pb-8! text-space-red dark:text-space-yellow"
       >
@@ -336,9 +338,15 @@ const enHero = {
   html.dark #curator-feed-default-feed-layout .crt-post-hover .crt-post-text,
   html.dark #curator-feed-default-feed-layout .crt-post-hover .crt-post-text p,
   html.dark #curator-feed-default-feed-layout .crt-post-hover .crt-post-text a,
-  html.dark #curator-feed-default-feed-layout .crt-post-hover .crt-post-fullname,
+  html.dark
+    #curator-feed-default-feed-layout
+    .crt-post-hover
+    .crt-post-fullname,
   html.dark #curator-feed-default-feed-layout .crt-post-hover .crt-post-date,
-  html.dark #curator-feed-default-feed-layout .crt-post-hover .crt-post-date-link,
+  html.dark
+    #curator-feed-default-feed-layout
+    .crt-post-hover
+    .crt-post-date-link,
   html.dark #curator-feed-default-feed-layout .crt-post-hover .crt-post-share p,
   html.dark #curator-feed-default-feed-layout .crt-post-hover a,
   html.dark #curator-feed-default-feed-layout .crt-post-hover span {

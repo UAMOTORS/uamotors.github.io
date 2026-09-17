@@ -11,7 +11,8 @@ import PowerTrain from "../icons/general/PowertrainIcon.astro";
 import RacingCar from "../icons/general/RacingCar.astro";
 import Chart2 from "../icons/general/Chart2.astro";
 import RaceFlag from "../icons/general/RaceFlag.astro";
-import OP_image from "../assets/images/OP01-transparent-soft.png";
+import OpImageBlack from "../assets/images/OP01-2_black.webp";
+import OpImageWhite from "../assets/images/OP01-2_white.webp";
 import Dynamics from "../icons/general/DynamicsIcon.astro";
 ---
 
@@ -24,20 +25,29 @@ import Dynamics from "../icons/general/DynamicsIcon.astro";
     <h1 class="sigmar-ff text-balance mb-8">El Proyecto "OP"</h1>
 
     <div class="relative w-full flex justify-center items-center mb-6">
-      <div
+      <!-- <div
         class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 sm:w-96 sm:h-96 bg-space-red/30 dark:bg-space-red/40 rounded-full blur-[60px] sm:blur-[100px] -z-10 pointer-events-none"
       >
-      </div>
+      </div> -->
 
       <div
-        class="w-full drop-shadow-[0_15px_25px_rgba(0,0,0,0.6)] dark:drop-shadow-[0_20px_30px_rgba(0,0,0,0.9)] z-10"
+        class="w-full drop-shadow-[0_10px_25px_rgba(0,0,0,0.8)] dark:drop-shadow-[0_15px_30px_rgba(0,0,0,0.8)] z-10"
       >
         <Image
           width={1024}
           loading="eager"
-          class="mx-auto block w-full h-auto max-h-[380px] object-contain pb-8"
-          src={OP_image}
-          alt="Prototipo OP01"
+          src={OpImageWhite}
+          class="mx-auto block w-full h-auto max-h-[380px] object-contain pb-8 dark:hidden"
+          alt="OP01 CAD"
+          transition:name="hero-image"
+        />
+
+        <Image
+          width={1024}
+          loading="eager"
+          src={OpImageBlack}
+          class="mx-auto hidden w-full h-auto max-h-[380px] object-contain pb-8 dark:block"
+          alt="OP01 CAD"
           transition:name="hero-image"
         />
       </div>

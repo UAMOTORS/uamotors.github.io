@@ -4,14 +4,14 @@ import TiraUamotors from "./logos/TiraUamotors.astro";
 
 <div
   id="splash-screen"
-  class="fixed inset-0 bg-black z-[100000] flex flex-col items-center justify-center transition-all duration-500 ease-in-out select-none pointer-events-none opacity-0 hidden"
+  class="fixed inset-0 bg-gradient-to-b from-[#fdfcfb] to-[#e2d1c3] dark:from-[#434343] dark:to-black z-[100000] flex flex-col items-center justify-center transition-all duration-500 ease-in-out select-none pointer-events-none opacity-0 hidden"
 >
   <div
     class="relative w-[75%] max-w-xs sm:max-w-md flex flex-col items-center justify-center"
   >
     <TiraUamotors
-      useSweep={true}
-      class="w-full h-auto text-white filter drop-shadow-[0_0_20px_rgba(255,255,255,0.22)] transform scale-95 opacity-0 animate-splash-logo"
+      useSweep={false}
+      class="w-full h-auto text-black dark:text-white transform scale-95 opacity-0 animate-splash-logo"
     />
   </div>
 </div>
@@ -50,18 +50,57 @@ import TiraUamotors from "./logos/TiraUamotors.astro";
 </script>
 
 <style>
-  @keyframes splashLogo {
+  @keyframes splashPulseLight {
     0% {
       opacity: 0;
       transform: scale(0.95);
+      color: black;
+      filter: drop-shadow(0 0 0px transparent);
+    }
+    20% {
+      opacity: 1;
+      transform: scale(1);
+      color: black;
+    }
+    60% {
+      color: var(--space-red);
+      filter: drop-shadow(0 0 15px rgba(227, 30, 36, 0.5));
     }
     100% {
       opacity: 1;
       transform: scale(1);
+      color: black;
+    }
+  }
+
+  @keyframes splashPulseDark {
+    0% {
+      opacity: 0;
+      transform: scale(0.95);
+      color: white;
+      filter: drop-shadow(0 0 0px transparent);
+    }
+    20% {
+      opacity: 1;
+      transform: scale(1);
+      color: white;
+    }
+    60% {
+      color: var(--space-yellow);
+      filter: drop-shadow(0 0 15px rgba(255, 64, 70, 0.5));
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+      color: white;
     }
   }
 
   .animate-splash-logo {
-    animation: splashLogo 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: splashPulseLight 1.2s ease-in-out forwards;
+  }
+  
+  :global(html.dark) .animate-splash-logo {
+    animation: splashPulseDark 1.2s ease-in-out forwards;
   }
 </style>
