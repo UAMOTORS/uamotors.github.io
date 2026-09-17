@@ -378,7 +378,7 @@ import LogoRealisSimulation from "../components/logos/gold/LogoRealisSimulation.
       drop-shadow(0 0 8px rgba(0, 0, 0, 0.9));
   }
 
-  #oro-grid svg,
+  #oro-grid svg:not(.realis-logo),
   #oro-grid img,
   #plata-grid svg,
   #plata-grid img,
@@ -388,12 +388,14 @@ import LogoRealisSimulation from "../components/logos/gold/LogoRealisSimulation.
     filter: var(--logo-filter) !important;
   }
 
-  #oro-grid img[alt="Logo Realis Simulation"] {
-    filter: var(--realis-filter) !important;
+  /* El logo de Realis ahora usa color directo (Tailwind classes) en lugar de filtros */
+  #oro-grid svg.realis-logo {
+    opacity: 0.7;
+    transition: all 0.3s ease;
   }
 
   @media (hover: hover) {
-    #oro-grid a:hover svg,
+    #oro-grid a:hover svg:not(.realis-logo),
     #oro-grid a:hover img,
     #plata-grid a:hover svg,
     #plata-grid a:hover img,
@@ -402,11 +404,16 @@ import LogoRealisSimulation from "../components/logos/gold/LogoRealisSimulation.
       opacity: 1 !important;
       filter: var(--logo-hover-filter) !important;
     }
-  }
 
-  @media (hover: hover) {
-    #oro-grid a:hover img[alt="Logo Realis Simulation"] {
-      filter: var(--realis-hover-filter) !important;
+    /* Al hacer hover en la tarjeta (el a), cambiamos el color del SVG hijo */
+    #oro-grid a:hover svg.realis-logo {
+      opacity: 1;
+      transform: scale(1.05);
+      color: #00c4c4; /* Cian más cercano al original pero visible en fondo claro */
+    }
+    
+    html.dark #oro-grid a:hover svg.realis-logo {
+      color: #00ffff; /* Cian neón original para modo oscuro */
     }
   }
 </style>
