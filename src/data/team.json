@@ -42,11 +42,11 @@
         {
             "id": "dynamics",
             "departamento": "Dynamics",
-            "nombre": "Ángel Christian Rodríguez Villamares",
-            "fotoPath": "/profiles/pictures/dynamics-angel.webp",
+            "nombre": "Diego Nathanael Velazquez Soto",
+            "fotoPath": "/profiles/pictures/dynamics-diego.webp",
             "linkedin": "https://www.linkedin.com/in/angel-christian-rodriguez-villamares/",
             "integrantes": [
-                
+                {"nombre": "César Gael García Aguilar", "linkedin": "https://www.linkedin.com/in/cesar-gael-garcia-aguilar-380b242aa/"}
             ]
         },
 
