@@ -2,6 +2,10 @@
 import teamData from "../data/team.json";
 import UserAvatar from "../icons/general/userAvatar.astro";
 import LinkedinIcon from "../icons/social_media/Linkedin.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang); 
 ---
 
 <section class="flex flex-col items-center gap-8 mt-4 w-full px-2 md:px-0">
@@ -119,7 +123,7 @@ import LinkedinIcon from "../icons/social_media/Linkedin.astro";
 
 
           <p class="kanit-regular text-space-red dark:text-space-yellow uppercase tracking-widest text-sm text-center mb-4 -translate-y-1">
-            Líder {lider.departamento}
+            {t("team.lead")} {lider.departamento}
           </p>
           
           <div class="flex items-center gap-4 mb-6">
@@ -152,7 +156,7 @@ import LinkedinIcon from "../icons/social_media/Linkedin.astro";
               onclick={`toggleDepto('depto-${lider.id}', this, 'Departamento', 'Cerrar')`}
               class="kanit-regular px-4 py-1.5 rounded-full border border-space-red dark:border-space-yellow text-space-red dark:text-space-yellow hover:bg-space-red hover:text-white dark:hover:bg-space-yellow dark:hover:text-black transition-all duration-300 text-sm md:text-base"
             >
-              Departamento
+              {t("team.department")}
             </button>
           </div>
 

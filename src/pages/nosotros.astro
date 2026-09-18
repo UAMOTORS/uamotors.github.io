@@ -8,6 +8,11 @@ import Trophy from "../icons/general/Trophy.astro";
 import Globe from "../icons/general/Globe.astro";
 import TeamPhoto from "../assets/images/uamotors-team.webp";
 import Team from "../components/Team.astro";
+
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <MainLayout
