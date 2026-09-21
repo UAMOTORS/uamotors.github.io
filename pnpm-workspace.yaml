@@ -1,4 +1,5 @@
 allowBuilds:
-  esbuild: set this to true or false
-  sharp: set this to true or false
-  swup: set this to true or false
+  '@tailwindcss/oxide': true
+  esbuild: true
+  sharp: true
+  swup: true
