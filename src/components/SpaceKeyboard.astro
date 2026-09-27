@@ -4,42 +4,9 @@ interface Props {
   enMessages?: string[];
 }
 
-const { messages: customMessages, enMessages: customEnMessages } = Astro.props;
+const { messages: customMessages } = Astro.props;
 
 const defaultMessages = [
-  "Just an inchident. — Charles Leclerc",
-  "¡NOOOOOO! — Charles Leclerc, Francia 2022",
-  "¡Monaco is ours! — Charles Leclerc, 2024",
-  "I think we need to box. — Charles Leclerc",
-  "Understood, we are checking. — Ferrari Engineer",
-  "It is a beautiful day, baby! Let's go! — Charles Leclerc",
-  "Box, box, box! — Ingeniero de Carrera",
-  "Leave me alone, I know what to do! — Kimi",
-  "If you no longer go for a gap... — Ayrton Senna",
-  "Smooth operatorrr... — Carlos Sainz",
-  "Bono, my tyres are gone! — Lewis Hamilton",
-  "No, no, no, Michael! That was so not right! — Toto Wolff",
-  "Simply simply lovely. — Max Verstappen",
-  "GP2 engine, GP2! — Fernando Alonso",
-  "Karma! — Fernando Alonso",
-  "To finish first, first you must finish. — Michael Schumacher",
-  "It's lights out and away we go! — David Croft",
-  "El segundo es el primero de los perdedores. — Ayrton Senna",
-  "No me des más potencia, dame menos peso. — Colin Chapman",
-  "Llevando la ingeniería mexicana al límite.",
-  "Diseña con ingenio, crea con pasión. — UAMOTORS",
-  "No es solo velocidad, es ingeniería. — UAMOTORS",
-  "¡Bandera roja en pista! Dirección de carrera.",
-  "¡Push, push! Vuelta rápida.",
-  "¡Error 404: Fuera de la pista!",
-  "El éxito se construye milésima a milésima.",
-  "En la pista no hay suerte, solo preparación.",
-  "No limit to what we can build. — UAMOTORS",
-  "Feel the speed, respect the engineering. — UAMOTORS",
-  "Maximum attack! Vuelta de clasificación.",
-];
-
-const defaultEnMessages = [
   "Just an inchident. — Charles Leclerc",
   "NOOOOOO! — Charles Leclerc, France 2022",
   "Monaco is ours! — Charles Leclerc, 2024",
@@ -59,21 +26,20 @@ const defaultEnMessages = [
   "It's lights out and away we go! — David Croft",
   "Second is the first of the losers. — Ayrton Senna",
   "Simplify, then add lightness. — Colin Chapman",
-  "Pushing Mexican engineering to the limit.",
-  "Design with ingenuity, create with passion. — UAMOTORS",
-  "It's not just speed, it's engineering. — UAMOTORS",
-  "Red flag on track! Race control.",
-  "Push, push! Fastest lap.",
-  "Error 404: Off track!",
-  "Success is built thousandth by thousandth.",
-  "On the track there is no luck, only preparation.",
-  "No limit to what we can build. — UAMOTORS",
-  "Feel the speed, respect the engineering. — UAMOTORS",
-  "Maximum attack! Qualifying lap.",
+  "Llevando la ingeniería mexicana al límite.",
+  "Diseñar con ingenio, crear con pasión. — UAMOTORS",
+  "No es solo velocidad, es ingeniería. — UAMOTORS",
+  "¡Bandera roja en pista! Dirección de carrera.",
+  "¡Empuja, empuja! Vuelta rápida.",
+  "Error 404: ¡Fuera de pista!",
+  "El éxito se construye milésima a milésima.",
+  "En la pista no hay suerte, solo preparación.",
+  "No hay límites para lo que podemos construir. — UAMOTORS",
+  "Siente la velocidad, respeta la ingeniería. — UAMOTORS",
+  "¡Máximo ataque! Vuelta de clasificación.",
 ];
 
 const messages = customMessages || defaultMessages;
-const enMessages = customEnMessages || defaultEnMessages;
 ---
 
 <div
@@ -120,13 +86,12 @@ const enMessages = customEnMessages || defaultEnMessages;
   </div>
 </div>
 
-<script is:inline define:vars={{ messages, enMessages }}>
+<script is:inline define:vars={{ messages }}>
   function setupKeyboard() {
     const spaceBtn = document.getElementById("space-pop-culture");
     if (!spaceBtn) return;
 
-    const isEn = window.location.pathname.startsWith('/en/') || window.location.pathname === '/en';
-    const activeMessages = isEn ? enMessages : messages;
+    const activeMessages = messages;
 
     const platform = navigator.userAgent.toLowerCase();
     const isWin = platform.includes("win");
