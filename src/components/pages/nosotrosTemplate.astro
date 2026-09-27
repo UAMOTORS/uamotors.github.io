@@ -89,15 +89,24 @@ const t = useTranslations(lang);
         <ul class="space-y-6 kanit-light text-lg sm:text-xl">
           <li class="flex items-start gap-4">
             <RacingCar class="w-8 h-8 shrink-0 mt-1" />
-            <div set:html={t("nosotros.objetivo1")} />
+            <div>
+              <strong class="kanit-regular text-space-red dark:text-space-yellow">{t("nosotros.objetivo1.title")}</strong><br />
+              <span set:html={t("nosotros.objetivo1.text")} />
+            </div>
           </li>
           <li class="flex items-start gap-4">
             <Trophy class="w-8 h-8 shrink-0 mt-1" />
-            <div set:html={t("nosotros.objetivo2")} />
+            <div>
+              <strong class="kanit-regular text-space-red dark:text-space-yellow">{t("nosotros.objetivo2.title")}</strong><br />
+              <span set:html={t("nosotros.objetivo2.text")} />
+            </div>
           </li>
           <li class="flex items-start gap-4">
             <Globe class="w-8 h-8 shrink-0 mt-1" />
-            <div set:html={t("nosotros.objetivo3")} />
+            <div>
+              <strong class="kanit-regular text-space-red dark:text-space-yellow">{t("nosotros.objetivo3.title")}</strong><br />
+              <span set:html={t("nosotros.objetivo3.text")} />
+            </div>
           </li>
         </ul>
       </div>

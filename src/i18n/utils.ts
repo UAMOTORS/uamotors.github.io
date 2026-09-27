@@ -1,5 +1,18 @@
-import es from "./es.json";
-import en from "./en.json";
+// imports español
+import esFooter from "./es/esFooter.json";
+import esTeam from "./es/esTeam.json";
+import esHome from "./es/esHome.json";
+import esNosotros from "./es/esNosotros.json";
+
+//imports inglés
+import enFooter from "./en/enFooter.json";
+import enTeam from "./en/enTeam.json";
+import enHome from "./en/enHome.json";
+import enNosotros from "./en/enNosotros.json";
+
+// objetos de idiomas
+const es = {...esFooter, ...esTeam, ...esHome, ...esNosotros};
+const en = {...enFooter, ...enTeam, ...enHome, ...enNosotros};
 
 // diccionarios
 const ui = {es, en};
