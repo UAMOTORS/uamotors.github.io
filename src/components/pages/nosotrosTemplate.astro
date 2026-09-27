@@ -1,0 +1,115 @@
+---
+import { Image } from "astro:assets";
+import MainLayout from "../../layouts/MainLayout.astro";
+import siteConfig from "../../site.config";
+import coverImage from "../../assets/images/1.png";
+import RacingCar from "../../icons/general/RacingCar.astro";
+import Trophy from "../../icons/general/Trophy.astro";
+import Globe from "../../icons/general/Globe.astro";
+import TeamPhoto from "../../assets/images/uamotors-team.webp";
+import Team from "../../components/Team.astro";
+
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<MainLayout
+  activePage="nosotros"
+  pageTitle={siteConfig.title + " | " + t("nosotros.mainTitle")}
+  description={t("nosotros.meta.description")}
+>
+  <div class="page-content max-w-4xl mx-auto">
+    <h1 class="sigmar-ff text-balance mb-8">{t("nosotros.mainTitle")}</h1>
+
+    <div
+      class="w-full drop-shadow-[0_10px_25px_rgba(0,0,0,0.8)] dark:drop-shadow-[0_10px_30px_rgba(0,0,0,0.7)] z-10"
+    >
+      <Image
+        width={1024}
+        height={600}
+        loading="eager"
+        layout="constrained"
+        class="rounded-4xl mb-12 mx-auto"
+        src={TeamPhoto}
+        alt="Equipo UAMOTORS"
+      />
+    </div>
+
+    <section class="text-left space-y-16">
+      <div>
+        <h2
+          class="sigmar-ff text-3xl mb-4 text-space-red dark:text-space-yellow"
+        >
+          {t("nosotros.title1")}
+        </h2>
+        <p
+          class="kanit-light text-lg sm:text-xl leading-relaxed"
+          set:html={t("nosotros.text1")}
+        />
+        <p
+          class="kanit-light text-lg sm:text-xl leading-relaxed mt-4"
+          set:html={t("nosotros.text2")}
+        />
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div
+          class="bg-black/5 dark:bg-white/5 p-8 rounded-3xl border border-black/10 dark:border-white/10 hover:-translate-y-2 hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300"
+        >
+          <h3 class="sigmar-ff text-2xl mb-3">{t("nosotros.mision.title")}</h3>
+          <p
+            class="kanit-light text-base sm:text-lg leading-relaxed"
+            set:html={t("nosotros.mision.text")}
+          />
+        </div>
+        <div
+          class="bg-black/5 dark:bg-white/5 p-8 rounded-3xl border border-black/10 dark:border-white/10 hover:-translate-y-2 hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300"
+        >
+          <h3 class="sigmar-ff text-2xl mb-3">{t("nosotros.vision.title")}</h3>
+          <p
+            class="kanit-light text-base sm:text-lg leading-relaxed"
+            set:html={t("nosotros.vision.text")}
+          />
+        </div>
+      </div>
+
+      <div>
+        <h2
+          class="sigmar-ff text-3xl mb-6 text-space-red dark:text-space-yellow"
+        >
+          {t("nosotros.title2")}
+        </h2>
+        <p class="kanit-light text-lg sm:text-xl leading-relaxed mb-8">
+          {t("nosotros.objetivos.text")}
+        </p>
+
+        <!-- Objetivos lista -->
+        <ul class="space-y-6 kanit-light text-lg sm:text-xl">
+          <li class="flex items-start gap-4">
+            <RacingCar class="w-8 h-8 shrink-0 mt-1" />
+            <div set:html={t("nosotros.objetivo1")} />
+          </li>
+          <li class="flex items-start gap-4">
+            <Trophy class="w-8 h-8 shrink-0 mt-1" />
+            <div set:html={t("nosotros.objetivo2")} />
+          </li>
+          <li class="flex items-start gap-4">
+            <Globe class="w-8 h-8 shrink-0 mt-1" />
+            <div set:html={t("nosotros.objetivo3")} />
+          </li>
+        </ul>
+      </div>
+
+      <div id="Equipo">
+        <h2
+          class="sigmar-ff text-3xl mb-6 text-space-red dark:text-space-yellow"
+        >
+          {t("nosotros.title3")}
+        </h2>
+        <Team />
+      </div>
+    </section>
+  </div>
+</MainLayout>
