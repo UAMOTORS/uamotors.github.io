@@ -58,6 +58,7 @@ const t = useTranslations(lang);
       </div>
     </div>
 
+    <!-- visión técnica -->
     <section class="text-left space-y-16">
       <div>
         <h2
@@ -71,18 +72,20 @@ const t = useTranslations(lang);
         />
       </div>
 
+      <!-- Objetivos -->
       <div>
-        <h3 class="sigmar-ff text-2xl mb-6">{t("proyecto.objetivos.sub")}</h3>
+        <h3 class="sigmar-ff text-2xl mb-6">
+          {t("proyecto.objetivos.sub")}
+        </h3>
         <ul class="space-y-6 kanit-light text-lg sm:text-xl">
           <li class="flex items-start gap-4">
             <Shield class="w-8 h-8 shrink-0 mt-1" />
             <div>
               <strong
                 class="kanit-regular text-space-red dark:text-space-yellow"
-                >Seguridad:</strong
+                >{t("proyecto.objetivo.t1")}</strong
               ><br />
-              Priorizar la integridad del piloto y la seguridad estructural del vehículo
-              en todo momento.
+              {t("proyecto.objetivo.d1")}
             </div>
           </li>
           <li class="flex items-start gap-4">
@@ -90,10 +93,9 @@ const t = useTranslations(lang);
             <div>
               <strong
                 class="kanit-regular text-space-red dark:text-space-yellow"
-                >Confiabilidad:</strong
+                >{t("proyecto.objetivo.t2")}</strong
               ><br />
-              Asegurar la consistencia de los sistemas integrados para cumplir con
-              las pruebas técnicas (tech inspection).
+              {t("proyecto.objetivo.d1")}
             </div>
           </li>
           <li class="flex items-start gap-4">
@@ -101,298 +103,281 @@ const t = useTranslations(lang);
             <div>
               <strong
                 class="kanit-regular text-space-red dark:text-space-yellow"
-                >Desarrollo Basado en Datos:</strong
-              ><br />
-              Implementar un sistema robusto de recolección de datos (telemetría)
-              como base técnica para futuras evoluciones del equipo.
+                >{t("proyecto.objetivo.t3")}
+              </strong>
+              <br />{t("proyecto.objetivo.d1")}
             </div>
           </li>
         </ul>
-      </div>
 
-      <div>
-        <h2
-          class="sigmar-ff text-3xl mb-4 text-space-red dark:text-space-yellow"
-        >
-          Sistemas del Vehículo
-        </h2>
-        <p class="kanit-light text-lg sm:text-xl leading-relaxed mb-6">
-          El desarrollo del <strong>OP</strong> se divide en áreas técnicas interconectadas
-          que trabajan en conjunto para maximizar el rendimiento:
-        </p>
+        <div>
+          <h2
+            class="sigmar-ff text-3xl mb-4 text-space-red dark:text-space-yellow"
+          >
+            <br />{t("proyecto.sistemas.title")}
+          </h2>
+          <p
+            class="kanit-light text-lg sm:text-xl leading-relaxed mb-6"
+            set:html={t("proyecto.sistemas.text")}
+          />
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
-          <div
-            class="md:col-span-1 lg:col-span-3 bg-black/5 dark:bg-white/5 p-6 rounded-3xl border border-black/10 dark:border-white/10 hover:-translate-y-2 hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300"
-          >
-            <h4 class="sigmar-ff text-xl mb-2 flex items-center gap-2">
-              <RacingCar class="w-6 h-6 shrink-0" /> Chassis
-            </h4>
-            <p class="kanit-light text-base sm:text-lg">
-              Diseño estructural y validación dinámica del chasis tubular y la
-              carrocería. Su objetivo es garantizar la máxima seguridad del
-              piloto y la integridad del vehículo.
-            </p>
-          </div>
-          <div
-            class="md:col-span-1 lg:col-span-3 bg-black/5 dark:bg-white/5 p-6 rounded-3xl border border-black/10 dark:border-white/10 hover:-translate-y-2 hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300"
-          >
-            <h4 class="sigmar-ff text-xl mb-2 flex items-center gap-2">
-              <Dynamics class="w-6 h-6 shrink-0" /> Dynamics
-            </h4>
-            <p class="kanit-light text-base sm:text-lg">
-              Responsable del comportamiento físico en pista mediante el ajuste
-              preciso de la suspensión y dirección, garantizando un manejo ágil,
-              estable y una excelente tracción mecánica.
-            </p>
-          </div>
-          <div
-            class="md:col-span-1 lg:col-span-2 bg-black/5 dark:bg-white/5 p-6 rounded-3xl border border-black/10 dark:border-white/10 hover:-translate-y-2 hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300"
-          >
-            <h4 class="sigmar-ff text-xl mb-2 flex items-center gap-2">
-              <PowerTrain class="w-6 h-6 shrink-0" /> Powertrain
-            </h4>
-            <p class="kanit-light text-base sm:text-lg">
-              Integración, gestión térmica y calibración del tren motriz basado
-              en un motor de motocicleta de alto rendimiento. Diseña los
-              sistemas de admisión, escape y transmisión, enfocándose en
-              optimizar la entrega de potencia y la tracción en pista.
-            </p>
-          </div>
-          <div
-            class="md:col-span-1 lg:col-span-2 bg-black/5 dark:bg-white/5 p-6 rounded-3xl border border-black/10 dark:border-white/10 hover:-translate-y-2 hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300"
-          >
-            <h4 class="sigmar-ff text-xl mb-2 flex items-center gap-2">
-              <Electronics class="w-6 h-6 shrink-0" /> Electronics
-            </h4>
-            <p class="kanit-light text-base sm:text-lg">
-              Programación de la <span class="relative group cursor-help"
-                ><strong>ECU</strong><span
-                  class="pointer-events-none absolute bottom-full left-1/2 z-20 mb-2 w-44 -translate-x-1/2 rounded-xl border border-black/10 bg-neutral-900/95 p-2 text-center text-xs leading-normal text-white opacity-0 shadow-xl transition-opacity duration-200 group-hover:opacity-100 dark:border-white/10 dark:bg-neutral-950/95 kanit-regular"
-                  >Unidad de Control del Motor</span
-                ></span
-              >, integración de sistemas embebidos y sensores dinámicos. Se
-              encarga de la gestión electrónica del vehículo, el control de
-              potencia y la adquisición de datos (DAQ) para retroalimentación
-              técnica.
-            </p>
-          </div>
-          <div
-            class="md:col-span-2 lg:col-span-2 bg-black/5 dark:bg-white/5 p-6 rounded-3xl border border-black/10 dark:border-white/10 hover:-translate-y-2 hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300"
-          >
-            <h4 class="sigmar-ff text-xl mb-2 flex items-center gap-2">
-              <Wind class="w-6 h-6 shrink-0" /> Aerodynamics
-            </h4>
-            <p class="kanit-light text-base sm:text-lg">
-              Optimización del flujo de aire mediante <span
-                class="relative group cursor-help"
-                ><strong>CFD</strong><span
-                  class="pointer-events-none absolute bottom-full left-1/2 z-20 mb-2 w-48 -translate-x-1/2 rounded-xl border border-black/10 bg-neutral-900/95 p-2 text-center text-xs leading-normal text-white opacity-0 shadow-xl transition-opacity duration-200 group-hover:opacity-100 dark:border-white/10 dark:bg-neutral-950/95 kanit-regular"
-                  >Dinámica de Fluidos Computacional</span
-                ></span
-              > para generar carga aerodinámica (downforce) eficiente, mejorando la
-              estabilidad del monoplaza sin comprometer el desempeño por arrastre
-              excesivo.
-            </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
+            <div
+              class="md:col-span-1 lg:col-span-3 bg-black/5 dark:bg-white/5 p-6 rounded-3xl border border-black/10 dark:border-white/10 hover:-translate-y-2 hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300"
+            >
+              <h4 class="sigmar-ff text-xl mb-2 flex items-center gap-2">
+                <RacingCar class="w-6 h-6 shrink-0" />
+                {t("proyecto.sistema.cha")}
+              </h4>
+              <p class="kanit-light text-base sm:text-lg">
+                {t("proyecto.sistema.text.cha")}
+              </p>
+            </div>
+            <div
+              class="md:col-span-1 lg:col-span-3 bg-black/5 dark:bg-white/5 p-6 rounded-3xl border border-black/10 dark:border-white/10 hover:-translate-y-2 hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300"
+            >
+              <h4 class="sigmar-ff text-xl mb-2 flex items-center gap-2">
+                <Dynamics class="w-6 h-6 shrink-0" />
+                {t("proyecto.sistema.dyn")}
+              </h4>
+              <p class="kanit-light text-base sm:text-lg">
+                {t("proyecto.sistema.text.dyn")}
+              </p>
+            </div>
+            <div
+              class="md:col-span-1 lg:col-span-2 bg-black/5 dark:bg-white/5 p-6 rounded-3xl border border-black/10 dark:border-white/10 hover:-translate-y-2 hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300"
+            >
+              <h4 class="sigmar-ff text-xl mb-2 flex items-center gap-2">
+                <PowerTrain class="w-6 h-6 shrink-0" />
+                {t("proyecto.sistema.pwr")}
+              </h4>
+              <p class="kanit-light text-base sm:text-lg">
+                {t("proyecto.sistema.text.pwr")}
+              </p>
+            </div>
+            <div
+              class="md:col-span-1 lg:col-span-2 bg-black/5 dark:bg-white/5 p-6 rounded-3xl border border-black/10 dark:border-white/10 hover:-translate-y-2 hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300"
+            >
+              <h4 class="sigmar-ff text-xl mb-2 flex items-center gap-2">
+                <Electronics class="w-6 h-6 shrink-0" />
+                {t("proyecto.sistema.ele")}
+              </h4>
+              <p
+                class="kanit-light text-base sm:text-lg"
+                set:html={t("proyecto.sistema.text.ele")}
+              />
+            </div>
+            <div
+              class="md:col-span-2 lg:col-span-2 bg-black/5 dark:bg-white/5 p-6 rounded-3xl border border-black/10 dark:border-white/10 hover:-translate-y-2 hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300"
+            >
+              <h4 class="sigmar-ff text-xl mb-2 flex items-center gap-2">
+                <Wind class="w-6 h-6 shrink-0" />
+                {t("proyecto.sistema.aer")}
+              </h4>
+              <p
+                class="kanit-light text-base sm:text-lg"
+                set:html={t("proyecto.sistema.text.aer")}
+              />
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="pt-8 md:pt-12">
-        <h3 class="sigmar-ff text-2xl mb-6">Herramientas y Validación</h3>
-        <p class="kanit-light text-lg sm:text-xl leading-relaxed mb-6">
-          Para garantizar la precisión de cada componente, el equipo utiliza
-          herramientas de nivel industrial para simulaciones y diseño:
-        </p>
-        <ul class="space-y-4 kanit-light text-lg sm:text-xl">
-          <li>
-            <strong class="kanit-regular text-space-red dark:text-space-yellow"
-              >Diseño CAD:</strong
-            > Uso extensivo de <a
-              href="https://www.solidworks.com/"
-              target="_blank"><strong>Solidworks</strong></a
-            > para el modelado mecánico.
-          </li>
-          <li>
-            <strong class="kanit-regular text-space-red dark:text-space-yellow"
-              >Simulación:</strong
-            > Análisis estructural y de fluidos mediante <a
-              href="https://www.ansys.com/"
-              target="_blank"><strong>Ansys</strong></a
-            >.
-          </li>
-          <li>
-            <strong class="kanit-regular text-space-red dark:text-space-yellow"
-              >Manufactura:</strong
-            > Planificación de procesos con <a
-              href="/nuestros-aliados/#nuestros-aliados"
-              ><strong>aliados estratégicos</strong></a
-            > para asegurar la viabilidad técnica de los componentes.
-          </li>
-        </ul>
-      </div>
-
-      <div id="formula-sae">
-        <h2
-          class="sigmar-ff text-3xl mb-4 text-space-red dark:text-space-yellow"
-        >
-          ¿Qué es Fórmula SAE?
-        </h2>
-        <p class="kanit-light text-lg sm:text-xl leading-relaxed mb-8">
-          <strong
-            ><a href="https://www.fsaeonline.com/" target="_blank" class=""
-              >Fórmula SAE (FSAE)</a
-            ></strong
-          > es la competencia de ingeniería automotriz con mayor reconocimiento internacional,
-          regida por los estándares técnicos de la
-          <strong
-            ><a href="https://www.sae.org/" target="_blank" class=""
-              >Society of Automotive Engineers (SAE)</a
-            ></strong
-          >. No es sólo una competencia de velocidad, sino una plataforma donde
-          más de 100 universidades validan el diseño, la manufactura y la
-          gestión financiera de un monoplaza de alto rendimiento.
-        </p>
-        <div>
-          <h3 class="sigmar-ff text-2xl mb-6">Criterios de Evaluación</h3>
-          <ul
-            class="grid grid-cols-1 md:grid-cols-2 gap-8 gap-y-12 kanit-light text-lg sm:text-xl"
-          >
-            <li class="flex items-start gap-4">
-              <Chart2 class="w-8 h-8 shrink-0 mt-1" />
-              <div>
-                <strong
-                  class="kanit-regular text-space-red dark:text-space-yellow"
-                  >Pruebas Estáticas</strong
-                >
-                <ul class="mt-3 space-y-3 text-base sm:text-lg">
-                  <li>
-                    <strong>Diseño de ingeniería:</strong> Defensa técnica de cada
-                    decisión tomada ante jueces expertos.
-                  </li>
-                  <li>
-                    <strong>Análisis de costos:</strong> Evaluación de la eficiencia
-                    en el uso de recursos y procesos de manufactura.
-                  </li>
-                  <li>
-                    <strong>Plan de negocios:</strong> Presentación de una estrategia
-                    de mercado y viabilidad para producción en serie.
-                  </li>
-                </ul>
-              </div>
+        <div class="pt-8 md:pt-12">
+          <h3 class="sigmar-ff text-2xl mb-6">
+            {t("proyecto.herramientas.sub")}
+          </h3>
+          <p class="kanit-light text-lg sm:text-xl leading-relaxed mb-6"></p>
+          <ul class="space-y-4 kanit-light text-lg sm:text-xl">
+            <li>
+              <strong
+                class="kanit-regular text-space-red dark:text-space-yellow"
+                >{t("proyecto.heramienta1")}
+              </strong>
+              <span set:html={t("proyecto.herramienta.des1")} />
             </li>
-            <li class="flex items-start gap-4">
-              <RaceFlag class="w-8 h-8 shrink-0 mt-1" />
-              <div>
-                <strong
-                  class="kanit-regular text-space-red dark:text-space-yellow"
-                  >Pruebas Dinámicas</strong
-                >
-                <ul class="mt-3 space-y-3 text-base sm:text-lg">
-                  <li>
-                    <strong>Aceleración:</strong> Prueba de potencia y tracción en
-                    una recta de 75 metros.
-                  </li>
-                  <li>
-                    <strong>Skidpad:</strong> Medición de fuerza centrífuga y agarre
-                    lateral en curvas.
-                  </li>
-                  <li>
-                    <strong>Autocross:</strong> Evaluación de agilidad y maniobrabilidad
-                    en circuitos revirados.
-                  </li>
-                  <li>
-                    <strong>Endurance:</strong> Reto de resistencia de 22 km para
-                    probar fiabilidad y eficiencia.
-                  </li>
-                </ul>
-              </div>
+            <li>
+              <strong
+                class="kanit-regular text-space-red dark:text-space-yellow"
+                >Simulación:</strong
+              > Análisis estructural y de fluidos mediante <a
+                href="https://www.ansys.com/"
+                target="_blank"><strong>Ansys</strong></a
+              >.
+            </li>
+            <li>
+              <strong
+                class="kanit-regular text-space-red dark:text-space-yellow"
+                >Manufactura:</strong
+              > Planificación de procesos con <a
+                href="/nuestros-aliados/#nuestros-aliados"
+                ><strong>aliados estratégicos</strong></a
+              > para asegurar la viabilidad técnica de los componentes.
             </li>
           </ul>
         </div>
-      </div>
 
-      <div class="bg-gray-100 dark:bg-gray-800 p-8 rounded-3xl">
-        <h2
-          class="sigmar-ff text-3xl mb-4 text-space-red dark:text-space-yellow"
-        >
-          Ruta FSAE Michigan 2027
-        </h2>
-        <p class="kanit-light text-lg sm:text-xl leading-relaxed mb-8">
-          El proyecto tiene una línea de tiempo definida que busca el
-          crecimiento constante del equipo:
-        </p>
-        <div class="pl-8 space-y-0 relative">
-          <div class="relative pb-8 timeline-item" data-date="2025-03">
-            <div
-              class="absolute left-[-26px] top-1.5 bottom-0 w-1 bg-gray-300 dark:bg-gray-600 timeline-line"
+        <div id="formula-sae">
+          <h2
+            class="sigmar-ff text-3xl mb-4 text-space-red dark:text-space-yellow"
+          >
+            ¿Qué es Fórmula SAE?
+          </h2>
+          <p class="kanit-light text-lg sm:text-xl leading-relaxed mb-8">
+            <strong
+              ><a href="https://www.fsaeonline.com/" target="_blank" class=""
+                >Fórmula SAE (FSAE)</a
+              ></strong
+            > es la competencia de ingeniería automotriz con mayor reconocimiento
+            internacional, regida por los estándares técnicos de la
+            <strong
+              ><a href="https://www.sae.org/" target="_blank" class=""
+                >Society of Automotive Engineers (SAE)</a
+              ></strong
+            >. No es sólo una competencia de velocidad, sino una plataforma
+            donde más de 100 universidades validan el diseño, la manufactura y
+            la gestión financiera de un monoplaza de alto rendimiento.
+          </p>
+          <div>
+            <h3 class="sigmar-ff text-2xl mb-6">Criterios de Evaluación</h3>
+            <ul
+              class="grid grid-cols-1 md:grid-cols-2 gap-8 gap-y-12 kanit-light text-lg sm:text-xl"
             >
-            </div>
-            <div
-              class="absolute -left-[32px] top-1.5 h-4 w-4 rounded-full border-2 border-gray-300 bg-white dark:border-gray-600 dark:bg-gray-800 timeline-dot transition-all duration-300"
-            >
-            </div>
-            <h4 class="sigmar-ff text-xl timeline-title">
-              Fundación (Marzo 2025)
-            </h4>
-            <p class="kanit-light text-lg timeline-desc">
-              Inicio del diseño conceptual y formación del equipo
-              multidisciplinario.
-            </p>
-          </div>
-
-          <div class="relative pb-8 timeline-item" data-date="2026-09">
-            <div
-              class="absolute left-[-26px] top-1.5 bottom-0 w-1 bg-gray-300 dark:bg-gray-600 timeline-line"
-            >
-            </div>
-            <div
-              class="absolute -left-[32px] top-1.5 h-4 w-4 rounded-full border-2 border-gray-300 bg-white dark:border-gray-600 dark:bg-gray-800 timeline-dot transition-all duration-300"
-            >
-            </div>
-            <h4 class="sigmar-ff text-xl timeline-title">
-              FSAE México (Septiembre 2026)
-            </h4>
-            <p class="kanit-light text-lg timeline-desc">
-              Participación en categoría de diseño y simulaciones, sin
-              requerimiento de prototipo físico.
-            </p>
-          </div>
-
-          <div class="relative pb-8 timeline-item" data-date="2027-02">
-            <div
-              class="absolute left-[-26px] top-1.5 bottom-0 w-1 bg-gray-300 dark:bg-gray-600 timeline-line"
-            >
-            </div>
-            <div
-              class="absolute -left-[32px] top-1.5 h-4 w-4 rounded-full border-2 border-gray-300 bg-white dark:border-gray-600 dark:bg-gray-800 timeline-dot transition-all duration-300"
-            >
-            </div>
-            <h4 class="sigmar-ff text-xl timeline-title">
-              FSAE México (Febrero 2027)
-            </h4>
-            <p class="kanit-light text-lg timeline-desc">
-              Participación en FSAE México con el prototipo físico y pruebas
-              dinámicas.
-            </p>
-          </div>
-
-          <div class="relative timeline-item" data-date="2027-05">
-            <div
-              class="absolute -left-[32px] top-1.5 h-4 w-4 rounded-full border-2 border-gray-300 bg-white dark:border-gray-600 dark:bg-gray-800 timeline-dot transition-all duration-300"
-            >
-            </div>
-            <h4 class="sigmar-ff text-xl timeline-title">
-              FSAE Michigan (Mayo 2027)
-            </h4>
-            <p class="kanit-light text-lg timeline-desc">
-              Meta de clasificación y competencia internacional en Estados
-              Unidos.
-            </p>
+              <li class="flex items-start gap-4">
+                <Chart2 class="w-8 h-8 shrink-0 mt-1" />
+                <div>
+                  <strong
+                    class="kanit-regular text-space-red dark:text-space-yellow"
+                    >Pruebas Estáticas</strong
+                  >
+                  <ul class="mt-3 space-y-3 text-base sm:text-lg">
+                    <li>
+                      <strong>Diseño de ingeniería:</strong> Defensa técnica de cada
+                      decisión tomada ante jueces expertos.
+                    </li>
+                    <li>
+                      <strong>Análisis de costos:</strong> Evaluación de la eficiencia
+                      en el uso de recursos y procesos de manufactura.
+                    </li>
+                    <li>
+                      <strong>Plan de negocios:</strong> Presentación de una estrategia
+                      de mercado y viabilidad para producción en serie.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="flex items-start gap-4">
+                <RaceFlag class="w-8 h-8 shrink-0 mt-1" />
+                <div>
+                  <strong
+                    class="kanit-regular text-space-red dark:text-space-yellow"
+                    >Pruebas Dinámicas</strong
+                  >
+                  <ul class="mt-3 space-y-3 text-base sm:text-lg">
+                    <li>
+                      <strong>Aceleración:</strong> Prueba de potencia y tracción
+                      en una recta de 75 metros.
+                    </li>
+                    <li>
+                      <strong>Skidpad:</strong> Medición de fuerza centrífuga y agarre
+                      lateral en curvas.
+                    </li>
+                    <li>
+                      <strong>Autocross:</strong> Evaluación de agilidad y maniobrabilidad
+                      en circuitos revirados.
+                    </li>
+                    <li>
+                      <strong>Endurance:</strong> Reto de resistencia de 22 km para
+                      probar fiabilidad y eficiencia.
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
 
-        <script src="../../scripts/timeline.js"></script>
+        <div class="bg-gray-100 dark:bg-gray-800 p-8 rounded-3xl">
+          <h2
+            class="sigmar-ff text-3xl mb-4 text-space-red dark:text-space-yellow"
+          >
+            Ruta FSAE Michigan 2027
+          </h2>
+          <p class="kanit-light text-lg sm:text-xl leading-relaxed mb-8">
+            El proyecto tiene una línea de tiempo definida que busca el
+            crecimiento constante del equipo:
+          </p>
+          <div class="pl-8 space-y-0 relative">
+            <div class="relative pb-8 timeline-item" data-date="2025-03">
+              <div
+                class="absolute left-[-26px] top-1.5 bottom-0 w-1 bg-gray-300 dark:bg-gray-600 timeline-line"
+              >
+              </div>
+              <div
+                class="absolute -left-[32px] top-1.5 h-4 w-4 rounded-full border-2 border-gray-300 bg-white dark:border-gray-600 dark:bg-gray-800 timeline-dot transition-all duration-300"
+              >
+              </div>
+              <h4 class="sigmar-ff text-xl timeline-title">
+                Fundación (Marzo 2025)
+              </h4>
+              <p class="kanit-light text-lg timeline-desc">
+                Inicio del diseño conceptual y formación del equipo
+                multidisciplinario.
+              </p>
+            </div>
+
+            <div class="relative pb-8 timeline-item" data-date="2026-09">
+              <div
+                class="absolute left-[-26px] top-1.5 bottom-0 w-1 bg-gray-300 dark:bg-gray-600 timeline-line"
+              >
+              </div>
+              <div
+                class="absolute -left-[32px] top-1.5 h-4 w-4 rounded-full border-2 border-gray-300 bg-white dark:border-gray-600 dark:bg-gray-800 timeline-dot transition-all duration-300"
+              >
+              </div>
+              <h4 class="sigmar-ff text-xl timeline-title">
+                FSAE México (Septiembre 2026)
+              </h4>
+              <p class="kanit-light text-lg timeline-desc">
+                Participación en categoría de diseño y simulaciones, sin
+                requerimiento de prototipo físico.
+              </p>
+            </div>
+
+            <div class="relative pb-8 timeline-item" data-date="2027-02">
+              <div
+                class="absolute left-[-26px] top-1.5 bottom-0 w-1 bg-gray-300 dark:bg-gray-600 timeline-line"
+              >
+              </div>
+              <div
+                class="absolute -left-[32px] top-1.5 h-4 w-4 rounded-full border-2 border-gray-300 bg-white dark:border-gray-600 dark:bg-gray-800 timeline-dot transition-all duration-300"
+              >
+              </div>
+              <h4 class="sigmar-ff text-xl timeline-title">
+                FSAE México (Febrero 2027)
+              </h4>
+              <p class="kanit-light text-lg timeline-desc">
+                Participación en FSAE México con el prototipo físico y pruebas
+                dinámicas.
+              </p>
+            </div>
+
+            <div class="relative timeline-item" data-date="2027-05">
+              <div
+                class="absolute -left-[32px] top-1.5 h-4 w-4 rounded-full border-2 border-gray-300 bg-white dark:border-gray-600 dark:bg-gray-800 timeline-dot transition-all duration-300"
+              >
+              </div>
+              <h4 class="sigmar-ff text-xl timeline-title">
+                FSAE Michigan (Mayo 2027)
+              </h4>
+              <p class="kanit-light text-lg timeline-desc">
+                Meta de clasificación y competencia internacional en Estados
+                Unidos.
+              </p>
+            </div>
+          </div>
+
+          <script src="../../scripts/timeline.js"></script>
+        </div>
       </div>
     </section>
   </div>

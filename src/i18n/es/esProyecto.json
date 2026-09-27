@@ -1,14 +1,41 @@
 {
     "proyecto.main.title": "El Proyecto \"OP\"",
     "proyecto.vision.title": "Visión Técnica",
-    "proyecto.sistemas.title": "",
+    "proyecto.sistemas.title": "Sistemas del Vehículo",
     "proyecto.fsae.title": "",
     "proyecto.trayectoria.title": "",
     
     "proyecto.objetivos.sub": "Objetivos de Diseño",
-    "proyecto.herramientas.sub": "",
+    "proyecto.herramientas.sub": "Herramientas y Validación",
     "proyecto.criterios.sub": "",
 
-    "proyecto.vision.text": "El proyecto de escudería de <strong>UAMOTORS</strong>, se materializa en <strong>\"OP\"</strong>, nuestro monoplaza insignia. Este vehículo es el resultado de un ciclo de ingeniería que abarca <strong>concepción</strong>, <strong>diseño</strong>, <strong>fabricación</strong> y <strong>presentación</strong> bajo normas internacionales. El objetivo detrás de <strong>\"OP\"</strong> es consolidar un monoplaza fiable y optimizado para pilotos principiantes, priorizando bajos costos operativos y diseños altamente manufacturables."
+    "proyecto.vision.text": "El proyecto de escudería de <strong>UAMOTORS</strong>, se materializa en <strong>\"OP\"</strong>, nuestro monoplaza insignia. Este vehículo es el resultado de un ciclo de ingeniería que abarca <strong>concepción</strong>, <strong>diseño</strong>, <strong>fabricación</strong> y <strong>presentación</strong> bajo normas internacionales. El objetivo detrás de <strong>\"OP\"</strong> es consolidar un monoplaza fiable y optimizado para pilotos principiantes, priorizando bajos costos operativos y diseños altamente manufacturables.",
+
+    "proyecto.objetivo.t1": "Seguridad:",
+    "proyecto.objetivo.t2": "Confiabilidad:",
+    "proyecto.objetivo.t3": "Desarrollo Basado en Datos:",
+    "proyecto.objetivo.d1": "Priorizar la integridad del piloto y la seguridad estructural del vehículo en todo momento.",
+    "proyecto.objetivo.d2": "Asegurar la consistencia de los sistemas integrados para cumplir con las pruebas técnicas (tech inspection).",
+    "proyecto.objetivo.d3": "Implementar un sistema robusto de recolección de datos (telemetría) como base técnica para futuras evoluciones del equipo.",
+
+    "proyecto.sistemas.text": "El desarrollo del <strong>OP</strong> se divide en áreas técnicas interconectadas que trabajan en conjunto para maximizar el rendimiento:",
+    "proyecto.sistema.cha": "Chassis",    
+    "proyecto.sistema.dyn": "Dynamics",
+    "proyecto.sistema.pwr": "Powertrain",
+    "proyecto.sistema.ele": "Electronics",
+    "proyecto.sistema.aer": "Aerodynamics",
+    "proyecto.sistema.text.cha": "Diseño estructural y validación dinámica del chasis tubular y la carrocería. Su objetivo es garantizar la máxima seguridad del piloto y la integridad del vehículo.",
+    "proyecto.sistema.text.dyn": "Responsable del comportamiento físico en pista mediante el ajuste preciso de la suspensión y dirección, garantizando un manejo ágil, estable y una excelente tracción mecánica.",
+    "proyecto.sistema.text.pwr": "Integración, gestión térmica y calibración del tren motriz basado en un motor de motocicleta de alto rendimiento. Diseña los sistemas de admisión, escape y transmisión, enfocándose en optimizar la entrega de potencia y la tracción en pista.",
+    "proyecto.sistema.text.ele": "Programación de la <span class='relative group cursor-help'><strong>ECU</strong><span class='pointer-events-none absolute bottom-full left-1/2 z-20 mb-2 w-44 -translate-x-1/2 rounded-xl border border-black/10 bg-neutral-900/95 p-2 text-center text-xs leading-normal text-white opacity-0 shadow-xl transition-opacity duration-200 group-hover:opacity-100 dark:border-white/10 dark:bg-neutral-950/95 kanit-regular'>Unidad de Control del Motor</span></span>, integración de sistemas embebidos y sensores dinámicos. Se encarga de la gestión electrónica del vehículo, el control de potencia y la adquisición de datos (DAQ) para retroalimentación técnica.",
+    "proyecto.sistema.text.aer": "Optimización del flujo de aire mediante <span class='relative group cursor-help'><strong>CFD</strong><span class='pointer-events-none absolute bottom-full left-1/2 z-20 mb-2 w-48 -translate-x-1/2 rounded-xl border border-black/10 bg-neutral-900/95 p-2 text-center text-xs leading-normal text-white opacity-0 shadow-xl transition-opacity duration-200 group-hover:opacity-100 dark:border-white/10 dark:bg-neutral-950/95 kanit-regular'>Dinámica de Fluidos Computacional</span></span> para generar carga aerodinámica (downforce) eficiente, mejorando la estabilidad del monoplaza sin comprometer el desempeño por arrastre excesivo.",
+
+    "proyecto.herramientas.text": "Para garantizar la precisión de cada componente, el equipo utiliza herramientas de nivel industrial para simulaciones y diseño:",
+    "proyecto.heramienta1": "Diseño CAD: ",
+    "proyecto.herramienta.des1": "Uso extensivo de <a href='https://www.solidworks.com/' target='_blank'><strong>Solidworks</strong></a> para el modelado mecánico.",
+    "proyecto.heramienta2": "",
+    "proyecto.herramienta.des2": "",
+    "proyecto.heramienta3": "",
+    "proyecto.herramienta.des3": ""
 
 }
