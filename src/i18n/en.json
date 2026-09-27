@@ -13,5 +13,9 @@
     "home.hero.text": "More than a racing team, we are a hub of innovation and talent. Join our project and help us elevate Mexican engineering at the international <a href= '/proyecto#formula-sae' class='text-space-red font-medium hover:font-bold transition-all'>Formula SAE</a> competition.",
     "home.hero.btn1": "Explore project",
     "home.hero.btn2": "Support our team",
-    "home.instragram": "Follow us on Instagram!"
+    "home.instragram": "Follow us on Instagram!",
+
+    "404.text": "The address you are trying to access does not exist, has been moved, or is under maintenance.",
+    "404.btn": "Back to the pits",
+    "404.spacebar": "Press <kbd class='px-2 py-1 bg-black/10 dark:bg-white/10 rounded font-mono' >Space</kbd> on your keyboard to change the quote."
 }

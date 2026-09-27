@@ -1,0 +1,108 @@
+---
+import { Image } from "astro:assets";
+import MainLayout from "../../layouts/MainLayout.astro";
+import { withBase } from "../../utils/helpers";
+import carImage from "../../assets/images/OP01_2-transparent.png";
+import SpaceKeyboard from "../../components/SpaceKeyboard.astro";
+import siteConfig from "../../site.config";
+import Button from "../../components/Button.astro";
+
+// i18n
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<MainLayout
+  activePage="404"
+  pageTitle={siteConfig.title + " | 404 - Fuera de Pista"}
+  description="Página no encontrada - UAMOTORS. La dirección solicitada no existe o ha sido movida."
+  showSubscribeForm={false}
+>
+  <script is:inline>
+    (function () {
+      const isEn =
+        window.location.pathname.startsWith("/en/") ||
+        window.location.pathname === "/en";
+      if (isEn) {
+        document.documentElement.classList.add("route-en");
+        document.documentElement.setAttribute("lang", "en");
+        document.title = "UAMOTORS | 404 - Off Track";
+        const desc = document.querySelector('meta[name="description"]');
+        if (desc)
+          desc.setAttribute(
+            "content",
+            "Page not found - UAMOTORS. The requested address does not exist or has been moved.",
+          );
+      } else {
+        document.documentElement.classList.add("route-es");
+      }
+    })();
+  </script>
+
+  <style>
+    html.route-en .lang-es {
+      display: none !important;
+    }
+    html:not(.route-en) .lang-en {
+      display: none !important;
+    }
+  </style>
+
+  <div
+    class="flex flex-col items-center justify-center page-content py-12 text-center"
+  >
+    <h1
+      class="sigmar-ff text-8xl md:text-9xl mb-4 text-space-red dark:text-space-yellow"
+    >
+      404
+    </h1>
+
+    <div
+      class="relative w-full max-w-lg flex justify-center items-center my-6 group"
+    >
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 sm:w-72 sm:h-72 bg-space-red/30 dark:bg-space-yellow/10 rounded-full blur-[60px] sm:blur-[80px] -z-10 pointer-events-none"
+      >
+      </div>
+
+      <Image
+        class="w-auto h-auto max-h-[220px] object-contain drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)] rotate-6 transition-transform duration-500 hover:rotate-12 lang-es"
+        src={carImage}
+        alt="Vehículo UAMOTORS fuera de pista"
+        width={500}
+        height={300}
+      />
+      <Image
+        class="w-auto h-auto max-h-[220px] object-contain drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)] rotate-6 transition-transform duration-500 hover:rotate-12 lang-en"
+        src={carImage}
+        alt="UAMOTORS vehicle off track"
+        width={500}
+        height={300}
+      />
+    </div>
+
+    <div class="space-y-4 max-w-md mx-auto px-4 mt-6">
+      <p class="kanit-light text-base sm:text-lg lang-es">
+        {t("404.text")}
+      </p>
+      <!-- <p class="kanit-light text-base sm:text-lg lang-en">
+        The address you are trying to access does not exist, has been moved, or
+        is under maintenance.
+      </p> -->
+      <div class="pt-6 lang-es">
+        <Button href={withBase("/")} class="space-btn-filled px-8">
+          {t("404.btn")}
+        </Button>
+      </div>
+    </div>
+
+    <div class="w-full max-w-2xl mt-4">
+      <SpaceKeyboard />
+      <p
+        class="text-xs opacity-60 mt-4 kanit-light lang-es"
+        set:html={t("404.spacebar")}
+      />
+    </div>
+  </div>
+</MainLayout>
