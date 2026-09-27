@@ -24,14 +24,14 @@
             "fotoPath": "/profiles/pictures/project-ximena.webp",
             "linkedin": "https://www.linkedin.com/in/ximena-janeth-baeza-angeles-56670536a/",
             "integrantes": [
-                
+                {"nombre": "Claudio Israel Nuñez Rodriguez", "linkedin": "https://www.linkedin.com/in/claudio-israel-nu%C3%B1ez-rodriguez-70058b359/"}
             ]
         },
 
         {
             "id": "marketing",
             "departamento": "Marketing",
-            "nombre": "Esmeralda Apolinar",
+            "nombre": "Esmeralda Apolinar Viscaya",
             "fotoPath": "/profiles/pictures/marketing-esmeralda.webp",
             "linkedin": "https://www.linkedin.com/in/esmeralda-apolinar-3782223a9/",
             "integrantes": [
@@ -46,7 +46,8 @@
             "fotoPath": "/profiles/pictures/dynamics-diego.webp",
             "linkedin": "https://www.linkedin.com/in/diego-nathanael-velazquez-soto-a86002348/",
             "integrantes": [
-                {"nombre": "César Gael García Aguilar", "linkedin": "https://www.linkedin.com/in/cesar-gael-garcia-aguilar-380b242aa/"}
+                {"nombre": "César Gael García Aguilar", "linkedin": "https://www.linkedin.com/in/cesar-gael-garcia-aguilar-380b242aa/"},
+                {"nombre": "Rodrigo Jiménez Cerón", "linkedin": "https://www.linkedin.com/in/rodrigo-jim%C3%A9nez-cer%C3%B3n-229a75436/"}
             ]
         },
 
