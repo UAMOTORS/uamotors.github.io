@@ -7,5 +7,11 @@
 
     "team.lead": "Lead",
     "team.department": "Departament",
-    "team.close": "Close"
+    "team.close": "Close",
+
+    "home.hero.title": "Engineered with ingenuity, driven by passion.",
+    "home.hero.text": "More than a racing team, we are a hub of innovation and talent. Join our project and help us elevate Mexican engineering at the international <a href= '/proyecto#formula-sae' class='text-space-red font-medium hover:font-bold transition-all'>Formula SAE</a> competition.",
+    "home.hero.btn1": "Explore project",
+    "home.hero.btn2": "Support our team",
+    "home.instragram": "Follow us on Instagram!"
 }
