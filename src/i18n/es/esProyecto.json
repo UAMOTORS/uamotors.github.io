@@ -2,7 +2,7 @@
     "proyecto.main.title": "El Proyecto \"OP\"",
     "proyecto.vision.title": "Visión Técnica",
     "proyecto.sistemas.title": "Sistemas del Vehículo",
-    "proyecto.fsae.title": "",
+    "proyecto.fsae.title": "¿Qué es Fórmula SAE?",
     "proyecto.trayectoria.title": "",
     
     "proyecto.objetivos.sub": "Objetivos de Diseño",
@@ -36,6 +36,8 @@
     "proyecto.heramienta2": "Simulación: ",
     "proyecto.herramienta.des2": "Análisis estructural y de fluidos mediante <a href='https://www.ansys.com/' target='_blank'><strong>Ansys</strong></a>",
     "proyecto.heramienta3": "Manufactura: ",
-    "proyecto.herramienta.des3": "Planificación de procesos con <a href='/nuestros-aliados/#nuestros-aliados'><strong>aliados estratégicos</strong></a> para asegurar la viabilidad técnica de los componentes."
+    "proyecto.herramienta.des3": "Planificación de procesos con <a href='/nuestros-aliados/#nuestros-aliados'><strong>aliados estratégicos</strong></a> para asegurar la viabilidad técnica de los componentes.",
+    
+    "proyecto.fsae.text": "<strong><a href='https://www.fsaeonline.com/' target='_blank' class=''>Fórmula SAE (FSAE)</a></strong> es la competencia de ingeniería automotriz con mayor reconocimiento internacional, regida por los estándares técnicos de la <strong><a href='https://www.sae.org/' target='_blank' class=''>Society of Automotive Engineers (SAE)</a></strong>. No es sólo una competencia de velocidad, sino una plataforma donde más de 100 universidades validan el diseño, la manufactura y la gestión financiera de un monoplaza de alto rendimiento."
 
 }
