@@ -216,23 +216,11 @@ const t = useTranslations(lang);
           <h2
             class="sigmar-ff text-3xl mb-4 text-space-red dark:text-space-yellow"
           >
-            ¿Qué es Fórmula SAE?
+            {t("proyecto.fsae.title")}
           </h2>
-          <p class="kanit-light text-lg sm:text-xl leading-relaxed mb-8">
-            <strong
-              ><a href="https://www.fsaeonline.com/" target="_blank" class=""
-                >Fórmula SAE (FSAE)</a
-              ></strong
-            > es la competencia de ingeniería automotriz con mayor reconocimiento
-            internacional, regida por los estándares técnicos de la
-            <strong
-              ><a href="https://www.sae.org/" target="_blank" class=""
-                >Society of Automotive Engineers (SAE)</a
-              ></strong
-            >. No es sólo una competencia de velocidad, sino una plataforma
-            donde más de 100 universidades validan el diseño, la manufactura y
-            la gestión financiera de un monoplaza de alto rendimiento.
-          </p>
+          <p class="kanit-light text-lg sm:text-xl leading-relaxed mb-8"
+						 set:html={t("proyecto.fsae.text")}
+					/>
           <div>
             <h3 class="sigmar-ff text-2xl mb-6">Criterios de Evaluación</h3>
             <ul
