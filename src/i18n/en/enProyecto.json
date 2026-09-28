@@ -31,10 +31,10 @@
     "proyecto.sistema.text.aer": "Airflow optimization using <span class='relative group cursor-help'><strong>CFD</strong><span class='pointer-events-none absolute bottom-full left-1/2 z-20 mb-2 w-48 -translate-x-1/2 rounded-xl border border-black/10 bg-neutral-900/95 p-2 text-center text-xs leading-normal text-white opacity-0 shadow-xl transition-opacity duration-200 group-hover:opacity-100 dark:border-white/10 dark:bg-neutral-950/95 kanit-regular'>Computational Fluid Dynamics</span></span> to generate efficient downforce, enhancing race car stability without compromising performance through excessive drag.",
 
     "proyecto.herramientas.text": "To guarantee the precision of every component, the team utilizes industry-standard tools for design and simulation:",
-    "proyecto.heramienta1": "",
-    "proyecto.herramienta.des1": "",
-    "proyecto.heramienta2": "",
-    "proyecto.herramienta.des2": "",
-    "proyecto.heramienta3": "",
-    "proyecto.herramienta.des3": ""
+    "proyecto.heramienta1": "CAD Design: ",
+    "proyecto.herramienta.des1": "Extensive use of <a href='https://www.solidworks.com/' target='_blank'><strong>Solidworks</strong></a> for mechanical modeling.",
+    "proyecto.heramienta2": "Simulation: ",
+    "proyecto.herramienta.des2": "Structural and fluid analysis using <a href='https://www.ansys.com/' target='_blank'><strong>Ansys</strong></a>.",
+    "proyecto.heramienta3": "Manufacturing: ",
+    "proyecto.herramienta.des3": "Process planning with <a href='/en/nuestros-aliados/#nuestros-aliados'><strong>strategic partners</strong></a> to ensure the technical viability of the components."
 }

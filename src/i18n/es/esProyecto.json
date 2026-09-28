@@ -33,9 +33,9 @@
     "proyecto.herramientas.text": "Para garantizar la precisión de cada componente, el equipo utiliza herramientas de nivel industrial para simulaciones y diseño:",
     "proyecto.heramienta1": "Diseño CAD: ",
     "proyecto.herramienta.des1": "Uso extensivo de <a href='https://www.solidworks.com/' target='_blank'><strong>Solidworks</strong></a> para el modelado mecánico.",
-    "proyecto.heramienta2": "",
-    "proyecto.herramienta.des2": "",
-    "proyecto.heramienta3": "",
-    "proyecto.herramienta.des3": ""
+    "proyecto.heramienta2": "Simulación: ",
+    "proyecto.herramienta.des2": "Análisis estructural y de fluidos mediante <a href='https://www.ansys.com/' target='_blank'><strong>Ansys</strong></a>",
+    "proyecto.heramienta3": "Manufactura: ",
+    "proyecto.herramienta.des3": "Planificación de procesos con <a href='/nuestros-aliados/#nuestros-aliados'><strong>aliados estratégicos</strong></a> para asegurar la viabilidad técnica de los componentes."
 
 }
