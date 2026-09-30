@@ -9,8 +9,12 @@ import { withBase } from "../utils/helpers";
 
 const { activePage } = Astro.props;
 const currentPath = Astro.url.pathname;
+const normalizedPath = currentPath.endsWith("/") && currentPath.length > 1 
+  ? currentPath.slice(0, -1) 
+  : currentPath;
+
 const isEnglish =
-  currentPath.startsWith("/en") || currentPath.startsWith("/en/");
+  normalizedPath.startsWith("/en") || normalizedPath === "/en";
 const routeMap = {
   "/": "/en",
   "/en": "/",
@@ -25,10 +29,10 @@ const routeMap = {
 };
 
 let targetUrl =
-  routeMap[currentPath] ||
+  routeMap[normalizedPath] ||
   (isEnglish
-    ? currentPath.replace(/^\/en(\/|$)/, "/")
-    : "/en" + (currentPath === "/" ? "" : currentPath));
+    ? normalizedPath.replace(/^\/en(\/|$)/, "/")
+    : "/en" + (normalizedPath === "/" ? "" : normalizedPath));
 
 const englishNavLinks = [
   {
