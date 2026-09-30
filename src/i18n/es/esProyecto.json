@@ -1,13 +1,15 @@
 {
+    "proyecto.meta.title": "Proyecto",
+    "proyecto.meta.desc": "Explora los detalles técnicos del OP01, el monoplaza de UAMOTORS diseñado bajo normas de Formula SAE. Conoce el chasis, suspensión, aerodinámica y tren motriz.",
     "proyecto.main.title": "El Proyecto \"OP\"",
     "proyecto.vision.title": "Visión Técnica",
     "proyecto.sistemas.title": "Sistemas del Vehículo",
     "proyecto.fsae.title": "¿Qué es Fórmula SAE?",
-    "proyecto.trayectoria.title": "",
+    "proyecto.trayectoria.title": "Ruta FSAE Michigan 2027",
     
     "proyecto.objetivos.sub": "Objetivos de Diseño",
     "proyecto.herramientas.sub": "Herramientas y Validación",
-    "proyecto.criterios.sub": "",
+    "proyecto.criterios.sub": "Criterios de Evaluación",
 
     "proyecto.vision.text": "El proyecto de escudería de <strong>UAMOTORS</strong>, se materializa en <strong>\"OP\"</strong>, nuestro monoplaza insignia. Este vehículo es el resultado de un ciclo de ingeniería que abarca <strong>concepción</strong>, <strong>diseño</strong>, <strong>fabricación</strong> y <strong>presentación</strong> bajo normas internacionales. El objetivo detrás de <strong>\"OP\"</strong> es consolidar un monoplaza fiable y optimizado para pilotos principiantes, priorizando bajos costos operativos y diseños altamente manufacturables.",
 
@@ -38,6 +40,21 @@
     "proyecto.heramienta3": "Manufactura: ",
     "proyecto.herramienta.des3": "Planificación de procesos con <a href='/nuestros-aliados/#nuestros-aliados'><strong>aliados estratégicos</strong></a> para asegurar la viabilidad técnica de los componentes.",
     
-    "proyecto.fsae.text": "<strong><a href='https://www.fsaeonline.com/' target='_blank' class=''>Fórmula SAE (FSAE)</a></strong> es la competencia de ingeniería automotriz con mayor reconocimiento internacional, regida por los estándares técnicos de la <strong><a href='https://www.sae.org/' target='_blank' class=''>Society of Automotive Engineers (SAE)</a></strong>. No es sólo una competencia de velocidad, sino una plataforma donde más de 100 universidades validan el diseño, la manufactura y la gestión financiera de un monoplaza de alto rendimiento."
+    "proyecto.fsae.text": "<strong><a href='https://www.fsaeonline.com/' target='_blank' class=''>Fórmula SAE (FSAE)</a></strong> es la competencia de ingeniería automotriz con mayor reconocimiento internacional, regida por los estándares técnicos de la <strong><a href='https://www.sae.org/' target='_blank' class=''>Society of Automotive Engineers (SAE)</a></strong>. No es sólo una competencia de velocidad, sino una plataforma donde más de 100 universidades validan el diseño, la manufactura y la gestión financiera de un monoplaza de alto rendimiento.",
 
+    "proyecto.criterios.estaticas": "Pruebas Estáticas",
+    "proyecto.criterios.estaticas.lista": "<li><strong>Diseño de ingeniería:</strong> Defensa técnica de cada decisión tomada ante jueces expertos.</li></br> <li><strong>Análisis de costos:</strong> Evaluación de la eficiencia en el uso de recursos y procesos de manufactura.</li></br> <li><strong>Plan de negocios:</strong> Presentación de una estrategia de mercado y viabilidad para producción en serie.</li></br>",
+
+    "proyecto.criterios.dinamicas": "Pruebas Dinámicas",
+    "proyecto.criterios.dinamicas.lista": "<li><strong>Aceleración:</strong> Prueba de potencia y tracción en una recta de 75 metros.</li></br> <li><strong>Skidpad:</strong> Medición de fuerza centrífuga y agarre lateral en curvas.</li></br> <li><strong>Autocross:</strong> Evaluación de agilidad y maniobrabilidad en circuitos revirados.</li></br> <li><strong>Endurance:</strong> Reto de resistencia de 22 km para probar fiabilidad y eficiencia.</li></br>",
+
+    "proyecto.timeline.desc": "El proyecto tiene una línea de tiempo definida que busca el crecimiento constante del equipo:",
+    "proyecto.timeline.item1.title": "Fundación (Marzo 2025)",
+    "proyecto.timeline.item1.desc": "Inicio del diseño conceptual y formación del equipo multidisciplinario.",
+    "proyecto.timeline.item2.title": "FSAE México (Septiembre 2026)",
+    "proyecto.timeline.item2.desc": "Participación en categoría de diseño y simulaciones, sin requerimiento de prototipo físico.",
+    "proyecto.timeline.item3.title": "FSAE México (Febrero 2027)",
+    "proyecto.timeline.item3.desc": "Participación en FSAE México con el prototipo físico y pruebas dinámicas.",
+    "proyecto.timeline.item4.title": "FSAE Michigan (Mayo 2027)",
+    "proyecto.timeline.item4.desc": "Meta de clasificación y competencia internacional en Estados Unidos."
 }

@@ -23,8 +23,8 @@ const t = useTranslations(lang);
 
 <MainLayout
   activePage="proyecto"
-  pageTitle={siteConfig.title + " | Proyecto"}
-  description="Explora los detalles técnicos del OP01, el monoplaza de UAMOTORS diseñado bajo normas de Formula SAE. Conoce el chasis, suspensión, aerodinámica y tren motriz."
+  pageTitle={siteConfig.title + " | " + t("proyecto.meta.title")}
+  description={t("proyecto.meta.desc")}
 >
   <div class="page-content max-w-4xl mx-auto">
     <h1 class="sigmar-ff text-balance mb-8">{t("proyecto.main.title")}</h1>
@@ -218,11 +218,14 @@ const t = useTranslations(lang);
           >
             {t("proyecto.fsae.title")}
           </h2>
-          <p class="kanit-light text-lg sm:text-xl leading-relaxed mb-8"
-						 set:html={t("proyecto.fsae.text")}
-					/>
+          <p
+            class="kanit-light text-lg sm:text-xl leading-relaxed mb-8"
+            set:html={t("proyecto.fsae.text")}
+          />
           <div>
-            <h3 class="sigmar-ff text-2xl mb-6">Criterios de Evaluación</h3>
+            <h3 class="sigmar-ff text-2xl mb-6">
+              {t("proyecto.criterios.sub")}
+            </h3>
             <ul
               class="grid grid-cols-1 md:grid-cols-2 gap-8 gap-y-12 kanit-light text-lg sm:text-xl"
             >
@@ -231,21 +234,10 @@ const t = useTranslations(lang);
                 <div>
                   <strong
                     class="kanit-regular text-space-red dark:text-space-yellow"
-                    >Pruebas Estáticas</strong
+                    >{t("proyecto.criterios.estaticas")}</strong
                   >
                   <ul class="mt-3 space-y-3 text-base sm:text-lg">
-                    <li>
-                      <strong>Diseño de ingeniería:</strong> Defensa técnica de cada
-                      decisión tomada ante jueces expertos.
-                    </li>
-                    <li>
-                      <strong>Análisis de costos:</strong> Evaluación de la eficiencia
-                      en el uso de recursos y procesos de manufactura.
-                    </li>
-                    <li>
-                      <strong>Plan de negocios:</strong> Presentación de una estrategia
-                      de mercado y viabilidad para producción en serie.
-                    </li>
+                    <span set:html={t("proyecto.criterios.estaticas.lista")} />
                   </ul>
                 </div>
               </li>
@@ -254,25 +246,10 @@ const t = useTranslations(lang);
                 <div>
                   <strong
                     class="kanit-regular text-space-red dark:text-space-yellow"
-                    >Pruebas Dinámicas</strong
+                    >{t("proyecto.criterios.dinamicas")}</strong
                   >
                   <ul class="mt-3 space-y-3 text-base sm:text-lg">
-                    <li>
-                      <strong>Aceleración:</strong> Prueba de potencia y tracción
-                      en una recta de 75 metros.
-                    </li>
-                    <li>
-                      <strong>Skidpad:</strong> Medición de fuerza centrífuga y agarre
-                      lateral en curvas.
-                    </li>
-                    <li>
-                      <strong>Autocross:</strong> Evaluación de agilidad y maniobrabilidad
-                      en circuitos revirados.
-                    </li>
-                    <li>
-                      <strong>Endurance:</strong> Reto de resistencia de 22 km para
-                      probar fiabilidad y eficiencia.
-                    </li>
+                    <span set:html={t("proyecto.criterios.dinamicas.lista")} />
                   </ul>
                 </div>
               </li>
@@ -284,11 +261,10 @@ const t = useTranslations(lang);
           <h2
             class="sigmar-ff text-3xl mb-4 text-space-red dark:text-space-yellow"
           >
-            Ruta FSAE Michigan 2027
+            {t("proyecto.trayectoria.title")}
           </h2>
           <p class="kanit-light text-lg sm:text-xl leading-relaxed mb-8">
-            El proyecto tiene una línea de tiempo definida que busca el
-            crecimiento constante del equipo:
+            {t("proyecto.timeline.desc")}
           </p>
           <div class="pl-8 space-y-0 relative">
             <div class="relative pb-8 timeline-item" data-date="2025-03">
@@ -301,11 +277,10 @@ const t = useTranslations(lang);
               >
               </div>
               <h4 class="sigmar-ff text-xl timeline-title">
-                Fundación (Marzo 2025)
+                {t("proyecto.timeline.item1.title")}
               </h4>
               <p class="kanit-light text-lg timeline-desc">
-                Inicio del diseño conceptual y formación del equipo
-                multidisciplinario.
+                {t("proyecto.timeline.item1.desc")}
               </p>
             </div>
 
@@ -319,11 +294,10 @@ const t = useTranslations(lang);
               >
               </div>
               <h4 class="sigmar-ff text-xl timeline-title">
-                FSAE México (Septiembre 2026)
+                {t("proyecto.timeline.item2.title")}
               </h4>
               <p class="kanit-light text-lg timeline-desc">
-                Participación en categoría de diseño y simulaciones, sin
-                requerimiento de prototipo físico.
+                {t("proyecto.timeline.item2.desc")}
               </p>
             </div>
 
@@ -337,11 +311,10 @@ const t = useTranslations(lang);
               >
               </div>
               <h4 class="sigmar-ff text-xl timeline-title">
-                FSAE México (Febrero 2027)
+                {t("proyecto.timeline.item3.title")}
               </h4>
               <p class="kanit-light text-lg timeline-desc">
-                Participación en FSAE México con el prototipo físico y pruebas
-                dinámicas.
+                {t("proyecto.timeline.item3.desc")}
               </p>
             </div>
 
@@ -351,11 +324,10 @@ const t = useTranslations(lang);
               >
               </div>
               <h4 class="sigmar-ff text-xl timeline-title">
-                FSAE Michigan (Mayo 2027)
+                {t("proyecto.timeline.item4.title")}
               </h4>
               <p class="kanit-light text-lg timeline-desc">
-                Meta de clasificación y competencia internacional en Estados
-                Unidos.
+                {t("proyecto.timeline.item4.desc")}
               </p>
             </div>
           </div>

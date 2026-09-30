@@ -1,13 +1,15 @@
 {
+    "proyecto.meta.title": "Project",
+    "proyecto.meta.desc": "Explore the technical details of the OP01, UAMOTORS' single-seater designed under Formula SAE rules. Learn about the chassis, suspension, aerodynamics, and powertrain.",
     "proyecto.main.title": "The \"OP\" Project",
     "proyecto.vision.title": "Technical Vision",
     "proyecto.sistemas.title": "Vehicle Systems",
     "proyecto.fsae.title": "What is Formula SAE?",
-    "proyecto.trayectoria.title": "",
+    "proyecto.trayectoria.title": "FSAE Michigan 2027 Roadmap",
     
     "proyecto.objetivos.sub": "Design Objectives",
     "proyecto.herramientas.sub": "Tools & Validation",
-    "proyecto.criterios.sub": "",
+    "proyecto.criterios.sub": "Evaluation Criteria",
 
     "proyecto.vision.text": "The <strong>UAMOTORS</strong> racing project takes shape in <strong>\"OP\"</strong>, our flagship single-seater. This vehicle is the result of an engineering cycle that spans <strong>conception</strong>, <strong>design</strong>, <strong>manufacturing</strong>, and <strong>testing</strong> under international standards. The goal behind <strong>\"OP\"</strong> is to build a reliable race car optimized for novice drivers, prioritizing low operating costs and highly manufacturable designs.",
 
@@ -38,5 +40,21 @@
     "proyecto.heramienta3": "Manufacturing: ",
     "proyecto.herramienta.des3": "Process planning with <a href='/en/nuestros-aliados/#nuestros-aliados'><strong>strategic partners</strong></a> to ensure the technical viability of the components.",
     
-    "proyecto.fsae.text": "<strong><a href='https://www.fsaeonline.com/' target='_blank' class=''>Formula SAE (FSAE)</a></strong> is the most globally recognized student engineering competition, governed by the technical standards of the <strong><a href='https://www.sae.org/' target='_blank' class=''>Society of Automotive Engineers (SAE)</a></strong>. It is not simply a speed competition, but a platform where over 100 universities validate the design, manufacturing, and financial management of a high-performance race car."
+    "proyecto.fsae.text": "<strong><a href='https://www.fsaeonline.com/' target='_blank' class=''>Formula SAE (FSAE)</a></strong> is the most globally recognized student engineering competition, governed by the technical standards of the <strong><a href='https://www.sae.org/' target='_blank' class=''>Society of Automotive Engineers (SAE)</a></strong>. It is not simply a speed competition, but a platform where over 100 universities validate the design, manufacturing, and financial management of a high-performance race car.",
+
+    "proyecto.criterios.estaticas": "Static Events",
+    "proyecto.criterios.estaticas.lista": "<li><strong>Engineering design:</strong> Technical defense of design decisions before industry expert judges.</li></br> <li><strong>Cost analysis:</strong> Evaluation of resource efficiency and manufacturing processes.</li></br> <li><strong>Business Presentation:</strong> Presenting a market strategy and business viability for serial production.</li></br>",
+
+    "proyecto.criterios.dinamicas": "Dynamic Events",
+    "proyecto.criterios.dinamicas.lista": "<li><strong>Acceleration:</strong> Evaluation of power and traction over a 75-meter straight.</li></br> <li><strong>Skidpad:</strong> Measuring cornering ability and lateral grip on a figure-eight track.</li></br> <li><strong>Autocross:</strong> Assessing handling and agility on a tight, winding circuit.</li></br> <li><strong>Endurance:</strong> A demanding 22 km race to test overall reliability and efficiency.</li></br>",
+
+    "proyecto.timeline.desc": "The project operates under a defined timeline focused on the team's continuous growth:",
+    "proyecto.timeline.item1.title": "Founding (March 2025)",
+    "proyecto.timeline.item1.desc": "Start of conceptual design and formation of the multidisciplinary team.",
+    "proyecto.timeline.item2.title": "FSAE México (September 2026)",
+    "proyecto.timeline.item2.desc": "Participation in design and simulation categories, without the physical prototype requirement.",
+    "proyecto.timeline.item3.title": "FSAE México (February 2027)",
+    "proyecto.timeline.item3.desc": "Participation in FSAE México with the physical prototype and dynamic tests.",
+    "proyecto.timeline.item4.title": "FSAE Michigan (May 2027)",
+    "proyecto.timeline.item4.desc": "Goal of qualifying and competing in the international event in the United States."
 }
