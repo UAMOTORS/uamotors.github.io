@@ -1,24 +1,24 @@
 {
     "aliados.meta.title": "Our Partners",
-    "aliados.meta.desc": "Meet the companies and institutions driving UAMOTORS. Discover the benefits of sponsoring our project and accelerating UAM's engineering talent.",
+    "aliados.meta.desc": "Meet the companies and institutions powering UAMOTORS. Discover the benefits of sponsoring our project and accelerating UAM engineering talent.",
     "aliados.main.title": "Our Partners",
-    "aliados.intro.text": "<strong>UAMOTORS</strong> is an initiative that seeks to demonstrate the high level of the <a href='https://www.uam.mx/' target='_blank'><strong>UAM</strong></a> in global technological scenarios. To materialize our vision and push Mexican engineering to the limit, we look for strategic partners who provide the <strong>technical and financial support</strong> necessary to turn this development into a competitive reality.",
+    "aliados.intro.text": "<strong>UAMOTORS</strong> is an initiative that seeks to demonstrate the high caliber of <a href='https://www.uam.mx/' target='_blank'><strong>UAM</strong></a> in global technological arenas. To realize our vision and push Mexican engineering to the limit, we seek strategic partners to provide the <strong>technical and financial support</strong> necessary to turn this development into a competitive reality.",
     
-    "aliados.card1.title": "Strategic Alliance",
-    "aliados.card1.text": "We are not just looking for a sponsor, but a strategic partner that drives the growth of student talent and strengthens technological development in Mexico.",
-    "aliados.card2.title": "Academia-Industry Link",
-    "aliados.card2.text": "The project positions companies as promoters of young talent, providing a direct link platform with the university community of the <a href='https://www.uam.mx/' target='_blank'><strong>UAM</strong></a>.",
+    "aliados.card1.title": "Strategic Partnership",
+    "aliados.card1.text": "We do not seek merely a sponsor, but a strategic partner to drive student talent growth and strengthen technological development in Mexico.",
+    "aliados.card2.title": "Academy-Industry Link",
+    "aliados.card2.text": "The project positions companies as champions of young talent, providing a direct connection platform with the <a href='https://www.uam.mx/' target='_blank'><strong>UAM</strong></a> university community.",
 
     "aliados.beneficios.title": "Key Benefits",
     "aliados.beneficio1.title": "Brand Visibility:",
-    "aliados.beneficio1.text": "Presence of logos on our <a href='/en/project'><strong>\"OP\"</strong></a> race car, uniforms, and promotional material.",
+    "aliados.beneficio1.text": "Logo placement on our race car <a href='/proyecto'><strong>\"OP\"</strong></a>, uniforms, and promotional material.",
     "aliados.beneficio2.title": "Digital Impact:",
-    "aliados.beneficio2.text": "Constant broadcast on <a href='/en/contact/#official-channels'><strong>social platforms</strong></a> with a dynamic and continuously growing reach.",
+    "aliados.beneficio2.text": "Continuous presence on our <a href='/contacto/#canales-oficiales'><strong>social platforms</strong></a> with a dynamic, growing reach.",
     "aliados.beneficio3.title": "Tax Benefit:",
-    "aliados.beneficio3.text": "Delivery of tax-deductible receipt backed by <a href='https://www.fundacionuam.org/' target='_blank'><strong>Fundación UAM</strong></a>.",
-    "aliados.beneficio4.title": "Presence at Events:",
-    "aliados.beneficio4.text": "Brand exposure in activities with the university community and team exhibitions.",
+    "aliados.beneficio3.text": "Tax-deductible receipts provided with the support of <a href='https://www.fundacionuam.org/' target='_blank'><strong>Fundación UAM</strong></a>.",
+    "aliados.beneficio4.title": "Event Presence:",
+    "aliados.beneficio4.text": "Brand exposure at university community events and team exhibitions.",
 
-    "aliados.cta.title": "Accelerate our goal!",
-    "aliados.cta.text": "Your support is the engine that allows us to take <a href='https://www.uam.mx/'><strong>UAM</strong></a> engineering to the next level. To learn about our collaboration schemes and their <strong>benefits</strong>, contact us and let's work <strong>together</strong>."
+    "aliados.cta.title": "Accelerate Our Goal!",
+    "aliados.cta.text": "Your support is the engine that drives UAM engineering to the next level. To learn about our collaboration models and their <strong>benefits</strong>, get in touch and let's work <strong>together</strong>."
 }
