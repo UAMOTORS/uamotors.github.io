@@ -194,8 +194,8 @@ const t = useTranslations(lang);
       class="flex flex-col gap-1 items-center justify-center text-balance opacity-80 text-center"
     >
       <span
-        >&copy; {currentYear}
-        {siteConfig.title}. {t("footer.rights")}</span
+        >&copy; {`${currentYear} ${siteConfig.title}`}.
+        {t("footer.rights")}</span
       >
       <span class="text-xs opacity-75 mt-1">
         {t("footer.developedBy")}
