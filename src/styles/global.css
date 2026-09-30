@@ -8,7 +8,7 @@
   --space-sand: #e2d1c3;
   --space-stone: #434343;
 
-  --glass-bg: rgb(255, 255, 255, 0.15);
+  --glass-bg: rgba(255, 255, 255, 0.15);
   --glass-blur: blur(40px);
   --glass-border: 0px solid rgba(255, 255, 255, 0.04);
   --glass-shadow:

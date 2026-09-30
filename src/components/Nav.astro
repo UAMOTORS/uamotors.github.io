@@ -160,8 +160,13 @@ const navLinks = isEnglish ? englishNavLinks : siteConfig.headerNavLinks;
     -webkit-backdrop-filter: var(--glass-blur) !important;
     border: var(--glass-border) !important;
     box-shadow: var(--glass-shadow) !important;
-    transform: translate3d(0, 0, 0) !important;
-    backface-visibility: hidden !important;
+  }
+
+  @supports (-webkit-backdrop-filter: blur(1px)) and (not (backdrop-filter: blur(1px))) {
+    .nav-glass {
+      transform: translate3d(0, 0, 0) !important;
+      backface-visibility: hidden !important;
+    }
   }
 
   @media (orientation: portrait) {
