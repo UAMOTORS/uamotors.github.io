@@ -1,0 +1,24 @@
+{
+    "aliados.meta.title": "Nuestros Aliados",
+    "aliados.meta.desc": "Conoce a las empresas e instituciones que impulsan a UAMOTORS. Descubre los beneficios de patrocinar nuestro proyecto y acelerar el talento en ingeniería de la UAM.",
+    "aliados.main.title": "Nuestros Aliados",
+    "aliados.intro.text": "<strong>UAMOTORS</strong> es una iniciativa que busca demostrar el alto nivel de la <a href='https://www.uam.mx/' target='_blank'><strong>UAM</strong></a> en escenarios tecnológicos globales. Para materializar nuestra visión y llevar la ingeniería mexicana al límite, buscamos aliados estratégicos que nos brinden el <strong>respaldo técnico y financiero</strong> necesario para convertir este desarrollo en una realidad competitiva.",
+    
+    "aliados.card1.title": "Alianza Estratégica",
+    "aliados.card1.text": "No buscamos solo un patrocinador, sino un aliado estratégico que impulse el crecimiento del talento estudiantil y fortalezca el desarrollo tecnológico de México.",
+    "aliados.card2.title": "Vínculo Academia-Industria",
+    "aliados.card2.text": "El proyecto posiciona a las empresas como impulsoras del talento joven, brindando una plataforma de vinculación directa con la comunidad universitaria de la <a href='https://www.uam.mx/' target='_blank'><strong>UAM</strong></a>.",
+
+    "aliados.beneficios.title": "Beneficios Clave",
+    "aliados.beneficio1.title": "Visibilidad de Marca:",
+    "aliados.beneficio1.text": "Presencia de logotipos en nuestro monoplaza <a href='/proyecto'><strong>\"OP\"</strong></a>, uniformes y material promocional.",
+    "aliados.beneficio2.title": "Impacto Digital:",
+    "aliados.beneficio2.text": "Difusión constante en <a href='/contacto/#canales-oficiales'><strong>plataformas sociales</strong></a> con un alcance dinámico en continuo crecimiento.",
+    "aliados.beneficio3.title": "Beneficio Fiscal:",
+    "aliados.beneficio3.text": "Entrega de comprobante fiscal deducible de impuestos con el respaldo de <a href='https://www.fundacionuam.org/' target='_blank'><strong>Fundación UAM</strong></a>.",
+    "aliados.beneficio4.title": "Presencia en Eventos:",
+    "aliados.beneficio4.text": "Exposición de la marca en actividades con la comunidad universitaria y exposiciones del equipo.",
+
+    "aliados.cta.title": "¡Acelera nuestra meta!",
+    "aliados.cta.text": "Tu respaldo es el motor que nos permite llevar la ingeniería de la <a href='https://www.uam.mx/'><strong>UAM</strong></a> al siguiente nivel. Para conocer nuestros esquemas de colaboración y sus <strong>beneficios</strong>, contáctanos y trabajemos <strong>juntos</strong>."
+}

@@ -13,22 +13,26 @@ import Gift from "../../icons/general/Gift.astro";
 import Rocket from "../../icons/general/Rocket.astro";
 import LocationPin from "../../icons/general/LocationPin.astro";
 import Building from "../../icons/general/Building.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <MainLayout
   activePage="contacto"
-  pageTitle={siteConfig.title + " | Contact"}
-  description="Want to collaborate, sponsor, or join the UAMOTORS racing team? Get in touch with us through our official channels and representatives."
+  pageTitle={siteConfig.title + " | " + t("contacto.meta.title")}
+  description={t("contacto.meta.desc")}
 >
   <div class="page-content max-w-4xl mx-auto">
-    <h1 class="sigmar-ff text-balance mb-8">Contact</h1>
+    <h1 class="sigmar-ff text-balance mb-8">{t("contacto.main.title")}</h1>
 
     <section class="text-left space-y-16">
       <div>
         <h2
           class="sigmar-ff text-3xl mb-6 text-space-red dark:text-space-yellow"
         >
-          Why Contact Us?
+          {t("contacto.why.title")}
         </h2>
         <ul class="space-y-6 kanit-light text-lg sm:text-xl">
           <li class="flex items-start gap-4">
@@ -36,9 +40,9 @@ import Building from "../../icons/general/Building.astro";
             <div>
               <strong
                 class="kanit-regular text-space-red dark:text-space-yellow"
-                >Sponsorships:</strong
+                >{t("contacto.why.item1.title")}</strong
               ><br />
-              To establish <strong>strategic partnerships</strong> and foster industry-academy links.
+              <span set:html={t("contacto.why.item1.text")} />
             </div>
           </li>
           <li class="flex items-start gap-4">
@@ -46,9 +50,9 @@ import Building from "../../icons/general/Building.astro";
             <div>
               <strong
                 class="kanit-regular text-space-red dark:text-space-yellow"
-                >Donations:</strong
+                >{t("contacto.why.item2.title")}</strong
               ><br />
-              Support through financial contributions, in-kind donations, or parts for our race car <a href="/en/proyecto"><strong>"OP"</strong></a>.
+              <span set:html={t("contacto.why.item2.text")} />
             </div>
           </li>
           <li class="flex items-start gap-4">
@@ -56,9 +60,9 @@ import Building from "../../icons/general/Building.astro";
             <div>
               <strong
                 class="kanit-regular text-space-red dark:text-space-yellow"
-                >Recruitment:</strong
+                >{t("contacto.why.item3.title")}</strong
               ><br />
-              Information on how to join the <strong>UAMOTORS</strong> family.
+              <span set:html={t("contacto.why.item3.text")} />
             </div>
           </li>
         </ul>
@@ -68,11 +72,11 @@ import Building from "../../icons/general/Building.astro";
         <h2
           class="sigmar-ff text-3xl mb-6 text-space-red dark:text-space-yellow"
         >
-          Official Channels
+          {t("contacto.channels.title")}
         </h2>
         <div class="flex flex-col gap-4 kanit-light text-lg sm:text-xl">
           <a
-            href="mailto:uamotors.fsae@azc.uam.mx?subject=Interest%20in%20Sponsorship%20Proposal"
+            href="mailto:uamotors.fsae@azc.uam.mx?subject=Interés%20en%20Propuesta%20de%20Patrocinio"
             class="flex items-center gap-4 hover:text-space-red dark:hover:text-space-yellow transition-colors group w-fit"
           >
             <div
@@ -150,14 +154,14 @@ import Building from "../../icons/general/Building.astro";
           <h3
             class="sigmar-ff text-2xl mb-2 text-center text-space-red dark:text-space-yellow"
           >
-            Official Representatives
+            {t("contacto.reps.title")}
           </h3>
         </div>
         <div
           class="bg-white dark:bg-black/20 p-6 rounded-2xl border border-black/5 dark:border-white/5 shadow-sm h-full flex flex-col justify-start gap-2"
         >
           <div>
-            <h4 class="sigmar-ff text-xl mb-1">Team Captain</h4>
+            <h4 class="sigmar-ff text-xl mb-1">{t("contacto.reps.capitan")}</h4>
             <p class="kanit-light text-lg leading-relaxed mb-0">
               <strong class="kanit-regular"
                 >Jehoshua Alberto<br />Soto Benavides</strong
@@ -185,7 +189,7 @@ import Building from "../../icons/general/Building.astro";
                 target="_blank"
                 class="hover:underline text-sm md:text-base"
               >
-                View profile
+                {t("contacto.reps.ver_perfil")}
               </a>
             </li>
           </ul>
@@ -220,7 +224,7 @@ import Building from "../../icons/general/Building.astro";
                 target="_blank"
                 class="hover:underline text-sm md:text-base"
               >
-                View profile
+                {t("contacto.reps.ver_perfil")}
               </a>
             </li>
           </ul>
@@ -233,7 +237,7 @@ import Building from "../../icons/general/Building.astro";
         <h2
           class="sigmar-ff text-3xl mb-6 text-space-red dark:text-space-yellow"
         >
-          Physical Location
+          {t("contacto.location.title")}
         </h2>
         <div class="flex flex-col gap-6 kanit-light text-lg">
           <div
@@ -241,7 +245,9 @@ import Building from "../../icons/general/Building.astro";
           >
             <LocationPin class="w-8 h-8 shrink-0 mt-1" />
             <div>
-              <strong class="kanit-regular">Address (Azcapotzalco Campus):</strong><br />
+              <strong class="kanit-regular"
+                >{t("contacto.location.address.title")}</strong
+              ><br />
               <a
                 href="https://maps.app.goo.gl/EyxHEjW32biqcbMV6"
                 target="_blank"
@@ -255,7 +261,7 @@ import Building from "../../icons/general/Building.astro";
           >
             <Building class="w-8 h-8 shrink-0 mt-1" />
             <div>
-              <strong class="kanit-regular">Institution:</strong><br />
+              <strong class="kanit-regular">{t("contacto.location.inst.title")}</strong><br />
               <a href="https://www.uam.mx/" target="_blank"
                 >Universidad Autónoma Metropolitana</a
               >.

@@ -9,31 +9,44 @@ import { withBase } from "../utils/helpers";
 
 const { activePage } = Astro.props;
 const currentPath = Astro.url.pathname;
-const isEnglish = currentPath.startsWith("/en") || currentPath.startsWith("/en/");
-let targetUrl = "/";
-if (isEnglish) {
-  targetUrl = currentPath.replace(/^\/en(\/|$)/, "/");
-} else {
-  targetUrl = "/en" + (currentPath === "/" ? "" : currentPath);
-}
+const isEnglish =
+  currentPath.startsWith("/en") || currentPath.startsWith("/en/");
+const routeMap = {
+  "/": "/en",
+  "/en": "/",
+  "/nosotros": "/en/about-us",
+  "/en/about-us": "/nosotros",
+  "/proyecto": "/en/project",
+  "/en/project": "/proyecto",
+  "/nuestros-aliados": "/en/our-partners",
+  "/en/our-partners": "/nuestros-aliados",
+  "/contacto": "/en/contact",
+  "/en/contact": "/contacto",
+};
+
+let targetUrl =
+  routeMap[currentPath] ||
+  (isEnglish
+    ? currentPath.replace(/^\/en(\/|$)/, "/")
+    : "/en" + (currentPath === "/" ? "" : currentPath));
 
 const englishNavLinks = [
   {
     text: "About Us",
-    href: withBase("/en/nosotros")
+    href: withBase("/en/about-us"),
   },
   {
     text: "Project",
-    href: withBase("/en/proyecto")
+    href: withBase("/en/project"),
   },
   {
     text: "Our Partners",
-    href: withBase("/en/nuestros-aliados")
+    href: withBase("/en/our-partners"),
   },
   {
     text: "Contact",
-    href: withBase("/en/contacto")
-  }
+    href: withBase("/en/contact"),
+  },
 ];
 
 const navLinks = isEnglish ? englishNavLinks : siteConfig.headerNavLinks;
@@ -43,7 +56,9 @@ const navLinks = isEnglish ? englishNavLinks : siteConfig.headerNavLinks;
   <nav
     class="nav-glass font-light w-full flex flex-row items-center justify-between gap-2 rounded-4xl px-5 py-2 text-xs sm:gap-8 sm:py-3 sm:text-base"
   >
-    <a id="nav-logo-link" href={withBase(isEnglish ? "/en" : "/")}><SiteIdentity /></a>
+    <a id="nav-logo-link" href={withBase(isEnglish ? "/en" : "/")}
+      ><SiteIdentity /></a
+    >
     <div class="hidden md:flex md:gap-8">
       {(<NavLinks activePage={activePage} links={navLinks} />)}
     </div>
@@ -63,19 +78,17 @@ const navLinks = isEnglish ? englishNavLinks : siteConfig.headerNavLinks;
     id="mobile-links"
     class="font-light animated h-0 m-0 opacity-0 top-0 w-full pointer-events-none overflow-hidden flex flex-col"
   >
-    <span class="close-menu cursor-pointer hover:text-space-red dark:hover:text-space-yellow transition-colors mb-4"><CloseIcon class="w-6 h-6" /></span>
-    <NavLinks
-      activePage={activePage}
-      links={navLinks}
-      isMobileLink={true}
-    />
-
+    <span
+      class="close-menu cursor-pointer hover:text-space-red dark:hover:text-space-yellow transition-colors mb-4"
+      ><CloseIcon class="w-6 h-6" /></span
+    >
+    <NavLinks activePage={activePage} links={navLinks} isMobileLink={true} />
   </div>
 </header>
 <script>
-  import { navigate } from 'astro:transitions/client';
+  import { navigate } from "astro:transitions/client";
 
-  document.addEventListener('astro:page-load', () => {
+  document.addEventListener("astro:page-load", () => {
     const hamburger = document.querySelector("#hamburger-menu");
     const mobileLinks = document.querySelector("#mobile-links");
 
@@ -93,7 +106,7 @@ const navLinks = isEnglish ? englishNavLinks : siteConfig.headerNavLinks;
 
     const closeMenus = document.querySelectorAll(".close-menu");
     if (closeMenus.length > 0 && mobileLinks) {
-      closeMenus.forEach(closeMenu => {
+      closeMenus.forEach((closeMenu) => {
         if (!closeMenu.dataset.listenerAttached) {
           closeMenu.addEventListener("click", () => {
             mobileLinks.classList.add("slideOutUp");
@@ -107,16 +120,16 @@ const navLinks = isEnglish ? englishNavLinks : siteConfig.headerNavLinks;
 
     const mobileNavLinks = document.querySelectorAll(".mobile-nav-link");
     if (mobileNavLinks.length > 0 && mobileLinks) {
-      mobileNavLinks.forEach(link => {
+      mobileNavLinks.forEach((link) => {
         if (!link.dataset.listenerAttached) {
           link.addEventListener("click", (e) => {
             e.preventDefault();
-            const targetHref = link.getAttribute('href');
-            
+            const targetHref = link.getAttribute("href");
+
             // Remove blur effect instantly to prevent GPU lag, but animate out slowly
             mobileLinks.classList.add("no-glass", "slideOutUp");
             mobileLinks.classList.remove("slideInDown");
-            
+
             // Wait for elegant animation before navigating
             setTimeout(() => {
               if (targetHref) {

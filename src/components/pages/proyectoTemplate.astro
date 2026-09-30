@@ -1,0 +1,340 @@
+---
+import { Image } from "astro:assets";
+import MainLayout from "../../layouts/MainLayout.astro";
+import siteConfig from "../../site.config";
+import Shield from "../../icons/general/Shield.astro";
+import Gear from "../../icons/general/Gear.astro";
+import Chart from "../../icons/general/Chart.astro";
+import Electronics from "../../icons/general/Electronics.astro";
+import Wind from "../../icons/general/Wind.astro";
+import PowerTrain from "../../icons/general/PowertrainIcon.astro";
+import RacingCar from "../../icons/general/RacingCar.astro";
+import Chart2 from "../../icons/general/Chart2.astro";
+import RaceFlag from "../../icons/general/RaceFlag.astro";
+import OpImageBlack from "../../assets/images/OP01-2_black.webp";
+import OpImageWhite from "../../assets/images/OP01-2_white.webp";
+import Dynamics from "../../icons/general/DynamicsIcon.astro";
+
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<MainLayout
+  activePage="proyecto"
+  pageTitle={siteConfig.title + " | " + t("proyecto.meta.title")}
+  description={t("proyecto.meta.desc")}
+>
+  <div class="page-content max-w-4xl mx-auto">
+    <h1 class="sigmar-ff text-balance mb-8">{t("proyecto.main.title")}</h1>
+
+    <div class="relative w-full flex justify-center items-center mb-6">
+      <!-- <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 sm:w-96 sm:h-96 bg-space-red/30 dark:bg-space-red/40 rounded-full blur-[60px] sm:blur-[100px] -z-10 pointer-events-none"
+      >
+      </div> -->
+
+      <div
+        class="w-full drop-shadow-[0_10px_25px_rgba(0,0,0,0.8)] dark:drop-shadow-[0_15px_30px_rgba(0,0,0,0.8)] z-10"
+      >
+        <Image
+          width={1024}
+          loading="eager"
+          src={OpImageWhite}
+          class="mx-auto block w-full h-auto max-h-[380px] object-contain pb-8 dark:hidden"
+          alt="OP01 CAD"
+          transition:name="hero-image"
+        />
+
+        <Image
+          width={1024}
+          loading="eager"
+          src={OpImageBlack}
+          class="mx-auto hidden w-full h-auto max-h-[380px] object-contain pb-8 dark:block"
+          alt="OP01 CAD"
+          transition:name="hero-image"
+        />
+      </div>
+    </div>
+
+    <!-- visión técnica -->
+    <section class="text-left space-y-16">
+      <div>
+        <h2
+          class="sigmar-ff text-3xl mb-4 text-space-red dark:text-space-yellow"
+        >
+          {t("proyecto.vision.title")}
+        </h2>
+        <p
+          class="kanit-light text-lg sm:text-xl leading-relaxed"
+          set:html={t("proyecto.vision.text")}
+        />
+      </div>
+
+      <!-- Objetivos -->
+      <div>
+        <h3 class="sigmar-ff text-2xl mb-6">
+          {t("proyecto.objetivos.sub")}
+        </h3>
+        <ul class="space-y-6 kanit-light text-lg sm:text-xl">
+          <li class="flex items-start gap-4">
+            <Shield class="w-8 h-8 shrink-0 mt-1" />
+            <div>
+              <strong
+                class="kanit-regular text-space-red dark:text-space-yellow"
+                >{t("proyecto.objetivo.t1")}</strong
+              ><br />
+              {t("proyecto.objetivo.d1")}
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <Gear class="w-8 h-8 shrink-0 mt-1" />
+            <div>
+              <strong
+                class="kanit-regular text-space-red dark:text-space-yellow"
+                >{t("proyecto.objetivo.t2")}</strong
+              ><br />
+              {t("proyecto.objetivo.d1")}
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <Chart class="w-8 h-8 shrink-0 mt-1" />
+            <div>
+              <strong
+                class="kanit-regular text-space-red dark:text-space-yellow"
+                >{t("proyecto.objetivo.t3")}
+              </strong>
+              <br />{t("proyecto.objetivo.d1")}
+            </div>
+          </li>
+        </ul>
+
+        <div>
+          <h2
+            class="sigmar-ff text-3xl mb-4 text-space-red dark:text-space-yellow"
+          >
+            <br />{t("proyecto.sistemas.title")}
+          </h2>
+          <p
+            class="kanit-light text-lg sm:text-xl leading-relaxed mb-6"
+            set:html={t("proyecto.sistemas.text")}
+          />
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
+            <div
+              class="md:col-span-1 lg:col-span-3 bg-black/5 dark:bg-white/5 p-6 rounded-3xl border border-black/10 dark:border-white/10 hover:-translate-y-2 hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300"
+            >
+              <h4 class="sigmar-ff text-xl mb-2 flex items-center gap-2">
+                <RacingCar class="w-6 h-6 shrink-0" />
+                {t("proyecto.sistema.cha")}
+              </h4>
+              <p class="kanit-light text-base sm:text-lg">
+                {t("proyecto.sistema.text.cha")}
+              </p>
+            </div>
+            <div
+              class="md:col-span-1 lg:col-span-3 bg-black/5 dark:bg-white/5 p-6 rounded-3xl border border-black/10 dark:border-white/10 hover:-translate-y-2 hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300"
+            >
+              <h4 class="sigmar-ff text-xl mb-2 flex items-center gap-2">
+                <Dynamics class="w-6 h-6 shrink-0" />
+                {t("proyecto.sistema.dyn")}
+              </h4>
+              <p class="kanit-light text-base sm:text-lg">
+                {t("proyecto.sistema.text.dyn")}
+              </p>
+            </div>
+            <div
+              class="md:col-span-1 lg:col-span-2 bg-black/5 dark:bg-white/5 p-6 rounded-3xl border border-black/10 dark:border-white/10 hover:-translate-y-2 hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300"
+            >
+              <h4 class="sigmar-ff text-xl mb-2 flex items-center gap-2">
+                <PowerTrain class="w-6 h-6 shrink-0" />
+                {t("proyecto.sistema.pwr")}
+              </h4>
+              <p class="kanit-light text-base sm:text-lg">
+                {t("proyecto.sistema.text.pwr")}
+              </p>
+            </div>
+            <div
+              class="md:col-span-1 lg:col-span-2 bg-black/5 dark:bg-white/5 p-6 rounded-3xl border border-black/10 dark:border-white/10 hover:-translate-y-2 hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300"
+            >
+              <h4 class="sigmar-ff text-xl mb-2 flex items-center gap-2">
+                <Electronics class="w-6 h-6 shrink-0" />
+                {t("proyecto.sistema.ele")}
+              </h4>
+              <p
+                class="kanit-light text-base sm:text-lg"
+                set:html={t("proyecto.sistema.text.ele")}
+              />
+            </div>
+            <div
+              class="md:col-span-2 lg:col-span-2 bg-black/5 dark:bg-white/5 p-6 rounded-3xl border border-black/10 dark:border-white/10 hover:-translate-y-2 hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-300"
+            >
+              <h4 class="sigmar-ff text-xl mb-2 flex items-center gap-2">
+                <Wind class="w-6 h-6 shrink-0" />
+                {t("proyecto.sistema.aer")}
+              </h4>
+              <p
+                class="kanit-light text-base sm:text-lg"
+                set:html={t("proyecto.sistema.text.aer")}
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-8 md:pt-12">
+          <h3 class="sigmar-ff text-2xl mb-6">
+            {t("proyecto.herramientas.sub")}
+          </h3>
+          <p class="kanit-light text-lg sm:text-xl leading-relaxed mb-6"></p>
+          <ul class="space-y-4 kanit-light text-lg sm:text-xl">
+            <li>
+              <strong
+                class="kanit-regular text-space-red dark:text-space-yellow"
+                >{t("proyecto.heramienta1")}
+              </strong>
+              <span set:html={t("proyecto.herramienta.des1")} />
+            </li>
+            <li>
+              <strong
+                class="kanit-regular text-space-red dark:text-space-yellow"
+                >{t("proyecto.heramienta2")}</strong
+              >
+              <span set:html={t("proyecto.herramienta.des2")} />.
+            </li>
+            <li>
+              <strong
+                class="kanit-regular text-space-red dark:text-space-yellow"
+                >{t("proyecto.heramienta3")}</strong
+              ><span set:html={t("proyecto.herramienta.des3")} />
+            </li>
+          </ul>
+        </div>
+
+        <div id="formula-sae">
+          <br />
+          <h2
+            class="sigmar-ff text-3xl mb-4 text-space-red dark:text-space-yellow"
+          >
+            {t("proyecto.fsae.title")}
+          </h2>
+          <p
+            class="kanit-light text-lg sm:text-xl leading-relaxed mb-8"
+            set:html={t("proyecto.fsae.text")}
+          />
+          <div>
+            <h3 class="sigmar-ff text-2xl mb-6">
+              {t("proyecto.criterios.sub")}
+            </h3>
+            <ul
+              class="grid grid-cols-1 md:grid-cols-2 gap-8 gap-y-12 kanit-light text-lg sm:text-xl"
+            >
+              <li class="flex items-start gap-4">
+                <Chart2 class="w-8 h-8 shrink-0 mt-1" />
+                <div>
+                  <strong
+                    class="kanit-regular text-space-red dark:text-space-yellow"
+                    >{t("proyecto.criterios.estaticas")}</strong
+                  >
+                  <ul class="mt-3 space-y-3 text-base sm:text-lg">
+                    <span set:html={t("proyecto.criterios.estaticas.lista")} />
+                  </ul>
+                </div>
+              </li>
+              <li class="flex items-start gap-4">
+                <RaceFlag class="w-8 h-8 shrink-0 mt-1" />
+                <div>
+                  <strong
+                    class="kanit-regular text-space-red dark:text-space-yellow"
+                    >{t("proyecto.criterios.dinamicas")}</strong
+                  >
+                  <ul class="mt-3 space-y-3 text-base sm:text-lg">
+                    <span set:html={t("proyecto.criterios.dinamicas.lista")} />
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-gray-100 dark:bg-gray-800 p-8 rounded-3xl">
+          <h2
+            class="sigmar-ff text-3xl mb-4 text-space-red dark:text-space-yellow"
+          >
+            {t("proyecto.trayectoria.title")}
+          </h2>
+          <p class="kanit-light text-lg sm:text-xl leading-relaxed mb-8">
+            {t("proyecto.timeline.desc")}
+          </p>
+          <div class="pl-8 space-y-0 relative">
+            <div class="relative pb-8 timeline-item" data-date="2025-03">
+              <div
+                class="absolute left-[-26px] top-1.5 bottom-0 w-1 bg-gray-300 dark:bg-gray-600 timeline-line"
+              >
+              </div>
+              <div
+                class="absolute -left-[32px] top-1.5 h-4 w-4 rounded-full border-2 border-gray-300 bg-white dark:border-gray-600 dark:bg-gray-800 timeline-dot transition-all duration-300"
+              >
+              </div>
+              <h4 class="sigmar-ff text-xl timeline-title">
+                {t("proyecto.timeline.item1.title")}
+              </h4>
+              <p class="kanit-light text-lg timeline-desc">
+                {t("proyecto.timeline.item1.desc")}
+              </p>
+            </div>
+
+            <div class="relative pb-8 timeline-item" data-date="2026-09">
+              <div
+                class="absolute left-[-26px] top-1.5 bottom-0 w-1 bg-gray-300 dark:bg-gray-600 timeline-line"
+              >
+              </div>
+              <div
+                class="absolute -left-[32px] top-1.5 h-4 w-4 rounded-full border-2 border-gray-300 bg-white dark:border-gray-600 dark:bg-gray-800 timeline-dot transition-all duration-300"
+              >
+              </div>
+              <h4 class="sigmar-ff text-xl timeline-title">
+                {t("proyecto.timeline.item2.title")}
+              </h4>
+              <p class="kanit-light text-lg timeline-desc">
+                {t("proyecto.timeline.item2.desc")}
+              </p>
+            </div>
+
+            <div class="relative pb-8 timeline-item" data-date="2027-02">
+              <div
+                class="absolute left-[-26px] top-1.5 bottom-0 w-1 bg-gray-300 dark:bg-gray-600 timeline-line"
+              >
+              </div>
+              <div
+                class="absolute -left-[32px] top-1.5 h-4 w-4 rounded-full border-2 border-gray-300 bg-white dark:border-gray-600 dark:bg-gray-800 timeline-dot transition-all duration-300"
+              >
+              </div>
+              <h4 class="sigmar-ff text-xl timeline-title">
+                {t("proyecto.timeline.item3.title")}
+              </h4>
+              <p class="kanit-light text-lg timeline-desc">
+                {t("proyecto.timeline.item3.desc")}
+              </p>
+            </div>
+
+            <div class="relative timeline-item" data-date="2027-05">
+              <div
+                class="absolute -left-[32px] top-1.5 h-4 w-4 rounded-full border-2 border-gray-300 bg-white dark:border-gray-600 dark:bg-gray-800 timeline-dot transition-all duration-300"
+              >
+              </div>
+              <h4 class="sigmar-ff text-xl timeline-title">
+                {t("proyecto.timeline.item4.title")}
+              </h4>
+              <p class="kanit-light text-lg timeline-desc">
+                {t("proyecto.timeline.item4.desc")}
+              </p>
+            </div>
+          </div>
+
+          <script src="../../scripts/timeline.js"></script>
+        </div>
+      </div>
+    </section>
+  </div>
+</MainLayout>

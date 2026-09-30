@@ -1,0 +1,60 @@
+{
+    "proyecto.meta.title": "Project",
+    "proyecto.meta.desc": "Explore the technical details of the OP01, UAMOTORS' single-seater designed under Formula SAE rules. Learn about the chassis, suspension, aerodynamics, and powertrain.",
+    "proyecto.main.title": "The \"OP\" Project",
+    "proyecto.vision.title": "Technical Vision",
+    "proyecto.sistemas.title": "Vehicle Systems",
+    "proyecto.fsae.title": "What is Formula SAE?",
+    "proyecto.trayectoria.title": "FSAE Michigan 2027 Roadmap",
+    
+    "proyecto.objetivos.sub": "Design Objectives",
+    "proyecto.herramientas.sub": "Tools & Validation",
+    "proyecto.criterios.sub": "Evaluation Criteria",
+
+    "proyecto.vision.text": "The <strong>UAMOTORS</strong> racing project takes shape in <strong>\"OP\"</strong>, our flagship single-seater. This vehicle is the result of an engineering cycle that spans <strong>conception</strong>, <strong>design</strong>, <strong>manufacturing</strong>, and <strong>testing</strong> under international standards. The goal behind <strong>\"OP\"</strong> is to build a reliable race car optimized for novice drivers, prioritizing low operating costs and highly manufacturable designs.",
+
+    "proyecto.objetivo.t1": "Safety:",
+    "proyecto.objetivo.t2": "Reliability:",
+    "proyecto.objetivo.t3": "Data-Driven Development:",
+    "proyecto.objetivo.d1": "Prioritize driver integrity and the vehicle's structural safety at all times.",
+    "proyecto.objetivo.d2": "Ensure the consistency of integrated systems to pass technical inspections.",
+    "proyecto.objetivo.d3": "Implement a robust data acquisition system (telemetry) to serve as a technical foundation for the team's future development.",
+
+    "proyecto.sistemas.text": "The development of the <strong>OP</strong> is divided into interconnected technical areas working together to maximize performance:",
+    "proyecto.sistema.cha": "Chassis",    
+    "proyecto.sistema.dyn": "Dynamics",
+    "proyecto.sistema.pwr": "Powertrain",
+    "proyecto.sistema.ele": "Electronics",
+    "proyecto.sistema.aer": "Aerodynamics",
+    "proyecto.sistema.text.cha": "Structural design and dynamic validation of the space frame chassis and bodywork. Its goal is to guarantee driver safety and vehicle integrity.",
+    "proyecto.sistema.text.dyn": "Responsible for on-track vehicle behavior through the precise tuning of the suspension and steering systems, ensuring agile, stable handling and mechanical grip.",
+    "proyecto.sistema.text.pwr": "Integration, thermal management, and calibration of the powertrain based on a high-performance motorcycle engine. Designing intake, exhaust, and drivetrain systems to optimize power delivery and on-track traction.",
+    "proyecto.sistema.text.ele": "Programming of the <span class='relative group cursor-help'><strong>ECU</strong><span class='pointer-events-none absolute bottom-full left-1/2 z-20 mb-2 w-44 -translate-x-1/2 rounded-xl border border-black/10 bg-neutral-900/95 p-2 text-center text-xs leading-normal text-white opacity-0 shadow-xl transition-opacity duration-200 group-hover:opacity-100 dark:border-white/10 dark:bg-neutral-950/95 kanit-regular'>Engine Control Unit</span></span>, integration of embedded systems and dynamic sensors. Responsible for vehicle electronics, power delivery, and data acquisition (DAQ) for technical feedback.",
+    "proyecto.sistema.text.aer": "Airflow optimization using <span class='relative group cursor-help'><strong>CFD</strong><span class='pointer-events-none absolute bottom-full left-1/2 z-20 mb-2 w-48 -translate-x-1/2 rounded-xl border border-black/10 bg-neutral-900/95 p-2 text-center text-xs leading-normal text-white opacity-0 shadow-xl transition-opacity duration-200 group-hover:opacity-100 dark:border-white/10 dark:bg-neutral-950/95 kanit-regular'>Computational Fluid Dynamics</span></span> to generate efficient downforce, enhancing race car stability without compromising performance through excessive drag.",
+
+    "proyecto.herramientas.text": "To guarantee the precision of every component, the team utilizes industry-standard tools for design and simulation:",
+    "proyecto.heramienta1": "CAD Design: ",
+    "proyecto.herramienta.des1": "Extensive use of <a href='https://www.solidworks.com/' target='_blank'><strong>Solidworks</strong></a> for mechanical modeling.",
+    "proyecto.heramienta2": "Simulation: ",
+    "proyecto.herramienta.des2": "Structural and fluid analysis using <a href='https://www.ansys.com/' target='_blank'><strong>Ansys</strong></a>.",
+    "proyecto.heramienta3": "Manufacturing: ",
+    "proyecto.herramienta.des3": "Process planning with <a href='/en/nuestros-aliados/#nuestros-aliados'><strong>strategic partners</strong></a> to ensure the technical viability of the components.",
+    
+    "proyecto.fsae.text": "<strong><a href='https://www.fsaeonline.com/' target='_blank' class=''>Formula SAE (FSAE)</a></strong> is the most globally recognized student engineering competition, governed by the technical standards of the <strong><a href='https://www.sae.org/' target='_blank' class=''>Society of Automotive Engineers (SAE)</a></strong>. It is not simply a speed competition, but a platform where over 100 universities validate the design, manufacturing, and financial management of a high-performance race car.",
+
+    "proyecto.criterios.estaticas": "Static Events",
+    "proyecto.criterios.estaticas.lista": "<li><strong>Engineering design:</strong> Technical defense of design decisions before industry expert judges.</li></br> <li><strong>Cost analysis:</strong> Evaluation of resource efficiency and manufacturing processes.</li></br> <li><strong>Business Presentation:</strong> Presenting a market strategy and business viability for serial production.</li></br>",
+
+    "proyecto.criterios.dinamicas": "Dynamic Events",
+    "proyecto.criterios.dinamicas.lista": "<li><strong>Acceleration:</strong> Evaluation of power and traction over a 75-meter straight.</li></br> <li><strong>Skidpad:</strong> Measuring cornering ability and lateral grip on a figure-eight track.</li></br> <li><strong>Autocross:</strong> Assessing handling and agility on a tight, winding circuit.</li></br> <li><strong>Endurance:</strong> A demanding 22 km race to test overall reliability and efficiency.</li></br>",
+
+    "proyecto.timeline.desc": "The project operates under a defined timeline focused on the team's continuous growth:",
+    "proyecto.timeline.item1.title": "Founding (March 2025)",
+    "proyecto.timeline.item1.desc": "Start of conceptual design and formation of the multidisciplinary team.",
+    "proyecto.timeline.item2.title": "FSAE México (September 2026)",
+    "proyecto.timeline.item2.desc": "Participation in design and simulation categories, without the physical prototype requirement.",
+    "proyecto.timeline.item3.title": "FSAE México (February 2027)",
+    "proyecto.timeline.item3.desc": "Participation in FSAE México with the physical prototype and dynamic tests.",
+    "proyecto.timeline.item4.title": "FSAE Michigan (May 2027)",
+    "proyecto.timeline.item4.desc": "Goal of qualifying and competing in the international event in the United States."
+}
