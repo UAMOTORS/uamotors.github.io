@@ -9,8 +9,16 @@ import { withBase } from "../utils/helpers";
 
 const { activePage } = Astro.props;
 const currentPath = Astro.url.pathname;
+
+// Remover la diagonal final (slash) si existe (excepto si es el home "/")
+// Esto soluciona la discrepancia entre el entorno local (sin slash) y producción en GitHub Pages (con slash)
+const normalizedPath = currentPath.endsWith("/") && currentPath.length > 1 
+  ? currentPath.slice(0, -1) 
+  : currentPath;
+
 const isEnglish =
-  currentPath.startsWith("/en") || currentPath.startsWith("/en/");
+  normalizedPath.startsWith("/en") || normalizedPath === "/en";
+
 const routeMap = {
   "/": "/en",
   "/en": "/",
@@ -25,10 +33,10 @@ const routeMap = {
 };
 
 let targetUrl =
-  routeMap[currentPath] ||
+  routeMap[normalizedPath] ||
   (isEnglish
-    ? currentPath.replace(/^\/en(\/|$)/, "/")
-    : "/en" + (currentPath === "/" ? "" : currentPath));
+    ? normalizedPath.replace(/^\/en(\/|$)/, "/")
+    : "/en" + (normalizedPath === "/" ? "" : normalizedPath));
 
 const englishNavLinks = [
   {
