@@ -9,6 +9,7 @@ import { Image } from "astro:assets";
 import heroImage from "../../assets/images/pixeltrue-space-discovery.svg";
 import ArrowRight from "../../icons/ArrowRight.astro";
 import OP_image_vertical from "../../assets/images/OP01_2-transparent.png";
+import OP_image_mobile from "../../assets/images/OP01_2-transparent-cut.png";
 
 // i18n
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
@@ -43,7 +44,7 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
   pageTitle={siteConfig.title + " | Escudería Formula SAE UAM"}
 >
   <div
-    class="jumbo-banner relative flex flex-col sm:flex-row sm:items-center sm:justify-between w-full px-4 my-12 gap-6"
+    class="jumbo-banner relative flex flex-row items-center justify-between w-full pl-4 pr-0 sm:px-4 my-8 sm:my-12 gap-2 sm:gap-6 overflow-hidden"
   >
     <!-- <svg 
       class="absolute -top-24 -left-24 sm:-top-36 sm:-left-4 w-[450px] h-[450px] sm:w-[600px] sm:h-[600px] -z-10 pointer-events-none"
@@ -64,7 +65,7 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
       <circle cx="50" cy="50" r="50" class="fill-[url(#glow-text-light)] dark:fill-[url(#glow-text-dark)]" />
     </svg> -->
 
-    <div class="w-full sm:flex-1 min-w-0 relative z-30">
+    <div class="w-[60%] sm:flex-1 min-w-0 relative z-30 pr-2 sm:pr-0">
       {
         siteConfig.hero?.eyebrowText && (
           <span
@@ -119,7 +120,7 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
       </div>
     </div>
     <div
-      class="w-full sm:flex-1 min-w-0 flex justify-center items-center mt-4 sm:mt-0 relative group"
+      class="w-[40%] sm:flex-1 min-w-0 flex justify-end items-center relative group"
     >
       <div
         class="absolute inset-0 bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:40px_40px] opacity-15 dark:opacity-25 pointer-events-none rounded-2xl [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_70%)]"
@@ -127,7 +128,7 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
       </div>
 
       <div
-        class="relative w-full h-[150px] sm:h-auto flex justify-center items-center transition-transform duration-700"
+        class="relative h-auto sm:w-full flex justify-end sm:justify-center items-center transition-transform duration-700"
       >
         <div class="absolute inset-0 pointer-events-none overflow-hidden z-0">
           <div
@@ -137,13 +138,21 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
         </div>
 
         <div
-          class="absolute sm:relative z-10 animate-car-levitate flex justify-center items-center"
+          class="relative z-10 animate-car-levitate flex justify-end sm:justify-center items-center"
         >
+          <!-- Carro Desktop -->
           <Image
-            class="w-auto h-auto max-h-[300px] sm:max-h-[650px] object-contain drop-shadow-[0_15px_25px_rgba(0,0,0,0.6)] dark:drop-shadow-[0_15px_25px_rgba(0,0,0,0.8)] rotate-90 sm:rotate-0"
+            class="hidden sm:block w-auto h-auto max-h-[650px] object-contain drop-shadow-[0_15px_25px_rgba(0,0,0,0.6)] dark:drop-shadow-[0_15px_25px_rgba(0,0,0,0.8)]"
             src={OP_image_vertical}
-            alt={"UAMOTORS Vehicle"}
+            alt="UAMOTORS Vehicle"
             transition:name="hero-image"
+          />
+          <!-- Coche Recortado -->
+          <Image
+            class="block sm:hidden w-auto h-[350px] max-w-none drop-shadow-[0_10px_20px_rgba(0,0,0,0.6)] dark:drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)]"
+            src={OP_image_mobile}
+            alt="UAMOTORS Vehicle Mobile"
+            transition:name="hero-image-mobile"
           />
         </div>
 
@@ -524,7 +533,7 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
     will-change: bottom, opacity, transform;
   }
 
-  @media (max-width: 639px) {
+  /*   @media (max-width: 639px) {
     @keyframes laser-scan-mobile-v3 {
       0% {
         left: 0%;
@@ -616,7 +625,7 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
       animation: laser-scan-reverse-mobile-v3 12s ease-in-out infinite !important;
       will-change: left, opacity, transform !important;
     }
-  }
+  } */
 
   body {
     overflow-x: clip;
