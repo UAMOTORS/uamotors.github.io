@@ -1,0 +1,38 @@
+{
+  "privacy": {
+    "title": "Privacy Notice",
+    "lastUpdated": "<strong>Last updated:</strong> October 8, 2026",
+    "intro1": "The student team <strong>UAMOTORS</strong>, belonging to the <a href='https://www.uam.mx/' target='_blank' rel='noopener noreferrer'>Universidad Autónoma Metropolitana</a>, with its operational headquarters at the <a href='https://www.azc.uam.mx/' target='_blank' rel='noopener noreferrer'>Azcapotzalco campus</a> (hereinafter \"the Team\"), operates the website hosted at uamotors.github.io (hereinafter \"the Site\").",
+    "intro2": "This Privacy Notice aims to inform you about the Site's practices regarding your information and how we interact with your browser.",
+    "sections": {
+      "s1": {
+        "title": "1. Personal Data and Forms",
+        "content": "Currently, <strong>this Site does not directly collect, store, or process Personally Identifiable Information (PII)</strong>. We do not have registration forms, nor do we request emails, names, or student ID numbers for standard browsing."
+      },
+      "s2": {
+        "title": "2. Web Analytics and Site Statistics",
+        "p1": "To understand how visitors interact with our content and improve the user experience, we use <strong><a href='https://www.goatcounter.com/' target='_blank' rel='noopener noreferrer'>GoatCounter</a></strong>, an open-source, privacy-focused web analytics platform.",
+        "p2": "GoatCounter is designed to work <strong>without using cookies</strong> and does not track your behavior across other websites. The information it collects is technical in nature (such as browser type, operating system, screen resolution, and pages visited, among other technical data) and is anonymized at the time of collection. It is not possible to identify any individual user from this data."
+      },
+      "s3": {
+        "title": "3. Use of Local Storage",
+        "p1": "This Site strictly uses your browser's <strong>Local Storage</strong> for technical and user interface purposes only. We store two variables on your device:",
+        "li1": "<strong>Language Preference:</strong> To remember if you prefer to browse the site in Spanish or English.",
+        "li2": "<strong>Theme Preference:</strong> To remember if you have manually selected light or dark mode, stopping the automatic sync with your operating system's theme.",
+        "p2": "This interface information does not travel to our servers or GoatCounter, is inaccessible to the Team, and remains exclusively on your device. You can delete this data at any time by clearing your browser's history or cache."
+      },
+      "s4": {
+        "title": "4. Third-Party Links",
+        "content": "The Site may contain links to our social networks or other websites of interest (such as sponsors or official university pages, among others). Once you use these links to leave our site, we no longer have control over the website you are redirected to, and we are not responsible for the privacy practices of those external sites."
+      },
+      "s5": {
+        "title": "5. Changes to this Privacy Notice",
+        "content": "The Team reserves the right to make modifications or updates to this Privacy Notice at any time without prior notice. Any updates will be posted on this page, with the date of the last update indicated at the top."
+      },
+      "s6": {
+        "title": "6. Contact",
+        "content": "If you have any questions about this Privacy Notice or the technical operation of the Site, you can contact us at:<br><strong>Email:</strong> <a href='mailto:uamotors.fsae@azc.uam.mx'>uamotors.fsae@azc.uam.mx</a>"
+      }
+    }
+  }
+}
