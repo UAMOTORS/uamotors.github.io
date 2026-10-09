@@ -227,7 +227,10 @@ const t = useTranslations(lang);
             >
               {t("aliados.card2.title")}
             </h4>
-            <p class="kanit-light text-base sm:text-lg leading-relaxed" set:html={t("aliados.card2.text")}></p>
+            <p
+              class="kanit-light text-base sm:text-lg leading-relaxed"
+              set:html={t("aliados.card2.text")}
+            />
           </div>
         </div>
       </div>
@@ -249,6 +252,7 @@ const t = useTranslations(lang);
                 >{t("aliados.beneficio1.title")}</strong
               ><br />
               <span set:html={t("aliados.beneficio1.text")} />
+              <sup> **</sup>
             </div>
           </li>
           <li class="flex items-start gap-4">
@@ -259,6 +263,7 @@ const t = useTranslations(lang);
                 >{t("aliados.beneficio2.title")}</strong
               ><br />
               <span set:html={t("aliados.beneficio2.text")} />
+              <sup> **</sup>
             </div>
           </li>
           <li class="flex items-start gap-4">
@@ -269,6 +274,7 @@ const t = useTranslations(lang);
                 >{t("aliados.beneficio3.title")}</strong
               ><br />
               <span set:html={t("aliados.beneficio3.text")} />
+              <sup> *</sup>
             </div>
           </li>
           <li class="flex items-start gap-4">
@@ -279,6 +285,7 @@ const t = useTranslations(lang);
                 >{t("aliados.beneficio4.title")}</strong
               ><br />
               <span set:html={t("aliados.beneficio4.text")} />
+              <sup> **</sup>
             </div>
           </li>
         </ul>
@@ -308,84 +315,99 @@ const t = useTranslations(lang);
           </a>
         </div>
       </div>
+
+      <ul class="flex flex-col gap-1 text-base text-left list-none m-0 p-0">
+        <li class="flex items-start gap-2 !m-0 !p-0 leading-tight">
+          <div class="w-4 shrink-0 text-right">
+            <sup class="leading-none">*</sup>
+          </div>
+          <div>{t("aliados.notice1")}</div>
+        </li>
+        <li class="flex items-start gap-2 !m-0 !p-0 leading-tight">
+          <div class="w-4 shrink-0 text-right">
+            <sup class="leading-none">**</sup>
+          </div>
+          <div>{t("aliados.notice2")}</div>
+        </li>
+      </ul>
     </section>
   </div>
-</MainLayout>
 
-<style is:global>
-  #oro-grid img,
-  #plata-grid img,
-  #bronce-grid img {
-    border-radius: 0 !important;
-  }
-  #oro-grid svg,
-  #oro-grid img,
-  #plata-grid svg,
-  #plata-grid img,
-  #bronce-grid svg,
-  #bronce-grid img {
-    transition: all 0.15s ease-in-out !important;
-  }
+  <style is:global>
+    #oro-grid img,
+    #plata-grid img,
+    #bronce-grid img {
+      border-radius: 0 !important;
+    }
+    #oro-grid svg,
+    #oro-grid img,
+    #plata-grid svg,
+    #plata-grid img,
+    #bronce-grid svg,
+    #bronce-grid img {
+      transition: all 0.15s ease-in-out !important;
+    }
 
-  html.light {
-    --logo-filter: grayscale(1) opacity(1)
-      drop-shadow(0 0 1px rgba(255, 255, 255, 1))
-      drop-shadow(0 6px 8px rgba(100, 85, 75, 1));
-    --logo-hover-filter: grayscale(0) opacity(1);
-    --realis-shadow: drop-shadow(0 0 6px rgba(255, 255, 255, 1))
-      drop-shadow(0 8px 10px rgba(100, 85, 75, 1));
-    --realis-hover-shadow: drop-shadow(0 0 2px rgba(255, 255, 255, 1))
-      drop-shadow(0 8px 10px rgba(100, 85, 75, 1));
-  }
+    html.light {
+      --logo-filter: grayscale(1) opacity(1)
+        drop-shadow(0 0 1px rgba(255, 255, 255, 1))
+        drop-shadow(0 6px 8px rgba(100, 85, 75, 1));
+      --logo-hover-filter: grayscale(0) opacity(1);
+      --realis-shadow: drop-shadow(0 0 6px rgba(255, 255, 255, 1))
+        drop-shadow(0 8px 10px rgba(100, 85, 75, 1));
+      --realis-hover-shadow: drop-shadow(0 0 2px rgba(255, 255, 255, 1))
+        drop-shadow(0 8px 10px rgba(100, 85, 75, 1));
+    }
 
-  html.dark {
-    --logo-filter: grayscale(1) invert(1) opacity(0.85)
-      drop-shadow(0 0 2px rgba(0, 0, 0, 1))
-      drop-shadow(0 8px 10px rgba(0, 0, 0, 1));
-    --logo-hover-filter: grayscale(0) invert(0) opacity(1);
-    --realis-shadow: drop-shadow(0 0 6px rgba(0, 0, 0, 1))
-      drop-shadow(0 8px 10px rgba(0, 0, 0, 1));
-    --realis-hover-shadow: drop-shadow(0 0 8px rgba(0, 0, 0, 0.9));
-  }
+    html.dark {
+      --logo-filter: grayscale(1) invert(1) opacity(0.85)
+        drop-shadow(0 0 2px rgba(0, 0, 0, 1))
+        drop-shadow(0 8px 10px rgba(0, 0, 0, 1));
+      --logo-hover-filter: grayscale(0) invert(0) opacity(1);
+      --realis-shadow: drop-shadow(0 0 6px rgba(0, 0, 0, 1))
+        drop-shadow(0 8px 10px rgba(0, 0, 0, 1));
+      --realis-hover-shadow: drop-shadow(0 0 8px rgba(0, 0, 0, 0.9));
+    }
 
-  #oro-grid svg:not(.realis-logo),
-  #oro-grid img,
-  #plata-grid svg,
-  #plata-grid img,
-  #bronce-grid svg,
-  #bronce-grid img {
-    opacity: 1 !important;
-    filter: var(--logo-filter) !important;
-  }
-
-  /* El logo de Realis ahora usa color directo (Tailwind classes) en lugar de filtros */
-  #oro-grid svg.realis-logo {
-    transition: all 0.3s ease;
-    filter: var(--realis-shadow) !important;
-  }
-
-  @media (hover: hover) {
-    #oro-grid a:hover svg:not(.realis-logo),
-    #oro-grid a:hover img,
-    #plata-grid a:hover svg,
-    #plata-grid a:hover img,
-    #bronce-grid a:hover svg,
-    #bronce-grid a:hover img {
+    #oro-grid svg:not(.realis-logo),
+    #oro-grid img,
+    #plata-grid svg,
+    #plata-grid img,
+    #bronce-grid svg,
+    #bronce-grid img {
       opacity: 1 !important;
-      filter: var(--logo-hover-filter) !important;
+      filter: var(--logo-filter) !important;
     }
 
-    /* Al hacer hover en la tarjeta (el a), cambiamos el color del SVG hijo */
-    #oro-grid a:hover svg.realis-logo {
-      transform: scale(1.05);
-      color: #00c4c4; /* Cian más cercano al original pero visible en fondo claro */
-      filter: var(--realis-hover-shadow) !important;
+    /* El logo de Realis ahora usa color directo (Tailwind classes) en lugar de filtros */
+    #oro-grid svg.realis-logo {
+      transition: all 0.3s ease;
+      filter: var(--realis-shadow) !important;
     }
 
-    html.dark #oro-grid a:hover svg.realis-logo {
-      color: #00ffff; /* Cian neón original para modo oscuro */
-    }
-  }
-</style>
+    @media (hover: hover) {
+      #oro-grid a:hover svg:not(.realis-logo),
+      #oro-grid a:hover img,
+      #plata-grid a:hover svg,
+      #plata-grid a:hover img,
+      #bronce-grid a:hover svg,
+      #bronce-grid a:hover img {
+        opacity: 1 !important;
+        filter: var(--logo-hover-filter) !important;
+      }
 
-<script src="../../scripts/aliados-animations.js"></script>
+      /* Al hacer hover en la tarjeta (el a), cambiamos el color del SVG hijo */
+      #oro-grid a:hover svg.realis-logo {
+        transform: scale(1.05);
+        color: #00c4c4; /* Cian más cercano al original pero visible en fondo claro */
+        filter: var(--realis-hover-shadow) !important;
+      }
+
+      html.dark #oro-grid a:hover svg.realis-logo {
+        color: #00ffff; /* Cian neón original para modo oscuro */
+      }
+    }
+  </style>
+
+  <script src="../../scripts/aliados-animations.js"></script>
+</MainLayout>

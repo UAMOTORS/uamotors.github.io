@@ -103,8 +103,20 @@ const ogImageURL = new URL(image || defaultOgImage.src, Astro.site);
       is:inline
       data-goatcounter="https://uamotors.goatcounter.com/count"
       async
-      src="//gc.zgo.at/count.js"
-    ></script>
+      src="//gc.zgo.at/count.js"></script>
+
+    <!-- Datos Estructurados (JSON-LD) para Google -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "UAMOTORS",
+        "url": "https://uamotors.github.io/",
+        "logo": "https://uamotors.github.io/favicon.svg",
+        "sameAs": ["https://www.instagram.com/uamotors/"],
+        "description": "Escudería representante de la Universidad Autónoma Metropolitana en competencias de diseño y manufactura de Fórmula SAE."
+      }
+    </script>
   </head>
   <body>
     <SplashScreen />

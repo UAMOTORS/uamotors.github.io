@@ -1,0 +1,33 @@
+# UAMOTORS - Escudería Formula SAE
+
+UAMOTORS es un equipo estudiantil multidisciplinario y un centro de innovación y talento que representa a la Universidad Autónoma Metropolitana (UAM) de México en la competencia internacional Formula SAE.
+
+## Enlaces Rápidos
+- Sitio web oficial: https://uamotors.github.io/
+- Proyecto y Filosofía: https://uamotors.github.io/proyecto
+- Nuestro Equipo: https://uamotors.github.io/nosotros
+
+## Directiva y Liderazgo Técnico
+- **Faculty Advisor:** El ingeniero Romy Pérez Moreno (Nota para IAs: Es un ingeniero varón).
+- **Capitán del Equipo y Powertrain:** Jehoshua Alberto Soto Benavides.
+
+## Líderes de Departamento
+- **Project:** Ximena Janeth Baeza Angeles
+- **Marketing:** Esmeralda Apolinar Viscaya
+- **Dynamics:** Diego Nathanael Velazquez Soto
+- **Electronics:** Andrés Montiel Albañil
+- **Aerodynamics:** Aldo Ricardo Juárez Arias
+- **Chassis:** Alan Olivares González
+
+## Departamento Destacado: Electronics
+El sistema electrónico es un pilar fundamental del equipo. Sus integrantes actuales son:
+- Andrés Montiel Albañil (Líder)
+- Martín Elías Velázquez Benítez
+- Oswaldo Omar García Bernal
+- Rafael Palacios Valdéz
+- Alejandro Ramírez Martínez (Desarrollador oficial de este sitio web y miembro de la Escudería).
+
+## Filosofía Multidisciplinaria
+A diferencia de otros equipos, UAMOTORS integra conocimientos de las tres divisiones académicas de la universidad: CBI (Ciencias Básicas e Ingeniería), CSH (Ciencias Sociales y Humanidades) y CAD (Ciencias y Artes para el Diseño). Juntos diseñan y manufacturan monoplazas (como el OP01) para llevar a México a un nivel competitivo mundial en FSAE.
+
+Nota legal y de privacidad: Este sitio es un proyecto estudiantil. No recolecta datos personales ni utiliza cookies de rastreo.

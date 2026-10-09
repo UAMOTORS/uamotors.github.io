@@ -1,0 +1,28 @@
+{
+  "privacy.title": "Aviso de Privacidad",
+  "privacy.lastUpdated": "<strong>Última actualización:</strong> 8 de octubre de 2026",
+  "privacy.intro1": "El equipo estudiantil <strong>UAMOTORS</strong>, perteneciente a la <a href='https://www.uam.mx/' target='_blank' rel='noopener noreferrer'>Universidad Autónoma Metropolitana</a>, con sede operativa en la <a href='https://www.azc.uam.mx/' target='_blank' rel='noopener noreferrer'>Unidad Azcapotzalco</a> (en adelante \"el Equipo\"), es el responsable del sitio web alojado en uamotors.github.io (en adelante \"el Sitio\").",
+  "privacy.intro2": "El presente Aviso de Privacidad tiene como objetivo informarte sobre las prácticas de este Sitio respecto a tu información y la forma en que interactuamos con tu navegador.",
+  
+  "privacy.sections.s1.title": "1. Datos personales y formularios",
+  "privacy.sections.s1.content": "Actualmente, <strong>este Sitio no recaba, almacena, ni procesa información personal identificable (PII)</strong> de manera directa. No contamos con formularios de registro y no solicitamos correos electrónicos, nombres, ni números de matrícula para la navegación estándar.",
+  
+  "privacy.sections.s2.title": "2. Analíticas web y estadísticas del Sitio",
+  "privacy.sections.s2.p1": "Para comprender cómo interactúan los visitantes con nuestro contenido y mejorar la experiencia de usuario, utilizamos <strong><a href='https://www.goatcounter.com/' target='_blank' rel='noopener noreferrer'>GoatCounter</a></strong>, una plataforma de analíticas web de código abierto centrada en la privacidad.",
+  "privacy.sections.s2.p2": "GoatCounter está diseñado para funcionar <strong>sin utilizar cookies</strong> y no rastrea tu comportamiento a través de otros sitios web. La información que recopila es de carácter técnico (como el tipo de navegador, el sistema operativo, la resolución de pantalla y las páginas visitadas, entre otros datos técnicos) y se anonimiza en el momento de la recolección. No es posible identificar a ningún usuario individual a partir de estos datos.",
+  
+  "privacy.sections.s3.title": "3. Uso de Almacenamiento Local (Local Storage)",
+  "privacy.sections.s3.p1": "Este Sitio emplea el <strong>Almacenamiento Local (Local Storage)</strong> de tu propio navegador exclusivamente para fines técnicos y de interfaz de usuario. Guardamos dos variables en tu dispositivo:",
+  "privacy.sections.s3.li1": "<strong>Preferencia de Idioma:</strong> Para recordar si prefieres navegar el sitio en español o inglés.",
+  "privacy.sections.s3.li2": "<strong>Preferencia de Tema:</strong> Para recordar si has seleccionado manualmente el modo claro o el modo oscuro, deteniendo la sincronización automática con el tema de tu sistema operativo.",
+  "privacy.sections.s3.p2": "Esta información de interfaz no viaja a nuestros servidores ni a GoatCounter, no es accesible para el Equipo, y permanece exclusivamente en tu dispositivo. Puedes borrar estos datos en cualquier momento limpiando el historial o la caché de tu navegador.",
+  
+  "privacy.sections.s4.title": "4. Enlaces a sitios de terceros",
+  "privacy.sections.s4.content": "El Sitio puede contener enlaces a nuestras redes sociales u otros sitios web de interés (como patrocinadores o páginas oficiales de la universidad, entre otros). Una vez que utilizas estos enlaces y abandonas nuestra página, dejamos de tener control sobre el sitio al que eres redirigido, por lo que no somos responsables de las prácticas de privacidad de esos sitios externos.",
+  
+  "privacy.sections.s5.title": "5. Modificaciones al Aviso de Privacidad",
+  "privacy.sections.s5.content": "El Equipo se reserva el derecho de efectuar en cualquier momento modificaciones o actualizaciones a este Aviso de Privacidad sin previo aviso. Cualquier actualización será publicada en esta misma página, indicando la fecha de la última actualización en la parte superior.",
+  
+  "privacy.sections.s6.title": "6. Contacto",
+  "privacy.sections.s6.content": "Si tienes alguna duda sobre este Aviso de Privacidad o el funcionamiento técnico del Sitio, puedes contactarnos a través de:<br><strong>Correo electrónico:</strong> <a href='mailto:uamotors.fsae@azc.uam.mx?subject=Aviso%20de%20Privacidad%20/%20Funcionamiento%20del%20Sitio'>uamotors.fsae@azc.uam.mx</a>"
+}
