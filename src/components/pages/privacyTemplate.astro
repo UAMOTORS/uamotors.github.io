@@ -6,33 +6,69 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<MainLayout activePage="" pageTitle={t("privacy.")}>
-  <main class="max-w-4xl mx-auto px-6 py-16 min-h-screen">
-    <h1
-      class="sigmar-ff text-3xl sm:text-5xl mb-8 text-space-red dark:text-space-yellow"
-    >
-      {t("privacy.heading")}
+<MainLayout activePage="" pageTitle={t("privacy.title")}>
+  <div class="my-12 px-6 w-full max-w-4xl mx-auto text-left">
+    {/* Título */}
+    <h1 class="sigmar-ff text-balance mb-8 text-center">
+      {t("privacy.title")}
     </h1>
 
     <div
       class="kanit-regular space-y-6 text-gray-800 dark:text-gray-300 text-lg"
+      style="text-align: justify;"
     >
-      <p set:html={t("privacy.intro")} />
+      <!-- Intro -->
+      <p set:html={t("privacy.lastUpdated")} />
+      <p set:html={t("privacy.intro1")} />
+      <p set:html={t("privacy.intro2")} />
 
+      <!-- Datos personales y formularios -->
       <h2 class="text-2xl font-bold mt-8 text-black dark:text-white">
-        {t("privacy.h2.1")}
+        {t("privacy.sections.s1.title")}
       </h2>
-      <p set:html={t("privacy.p.1")} />
+      <p set:html={t("privacy.sections.s1.content")} />
 
+      <!-- Analíticas web y estadísticas del Sitio -->
       <h2 class="text-2xl font-bold mt-8 text-black dark:text-white">
-        {t("privacy.h2.2")}
+        {t("privacy.sections.s2.title")}
       </h2>
-      <p set:html={t("privacy.p.2")} />
+      <p set:html={t("privacy.sections.s2.p1")} />
+      <p set:html={t("privacy.sections.s2.p2")} />
 
+      <!-- Uso de Almacenamiento Local (Local Storage) -->
       <h2 class="text-2xl font-bold mt-8 text-black dark:text-white">
-        {t("privacy.h2.3")}
+        {t("privacy.sections.s3.title")}
       </h2>
-      <p set:html={t("privacy.p.3")} />
+      <p set:html={t("privacy.sections.s3.p1")} />
+      <ul style="padding-left: 2em;">
+        <li
+          style="list-style-type:disc;"
+          set:html={t("privacy.sections.s3.li1")}
+        />
+        <li
+          style="list-style-type:disc;"
+          set:html={t("privacy.sections.s3.li2")}
+        />
+      </ul>
+      <p set:html={t("privacy.sections.s3.p2")} />
+
+      <!-- Enlaces a sitios de terceros -->
+      <h2 class="text-2xl font-bold mt-8 text-black dark:text-white">
+        {t("privacy.sections.s4.title")}
+      </h2>
+      <p set:html={t("privacy.sections.s4.content")} />
+
+      <!-- Modificaciones al Aviso de Privacidad -->
+      <h2 class="text-2xl font-bold mt-8 text-black dark:text-white">
+        {t("privacy.sections.s5.title")}
+      </h2>
+      <p set:html={t("privacy.sections.s5.content")} />
+
+      <!-- Contacto -->
+      <h2 class="text-2xl font-bold mt-8 text-black dark:text-white">
+        {t("privacy.sections.s6.title")}
+      </h2>
+      <p set:html={t("privacy.sections.s6.content")} />
     </div>
-  </main>
+  </div>
 </MainLayout>

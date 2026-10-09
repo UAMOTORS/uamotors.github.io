@@ -9,12 +9,12 @@ import { withBase } from "../utils/helpers";
 
 const { activePage } = Astro.props;
 const currentPath = Astro.url.pathname;
-const normalizedPath = currentPath.endsWith("/") && currentPath.length > 1 
-  ? currentPath.slice(0, -1) 
-  : currentPath;
+const normalizedPath =
+  currentPath.endsWith("/") && currentPath.length > 1
+    ? currentPath.slice(0, -1)
+    : currentPath;
 
-const isEnglish =
-  normalizedPath.startsWith("/en") || normalizedPath === "/en";
+const isEnglish = normalizedPath.startsWith("/en") || normalizedPath === "/en";
 const routeMap = {
   "/": "/en",
   "/en": "/",
@@ -26,6 +26,8 @@ const routeMap = {
   "/en/our-partners": "/nuestros-aliados",
   "/contacto": "/en/contact",
   "/en/contact": "/contacto",
+  "/aviso-de-privacidad": "/en/privacy-notice",
+  "/en/privacy-notice": "/aviso-de-privacidad",
 };
 
 let targetUrl =
