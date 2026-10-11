@@ -18,6 +18,12 @@ function initTimeline() {
 
               const dot = item.querySelector(".timeline-dot");
               const line = item.querySelector(".timeline-line");
+              const isLast = index === items.length - 1;
+
+              if (isLast) {
+                if (line) line.style.display = "none";
+                item.classList.remove("pb-8");
+              }
 
               if (isCompleted) {
                 dot.classList.remove(
