@@ -1,0 +1,28 @@
+
+/* hero carousel (inline styles of ProjectCarousel moved to classes) */
+.pc-root { --sp: 75; position: relative; width: 100%; height: calc((var(--n) - 1) * var(--sp) * 1vh + 100vh); margin-top: -85px; margin-bottom: -110px; background: #121212; color: #fff; overflow-x: clip; }
+@media (max-width: 809px) { .pc-root { --sp: 60; } }
+.pc-sticky { position: sticky; top: 0; height: 100vh; overflow: hidden; }
+.pc-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; z-index: 0; }
+.pc-overlays { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+.pc-center { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 26px; padding: 24px; text-align: center; }
+.pc-overlay { transform: translate3d(0, calc(var(--i) * var(--sp) * 1vh), 0); will-change: transform; }
+.pc-ref-link { pointer-events: auto; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 26px; color: inherit; cursor: pointer; }
+.pc-cat { font-size: 15px; font-weight: 600; letter-spacing: 0.02em; color: #E6E6E6; transition-delay: 0.05s; }
+.pc-title { margin: 0; font-family: var(--font); font-weight: 600; letter-spacing: -0.01em; line-height: 1.1; font-size: clamp(56px, 9vw, 132px); color: #fff; max-width: 94vw; }
+@media (min-width: 810px) and (max-width: 1199px) { .pc-title { line-height: 0.9; } }
+@media (max-width: 759px) { .pc-title { font-size: clamp(30px, 11vw, 52px); } }
+.pc-ref-btn { display: flex; align-items: center; justify-content: center; width: 66px; height: 66px; border-radius: 100px; background: #121212; border: 1px solid rgba(255,255,255,0.14); color: #fff; }
+.pc-bar { position: absolute; top: 50%; right: 20px; transform: translateY(-50%); z-index: 6; display: flex; flex-direction: column; align-items: center; gap: 3px; pointer-events: auto; }
+@media (max-width: 599px) { .pc-bar { display: none; } }
+.pc-nav-bar { display: block; width: 28px; height: 2px; border-radius: 2px; transform: scaleX(0.5714); transform-origin: center; background: rgba(255,255,255,0.35); }
+.pc-nav-bar.pc-nav-active { transform: scaleX(1); background: #fff; }
+.pc-fallback { display: none; position: relative; }
+.pc-root.pc-nogl { height: auto; margin-bottom: 0; }
+.pc-root.pc-nogl .pc-sticky { display: none; }
+.pc-root.pc-nogl .pc-fallback { display: block; }
+.pc-fb-slide { position: relative; width: 100%; height: 100vh; overflow: hidden; }
+.pc-fb-media { position: absolute; top: 50%; left: 50%; width: 80%; max-width: 1400px; height: 68vh; transform: translate(-50%, -50%); overflow: hidden; border-radius: 20px; }
+@media (max-width: 1199px) { .pc-fb-media { width: 84%; height: 58vh; } }
+@media (max-width: 809px) { .pc-fb-media { width: 92%; height: 50vh; } }
+.pc-fb-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
