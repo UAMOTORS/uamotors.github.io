@@ -1,15 +1,9 @@
 {
-  "logros.meta.title": "Milestones",
-  "logros.meta.desc": "Explore the milestones, competitions, and technical achievements of UAMOTORS in Formula SAE.",
-  "logros.main.title": "Milestones",
-  "logros.main.subtitle": "Our journey building <strong>\"OP\"</strong> and representing <strong>UAM</strong>.",
-  "logros.post.by": "By",
-  "logros.post.on": "on",
-  "logros.post.tagged": "Tagged:",
-  "logros.post.back": "Back to all milestones",
-  "logros.post.next": "Next milestone:",
-  "logros.pagination.page": "Page",
-  "logros.pagination.of": "of",
+  "logros.meta.title": "Achievements",
+  "logros.meta.desc": "Explore the achievements, awards, and technical milestones of UAMOTORS in Formula SAE.",
+  "logros.main.title": "Achievements",
+  "logros.main.subtitle": "Our journey building the <strong>\"OP\"</strong> race car and representing <strong>the UAM</strong>.",
+ 
   "items": [
     {
       "title": "May the force be with you",

@@ -2,14 +2,8 @@
   "logros.meta.title": "Logros",
   "logros.meta.desc": "Conoce los hitos, competencias y avances técnicos de UAMOTORS en Fórmula SAE.",
   "logros.main.title": "Logros",
-  "logros.main.subtitle": "Nuestra historia construyendo a <strong>\"OP\"</strong> y representando a la <strong>UAM</strong>.",
-  "logros.post.by": "Por",
-  "logros.post.on": "el",
-  "logros.post.tagged": "Categorías:",
-  "logros.post.back": "Volver a todos los logros",
-  "logros.post.next": "Siguiente logro:",
-  "logros.pagination.page": "Página",
-  "logros.pagination.of": "de",
+  "logros.main.subtitle": "Nuestra historia construyendo el monoplaza <strong>\"OP\"</strong> y representando a la <strong>UAM</strong>.",
+  
   "items": [
     {
       "title": "Que la fuerza te acompañe",
