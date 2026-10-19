@@ -88,7 +88,7 @@ const siteConfig: SiteConfig = {
         },
         {
             text: 'Logros',
-            href: withBase('blog')
+            href: withBase('logros')
         },
         {
             text: 'Aliados',

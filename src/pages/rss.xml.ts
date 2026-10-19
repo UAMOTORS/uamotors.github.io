@@ -14,7 +14,7 @@ export async function GET(context) {
       title: post.data.title,
       pubDate: post.data.pubDate,
       description: post.data.description,
-      link: withBase(`/blog/${post.id}/`),
+      link: withBase(post.id.startsWith("en/") ? "/en/milestones" : "/logros"),
     })),
     customData: `<language>en-US</language>`,
     stylesheet: withBase("/pretty-feed-v3.xsl"),
