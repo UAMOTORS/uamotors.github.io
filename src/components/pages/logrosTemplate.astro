@@ -1,18 +1,15 @@
 ---
-import { getCollection } from "astro:content";
 import MainLayout from "../../layouts/MainLayout.astro";
 import PostCardPreview from "../PostCardPreview.astro";
 import siteConfig from "../../site.config";
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
-import { sortItemsByDateDesc } from "../../utils/helpers";
+import logrosData from "../../data/logros.json";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const isEnglish = lang === "en";
 
-const logros = (await getCollection("blogs"))
-  .filter((post) => (isEnglish ? post.id.startsWith("en/") : !post.id.startsWith("en/")))
-  .sort(sortItemsByDateDesc);
+const logros = isEnglish ? logrosData.en : logrosData.es;
 ---
 
 <MainLayout
@@ -33,7 +30,7 @@ const logros = (await getCollection("blogs"))
     <div
       class="flex flex-col text-left gap-8 mb-4 text-sm sm:text-base max-w-fit mx-auto"
     >
-      {logros.map((post) => <PostCardPreview post={post} />)}
+      {logros.map((item) => <PostCardPreview post={item} />)}
     </div>
   </div>
 </MainLayout>

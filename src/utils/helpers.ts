@@ -1,7 +1,7 @@
-import { type CollectionEntry } from 'astro:content';
-
-export function sortItemsByDateDesc(itemA: CollectionEntry<'blogs'>, itemB: CollectionEntry<'blogs'>) {
-    return new Date(itemB.data.pubDate).getTime() - new Date(itemA.data.pubDate).getTime();
+export function sortItemsByDateDesc(itemA: any, itemB: any) {
+    const dateA = new Date(itemA.pubDate || itemA.data?.pubDate || 0).getTime();
+    const dateB = new Date(itemB.pubDate || itemB.data?.pubDate || 0).getTime();
+    return dateB - dateA;
 }
 
 export function createSlugFromTitle(title: string): string {
@@ -13,8 +13,8 @@ export function createSlugFromTitle(title: string): string {
         .replace(/-+/g, '-');
 }
 
-export function getAllTags(posts: CollectionEntry<'blogs'>[]) {
-    const tags: string[] = [...new Set(posts.flatMap((post) => post.data.tags || []).filter(Boolean))];
+export function getAllTags(posts: any[]) {
+    const tags: string[] = [...new Set(posts.flatMap((post) => post.tags || post.data?.tags || []).filter(Boolean))];
     return tags
         .map((tag) => {
             return {
@@ -27,8 +27,8 @@ export function getAllTags(posts: CollectionEntry<'blogs'>[]) {
         });
 }
 
-export function getPostsByTag(posts: CollectionEntry<'blogs'>[], tagId: string) {
-    const filteredPosts: CollectionEntry<'blogs'>[] = posts.filter((post) => (post.data.tags || []).map((tag) => createSlugFromTitle(tag)).includes(tagId));
+export function getPostsByTag(posts: any[], tagId: string) {
+    const filteredPosts: any[] = posts.filter((post) => (post.tags || post.data?.tags || []).map((tag: string) => createSlugFromTitle(tag)).includes(tagId));
     return filteredPosts;
 }
 

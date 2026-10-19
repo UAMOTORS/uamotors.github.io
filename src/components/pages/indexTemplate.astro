@@ -1,9 +1,7 @@
 ---
-import { getCollection } from "astro:content";
 import MainLayout from "../../layouts/MainLayout.astro";
 import siteConfig from "../../site.config";
-import { sortItemsByDateDesc, withBase } from "../../utils/helpers";
-import PostCardPreview from "../PostCardPreview.astro";
+import { withBase } from "../../utils/helpers";
 import Button from "../Button.astro";
 import { Image } from "astro:assets";
 import heroImage from "../../assets/images/pixeltrue-space-discovery.svg";
@@ -15,8 +13,6 @@ import OP_image_mobile from "../../assets/images/OP01_2-transparent-cut.png";
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-
-const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
 ---
 
 <script is:inline>

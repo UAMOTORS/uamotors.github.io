@@ -1,31 +1,43 @@
 ---
 import { Image } from "astro:assets";
-import type { CollectionEntry } from "astro:content";
 import FormattedDate from "./FormattedDate.astro";
-import { withBase } from "../utils/helpers";
+import img1 from "../assets/images/1.png";
+import img2 from "../assets/images/2.jpg";
+import img3 from "../assets/images/3.jpg";
+import img4 from "../assets/images/4.jpg";
 
-type Props = { post: CollectionEntry<"blogs"> };
+const imageMap: Record<string, any> = {
+  "1": img1,
+  "2": img2,
+  "3": img3,
+  "4": img4,
+};
+
+type Props = {
+  post: {
+    title: string;
+    pubDate: string;
+    description?: string;
+    image?: any;
+  };
+};
+
 const { post } = Astro.props;
-const { title, pubDate, description, image } = post.data;
-
-const postUrl = post.id.startsWith("en/")
-  ? withBase("/en/blog/" + post.id.replace(/^en\//, ""))
-  : withBase("/blog/" + post.id);
+const { title, pubDate, description, image } = post;
+const imgSrc = typeof image === "string" && imageMap[image] ? imageMap[image] : (image?.url || image);
 ---
 
-<a class="font-bold" href={postUrl}>
+<div class="font-bold">
   <div class="flex flex-col sm:flex-row gap-2 sm:gap-4">
     {
-      image && image.url && (
-        <>
-          <Image
-            class=""
-            src={image.url}
-            alt={image.alt || ""}
-            width={300}
-            height={167}
-          />
-        </>
+      imgSrc && (
+        <Image
+          class=""
+          src={imgSrc}
+          alt={title || ""}
+          width={300}
+          height={167}
+        />
       )
     }
     <div class="flex flex-col max-w-fit">
@@ -38,4 +50,4 @@ const postUrl = post.id.startsWith("en/")
       }
     </div>
   </div>
-</a>
+</div>
