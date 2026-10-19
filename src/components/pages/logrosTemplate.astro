@@ -23,9 +23,10 @@ const logros = logrosData.items;
     <h1 class="sigmar-ff text-balance mb-2">{t("logros.main.title")}</h1>
     {
       t("logros.main.subtitle") && (
-        <p class="kanit-light text-lg sm:text-xl leading-relaxed text-balance mb-10 text-neutral-600 dark:text-neutral-300">
-          {t("logros.main.subtitle")}
-        </p>
+        <p
+          class="kanit-light text-lg sm:text-xl leading-relaxed text-balance mb-10 text-neutral-600 dark:text-neutral-300"
+          set:html={t("logros.main.subtitle")}
+        ></p>
       )
     }
 
