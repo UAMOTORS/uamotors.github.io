@@ -15,25 +15,19 @@
       "title": "May the force be with you",
       "pubDate": "2024-02-06",
       "description": "This post should show up on its own!",
-      "image": "4"
+      "image": "1"
     },
     {
       "title": "Aim for the stars, land on the moons or trail behind the asteroid?",
       "pubDate": "2024-01-31",
       "description": "I had some challenges, but the community helped out!",
-      "image": "3"
+      "image": "2"
     },
     {
       "title": "Second post",
       "pubDate": "2024-01-15",
       "description": "This post is awesome!",
-      "image": "2"
-    },
-    {
-      "title": "First adventure on Mars",
-      "pubDate": "2024-01-01",
-      "description": "This is the first post of my new blog.",
-      "image": "1"
+      "image": "3"
     }
   ]
 }

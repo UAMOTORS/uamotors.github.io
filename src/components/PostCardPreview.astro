@@ -4,13 +4,12 @@ import FormattedDate from "./FormattedDate.astro";
 import img1 from "../assets/images/1.png";
 import img2 from "../assets/images/2.jpg";
 import img3 from "../assets/images/3.jpg";
-import img4 from "../assets/images/4.jpg";
+// import img4 from "../assets/images/4.jpg";
 
 const imageMap: Record<string, any> = {
   "1": img1,
   "2": img2,
   "3": img3,
-  "4": img4,
 };
 
 type Props = {
@@ -24,7 +23,10 @@ type Props = {
 
 const { post } = Astro.props;
 const { title, pubDate, description, image } = post;
-const imgSrc = typeof image === "string" && imageMap[image] ? imageMap[image] : (image?.url || image);
+const imgSrc =
+  typeof image === "string" && imageMap[image]
+    ? imageMap[image]
+    : image?.url || image;
 ---
 
 <div class="font-bold">

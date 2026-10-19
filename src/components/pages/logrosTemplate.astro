@@ -11,7 +11,10 @@ const t = useTranslations(lang);
 const isEnglish = lang === "en";
 
 const logrosData = isEnglish ? enLogros : esLogros;
-const logros = logrosData.items;
+// const logros = logrosData.items;
+const logros = [...logrosData.items].sort(
+  (a, b) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime(),
+);
 ---
 
 <MainLayout
@@ -26,7 +29,7 @@ const logros = logrosData.items;
         <p
           class="kanit-light text-lg sm:text-xl leading-relaxed text-balance mb-10 text-neutral-600 dark:text-neutral-300"
           set:html={t("logros.main.subtitle")}
-        ></p>
+        />
       )
     }
 
