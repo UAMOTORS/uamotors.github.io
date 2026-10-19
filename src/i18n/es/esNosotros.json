@@ -4,7 +4,7 @@
     "nosotros.title1": "¿Quiénes somos?",
     "nosotros.title2": "Objetivos Estratégicos",
     "nosotros.title3": "Equipo",
-    "nosotros.text1": "<strong>UAMOTORS</strong> es un equipo multidisciplinario de estudiantes de la <a href='https://www.uam.mx/' target='_blank'><strong>Universidad Autónoma Metropolitana</strong></a>, fundado en la Unidad Azcapotzalco en marzo de 2025 por iniciativa del propio alumnado. No somos solo un grupo de ingeniería; integramos conocimientos de las tres divisiones académicas de nuestra unidad: <strong>CBI</strong> (Ciencias Básicas e Ingeniería), <strong>CSH</strong> (Ciencias Socialesy Humanidades) y <strong>CAD</strong> (Ciencias y Artes para el Diseño).",
+    "nosotros.text1": "<strong>UAMOTORS</strong> es un equipo multidisciplinario de estudiantes de la <a href='https://www.uam.mx/' target='_blank'><strong>Universidad Autónoma Metropolitana</strong></a>, fundado en la Unidad Azcapotzalco en marzo de 2025 por iniciativa del propio alumnado. No somos solo un grupo de ingeniería; integramos conocimientos de las tres divisiones académicas de nuestra unidad: <strong>CBI</strong> (Ciencias Básicas e Ingeniería), <strong>CSH</strong> (Ciencias Sociales y Humanidades) y <strong>CAD</strong> (Ciencias y Artes para el Diseño).",
     "nosotros.text2": "Nuestra razón de ser es enfrentar retos reales de desarrollo tecnológico a través del diseño y construcción de un monoplaza tipo fórmula que cumpla con los lineamientos de la <a href='https://www.sae.org/' target='_blank'><strong>Society of Automotive Engineers (SAE)</strong></a>.",
     "nosotros.mision.title": "Nuestra Misión",
     "nosotros.vision.title": "Visión de Diseño",
@@ -16,5 +16,5 @@
     "nosotros.objetivo2.title": "Competitividad:",
     "nosotros.objetivo2.text": "Crear una base sólida para que las futuras generaciones de la UAM tengan un antecedente de éxito en la competencia.",
     "nosotros.objetivo3.title": "Proyección Internacional:",
-    "nosotros.objetivo3.text": "Nuestra hoja de ruta incluye la participación en <a href='https://www.saemx.org/formula-sae-mx' target='_blank'><strong>FSAE México</strong></a> así como clasificar y competir en <a href='https://www.fsaeonline.com/' target='_blank'><strong>Formula SAE International</strong></a>."
+    "nosotros.objetivo3.text": "Nuestra hoja de ruta incluye la participación en <a href='https://www.saemx.org/formula-sae-mx' target='_blank'><strong>FSAE México</strong></a>, así como clasificar y competir en <a href='https://www.fsaeonline.com/' target='_blank'><strong>Formula SAE International</strong></a>."
 }
