@@ -9,5 +9,31 @@
   "logros.post.back": "Volver a todos los logros",
   "logros.post.next": "Siguiente logro:",
   "logros.pagination.page": "Página",
-  "logros.pagination.of": "de"
+  "logros.pagination.of": "de",
+  "items": [
+    {
+      "title": "Que la fuerza te acompañe",
+      "pubDate": "2024-02-06",
+      "description": "¡Esta publicación aparecerá por sí sola!",
+      "image": "4"
+    },
+    {
+      "title": "Apunta a las estrellas, ¿aterriza entre las lunas o sigue al meteorito?",
+      "pubDate": "2024-01-31",
+      "description": "¡Tuve algunos desafíos, pero la comunidad me ayudó!",
+      "image": "3"
+    },
+    {
+      "title": "Segunda publicación",
+      "pubDate": "2024-01-15",
+      "description": "¡Esta publicación es genial!",
+      "image": "2"
+    },
+    {
+      "title": "Primera aventura en Marte",
+      "pubDate": "2024-01-01",
+      "description": "Esta es la primera publicación de mi nuevo blog.",
+      "image": "1"
+    }
+  ]
 }

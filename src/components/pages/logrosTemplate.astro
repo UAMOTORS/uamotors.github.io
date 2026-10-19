@@ -3,13 +3,15 @@ import MainLayout from "../../layouts/MainLayout.astro";
 import PostCardPreview from "../PostCardPreview.astro";
 import siteConfig from "../../site.config";
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
-import logrosData from "../../data/logros.json";
+import esLogros from "../../i18n/es/esLogros.json";
+import enLogros from "../../i18n/en/enLogros.json";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const isEnglish = lang === "en";
 
-const logros = isEnglish ? logrosData.en : logrosData.es;
+const logrosData = isEnglish ? enLogros : esLogros;
+const logros = logrosData.items;
 ---
 
 <MainLayout

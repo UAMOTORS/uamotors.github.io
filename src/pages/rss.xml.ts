@@ -1,7 +1,7 @@
 import rss from "@astrojs/rss";
 import { withBase } from "../utils/helpers";
 import siteConfig from "../site.config";
-import logrosData from "../data/logros.json";
+import esLogros from "../i18n/es/esLogros.json";
 
 export async function GET(context) {
   return rss({
@@ -9,7 +9,7 @@ export async function GET(context) {
     description: siteConfig.description,
     site: context.site + withBase("/"),
     trailingSlash: false,
-    items: logrosData.es.map((post) => ({
+    items: esLogros.items.map((post) => ({
       title: post.title,
       pubDate: new Date(post.pubDate),
       description: post.description,
