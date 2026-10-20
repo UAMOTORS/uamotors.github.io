@@ -70,13 +70,17 @@ const navLinks = isEnglish ? englishNavLinks : siteConfig.headerNavLinks;
   <nav
     class="nav-glass font-light w-full flex flex-row items-center justify-between gap-2 rounded-4xl px-5 py-2 text-xs sm:gap-8 sm:py-3 sm:text-base"
   >
-    <a id="nav-logo-link" href={withBase(isEnglish ? "/en" : "/")}
-      ><SiteIdentity /></a
+    <a
+      id="nav-logo-link"
+      href={withBase(isEnglish ? "/en" : "/")}
+      class="shrink-0 flex items-center"
     >
-    <div class="hidden md:flex md:gap-8">
+      <SiteIdentity />
+    </a>
+    <div class="hidden md:flex md:gap-4 lg:gap-8">
       {(<NavLinks activePage={activePage} links={navLinks} />)}
     </div>
-    <div class="flex items-center gap-4">
+    <div class="flex items-center gap-3 sm:gap-4 shrink-0">
       <a
         href={targetUrl}
         translate="no"
