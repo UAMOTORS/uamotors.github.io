@@ -17,7 +17,9 @@ export default defineConfig({
   },
   integrations: [
     preact(),
-    sitemap(),
+    sitemap({
+      filter: (page) => !page.includes("/404"),
+    }),
   ],
 
   image: {

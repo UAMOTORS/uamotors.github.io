@@ -86,7 +86,9 @@ const t = useTranslations(lang);
           target="_blank"
           class="flex items-center justify-center md:hover:scale-105 transition-transform duration-300"
         >
-          <LogoEsss class="h-auto w-14 sm:w-16 md:w-16 object-contain" />
+          <LogoEsss
+            class="h-auto w-[72px] sm:w-[88px] md:w-[92px] object-contain"
+          />
         </a>
         <a
           href="https://www.realis-simulation.com/"
@@ -236,34 +238,5 @@ const t = useTranslations(lang);
 <style is:global>
   .footer-patrocinadores img {
     border-radius: 0 !important;
-  }
-  .footer-patrocinadores svg,
-  .footer-patrocinadores img {
-    transition: filter 0.2s ease-in-out;
-  }
-  @media (hover: hover) {
-    .footer-patrocinadores a:hover svg.realis-logo {
-      color: #00c4c4;
-    }
-    html.dark .footer-patrocinadores a:hover svg.realis-logo {
-      color: #00ffff;
-    }
-    html.dark .footer-patrocinadores a:hover svg:not(.realis-logo),
-    html.dark .footer-patrocinadores a:hover img {
-      filter: invert(0) drop-shadow(0 0 4px rgba(255, 255, 255, 0.9))
-        drop-shadow(0 0 4px rgba(67, 67, 67, 0.9)) !important;
-    }
-  }
-  html.dark .footer-patrocinadores a:hover img[alt="Logo Ansys"],
-  html.dark .footer-patrocinadores a:hover img[alt="Logo RapidHarnest"],
-  html.dark .footer-patrocinadores a:hover img[alt="Logo Primera Plus"],
-  html.dark
-    .footer-patrocinadores
-    a:hover
-    img[alt="Logo Departamento de Energía"],
-  html.dark .footer-patrocinadores a:hover img[alt="Logo Harness Design"],
-  html.dark .footer-patrocinadores a:hover img[alt="Logo Solidworks"] {
-    filter: invert(0) drop-shadow(0 0 4px rgba(255, 255, 255, 0.9))
-      drop-shadow(0 0 4px rgba(67, 67, 67, 0.9)) !important;
   }
 </style>

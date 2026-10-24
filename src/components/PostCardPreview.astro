@@ -1,41 +1,67 @@
 ---
 import { Image } from "astro:assets";
-import type { CollectionEntry } from "astro:content";
 import FormattedDate from "./FormattedDate.astro";
-import { withBase } from "../utils/helpers";
+import img1 from "../assets/images/1.png";
+import img2 from "../assets/images/2.jpg";
+import img3 from "../assets/images/3.jpg";
+// import img4 from "../assets/images/4.jpg";
 
-type Props = { post: CollectionEntry<"blogs"> };
-const { post } = Astro.props;
-const { title, pubDate, description, image } = post.data;
+const imageMap: Record<string, any> = {
+  "1": img1,
+  "2": img2,
+  "3": img3,
+};
 
-const postUrl = post.id.startsWith("en/")
-  ? withBase("/en/blog/" + post.id.replace(/^en\//, ""))
-  : withBase("/blog/" + post.id);
+type Props = {
+  post: {
+    title: string;
+    pubDate: string;
+    description?: string;
+    image?: any;
+  };
+  isFeatured?: boolean;
+};
+
+const { post, isFeatured = false } = Astro.props;
+const { title, pubDate, description, image } = post;
+const imgSrc =
+  typeof image === "string" && imageMap[image]
+    ? imageMap[image]
+    : image?.url || image;
 ---
 
-<a class="font-bold" href={postUrl}>
-  <div class="flex flex-col sm:flex-row gap-2 sm:gap-4">
+<article
+  class={`bg-black/5 dark:bg-white/5 p-6 sm:p-8 rounded-3xl border border-black/10 dark:border-white/10 transition-all duration-300 hover:bg-black/10 dark:hover:bg-white/10 ${isFeatured ? "shadow-md dark:shadow-none" : ""}`}
+>
+  {/* {
+    imgSrc && (
+      <div class="w-full overflow-hidden rounded-2xl mb-6">
+        <Image
+          class="w-full aspect-video object-cover transition-transform duration-500 hover:scale-[1.02]"
+          src={imgSrc}
+          alt={title || ""}
+          width={800}
+          height={450}
+        />
+      </div>
+    )
+  } */}
+  <div class="flex flex-col">
+    <div class="mb-2 text-neutral-500 dark:text-neutral-400">
+      <FormattedDate date={new Date(pubDate)} />
+    </div>
+    <h2
+      class={`sigmar-ff text-balance mb-3 text-space-red dark:text-space-yellow ${isFeatured ? "text-2xl sm:text-3xl" : "text-xl sm:text-2xl"}`}
+      set:html={title}
+    />
     {
-      image && image.url && (
-        <>
-          <Image
-            class=""
-            src={image.url}
-            alt={image.alt || ""}
-            width={300}
-            height={167}
-          />
-        </>
+      description && (
+        <p
+          class={`kanit-light leading-relaxed text-neutral-700 dark:text-neutral-300 text-balance ${isFeatured ? "text-base sm:text-lg" : "text-base"}`}
+        >
+          {description}
+        </p>
       )
     }
-    <div class="flex flex-col max-w-fit">
-      <h2 class="mb-1">{title}</h2>
-      <FormattedDate date={new Date(pubDate)} />
-      {
-        description && (
-          <p class="font-light text-base text-balance">{description}</p>
-        )
-      }
-    </div>
   </div>
-</a>
+</article>

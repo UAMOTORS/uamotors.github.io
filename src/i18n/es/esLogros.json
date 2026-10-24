@@ -1,0 +1,27 @@
+{
+  "logros.meta.title": "Logros",
+  "logros.meta.desc": "Conoce los hitos, competencias y avances técnicos de UAMOTORS en Fórmula SAE.",
+  "logros.main.title": "Logros",
+  "logros.main.subtitle": "Nuestra historia construyendo el monoplaza <strong>\"OP\"</strong> y representando a la <strong>UAM</strong>.",
+  
+  "items": [
+    {
+      "title": "Mejor Desempeño en Modalidad Virtual",
+      "pubDate": "2026-09-21",
+      "description": "El equipo obtuvo la evaluación más destacada en la fase virtual de Formula SAE, sobresaliendo por el rigor en modelado CAD, simulaciones de ingeniería y la defensa técnica del monoplaza.",
+      "image": "1"
+    },
+    {
+      "title": "3<sup class='lowercase'>er</sup> lugar en Costs Event",
+      "pubDate": "2026-09-21",
+      "description": "En nuestro primer año de participación, conquistamos el podio en la prueba de Costs Event, validando la viabilidad económica, control presupuestario y optimización de manufactura del monoplaza.",
+      "image": "2"
+    },
+    {
+      "title": "Top 5 Clasificación General",
+      "pubDate": "2026-09-21",
+      "description": "Posicionamiento dentro de las 5 mejores escuderías en la tabla general de Formula SAE México, consolidando el trabajo de todo el equipo de la UAM frente a universidades de todo el país.",
+      "image": "3"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import PostCardPreview from "../PostCardPreview.astro";
+import siteConfig from "../../site.config";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import esLogros from "../../i18n/es/esLogros.json";
+import enLogros from "../../i18n/en/enLogros.json";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const isEnglish = lang === "en";
+
+const logrosData = isEnglish ? enLogros : esLogros;
+// const logros = logrosData.items;
+const logros = [...logrosData.items].sort(
+  (a, b) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime(),
+);
+---
+
+<MainLayout
+  activePage="logros"
+  pageTitle={siteConfig.title + " | " + t("logros.meta.title")}
+  description={t("logros.meta.desc")}
+>
+  <div class="page-content max-w-4xl mx-auto text-center">
+    <h1 class="sigmar-ff text-balance mb-2">{t("logros.main.title")}</h1>
+    {
+      t("logros.main.subtitle") && (
+        <p
+          class="kanit-light text-lg sm:text-xl leading-relaxed text-balance mb-10 text-neutral-600 dark:text-neutral-300"
+          set:html={t("logros.main.subtitle")}
+        />
+      )
+    }
+
+    <div
+      class="flex flex-col text-left gap-8 sm:gap-10 max-w-3xl mx-auto w-full mb-12"
+    >
+      {
+        logros.map((item, index) => (
+          <PostCardPreview post={item} isFeatured={index === 0} />
+        ))
+      }
+    </div>
+  </div>
+</MainLayout>

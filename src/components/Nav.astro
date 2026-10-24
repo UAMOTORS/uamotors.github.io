@@ -22,12 +22,18 @@ const routeMap = {
   "/en/about-us": "/nosotros",
   "/proyecto": "/en/project",
   "/en/project": "/proyecto",
+  "/logros": "/en/achievements",
+  "/en/achievements": "/logros",
+  "/en/milestones": "/logros",
+  "/en/logros": "/logros",
   "/nuestros-aliados": "/en/our-partners",
   "/en/our-partners": "/nuestros-aliados",
   "/contacto": "/en/contact",
   "/en/contact": "/contacto",
   "/aviso-de-privacidad": "/en/privacy-notice",
   "/en/privacy-notice": "/aviso-de-privacidad",
+  "/404": "/en/404",
+  "/en/404": "/404",
 };
 
 let targetUrl =
@@ -46,7 +52,11 @@ const englishNavLinks = [
     href: withBase("/en/project"),
   },
   {
-    text: "Our Partners",
+    text: "Achievements",
+    href: withBase("/en/achievements"),
+  },
+  {
+    text: "Partners",
     href: withBase("/en/our-partners"),
   },
   {
@@ -62,15 +72,20 @@ const navLinks = isEnglish ? englishNavLinks : siteConfig.headerNavLinks;
   <nav
     class="nav-glass font-light w-full flex flex-row items-center justify-between gap-2 rounded-4xl px-5 py-2 text-xs sm:gap-8 sm:py-3 sm:text-base"
   >
-    <a id="nav-logo-link" href={withBase(isEnglish ? "/en" : "/")}
-      ><SiteIdentity /></a
+    <a
+      id="nav-logo-link"
+      href={withBase(isEnglish ? "/en" : "/")}
+      class="shrink-0 flex items-center"
     >
-    <div class="hidden md:flex md:gap-8">
+      <SiteIdentity />
+    </a>
+    <div class="hidden md:flex md:gap-4 lg:gap-8">
       {(<NavLinks activePage={activePage} links={navLinks} />)}
     </div>
-    <div class="flex items-center gap-4">
+    <div class="flex items-center gap-3 sm:gap-4 shrink-0">
       <a
-        href={targetUrl}
+        id="nav-lang-switcher"
+        href={withBase(targetUrl)}
         translate="no"
         class="notranslate flex items-center justify-center w-[38px] h-[38px] text-xs font-semibold rounded-full border border-gray-500/30 hover:border-space-red dark:hover:border-space-yellow hover:text-space-red dark:hover:text-space-yellow transition-colors cursor-pointer select-none"
       >

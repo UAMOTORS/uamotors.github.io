@@ -1,22 +1,20 @@
 ---
-import { getCollection } from "astro:content";
 import MainLayout from "../../layouts/MainLayout.astro";
 import siteConfig from "../../site.config";
-import { sortItemsByDateDesc, withBase } from "../../utils/helpers";
-import PostCardPreview from "../PostCardPreview.astro";
+import { withBase } from "../../utils/helpers";
 import Button from "../Button.astro";
 import { Image } from "astro:assets";
 import heroImage from "../../assets/images/pixeltrue-space-discovery.svg";
 import ArrowRight from "../../icons/ArrowRight.astro";
-import OP_image_vertical from "../../assets/images/OP01_2-transparent.png";
-import OP_image_mobile from "../../assets/images/OP01_2-transparent-cut.png";
+// import OP_image_vertical from "../../assets/images/OP-26_2-transparent.png";
+// import OP_image_mobile from "../../assets/images/OP-26_2-transparent-cut.png";
+import OP_image_vertical from "../../assets/images/OP-26_hero.png";
+// import OP_image_mobile from "../../assets/images/OP-26_hero-mobile.png";
 
 // i18n
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-
-const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
 ---
 
 <script is:inline>
@@ -44,9 +42,9 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
   pageTitle={siteConfig.title + " | Escudería Formula SAE UAM"}
 >
   <div
-    class="jumbo-banner relative flex flex-row items-center justify-between w-full pl-4 pr-0 sm:px-4 my-8 sm:my-12 gap-2 sm:gap-6 overflow-hidden"
+    class="jumbo-banner relative flex flex-row items-stretch justify-between w-full pl-4 pr-0 md:px-4 my-8 md:my-12 gap-2 md:gap-6 [overflow-x:clip] [overflow-y:visible] md:overflow-visible"
   >
-    <!-- <svg 
+    {/* <svg 
       class="absolute -top-24 -left-24 sm:-top-36 sm:-left-4 w-[450px] h-[450px] sm:w-[600px] sm:h-[600px] -z-10 pointer-events-none"
       viewBox="0 0 100 100" 
       xmlns="http://www.w3.org/2000/svg"
@@ -63,14 +61,14 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
         </radialGradient>
       </defs>
       <circle cx="50" cy="50" r="50" class="fill-[url(#glow-text-light)] dark:fill-[url(#glow-text-dark)]" />
-    </svg> -->
+    </svg> */}
 
-    <div class="w-[60%] sm:flex-1 min-w-0 relative z-30 pr-2 sm:pr-0">
+    <div class="w-[54%] sm:w-[50%] md:flex-1 shrink-0 min-w-0 relative z-30 pr-2 md:pr-0 flex flex-col justify-center">
       {
         siteConfig.hero?.eyebrowText && (
           <span
             id="hero-eyebrow-text"
-            class="tag inline-block mb-2 rounded-full text-sm sm:text-base px-3 py-1 border border-gray-500 kanit-light select-none cursor-pointer"
+            class="tag inline-block w-fit self-start mb-2 rounded-full text-sm sm:text-base px-3 py-1 border border-gray-500 kanit-light select-none cursor-pointer"
             style="touch-action: manipulation;"
           >
             {siteConfig.hero?.eyebrowText}
@@ -78,21 +76,21 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
         )
       }
 
-      <!-- hero title -->
-      <h1 class="sigmar-ff-italic leading-tight text-balance sm:pt-0!">
+      {/* hero title */}
+      <h1 class="sigmar-ff-italic leading-tight text-balance md:pt-0!">
         {t("home.hero.title")}
       </h1>
 
-      <!-- hero text -->
+      {/* hero text */}
 
       <p
-        class="kanit-regular text-balance text-base sm:text-lg"
+        class="kanit-regular text-balance text-base md:text-lg"
         set:html={t("home.hero.text")}
       />
       <div
-        class="flex flex-wrap items-center text-xs sm:text-base gap-3 mt-3 sm:mt-12"
+        class="flex flex-col sm:flex-row items-stretch sm:items-center text-xs md:text-base gap-2 sm:gap-3 mt-3 md:mt-12"
       >
-        <!-- {
+        {/* {
           siteConfig.hero?.actions?.map((action, index) => (
             <Button
               href={action.href}
@@ -105,7 +103,7 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
               {t("home.hero.btn1")}
             </Button>
           ))
-        } -->
+        } */}
         <Button
           href={lang === "en" ? "en/proyecto" : "/proyecto"}
           class="space-btn-filled !py-2.5"
@@ -120,7 +118,7 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
       </div>
     </div>
     <div
-      class="w-[40%] sm:flex-1 min-w-0 flex justify-end items-center relative group"
+      class="flex-1 min-w-0 relative flex justify-start md:justify-center items-center [overflow-x:clip] [overflow-y:visible] md:overflow-visible group"
     >
       <div
         class="absolute inset-0 bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:40px_40px] opacity-15 dark:opacity-25 pointer-events-none rounded-2xl [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_70%)]"
@@ -128,38 +126,33 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
       </div>
 
       <div
-        class="relative h-auto sm:w-full flex justify-end sm:justify-center items-center transition-transform duration-700"
+        class="relative h-full w-full flex justify-start md:justify-center items-center transition-transform duration-700 py-2"
       >
-        <div class="absolute inset-0 pointer-events-none overflow-hidden z-0">
-          <div
-            class="absolute bottom-0 left-0 w-full h-[2px] bg-space-red shadow-[0_0_20px_5px_rgba(227,30,36,0.8)] animate-laser-scan-reverse"
-          >
-          </div>
-        </div>
-
         <div
-          class="relative z-10 animate-car-levitate flex justify-end sm:justify-center items-center"
+          class="relative z-10 animate-car-levitate h-full max-h-[460px] md:max-h-[500px] aspect-[1400/2795] flex items-center justify-start md:justify-center shrink-0 origin-left md:origin-center"
         >
-          <!-- Carro Desktop -->
+          {/* Telemetry laser scan: bottom reverse beam */}
+          <div class="laser-beam-container pointer-events-none z-0">
+            <div class="laser-beam-line laser-reverse">
+              <div class="laser-trail-reverse"></div>
+              <div class="laser-core"></div>
+            </div>
+          </div>
+
+          {/* Carro Completo (Desktop y Movil) */}
           <Image
-            class="hidden sm:block w-auto h-auto max-h-[650px] object-contain drop-shadow-[0_15px_25px_rgba(0,0,0,0.6)] dark:drop-shadow-[0_15px_25px_rgba(0,0,0,0.8)]"
+            class="w-full h-full max-w-none object-contain object-left md:object-center select-none pointer-events-none"
             src={OP_image_vertical}
             alt="UAMOTORS Vehicle"
             transition:name="hero-image"
           />
-          <!-- Coche Recortado -->
-          <Image
-            class="block sm:hidden w-auto h-[350px] max-w-none drop-shadow-[0_10px_20px_rgba(0,0,0,0.6)] dark:drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)]"
-            src={OP_image_mobile}
-            alt="UAMOTORS Vehicle Mobile"
-            transition:name="hero-image-mobile"
-          />
-        </div>
 
-        <div class="absolute inset-0 pointer-events-none overflow-hidden z-20">
-          <div
-            class="absolute top-0 left-0 w-full h-[2px] bg-[#9b0c10] shadow-[0_0_20px_5px_rgba(155,12,16,0.8)] animate-laser-scan"
-          >
+          {/* Telemetry laser scan: top forward beam */}
+          <div class="laser-beam-container pointer-events-none z-20">
+            <div class="laser-beam-line laser-forward">
+              <div class="laser-trail-forward"></div>
+              <div class="laser-core"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -213,7 +206,9 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
 
 <style is:global>
   html.splash-active .animate-laser-scan,
-  html.splash-active .animate-laser-scan-reverse {
+  html.splash-active .animate-laser-scan-reverse,
+  html.splash-active .laser-forward,
+  html.splash-active .laser-reverse {
     animation: none !important;
     opacity: 0 !important;
   }
@@ -222,13 +217,13 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
   }
 
   .crt-popup {
-    background-color: var(--glass-bg) !important;
+    background-color: rgba(255, 255, 255, 0.96) !important;
     backdrop-filter: var(--glass-blur) !important;
     -webkit-backdrop-filter: var(--glass-blur) !important;
-    color: #434343 !important;
-    border-radius: 8px !important;
-    border: var(--glass-border) !important;
-    box-shadow: var(--glass-shadow) !important;
+    color: #1a1a1a !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.25) !important;
     overflow: hidden !important;
   }
 
@@ -313,16 +308,31 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
   #curator-feed-default-feed-layout .crt-post-date,
   #curator-feed-default-feed-layout .crt-time,
   #curator-feed-default-feed-layout a,
-  .crt-popup .crt-post-header span,
-  .crt-popup .crt-post-header a,
-  .crt-popup .crt-post-header div,
+  .crt-popup,
+  .crt-popup .crt-popup-right,
+  .crt-popup .crt-popup-right *,
+  .crt-popup .crt-post-header,
+  .crt-popup .crt-post-header *,
   .crt-popup .crt-author-name,
+  .crt-popup .crt-author-username,
+  .crt-popup .crt-post-content,
+  .crt-popup .crt-post-content *,
   .crt-popup .crt-post-content-text,
+  .crt-popup .crt-post-content-text *,
+  .crt-popup .crt-post-text,
+  .crt-popup .crt-post-text *,
+  .crt-popup .crt-post-desc,
+  .crt-popup .crt-post-desc *,
+  .crt-popup p,
+  .crt-popup span,
+  .crt-popup a,
   .crt-popup .crt-date,
   .crt-popup .crt-post-date,
   .crt-popup .crt-time,
-  .crt-popup a {
+  .crt-popup .crt-post-share,
+  .crt-popup .crt-post-share * {
     color: #1a1a1a !important;
+    fill: #1a1a1a !important;
     opacity: 1 !important;
     text-decoration: none !important;
     transition: color 0.2s ease !important;
@@ -340,12 +350,18 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
     color: #e31e24 !important;
   }
 
+  .crt-popup .crt-social-icon,
+  .crt-popup .crt-social-icon i,
+  .crt-popup .crt-social-icon svg,
   .crt-popup .crt-close,
   .crt-popup .crt-play,
   .crt-popup .crt-nav-left,
   .crt-popup .crt-nav-right,
-  .crt-popup .crt-icon-close {
+  .crt-popup .crt-icon-close,
+  .crt-popup-wrapper .crt-popup .crt-previous,
+  .crt-popup-wrapper .crt-popup .crt-next {
     color: #1a1a1a !important;
+    fill: #1a1a1a !important;
     background-color: transparent !important;
   }
 
@@ -356,12 +372,12 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
   }
 
   html.dark .crt-popup {
-    background-color: var(--glass-bg) !important;
+    background-color: rgba(24, 24, 27, 0.95) !important;
     backdrop-filter: var(--glass-blur) !important;
     -webkit-backdrop-filter: var(--glass-blur) !important;
     color: #f5f5f5 !important;
-    border: var(--glass-border) !important;
-    box-shadow: var(--glass-shadow) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.7) !important;
   }
 
   html.dark #curator-feed-default-feed-layout .crt-post-hover {
@@ -403,16 +419,31 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
   html.dark #curator-feed-default-feed-layout .crt-post-date,
   html.dark #curator-feed-default-feed-layout .crt-time,
   html.dark #curator-feed-default-feed-layout a,
-  html.dark .crt-popup .crt-post-header span,
-  html.dark .crt-popup .crt-post-header a,
-  html.dark .crt-popup .crt-post-header div,
+  html.dark .crt-popup,
+  html.dark .crt-popup .crt-popup-right,
+  html.dark .crt-popup .crt-popup-right *,
+  html.dark .crt-popup .crt-post-header,
+  html.dark .crt-popup .crt-post-header *,
   html.dark .crt-popup .crt-author-name,
+  html.dark .crt-popup .crt-author-username,
+  html.dark .crt-popup .crt-post-content,
+  html.dark .crt-popup .crt-post-content *,
   html.dark .crt-popup .crt-post-content-text,
+  html.dark .crt-popup .crt-post-content-text *,
+  html.dark .crt-popup .crt-post-text,
+  html.dark .crt-popup .crt-post-text *,
+  html.dark .crt-popup .crt-post-desc,
+  html.dark .crt-popup .crt-post-desc *,
+  html.dark .crt-popup p,
+  html.dark .crt-popup span,
+  html.dark .crt-popup a,
   html.dark .crt-popup .crt-date,
   html.dark .crt-popup .crt-post-date,
   html.dark .crt-popup .crt-time,
-  html.dark .crt-popup a {
+  html.dark .crt-popup .crt-post-share,
+  html.dark .crt-popup .crt-post-share * {
     color: #f5f5f5 !important;
+    fill: #f5f5f5 !important;
   }
 
   html.dark #curator-feed-default-feed-layout a:hover,
@@ -427,12 +458,19 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
     color: #ff4046 !important;
   }
 
+  html.dark .crt-popup .crt-social-icon,
+  html.dark .crt-popup .crt-social-icon i,
+  html.dark .crt-popup .crt-social-icon svg,
   html.dark .crt-popup .crt-close,
   html.dark .crt-popup .crt-play,
   html.dark .crt-popup .crt-nav-left,
   html.dark .crt-popup .crt-nav-right,
-  html.dark .crt-popup .crt-icon-close {
+  html.dark .crt-popup .crt-icon-close,
+  html.dark .crt-popup-wrapper .crt-popup .crt-previous,
+  html.dark .crt-popup-wrapper .crt-popup .crt-next {
     color: #f5f5f5 !important;
+    fill: #f5f5f5 !important;
+    background-color: transparent !important;
   }
 
   html.dark .crt-popup .crt-close:hover,
@@ -446,6 +484,7 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
     z-index: 999999 !important;
   }
 
+  /* Legacy laser animations preserved for rollback reference
   @keyframes laser-scan-v4 {
     0% {
       top: 0%;
@@ -531,6 +570,143 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
     transform: scaleX(0);
     animation: laser-scan-reverse-v4 12s ease-in-out infinite;
     will-change: bottom, opacity, transform;
+  }
+  */
+
+  /* Optical telemetry laser scan styles */
+  .laser-beam-container {
+    position: absolute;
+    inset: -0.5rem 0;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+  }
+
+  .laser-beam-line {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    will-change: top, bottom, opacity, transform;
+  }
+
+  .laser-core {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to right, transparent 5%, rgba(255, 255, 255, 0.95) 50%, transparent 95%);
+    box-shadow:
+      0 0 14px 3px rgba(227, 30, 36, 0.9),
+      0 0 3px 1px rgba(255, 255, 255, 0.9);
+  }
+
+  .laser-trail-forward {
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    width: 100%;
+    height: 32px;
+    background: linear-gradient(to top, rgba(227, 30, 36, 0.16), transparent);
+    pointer-events: none;
+  }
+
+  .laser-trail-reverse {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 100%;
+    height: 32px;
+    background: linear-gradient(to bottom, rgba(227, 30, 36, 0.16), transparent);
+    pointer-events: none;
+  }
+
+  @keyframes laser-scan-forward-v5 {
+    0% {
+      top: 0%;
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    3% {
+      top: 0%;
+      opacity: 1;
+      transform: scaleX(1);
+    }
+    22% {
+      top: 100%;
+      opacity: 1;
+      transform: scaleX(1);
+    }
+    26% {
+      top: 100%;
+      opacity: 1;
+      transform: scaleX(1);
+    }
+    45% {
+      top: 0%;
+      opacity: 1;
+      transform: scaleX(1);
+    }
+    49% {
+      top: 0%;
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    100% {
+      top: 0%;
+      opacity: 0;
+      transform: scaleX(0);
+    }
+  }
+
+  @keyframes laser-scan-reverse-v5 {
+    0% {
+      bottom: 0%;
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    3% {
+      bottom: 0%;
+      opacity: 1;
+      transform: scaleX(1);
+    }
+    22% {
+      bottom: 100%;
+      opacity: 1;
+      transform: scaleX(1);
+    }
+    26% {
+      bottom: 100%;
+      opacity: 1;
+      transform: scaleX(1);
+    }
+    45% {
+      bottom: 0%;
+      opacity: 1;
+      transform: scaleX(1);
+    }
+    49% {
+      bottom: 0%;
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    100% {
+      bottom: 0%;
+      opacity: 0;
+      transform: scaleX(0);
+    }
+  }
+
+  .laser-forward {
+    opacity: 0;
+    transform: scaleX(0);
+    animation: laser-scan-forward-v5 7s ease-in-out infinite;
+  }
+
+  .laser-reverse {
+    opacity: 0;
+    transform: scaleX(0);
+    animation: laser-scan-reverse-v5 7s ease-in-out infinite;
   }
 
   /*   @media (max-width: 639px) {
@@ -631,17 +807,18 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
     overflow-x: clip;
   }
 
+  /* Vehicle levitation synchronized with 7s telemetry scan cycle */
   @keyframes car-levitate-v2 {
     0% {
       transform: scale(1);
     }
-    2% {
-      transform: scale(1.05);
+    3% {
+      transform: scale(1.025);
     }
-    33% {
-      transform: scale(1.05);
+    45% {
+      transform: scale(1.025);
     }
-    35% {
+    49% {
       transform: scale(1);
     }
     100% {
@@ -649,7 +826,7 @@ const allPosts = (await getCollection("blogs")).sort(sortItemsByDateDesc);
     }
   }
   .animate-car-levitate {
-    animation: car-levitate-v2 12s ease-in-out infinite;
+    animation: car-levitate-v2 7s ease-in-out infinite;
     will-change: transform;
   }
 </style>

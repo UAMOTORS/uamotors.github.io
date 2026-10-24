@@ -1,0 +1,27 @@
+{
+  "logros.meta.title": "Achievements",
+  "logros.meta.desc": "Explore the achievements, awards, and technical milestones of UAMOTORS in Formula SAE.",
+  "logros.main.title": "Achievements",
+  "logros.main.subtitle": "Our journey building the <strong>\"OP\"</strong> race car and representing <strong>the UAM</strong>.",
+ 
+  "items": [
+    {
+      "title": "Best Performance in Virtual Modality",
+      "pubDate": "2026-09-21",
+      "description": "Earned the highest evaluation during Formula SAE's virtual stage, distinguished by our engineering rigor, CAD simulations, and technical defense.",
+      "image": "1"
+    },
+    {
+      "title": "3<sup class='lowercase'>rd</sup> Place in Costs Event",
+      "pubDate": "2026-09-21",
+      "description": "In our debut year, we secured a podium finish in the Costs Event, proving our budget efficiency, manufacturing optimization, and overall economic feasibility.",
+      "image": "2"
+    },
+    {
+      "title": "Top 5 Overall Standing",
+      "pubDate": "2026-09-21",
+      "description": "Secured a Top-5 finish in the Formula SAE Mexico overall championship, cementing UAMOTORS' standing among the premier university racing teams nationwide.",
+      "image": "3"
+    }
+  ]
+}

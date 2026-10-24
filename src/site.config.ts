@@ -75,6 +75,8 @@ const siteConfig: SiteConfig = {
         src: '/tira-uamotors.svg',
         alt: 'UAMOTORS - Escudería Formula SAE de la UAM'
     },
+
+    // títulos del nav/header
     headerNavLinks: [
         {
             text: 'Nosotros',
@@ -85,7 +87,11 @@ const siteConfig: SiteConfig = {
             href: withBase('proyecto')
         },
         {
-            text: 'Nuestros Aliados',
+            text: 'Logros',
+            href: withBase('logros')
+        },
+        {
+            text: 'Aliados',
             href: withBase('nuestros-aliados')
         },
         {
