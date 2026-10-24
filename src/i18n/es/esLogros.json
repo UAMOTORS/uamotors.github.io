@@ -6,21 +6,21 @@
   
   "items": [
     {
-      "title": "Que la fuerza te acompañe",
-      "pubDate": "1901-02-06",
-      "description": "¡Esta publicación aparecerá por sí sola!",
+      "title": "Mejor Desempeño en Modalidad Virtual",
+      "pubDate": "2026-09-21",
+      "description": "El equipo obtuvo la evaluación más destacada en la fase virtual de Formula SAE, sobresaliendo por el rigor en modelado CAD, simulaciones de ingeniería y la defensa técnica del monoplaza.",
       "image": "1"
     },
     {
-      "title": "Apunta a las estrellas, ¿aterriza entre las lunas o sigue al meteorito?",
-      "pubDate": "2026-01-31",
-      "description": "¡Tuve algunos desafíos, pero la comunidad me ayudó!",
+      "title": "3<sup class='lowercase'>er</sup> lugar en Costs Event",
+      "pubDate": "2026-09-21",
+      "description": "En nuestro primer año de participación, conquistamos el podio en la prueba de Costs Event, validando la viabilidad económica, control presupuestario y optimización de manufactura del monoplaza.",
       "image": "2"
     },
     {
-      "title": "Segunda publicación",
-      "pubDate": "2024-01-15",
-      "description": "¡Esta publicación es genial!",
+      "title": "Top 5 Clasificación General",
+      "pubDate": "2026-09-21",
+      "description": "Posicionamiento dentro de las 5 mejores escuderías en la tabla general de Formula SAE México, consolidando el trabajo de todo el equipo de la UAM frente a universidades de todo el país.",
       "image": "3"
     }
   ]

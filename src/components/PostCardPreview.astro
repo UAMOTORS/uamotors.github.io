@@ -52,9 +52,8 @@ const imgSrc =
     </div>
     <h2
       class={`sigmar-ff text-balance mb-3 text-space-red dark:text-space-yellow ${isFeatured ? "text-2xl sm:text-3xl" : "text-xl sm:text-2xl"}`}
-    >
-      {title}
-    </h2>
+      set:html={title}
+    />
     {
       description && (
         <p

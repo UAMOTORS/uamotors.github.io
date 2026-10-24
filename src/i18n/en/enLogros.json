@@ -6,21 +6,21 @@
  
   "items": [
     {
-      "title": "May the force be with you",
-      "pubDate": "2024-02-06",
-      "description": "This post should show up on its own!",
+      "title": "Best Performance in Virtual Modality",
+      "pubDate": "2026-09-21",
+      "description": "Earned the highest evaluation during Formula SAE's virtual stage, distinguished by our engineering rigor, CAD simulations, and technical defense.",
       "image": "1"
     },
     {
-      "title": "Aim for the stars, land on the moons or trail behind the asteroid?",
-      "pubDate": "2024-01-31",
-      "description": "I had some challenges, but the community helped out!",
+      "title": "3<sup class='lowercase'>rd</sup> Place in Costs Event",
+      "pubDate": "2026-09-21",
+      "description": "In our debut year, we secured a podium finish in the Costs Event, proving our budget efficiency, manufacturing optimization, and overall economic feasibility.",
       "image": "2"
     },
     {
-      "title": "Second post",
-      "pubDate": "2024-01-15",
-      "description": "This post is awesome!",
+      "title": "Top 5 Overall Standing",
+      "pubDate": "2026-09-21",
+      "description": "Secured a Top-5 finish in the Formula SAE Mexico overall championship, cementing UAMOTORS' standing among the premier university racing teams nationwide.",
       "image": "3"
     }
   ]
