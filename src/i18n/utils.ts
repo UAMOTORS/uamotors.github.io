@@ -8,6 +8,7 @@ import esAliados from "./es/esAliados.json";
 import esContacto from "./es/esContacto.json";
 import esPrivacy from "./es/esPrivacy.json";
 import esLogros from "./es/esLogros.json";
+import es404 from "./es/es404.json";
 
 //imports inglés
 import enFooter from "./en/enFooter.json";
@@ -19,10 +20,11 @@ import enAliados from "./en/enAliados.json";
 import enContacto from "./en/enContacto.json";
 import enPrivacy from "./en/enPrivacy.json";
 import enLogros from "./en/enLogros.json";
-;
+import en404 from "./en/en404.json";
+
 // objetos de idiomas
-const es = {...esFooter, ...esTeam, ...esHome, ...esNosotros, ...esProyecto, ...esAliados, ...esContacto, ...esPrivacy, ...esLogros};
-const en = {...enFooter, ...enTeam, ...enHome, ...enNosotros, ...enProyecto, ...enAliados, ...enContacto, ...enPrivacy, ...enLogros};
+const es = {...esFooter, ...esTeam, ...esHome, ...esNosotros, ...esProyecto, ...esAliados, ...esContacto, ...esPrivacy, ...esLogros, ...es404};
+const en = {...enFooter, ...enTeam, ...enHome, ...enNosotros, ...enProyecto, ...enAliados, ...enContacto, ...enPrivacy, ...enLogros, ...en404};
 
 // diccionarios
 const ui = {es, en};

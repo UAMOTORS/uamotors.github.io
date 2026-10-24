@@ -2,53 +2,43 @@
 import { Image } from "astro:assets";
 import MainLayout from "../../layouts/MainLayout.astro";
 import { withBase } from "../../utils/helpers";
-import carImage from "../../assets/images/OP-26_2-transparent.png";
+import carImage from "../../assets/images/OP-26_404.png";
 import SpaceKeyboard from "../../components/SpaceKeyboard.astro";
 import siteConfig from "../../site.config";
 import Button from "../../components/Button.astro";
 
 // i18n
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
-const lang = getLangFromUrl(Astro.url);
+
+interface Props {
+  lang?: "es" | "en";
+}
+
+const { lang: propLang } = Astro.props;
+const lang = propLang || getLangFromUrl(Astro.url);
+const isEnInitial = lang === "en";
+
 const t = useTranslations(lang);
+const tEs = useTranslations("es");
+const tEn = useTranslations("en");
+
+const pageTitle = isEnInitial
+  ? `${siteConfig.title} | 404 - Off Track`
+  : `${siteConfig.title} | 404 - Fuera de Pista`;
+
+const pageDescription = isEnInitial
+  ? "Page not found - UAMOTORS. The requested address does not exist or has been moved."
+  : "Página no encontrada - UAMOTORS. La dirección solicitada no existe o ha sido movida.";
+
+const homeHref = withBase(isEnInitial ? "/en/" : "/");
 ---
 
 <MainLayout
   activePage="404"
-  pageTitle={siteConfig.title + " | 404 - Fuera de Pista"}
-  description="Página no encontrada - UAMOTORS. La dirección solicitada no existe o ha sido movida."
+  pageTitle={pageTitle}
+  description={pageDescription}
   showSubscribeForm={false}
 >
-  <script is:inline>
-    (function () {
-      const isEn =
-        window.location.pathname.startsWith("/en/") ||
-        window.location.pathname === "/en";
-      if (isEn) {
-        document.documentElement.classList.add("route-en");
-        document.documentElement.setAttribute("lang", "en");
-        document.title = "UAMOTORS | 404 - Off Track";
-        const desc = document.querySelector('meta[name="description"]');
-        if (desc)
-          desc.setAttribute(
-            "content",
-            "Page not found - UAMOTORS. The requested address does not exist or has been moved.",
-          );
-      } else {
-        document.documentElement.classList.add("route-es");
-      }
-    })();
-  </script>
-
-  <style>
-    html.route-en .lang-es {
-      display: none !important;
-    }
-    html:not(.route-en) .lang-en {
-      display: none !important;
-    }
-  </style>
-
   <div
     class="flex flex-col items-center justify-center page-content py-12 text-center"
   >
@@ -67,31 +57,21 @@ const t = useTranslations(lang);
       </div>
 
       <Image
-        class="w-auto h-auto max-h-[220px] object-contain drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)] rotate-6 transition-transform duration-500 hover:rotate-12 lang-es"
+        id="page-404-car"
+        class="w-auto h-auto max-h-[220px] object-contain drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)] rotate-6 transition-transform duration-500 hover:rotate-12"
         src={carImage}
-        alt="Vehículo UAMOTORS fuera de pista"
-        width={500}
-        height={300}
-      />
-      <Image
-        class="w-auto h-auto max-h-[220px] object-contain drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)] rotate-6 transition-transform duration-500 hover:rotate-12 lang-en"
-        src={carImage}
-        alt="UAMOTORS vehicle off track"
+        alt={isEnInitial ? "UAMOTORS vehicle off track" : "Vehículo UAMOTORS fuera de pista"}
         width={500}
         height={300}
       />
     </div>
 
     <div class="space-y-4 max-w-md mx-auto px-4 mt-6">
-      <p class="kanit-light text-base sm:text-lg lang-es">
+      <p id="page-404-text" class="kanit-light text-base sm:text-lg">
         {t("404.text")}
       </p>
-      <!-- <p class="kanit-light text-base sm:text-lg lang-en">
-        The address you are trying to access does not exist, has been moved, or
-        is under maintenance.
-      </p> -->
-      <div class="pt-6 lang-es">
-        <Button href={withBase("/")} class="space-btn-filled px-8">
+      <div class="pt-6">
+        <Button id="page-404-btn" href={homeHref} class="space-btn-filled px-8">
           {t("404.btn")}
         </Button>
       </div>
@@ -100,9 +80,96 @@ const t = useTranslations(lang);
     <div class="w-full max-w-2xl mt-4">
       <SpaceKeyboard />
       <p
-        class="text-xs opacity-60 mt-4 kanit-light lang-es"
+        id="page-404-spacebar"
+        class="text-xs opacity-60 mt-4 kanit-light"
         set:html={t("404.spacebar")}
       />
     </div>
   </div>
+
+  <script
+    is:inline
+    data-astro-rerun
+    define:vars={{
+      esText: tEs("404.text"),
+      esBtn: tEs("404.btn"),
+      esSpacebar: tEs("404.spacebar"),
+      enText: tEn("404.text"),
+      enBtn: tEn("404.btn"),
+      enSpacebar: tEn("404.spacebar"),
+      esHome: withBase("/"),
+      enHome: withBase("/en/"),
+      esTarget: withBase("/404"),
+      enTarget: withBase("/en/404"),
+    }}
+  >
+    (function () {
+      function syncLang() {
+        const path = window.location.pathname;
+        const isEn =
+          path.startsWith("/en/") ||
+          path === "/en" ||
+          path === "/en/404";
+
+        const textEl = document.getElementById("page-404-text");
+        const btnEl = document.getElementById("page-404-btn");
+        const spacebarEl = document.getElementById("page-404-spacebar");
+        const carEl = document.getElementById("page-404-car");
+        const navLangSwitcher = document.getElementById("nav-lang-switcher");
+        const navLogoLink = document.getElementById("nav-logo-link");
+        const descMeta = document.querySelector('meta[name="description"]');
+
+        if (isEn) {
+          document.documentElement.setAttribute("lang", "en");
+          document.title = "UAMOTORS | 404 - Off Track";
+          if (descMeta) {
+            descMeta.setAttribute(
+              "content",
+              "Page not found - UAMOTORS. The requested address does not exist or has been moved."
+            );
+          }
+          if (textEl) textEl.textContent = enText;
+          if (btnEl) {
+            btnEl.textContent = enBtn;
+            btnEl.setAttribute("href", enHome);
+          }
+          if (spacebarEl) spacebarEl.innerHTML = enSpacebar;
+          if (carEl) carEl.setAttribute("alt", "UAMOTORS vehicle off track");
+          if (navLangSwitcher) {
+            navLangSwitcher.textContent = "ES";
+            navLangSwitcher.setAttribute("href", esTarget);
+          }
+          if (navLogoLink) {
+            navLogoLink.setAttribute("href", enHome);
+          }
+        } else {
+          document.documentElement.setAttribute("lang", "es");
+          document.title = "UAMOTORS | 404 - Fuera de Pista";
+          if (descMeta) {
+            descMeta.setAttribute(
+              "content",
+              "Página no encontrada - UAMOTORS. La dirección solicitada no existe o ha sido movida."
+            );
+          }
+          if (textEl) textEl.textContent = esText;
+          if (btnEl) {
+            btnEl.textContent = esBtn;
+            btnEl.setAttribute("href", esHome);
+          }
+          if (spacebarEl) spacebarEl.innerHTML = esSpacebar;
+          if (carEl) carEl.setAttribute("alt", "Vehículo UAMOTORS fuera de pista");
+          if (navLangSwitcher) {
+            navLangSwitcher.textContent = "EN";
+            navLangSwitcher.setAttribute("href", enTarget);
+          }
+          if (navLogoLink) {
+            navLogoLink.setAttribute("href", esHome);
+          }
+        }
+      }
+
+      syncLang();
+      document.addEventListener("astro:page-load", syncLang);
+    })();
+  </script>
 </MainLayout>
