@@ -72,126 +72,46 @@ const t = useTranslations(lang);
         />
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-        <div
-          class="bg-black/5 dark:bg-white/5 p-8 rounded-3xl border border-black/10 dark:border-white/10 flex flex-col justify-between"
+      <div
+        class="bg-black/5 dark:bg-white/5 p-8 rounded-3xl border border-black/10 dark:border-white/10"
+      >
+        <h3
+          class="sigmar-ff text-2xl mb-6 text-space-red dark:text-space-yellow"
         >
-          <div>
-            <h3
-              class="sigmar-ff text-2xl mb-6 text-space-red dark:text-space-yellow"
-            >
-              {t("proyecto.objetivos.sub")}
-            </h3>
-            <ul class="space-y-6 kanit-light text-lg">
-              <li class="flex items-start gap-4">
-                <Shield class="w-8 h-8 shrink-0 mt-1" />
-                <div>
-                  <strong
-                    class="kanit-regular text-space-red dark:text-space-yellow"
-                    >{t("proyecto.objetivo.t1")}</strong
-                  ><br />
-                  {t("proyecto.objetivo.d1")}
-                </div>
-              </li>
-              <li class="flex items-start gap-4">
-                <Gear class="w-8 h-8 shrink-0 mt-1" />
-                <div>
-                  <strong
-                    class="kanit-regular text-space-red dark:text-space-yellow"
-                    >{t("proyecto.objetivo.t2")}</strong
-                  ><br />
-                  {t("proyecto.objetivo.d1")}
-                </div>
-              </li>
-              <li class="flex items-start gap-4">
-                <Chart class="w-8 h-8 shrink-0 mt-1" />
-                <div>
-                  <strong
-                    class="kanit-regular text-space-red dark:text-space-yellow"
-                    >{t("proyecto.objetivo.t3")}</strong
-                  ><br />
-                  {t("proyecto.objetivo.d1")}
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div
-          class="bg-black/5 dark:bg-white/5 p-8 rounded-3xl border border-black/10 dark:border-white/10 flex flex-col justify-between"
-        >
-          <div>
-            <h3
-              class="sigmar-ff text-2xl mb-4 text-space-red dark:text-space-yellow"
-            >
-              {t("proyecto.trayectoria.title")}
-            </h3>
-            <p class="kanit-light text-base leading-relaxed mb-8">
-              {t("proyecto.timeline.desc")}
-            </p>
-            <div class="pl-8 space-y-0 relative">
-              <div class="relative pb-8 timeline-item" data-date="2025-03">
-                <div
-                  class="absolute left-[-26px] top-1.5 bottom-0 w-1 bg-gray-300 dark:bg-gray-600 timeline-line"
-                >
-                </div>
-                <div
-                  class="absolute -left-[32px] top-1.5 h-4 w-4 rounded-full border-2 border-gray-300 bg-white dark:border-gray-600 dark:bg-gray-800 timeline-dot transition-all duration-300"
-                >
-                </div>
-                <h4 class="sigmar-ff text-xl timeline-title">
-                  {t("proyecto.timeline.item1.title")}
-                </h4>
-                <p class="kanit-light text-lg timeline-desc">
-                  {t("proyecto.timeline.item1.desc")}
-                </p>
-              </div>
-
-              <div class="relative pb-8 timeline-item" data-date="2026-09">
-                <div
-                  class="absolute left-[-26px] top-1.5 bottom-0 w-1 bg-gray-300 dark:bg-gray-600 timeline-line"
-                >
-                </div>
-                <div
-                  class="absolute -left-[32px] top-1.5 h-4 w-4 rounded-full border-2 border-gray-300 bg-white dark:border-gray-600 dark:bg-gray-800 timeline-dot transition-all duration-300"
-                >
-                </div>
-                <h4 class="sigmar-ff text-xl timeline-title">
-                  {t("proyecto.timeline.item2.title")}
-                </h4>
-                <p class="kanit-light text-lg timeline-desc">
-                  {t("proyecto.timeline.item2.desc")}
-                </p>
-              </div>
-
-              <div class="relative pb-8 timeline-item" data-date="2027-02">
-                <div
-                  class="absolute left-[-26px] top-1.5 bottom-0 w-1 bg-gray-300 dark:bg-gray-600 timeline-line"
-                >
-                </div>
-                <div
-                  class="absolute -left-[32px] top-1.5 h-4 w-4 rounded-full border-2 border-gray-300 bg-white dark:border-gray-600 dark:bg-gray-800 timeline-dot transition-all duration-300"
-                >
-                </div>
-                <h4 class="sigmar-ff text-xl timeline-title">
-                  {t("proyecto.timeline.item3.title")}
-                </h4>
-                <p class="kanit-light text-lg timeline-desc">
-                  {t("proyecto.timeline.item3.desc")}
-                </p>
-              </div>
-
-              {
-                /* <div class="relative timeline-item" data-date="2027-05">
-                <div class="absolute -left-[32px] top-1.5 h-4 w-4 rounded-full border-2 border-gray-300 bg-white dark:border-gray-600 dark:bg-gray-800 timeline-dot transition-all duration-300"></div>
-                <h4 class="sigmar-ff text-xl timeline-title">{t("proyecto.timeline.item4.title")}</h4>
-                <p class="kanit-light text-lg timeline-desc">{t("proyecto.timeline.item4.desc")}</p>
-              </div>*/
-              }
+          {t("proyecto.objetivos.sub")}
+        </h3>
+        <ul class="grid grid-cols-1 md:grid-cols-3 gap-6 kanit-light text-lg">
+          <li class="flex items-start gap-4">
+            <Shield class="w-8 h-8 shrink-0 mt-1" />
+            <div>
+              <strong
+                class="kanit-regular text-space-red dark:text-space-yellow"
+                >{t("proyecto.objetivo.t1")}</strong
+              ><br />
+              {t("proyecto.objetivo.d1")}
             </div>
-          </div>
-          <script src="../../scripts/timeline.js"></script>
-        </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <Gear class="w-8 h-8 shrink-0 mt-1" />
+            <div>
+              <strong
+                class="kanit-regular text-space-red dark:text-space-yellow"
+                >{t("proyecto.objetivo.t2")}</strong
+              ><br />
+              {t("proyecto.objetivo.d2")}
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <Chart class="w-8 h-8 shrink-0 mt-1" />
+            <div>
+              <strong
+                class="kanit-regular text-space-red dark:text-space-yellow"
+                >{t("proyecto.objetivo.t3")}</strong
+              ><br />
+              {t("proyecto.objetivo.d3")}
+            </div>
+          </li>
+        </ul>
       </div>
 
       <div>

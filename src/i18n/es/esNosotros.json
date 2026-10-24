@@ -2,7 +2,7 @@
     "nosotros.mainTitle": "Nosotros",
     "nosotros.meta.description": "Conoce a UAMOTORS: el equipo multidisciplinario de la UAM que diseña, manufactura y valida un monoplaza tipo Fórmula para competir en Formula SAE.",
     "nosotros.title1": "¿Quiénes somos?",
-    "nosotros.title2": "Objetivos Estratégicos",
+    "nosotros.title2": "Nuestras Metas",
     "nosotros.title3": "Equipo",
     "nosotros.text1": "<strong>UAMOTORS</strong> es un equipo multidisciplinario de estudiantes de la <a href='https://www.uam.mx/' target='_blank'><strong>Universidad Autónoma Metropolitana</strong></a>, fundado en la Unidad Azcapotzalco en marzo de 2025 por iniciativa del propio alumnado. No somos solo un grupo de ingeniería; integramos conocimientos de las tres divisiones académicas de nuestra unidad: <strong>CBI</strong> (Ciencias Básicas e Ingeniería), <strong>CSH</strong> (Ciencias Sociales y Humanidades) y <strong>CAD</strong> (Ciencias y Artes para el Diseño).",
     "nosotros.text2": "Nuestra razón de ser es enfrentar retos reales de desarrollo tecnológico a través del diseño y construcción de un monoplaza tipo fórmula que cumpla con los lineamientos de la <a href='https://www.sae.org/' target='_blank'><strong>Society of Automotive Engineers (SAE)</strong></a>.",
@@ -11,10 +11,10 @@
     "nosotros.mision.text": "Aspiramos a generar un impacto educativo profundo en cada integrante mediante la creación de alianzas estratégicas con la industria que fortalezcan el desarrollo tecnológico de México.",
     "nosotros.vision.text": "Nuestro enfoque está en construir un monoplaza que sea fiable, de bajos costos operativos y optimizado para pilotos principiantes, priorizando diseños manufacturables y decisiones basadas en el criterio técnico.",
     "nosotros.objetivos.text": "Para consolidar a UAMOTORS como un referente, trabajamos bajo metas claras:",
-    "nosotros.objetivo1.title": "Seguridad e Integridad:",
-    "nosotros.objetivo1.text": "Priorizar la protección del piloto y la fiabilidad de todos los sistemas del vehículo.",
-    "nosotros.objetivo2.title": "Competitividad:",
-    "nosotros.objetivo2.text": "Crear una base sólida para que las futuras generaciones de la UAM tengan un antecedente de éxito en la competencia.",
-    "nosotros.objetivo3.title": "Proyección Internacional:",
-    "nosotros.objetivo3.text": "Nuestra hoja de ruta incluye la participación en <a href='https://www.saemx.org/formula-sae-mx' target='_blank'><strong>FSAE México</strong></a>, así como clasificar y competir en <a href='https://www.fsaeonline.com/' target='_blank'><strong>Formula SAE International</strong></a>."
+    "nosotros.objetivo1.title": "Aprobación en Inspección Técnica:",
+    "nosotros.objetivo1.text": "Superar la inspección técnica bajo normativa SAE, buscando que cada nuevo diseño cumpla al 100% con los requisitos de seguridad y el reglamento.",
+    "nosotros.objetivo2.title": "Top 3 en FSAE México 2027:",
+    "nosotros.objetivo2.text": "Respaldados por nuestro Top 5 en 2026, el objetivo para 2027 es subir al podio nacional y colocarnos entre las tres mejores escuderías del país.",
+    "nosotros.objetivo3.title": "Eficiencia y Viabilidad de Manufactura:",
+    "nosotros.objetivo3.text": "Apalancar el podio en Costos de 2026 (3.er lugar nacional), asegurando un monoplaza competitivo, altamente costeable y optimizado para manufactura."
 }

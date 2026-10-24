@@ -3,9 +3,9 @@ import { Image } from "astro:assets";
 import MainLayout from "../../layouts/MainLayout.astro";
 import siteConfig from "../../site.config";
 import coverImage from "../../assets/images/1.png";
-import RacingCar from "../../icons/general/RacingCar.astro";
+import Shield from "../../icons/general/Shield.astro";
 import Trophy from "../../icons/general/Trophy.astro";
-import Globe from "../../icons/general/Globe.astro";
+import Gear from "../../icons/general/Gear.astro";
 import TeamPhoto from "../../assets/images/uamotors-team.webp";
 import Team from "../../components/Team.astro";
 
@@ -74,49 +74,115 @@ const t = useTranslations(lang);
         </div>
       </div>
 
-      <div>
-        <h2
-          class="sigmar-ff text-3xl mb-6 text-space-red dark:text-space-yellow"
-        >
-          {t("nosotros.title2")}
-        </h2>
-        <p class="kanit-light text-lg sm:text-xl leading-relaxed mb-8">
-          {t("nosotros.objetivos.text")}
-        </p>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-start">
+        <div>
+          <h2
+            class="sigmar-ff text-3xl mb-4 text-space-red dark:text-space-yellow"
+          >
+            {t("nosotros.title2")}
+          </h2>
+          <p class="kanit-light text-base sm:text-lg leading-relaxed mb-8">
+            {t("nosotros.objetivos.text")}
+          </p>
 
-        <!-- Objetivos lista -->
-        <ul class="space-y-6 kanit-light text-lg sm:text-xl">
-          <li class="flex items-start gap-4">
-            <RacingCar class="w-8 h-8 shrink-0 mt-1" />
-            <div>
-              <strong
-                class="kanit-regular text-space-red dark:text-space-yellow"
-                >{t("nosotros.objetivo1.title")}</strong
-              ><br />
-              <span set:html={t("nosotros.objetivo1.text")} />
+          <!-- Objetivos lista -->
+          <ul class="space-y-6 kanit-light text-base sm:text-lg">
+            <li class="flex items-start gap-4">
+              <Shield class="w-8 h-8 shrink-0 mt-1" />
+              <div>
+                <strong
+                  class="kanit-regular text-space-red dark:text-space-yellow"
+                  >{t("nosotros.objetivo1.title")}</strong
+                ><br />
+                <span set:html={t("nosotros.objetivo1.text")} />
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <Trophy class="w-8 h-8 shrink-0 mt-1" />
+              <div>
+                <strong
+                  class="kanit-regular text-space-red dark:text-space-yellow"
+                  >{t("nosotros.objetivo2.title")}</strong
+                ><br />
+                <span set:html={t("nosotros.objetivo2.text")} />
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <Gear class="w-8 h-8 shrink-0 mt-1" />
+              <div>
+                <strong
+                  class="kanit-regular text-space-red dark:text-space-yellow"
+                  >{t("nosotros.objetivo3.title")}</strong
+                ><br />
+                <span set:html={t("nosotros.objetivo3.text")} />
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h2
+            class="sigmar-ff text-3xl mb-4 text-space-red dark:text-space-yellow"
+          >
+            {t("proyecto.trayectoria.title")}
+          </h2>
+          <p class="kanit-light text-base sm:text-lg leading-relaxed mb-8">
+            {t("proyecto.timeline.desc")}
+          </p>
+
+          <div class="pl-8 space-y-0 relative">
+            <div class="relative pb-10 lg:pb-12 timeline-item" data-date="2025-03">
+              <div
+                class="absolute left-[-26px] top-1.5 bottom-0 w-1 bg-neutral-300 dark:bg-neutral-700 timeline-line"
+              >
+              </div>
+              <div
+                class="absolute -left-[32px] top-1.5 h-4 w-4 rounded-full border-2 border-neutral-300 bg-white dark:border-neutral-400 dark:bg-neutral-900 timeline-dot transition-all duration-300"
+              >
+              </div>
+              <h4 class="sigmar-ff text-xl timeline-title">
+                {t("proyecto.timeline.item1.title")}
+              </h4>
+              <p class="kanit-light text-base sm:text-lg timeline-desc">
+                {t("proyecto.timeline.item1.desc")}
+              </p>
             </div>
-          </li>
-          <li class="flex items-start gap-4">
-            <Trophy class="w-8 h-8 shrink-0 mt-1" />
-            <div>
-              <strong
-                class="kanit-regular text-space-red dark:text-space-yellow"
-                >{t("nosotros.objetivo2.title")}</strong
-              ><br />
-              <span set:html={t("nosotros.objetivo2.text")} />
+
+            <div class="relative pb-10 lg:pb-12 timeline-item" data-date="2026-09">
+              <div
+                class="absolute left-[-26px] top-1.5 bottom-0 w-1 bg-neutral-300 dark:bg-neutral-700 timeline-line"
+              >
+              </div>
+              <div
+                class="absolute -left-[32px] top-1.5 h-4 w-4 rounded-full border-2 border-neutral-300 bg-white dark:border-neutral-400 dark:bg-neutral-900 timeline-dot transition-all duration-300"
+              >
+              </div>
+              <h4 class="sigmar-ff text-xl timeline-title">
+                {t("proyecto.timeline.item2.title")}
+              </h4>
+              <p class="kanit-light text-base sm:text-lg timeline-desc">
+                {t("proyecto.timeline.item2.desc")}
+              </p>
             </div>
-          </li>
-          <li class="flex items-start gap-4">
-            <Globe class="w-8 h-8 shrink-0 mt-1" />
-            <div>
-              <strong
-                class="kanit-regular text-space-red dark:text-space-yellow"
-                >{t("nosotros.objetivo3.title")}</strong
-              ><br />
-              <span set:html={t("nosotros.objetivo3.text")} />
+
+            <div class="relative pb-8 timeline-item" data-date="2027-02">
+              <div
+                class="absolute left-[-26px] top-1.5 bottom-0 w-1 bg-neutral-300 dark:bg-neutral-700 timeline-line"
+              >
+              </div>
+              <div
+                class="absolute -left-[32px] top-1.5 h-4 w-4 rounded-full border-2 border-neutral-300 bg-white dark:border-neutral-400 dark:bg-neutral-900 timeline-dot transition-all duration-300"
+              >
+              </div>
+              <h4 class="sigmar-ff text-xl timeline-title">
+                {t("proyecto.timeline.item3.title")}
+              </h4>
+              <p class="kanit-light text-base sm:text-lg timeline-desc">
+                {t("proyecto.timeline.item3.desc")}
+              </p>
             </div>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
 
       <div id="Equipo">
@@ -129,4 +195,5 @@ const t = useTranslations(lang);
       </div>
     </section>
   </div>
+  <script src="../../scripts/timeline.js"></script>
 </MainLayout>

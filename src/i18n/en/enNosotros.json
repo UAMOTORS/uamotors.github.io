@@ -2,7 +2,7 @@
     "nosotros.mainTitle": "About Us",
     "nosotros.meta.description": "Get to know UAMOTORS: the multidisciplinary UAM team designing, manufacturing, and validating a Formula-style single-seater to compete in Formula SAE.",
     "nosotros.title1": "Who Are We?",
-    "nosotros.title2": "Strategic Objectives",
+    "nosotros.title2": "Our Goals",
     "nosotros.title3": "Team",
     "nosotros.text1": "<strong>UAMOTORS</strong> is a multidisciplinary student team from the <a href='https://www.uam.mx/' target='_blank'> <strong>Universidad Autónoma Metropolitana</strong></a>, founded at Unidad Azcapotzalco in March 2025 by student initiative. We are more than an engineering group; we integrate knowledge from our unit's three academic divisions: <strong>CBI</strong> (Basic Sciences and Engineering), <strong>CSH</strong> (Social Sciences and Humanities), and <strong>CAD</strong> (Sciences and Arts for Design).",
     "nosotros.text2": "Our core purpose is to tackle real-world technological development challenges through the design and construction of a Formula-style race car that complies with <a href='https://www.sae.org/' target='_blank'><strong>Society of Automotive Engineers (SAE)</strong></a> guidelines.",
@@ -10,11 +10,11 @@
     "nosotros.vision.title": "Design Vision",
     "nosotros.mision.text": "We aim to generate a profound educational impact on every member by establishing strategic partnerships with the industry that strengthen technological development in Mexico.",
     "nosotros.vision.text": "Our focus is on building a reliable, cost-effective single-seater optimized for novice drivers, prioritizing manufacturable designs and decisions backed by technical criteria.",
-    "nosotros.objetivos.text": "To establish UAMOTORS as a benchmark, we operate under clear goals:",
-    "nosotros.objetivo1.title": "Safety and Integrity:",
-    "nosotros.objetivo1.text": "Prioritize driver protection and the reliability of all vehicle systems.",
-    "nosotros.objetivo2.title": "Competitiveness:",
-    "nosotros.objetivo2.text": "Build a solid foundation to ensure future UAM generations have a legacy of success in the competition.",
-    "nosotros.objetivo3.title": "International Projection:",
-    "nosotros.objetivo3.text": "Our roadmap includes participating in <a href='https://www.saemx.org/formula-sae-mx' target='_blank'><strong>FSAE México</strong></a> as well as qualifying and competing in <a href='https://www.fsaeonline.com/' target='_blank'><strong>Formula SAE International</strong></a>."
+    "nosotros.objetivos.text": "To establish UAMOTORS as a benchmark, we work toward clear milestones:",
+    "nosotros.objetivo1.title": "Technical Inspection Approval:",
+    "nosotros.objetivo1.text": "Clearing technical inspection under SAE regulations, aiming for every new design to fully satisfy competition safety and rulebook standards.",
+    "nosotros.objetivo2.title": "Top 3 in FSAE Mexico 2027:",
+    "nosotros.objetivo2.text": "Building on our 2026 Top 5 finish, targeting the national podium in 2027 among Mexico's top three collegiate racing teams.",
+    "nosotros.objetivo3.title": "Manufacturing & Cost Efficiency:",
+    "nosotros.objetivo3.text": "Leveraging our 3rd-place podium in the 2026 Cost Event to deliver a competitive, cost-effective car optimized for real-world manufacturing."
 }
