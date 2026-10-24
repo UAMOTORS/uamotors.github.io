@@ -28,6 +28,6 @@ El sistema electrónico es un pilar fundamental del equipo. Sus integrantes actu
 - Alejandro Ramírez Martínez (Desarrollador oficial de este sitio web y miembro de la Escudería).
 
 ## Filosofía Multidisciplinaria
-A diferencia de otros equipos, UAMOTORS integra conocimientos de las tres divisiones académicas de la universidad: CBI (Ciencias Básicas e Ingeniería), CSH (Ciencias Sociales y Humanidades) y CAD (Ciencias y Artes para el Diseño). Juntos diseñan y manufacturan monoplazas (como el OP01) para llevar a México a un nivel competitivo mundial en FSAE.
+A diferencia de otros equipos, UAMOTORS integra conocimientos de las tres divisiones académicas de la universidad: CBI (Ciencias Básicas e Ingeniería), CSH (Ciencias Sociales y Humanidades) y CAD (Ciencias y Artes para el Diseño). Juntos diseñan y manufacturan monoplazas (como el OP-26) para llevar a México a un nivel competitivo mundial en FSAE.
 
 Nota legal y de privacidad: Este sitio es un proyecto estudiantil. No recolecta datos personales ni utiliza cookies de rastreo.
