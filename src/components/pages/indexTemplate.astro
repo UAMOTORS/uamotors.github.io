@@ -9,7 +9,7 @@ import ArrowRight from "../../icons/ArrowRight.astro";
 // import OP_image_vertical from "../../assets/images/OP01_2-transparent.png";
 // import OP_image_mobile from "../../assets/images/OP01_2-transparent-cut.png";
 import OP_image_vertical from "../../assets/images/OP-26_hero.png";
-import OP_image_mobile from "../../assets/images/OP-26_hero-mobile.png";
+// import OP_image_mobile from "../../assets/images/OP-26_hero-mobile.png";
 
 // i18n
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
@@ -42,7 +42,7 @@ const t = useTranslations(lang);
   pageTitle={siteConfig.title + " | Escudería Formula SAE UAM"}
 >
   <div
-    class="jumbo-banner relative flex flex-row items-stretch justify-between w-full pl-4 pr-0 md:px-4 my-8 md:my-12 gap-2 md:gap-6 overflow-hidden md:overflow-visible"
+    class="jumbo-banner relative flex flex-row items-stretch justify-between w-full pl-4 pr-0 md:px-4 my-8 md:my-12 gap-2 md:gap-6 [overflow-x:clip] [overflow-y:visible] md:overflow-visible"
   >
     <!-- <svg 
       class="absolute -top-24 -left-24 sm:-top-36 sm:-left-4 w-[450px] h-[450px] sm:w-[600px] sm:h-[600px] -z-10 pointer-events-none"
@@ -63,12 +63,12 @@ const t = useTranslations(lang);
       <circle cx="50" cy="50" r="50" class="fill-[url(#glow-text-light)] dark:fill-[url(#glow-text-dark)]" />
     </svg> -->
 
-    <div class="w-[60%] md:flex-1 min-w-0 relative z-30 pr-2 md:pr-0 flex flex-col justify-center">
+    <div class="w-[54%] sm:w-[50%] md:flex-1 shrink-0 min-w-0 relative z-30 pr-2 md:pr-0 flex flex-col justify-center">
       {
         siteConfig.hero?.eyebrowText && (
           <span
             id="hero-eyebrow-text"
-            class="tag inline-block mb-2 rounded-full text-sm sm:text-base px-3 py-1 border border-gray-500 kanit-light select-none cursor-pointer"
+            class="tag inline-block w-fit self-start mb-2 rounded-full text-sm sm:text-base px-3 py-1 border border-gray-500 kanit-light select-none cursor-pointer"
             style="touch-action: manipulation;"
           >
             {siteConfig.hero?.eyebrowText}
@@ -88,7 +88,7 @@ const t = useTranslations(lang);
         set:html={t("home.hero.text")}
       />
       <div
-        class="flex flex-wrap items-center text-xs md:text-base gap-3 mt-3 md:mt-12"
+        class="flex flex-col sm:flex-row items-stretch sm:items-center text-xs md:text-base gap-2 sm:gap-3 mt-3 md:mt-12"
       >
         <!-- {
           siteConfig.hero?.actions?.map((action, index) => (
@@ -118,7 +118,7 @@ const t = useTranslations(lang);
       </div>
     </div>
     <div
-      class="w-[40%] md:flex-1 min-w-0 flex justify-end md:justify-center items-center relative group"
+      class="flex-1 min-w-0 relative flex justify-start md:justify-center items-center [overflow-x:clip] [overflow-y:visible] md:overflow-visible group"
     >
       <div
         class="absolute inset-0 bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:40px_40px] opacity-15 dark:opacity-25 pointer-events-none rounded-2xl [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_70%)]"
@@ -126,38 +126,33 @@ const t = useTranslations(lang);
       </div>
 
       <div
-        class="relative h-full w-full flex justify-end md:justify-center items-center transition-transform duration-700 py-2"
+        class="relative h-full w-full flex justify-start md:justify-center items-center transition-transform duration-700 py-2"
       >
-        <div class="absolute inset-x-0 -inset-y-4 pointer-events-none overflow-hidden z-0">
-          <div
-            class="absolute bottom-4 left-0 w-full h-[2px] bg-space-red shadow-[0_0_20px_5px_rgba(227,30,36,0.8)] animate-laser-scan-reverse"
-          >
-          </div>
-        </div>
-
         <div
-          class="relative z-10 animate-car-levitate h-full max-h-[460px] flex justify-end md:justify-center items-center"
+          class="relative z-10 animate-car-levitate h-full max-h-[460px] md:max-h-[500px] aspect-[1400/2795] flex items-center justify-start md:justify-center shrink-0 origin-left md:origin-center"
         >
-          <!-- Carro Desktop -->
+          <!-- Telemetry laser scan: bottom reverse beam -->
+          <div class="laser-beam-container pointer-events-none z-0">
+            <div class="laser-beam-line laser-reverse">
+              <div class="laser-trail-reverse"></div>
+              <div class="laser-core"></div>
+            </div>
+          </div>
+
+          <!-- Carro Completo (Desktop y Movil) -->
           <Image
-            class="hidden md:block w-auto h-full max-h-[460px] object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.3)] dark:drop-shadow-[0_20px_40px_rgba(0,0,0,0.5)]"
+            class="w-full h-full max-w-none object-contain object-left md:object-center select-none pointer-events-none"
             src={OP_image_vertical}
             alt="UAMOTORS Vehicle"
             transition:name="hero-image"
           />
-          <!-- Coche Recortado -->
-          <Image
-            class="block md:hidden w-auto h-full max-h-[380px] object-contain drop-shadow-[0_10px_20px_rgba(0,0,0,0.3)] dark:drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)]"
-            src={OP_image_mobile}
-            alt="UAMOTORS Vehicle Mobile"
-            transition:name="hero-image-mobile"
-          />
-        </div>
 
-        <div class="absolute inset-x-0 -inset-y-4 pointer-events-none overflow-hidden z-20">
-          <div
-            class="absolute top-4 left-0 w-full h-[2px] bg-[#9b0c10] shadow-[0_0_20px_5px_rgba(155,12,16,0.8)] animate-laser-scan"
-          >
+          <!-- Telemetry laser scan: top forward beam -->
+          <div class="laser-beam-container pointer-events-none z-20">
+            <div class="laser-beam-line laser-forward">
+              <div class="laser-trail-forward"></div>
+              <div class="laser-core"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -211,7 +206,9 @@ const t = useTranslations(lang);
 
 <style is:global>
   html.splash-active .animate-laser-scan,
-  html.splash-active .animate-laser-scan-reverse {
+  html.splash-active .animate-laser-scan-reverse,
+  html.splash-active .laser-forward,
+  html.splash-active .laser-reverse {
     animation: none !important;
     opacity: 0 !important;
   }
@@ -444,6 +441,7 @@ const t = useTranslations(lang);
     z-index: 999999 !important;
   }
 
+  /* Legacy laser animations preserved for rollback reference
   @keyframes laser-scan-v4 {
     0% {
       top: 0%;
@@ -529,6 +527,143 @@ const t = useTranslations(lang);
     transform: scaleX(0);
     animation: laser-scan-reverse-v4 12s ease-in-out infinite;
     will-change: bottom, opacity, transform;
+  }
+  */
+
+  /* Optical telemetry laser scan styles */
+  .laser-beam-container {
+    position: absolute;
+    inset: -0.5rem 0;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+  }
+
+  .laser-beam-line {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    will-change: top, bottom, opacity, transform;
+  }
+
+  .laser-core {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to right, transparent 5%, rgba(255, 255, 255, 0.95) 50%, transparent 95%);
+    box-shadow:
+      0 0 14px 3px rgba(227, 30, 36, 0.9),
+      0 0 3px 1px rgba(255, 255, 255, 0.9);
+  }
+
+  .laser-trail-forward {
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    width: 100%;
+    height: 32px;
+    background: linear-gradient(to top, rgba(227, 30, 36, 0.16), transparent);
+    pointer-events: none;
+  }
+
+  .laser-trail-reverse {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 100%;
+    height: 32px;
+    background: linear-gradient(to bottom, rgba(227, 30, 36, 0.16), transparent);
+    pointer-events: none;
+  }
+
+  @keyframes laser-scan-forward-v5 {
+    0% {
+      top: 0%;
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    3% {
+      top: 0%;
+      opacity: 1;
+      transform: scaleX(1);
+    }
+    22% {
+      top: 100%;
+      opacity: 1;
+      transform: scaleX(1);
+    }
+    26% {
+      top: 100%;
+      opacity: 1;
+      transform: scaleX(1);
+    }
+    45% {
+      top: 0%;
+      opacity: 1;
+      transform: scaleX(1);
+    }
+    49% {
+      top: 0%;
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    100% {
+      top: 0%;
+      opacity: 0;
+      transform: scaleX(0);
+    }
+  }
+
+  @keyframes laser-scan-reverse-v5 {
+    0% {
+      bottom: 0%;
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    3% {
+      bottom: 0%;
+      opacity: 1;
+      transform: scaleX(1);
+    }
+    22% {
+      bottom: 100%;
+      opacity: 1;
+      transform: scaleX(1);
+    }
+    26% {
+      bottom: 100%;
+      opacity: 1;
+      transform: scaleX(1);
+    }
+    45% {
+      bottom: 0%;
+      opacity: 1;
+      transform: scaleX(1);
+    }
+    49% {
+      bottom: 0%;
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    100% {
+      bottom: 0%;
+      opacity: 0;
+      transform: scaleX(0);
+    }
+  }
+
+  .laser-forward {
+    opacity: 0;
+    transform: scaleX(0);
+    animation: laser-scan-forward-v5 7s ease-in-out infinite;
+  }
+
+  .laser-reverse {
+    opacity: 0;
+    transform: scaleX(0);
+    animation: laser-scan-reverse-v5 7s ease-in-out infinite;
   }
 
   /*   @media (max-width: 639px) {
@@ -629,17 +764,18 @@ const t = useTranslations(lang);
     overflow-x: clip;
   }
 
+  /* Vehicle levitation synchronized with 7s telemetry scan cycle */
   @keyframes car-levitate-v2 {
     0% {
       transform: scale(1);
     }
-    2% {
+    3% {
       transform: scale(1.025);
     }
-    33% {
+    45% {
       transform: scale(1.025);
     }
-    35% {
+    49% {
       transform: scale(1);
     }
     100% {
@@ -647,7 +783,7 @@ const t = useTranslations(lang);
     }
   }
   .animate-car-levitate {
-    animation: car-levitate-v2 12s ease-in-out infinite;
+    animation: car-levitate-v2 7s ease-in-out infinite;
     will-change: transform;
   }
 </style>
