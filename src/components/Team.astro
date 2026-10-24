@@ -91,37 +91,45 @@ const t = useTranslations(lang);
         </button> */}
 
         {/* Botón con soporte i18n */}
-        <button
-          onclick={`toggleDepto('depto-capitan', this, '${t("team.department")}', '${t("team.close")}')`}
-          class="kanit-regular px-4 py-1.5 rounded-full border border-space-red dark:border-space-yellow text-space-red dark:text-space-yellow hover:bg-space-red hover:text-white dark:hover:bg-space-yellow dark:hover:text-black transition-all duration-300 text-sm md:text-base"
-        >
-          {t("team.department")}
-        </button>
+        {
+          teamData.capitan.integrantes && teamData.capitan.integrantes.length > 0 && (
+            <button
+              onclick={`toggleDepto('depto-capitan', this, '${t("team.department")}', '${t("team.close")}')`}
+              class="kanit-regular px-4 py-1.5 rounded-full border border-space-red dark:border-space-yellow text-space-red dark:text-space-yellow hover:bg-space-red hover:text-white dark:hover:bg-space-yellow dark:hover:text-black transition-all duration-300 text-sm md:text-base"
+            >
+              {t("team.department")}
+            </button>
+          )
+        }
         
       </div>
 
       {/* Acordeon integrantes capitan */}
-      <div id="depto-capitan" class="grid transition-all duration-500 ease-in-out" style="grid-template-rows: 0fr; opacity: 0;">
-        <div class="overflow-hidden">
-          <div class="mt-6 pt-6 border-t border-black/10 dark:border-white/10">
-            <ul class="text-left space-y-4 kanit-light text-base md:text-lg w-full">
-              {teamData.capitan.integrantes.map((integrante) => (
-                <li class="flex items-center justify-between gap-3 w-full">
-                  <div class="flex items-start gap-3">
-                    <span class="w-2 h-2 mt-2.5 rounded-full bg-space-red dark:bg-space-yellow shrink-0" />
-                    <span>{integrante.nombre}</span>
-                  </div>
-                  {integrante.linkedin && (
-                    <a href={integrante.linkedin} target="_blank" rel="noopener noreferrer" class="p-2 -my-2 text-black dark:text-white hover:text-space-red dark:hover:text-space-yellow transition-colors duration-300 shrink-0">
-                      <LinkedinIcon class="w-6 h-6" />
-                    </a>
-                  )}
-                </li>
-              ))}
-            </ul>
+      {
+        teamData.capitan.integrantes && teamData.capitan.integrantes.length > 0 && (
+          <div id="depto-capitan" class="grid transition-all duration-500 ease-in-out" style="grid-template-rows: 0fr; opacity: 0;">
+            <div class="overflow-hidden">
+              <div class="mt-6 pt-6 border-t border-black/10 dark:border-white/10">
+                <ul class="text-left space-y-4 kanit-light text-base md:text-lg w-full">
+                  {teamData.capitan.integrantes.map((integrante) => (
+                    <li class="flex items-center justify-between gap-3 w-full">
+                      <div class="flex items-start gap-3">
+                        <span class="w-2 h-2 mt-2.5 rounded-full bg-space-red dark:bg-space-yellow shrink-0" />
+                        <span>{integrante.nombre}</span>
+                      </div>
+                      {integrante.linkedin && (
+                        <a href={integrante.linkedin} target="_blank" rel="noopener noreferrer" class="p-2 -my-2 text-black dark:text-white hover:text-space-red dark:hover:text-space-yellow transition-colors duration-300 shrink-0">
+                          <LinkedinIcon class="w-6 h-6" />
+                        </a>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        )
+      }
     </div>
   </div>
 
@@ -162,36 +170,44 @@ const t = useTranslations(lang);
               LinkedIn
             </a>
 
-            <button
-              onclick={`toggleDepto('depto-${lider.id}', this, '${t("team.department")}', '${t("team.close")}')`}
-              class="kanit-regular px-4 py-1.5 rounded-full border border-space-red dark:border-space-yellow text-space-red dark:text-space-yellow hover:bg-space-red hover:text-white dark:hover:bg-space-yellow dark:hover:text-black transition-all duration-300 text-sm md:text-base"
-            >
-              {t("team.department")}
-            </button>
+            {
+              lider.integrantes && lider.integrantes.length > 0 && (
+                <button
+                  onclick={`toggleDepto('depto-${lider.id}', this, '${t("team.department")}', '${t("team.close")}')`}
+                  class="kanit-regular px-4 py-1.5 rounded-full border border-space-red dark:border-space-yellow text-space-red dark:text-space-yellow hover:bg-space-red hover:text-white dark:hover:bg-space-yellow dark:hover:text-black transition-all duration-300 text-sm md:text-base"
+                >
+                  {t("team.department")}
+                </button>
+              )
+            }
           </div>
 
           {/* Acordeon integrantes */}
-          <div id={`depto-${lider.id}`} class="grid transition-all duration-500 ease-in-out" style="grid-template-rows: 0fr; opacity: 0;">
-            <div class="overflow-hidden">
-              <div class="mt-6 pt-6 border-t border-black/10 dark:border-white/10">
-                <ul class="text-left space-y-4 kanit-light text-base md:text-lg w-full">
-                  {lider.integrantes.map((integrante) => (
-                    <li class="flex items-center justify-between gap-3 w-full">
-                      <div class="flex items-start gap-3">
-                        <span class="w-2 h-2 mt-2.5 rounded-full bg-space-red dark:bg-space-yellow shrink-0" />
-                        <span>{integrante.nombre ? integrante.nombre : integrante}</span>
-                      </div>
-                      {integrante.linkedin && (
-                        <a href={integrante.linkedin} target="_blank" rel="noopener noreferrer" class="p-2 -my-2 text-black dark:text-white hover:text-space-red dark:hover:text-space-yellow transition-colors duration-300 shrink-0">
-                          <LinkedinIcon class="w-6 h-6" />
-                        </a>
-                      )}
-                    </li>
-                  ))}
-                </ul>
+          {
+            lider.integrantes && lider.integrantes.length > 0 && (
+              <div id={`depto-${lider.id}`} class="grid transition-all duration-500 ease-in-out" style="grid-template-rows: 0fr; opacity: 0;">
+                <div class="overflow-hidden">
+                  <div class="mt-6 pt-6 border-t border-black/10 dark:border-white/10">
+                    <ul class="text-left space-y-4 kanit-light text-base md:text-lg w-full">
+                      {lider.integrantes.map((integrante) => (
+                        <li class="flex items-center justify-between gap-3 w-full">
+                          <div class="flex items-start gap-3">
+                            <span class="w-2 h-2 mt-2.5 rounded-full bg-space-red dark:bg-space-yellow shrink-0" />
+                            <span>{integrante.nombre ? integrante.nombre : integrante}</span>
+                          </div>
+                          {integrante.linkedin && (
+                            <a href={integrante.linkedin} target="_blank" rel="noopener noreferrer" class="p-2 -my-2 text-black dark:text-white hover:text-space-red dark:hover:text-space-yellow transition-colors duration-300 shrink-0">
+                              <LinkedinIcon class="w-6 h-6" />
+                            </a>
+                          )}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
+            )
+          }
 
         </div>
       ))
