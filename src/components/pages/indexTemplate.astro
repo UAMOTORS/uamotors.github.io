@@ -44,7 +44,7 @@ const t = useTranslations(lang);
   <div
     class="jumbo-banner relative flex flex-row items-stretch justify-between w-full pl-4 pr-0 md:px-4 my-8 md:my-12 gap-2 md:gap-6 [overflow-x:clip] [overflow-y:visible] md:overflow-visible"
   >
-    <!-- <svg 
+    {/* <svg 
       class="absolute -top-24 -left-24 sm:-top-36 sm:-left-4 w-[450px] h-[450px] sm:w-[600px] sm:h-[600px] -z-10 pointer-events-none"
       viewBox="0 0 100 100" 
       xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +61,7 @@ const t = useTranslations(lang);
         </radialGradient>
       </defs>
       <circle cx="50" cy="50" r="50" class="fill-[url(#glow-text-light)] dark:fill-[url(#glow-text-dark)]" />
-    </svg> -->
+    </svg> */}
 
     <div class="w-[54%] sm:w-[50%] md:flex-1 shrink-0 min-w-0 relative z-30 pr-2 md:pr-0 flex flex-col justify-center">
       {
@@ -76,12 +76,12 @@ const t = useTranslations(lang);
         )
       }
 
-      <!-- hero title -->
+      {/* hero title */}
       <h1 class="sigmar-ff-italic leading-tight text-balance md:pt-0!">
         {t("home.hero.title")}
       </h1>
 
-      <!-- hero text -->
+      {/* hero text */}
 
       <p
         class="kanit-regular text-balance text-base md:text-lg"
@@ -90,7 +90,7 @@ const t = useTranslations(lang);
       <div
         class="flex flex-col sm:flex-row items-stretch sm:items-center text-xs md:text-base gap-2 sm:gap-3 mt-3 md:mt-12"
       >
-        <!-- {
+        {/* {
           siteConfig.hero?.actions?.map((action, index) => (
             <Button
               href={action.href}
@@ -103,7 +103,7 @@ const t = useTranslations(lang);
               {t("home.hero.btn1")}
             </Button>
           ))
-        } -->
+        } */}
         <Button
           href={lang === "en" ? "en/proyecto" : "/proyecto"}
           class="space-btn-filled !py-2.5"
@@ -131,7 +131,7 @@ const t = useTranslations(lang);
         <div
           class="relative z-10 animate-car-levitate h-full max-h-[460px] md:max-h-[500px] aspect-[1400/2795] flex items-center justify-start md:justify-center shrink-0 origin-left md:origin-center"
         >
-          <!-- Telemetry laser scan: bottom reverse beam -->
+          {/* Telemetry laser scan: bottom reverse beam */}
           <div class="laser-beam-container pointer-events-none z-0">
             <div class="laser-beam-line laser-reverse">
               <div class="laser-trail-reverse"></div>
@@ -139,7 +139,7 @@ const t = useTranslations(lang);
             </div>
           </div>
 
-          <!-- Carro Completo (Desktop y Movil) -->
+          {/* Carro Completo (Desktop y Movil) */}
           <Image
             class="w-full h-full max-w-none object-contain object-left md:object-center select-none pointer-events-none"
             src={OP_image_vertical}
@@ -147,7 +147,7 @@ const t = useTranslations(lang);
             transition:name="hero-image"
           />
 
-          <!-- Telemetry laser scan: top forward beam -->
+          {/* Telemetry laser scan: top forward beam */}
           <div class="laser-beam-container pointer-events-none z-20">
             <div class="laser-beam-line laser-forward">
               <div class="laser-trail-forward"></div>
