@@ -1,5 +1,5 @@
 {
-    "team.lead": "Líder",
-    "team.department": "Departamento",
-    "team.close": "Cerrar"
+  "lead": "Líder",
+  "department": "Departamento",
+  "close": "Cerrar"
 }

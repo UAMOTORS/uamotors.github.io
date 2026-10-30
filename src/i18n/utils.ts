@@ -23,8 +23,34 @@ import enLogros from "./en/enLogros.json";
 import en404 from "./en/en404.json";
 
 // objetos de idiomas
-const es = {...esFooter, ...esTeam, ...esHome, ...esNosotros, ...esProyecto, ...esAliados, ...esContacto, ...esPrivacy, ...esLogros, ...es404};
-const en = {...enFooter, ...enTeam, ...enHome, ...enNosotros, ...enProyecto, ...enAliados, ...enContacto, ...enPrivacy, ...enLogros, ...en404};
+// const es = {...esFooter, ...esTeam, ...esHome, ...esNosotros, ...esProyecto, ...esAliados, ...esContacto, ...esPrivacy, ...esLogros, ...es404};
+// const en = {...enFooter, ...enTeam, ...enHome, ...enNosotros, ...enProyecto, ...enAliados, ...enContacto, ...enPrivacy, ...enLogros, ...en404};
+
+const es = {
+    footer: esFooter,
+    team: esTeam,
+    home: esHome,
+    nosotros: esNosotros,
+    proyecto: esProyecto,
+    aliados: esAliados,
+    contacto: esContacto,
+    privacy: esPrivacy,
+    logros: esLogros,
+    "404": es404
+}
+
+const en = {
+    footer: enFooter,
+    team: enTeam,
+    home: enHome,
+    nosotros: enNosotros,
+    proyecto: enProyecto,
+    aliados: enAliados,
+    contacto: enContacto,
+    privacy: enPrivacy,
+    logros: enLogros,
+    "404": en404
+}
 
 // diccionarios
 const ui = {es, en};
@@ -39,8 +65,24 @@ export function getLangFromUrl(url: URL){
 }
 
 // traducción
+
+type NestedKeyOf<ObjectType extends object> = {
+    [Key in keyof ObjectType & (string | number)]: ObjectType[Key] extends any[]
+        ? never
+        : ObjectType[Key] extends object
+            ? `${Key}.${NestedKeyOf<ObjectType[Key]>}`
+            : `${Key}`;
+}[keyof ObjectType & (string | number)];
+
+type translationKey = NestedKeyOf<typeof ui['es']>;
+
+function getNestedValue(obj: any, path: string): string | undefined {
+    return path.split('.').reduce((acc, part) => acc?.[part], obj);
+}
+
 export function useTranslations(lang: keyof typeof ui){
-    return function t(key: keyof typeof ui['es']){
-        return ui[lang][key] || ui['es'][key];
-    }
+    return function t(key: translationKey){
+        // return ui[lang][key] || ui['es'][key];
+        return getNestedValue(ui[lang], key) || getNestedValue(ui['es'], key) || key;
+    };
 }
