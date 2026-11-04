@@ -1,9 +1,12 @@
 {
-  "logros.meta.title": "Achievements",
-  "logros.meta.desc": "Explore the achievements, awards, and technical milestones of UAMOTORS in Formula SAE.",
-  "logros.main.title": "Achievements",
-  "logros.main.subtitle": "Our journey building the <strong>\"OP\"</strong> race car and representing <strong>the UAM</strong>.",
- 
+  "meta": {
+    "title": "Achievements",
+    "desc": "Explore the achievements, awards, and technical milestones of UAMOTORS in Formula SAE."
+  },
+  "main": {
+    "title": "Achievements",
+    "subtitle": "Our journey building the <strong>\"OP\"</strong> race car and representing <strong>the UAM</strong>."
+  },
   "items": [
     {
       "title": "Best Performance in Virtual Modality",

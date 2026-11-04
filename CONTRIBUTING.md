@@ -8,7 +8,7 @@ Para trabajar en este proyecto, necesitas nociones básicas de:
 
 - **[Astro](https://astro.build/):** El framework principal que usamos. Sirve para crear sitios súper rápidos.
 - **[Tailwind CSS](https://tailwindcss.com/):** Para darle estilos a la página fácilmente mediante clases (_utility-first_).
-- **Markdown (`.md`):** Usamos Markdown para redactar los artículos del blog de manera sencilla.
+- **JSON y TypeScript:** Usamos archivos `.json` para gestionar los textos bilingües (`es` / `en`), logros e información del equipo, y TypeScript para utilidades y configuración.
 
 ### Instalación y Desarrollo Local
 
@@ -39,10 +39,17 @@ Para trabajar en este proyecto, necesitas nociones básicas de:
 
 ### ¿Dónde encuentro cada cosa?
 
-- **Páginas principales (`src/pages/`):** Si necesitas modificar el inicio, nosotros, nuestros aliados o contacto. Cada archivo `.astro` corresponde a una ruta de la página.
-- **Componentes (`src/components/`):** Aquí viven pedazos de código reutilizables, como los botones, la barra de navegación o los logos individuales de cada patrocinador.
-- **Artículos del Blog (`src/content/blogs/`):** Si te pidieron publicar una nueva noticia, aquí es donde creas el archivo `.md`.
-- **Imágenes e Íconos (`src/assets/` y `public/`):** Las fotografías, fondos (Canvas/SVGs) y logos van en estas carpetas.
+- **Rutas por idioma (`src/pages/` y `src/pages/en/`):** Cada archivo `.astro` define una ruta en español (raíz) o en inglés (`/en/*`) e importa su plantilla correspondiente.
+- **Plantillas de páginas (`src/components/pages/`):** Aquí vive el contenido y diseño real de cada sección (`indexTemplate.astro`, `nosotrosTemplate.astro`, `proyectoTemplate.astro`, `logrosTemplate.astro`, `nuestros-aliadosTemplate.astro`, `contactoTemplate.astro`, `privacyTemplate.astro`, `404Template.astro`). Si necesitas modificar la estructura visual de una página, edítala aquí para que el cambio aplique en ambos idiomas.
+- **Traducciones y Textos (`src/i18n/`):**
+  - `src/i18n/es/` y `src/i18n/en/`: Diccionarios JSON anidados por sección (`esNosotros.json`, `enNosotros.json`, etc.).
+  - `src/i18n/utils.ts`: Une los diccionarios y expone la función `useTranslations(lang)` para obtener textos mediante rutas con puntos (ej. `t("nosotros.meta.description")`).
+  - **Logros / Noticias (`esLogros.json` y `enLogros.json`):** Para publicar un nuevo logro, agrégalo al arreglo `"items"` en ambos archivos JSON y coloca su imagen en `src/assets/images/`.
+- **Datos del Equipo y Frases (`src/data/`):** Contiene `team.json` (integrantes y departamentos) y `quotes.json` (frases de la página 404).
+- **Componentes (`src/components/`):** Piezas reutilizables de la interfaz (barra de navegación, botones, carrusel y componentes de logos de patrocinadores en `src/components/logos/` divididos en `gold/`, `silver/` y `bronze/`).
+- **Íconos (`src/icons/`):** Íconos en formato `.astro` organizados en `general/` y `social_media/`.
+- **Imágenes y Archivos Estáticos (`src/assets/` y `public/`):** Fotografías del monoplaza y logos optimizables van en `src/assets/`; fotos de perfil del equipo (`public/profiles/pictures/`), favicons y `llms.txt` van en `public/`.
+- **Configuración Global (`src/site.config.ts`):** Enlaces de navegación, redes sociales, metadatos base y configuración general del sitio.
 
 ### Plantillas de GitHub (Issues y Pull Requests)
 

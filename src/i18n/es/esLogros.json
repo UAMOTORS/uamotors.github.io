@@ -1,9 +1,12 @@
 {
-  "logros.meta.title": "Logros",
-  "logros.meta.desc": "Conoce los hitos, competencias y avances técnicos de UAMOTORS en Fórmula SAE.",
-  "logros.main.title": "Logros",
-  "logros.main.subtitle": "Nuestra historia construyendo el monoplaza <strong>\"OP\"</strong> y representando a la <strong>UAM</strong>.",
-  
+  "meta": {
+    "title": "Logros",
+    "desc": "Conoce los hitos, competencias y avances técnicos de UAMOTORS en Fórmula SAE."
+  },
+  "main": {
+    "title": "Logros",
+    "subtitle": "Nuestra historia construyendo el monoplaza <strong>\"OP\"</strong> y representando a la <strong>UAM</strong>."
+  },
   "items": [
     {
       "title": "Mejor Desempeño en Modalidad Virtual",

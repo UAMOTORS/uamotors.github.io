@@ -1,8 +1,9 @@
 {
-    "footer.rights": " All rights reserved.",
-    "footer.developedBy": "Developed by ",
-    "footer.for": " for UAMOTORS ",
-    "footer.basedOn": " Based on the theme ",
-
-    "footer.privacy.button": "Privacy Notice"
+  "rights": " All rights reserved.",
+  "developedBy": "Developed by ",
+  "for": " for UAMOTORS ",
+  "basedOn": " Based on the theme ",
+  "privacy": {
+    "button": "Privacy Notice"
+  }
 }

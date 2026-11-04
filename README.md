@@ -73,10 +73,14 @@ Para ejecutar o probar este proyecto de forma local, sigue estos pasos:
 
 Astro utiliza una estructura de carpetas específica para organizar el código:
 
-- `src/pages/`: Contiene las páginas y rutas principales (ej. `index.astro`, `nosotros.astro`).
-- `src/content/blogs/`: Directorio donde se añaden los artículos del blog en formato Markdown (`.md`).
-- `src/components/`: Componentes reutilizables de la interfaz.
-- `src/assets/` y `public/`: Recursos gráficos. (`assets` se optimiza al compilar, `public` se sirve directamente).
+- `src/pages/` y `src/pages/en/`: Definen las rutas en español e inglés (ej. `nosotros.astro`, `en/about-us.astro`), además de `rss.xml.ts` y `robots.txt.ts`.
+- `src/components/pages/`: Plantillas principales de cada vista (`*Template.astro`) compartidas entre ambos idiomas.
+- `src/components/`: Componentes reutilizables de la interfaz (navegación, tarjetas, carrusel, `logos/` de patrocinadores por nivel).
+- `src/i18n/`: Sistema de internacionalización (`utils.ts`) y diccionarios JSON anidados en español (`es/`) e inglés (`en/`), incluyendo los logros del equipo (`esLogros.json` / `enLogros.json`).
+- `src/data/`: Datos estructurados en JSON como integrantes del equipo (`team.json`) y frases (`quotes.json`).
+- `src/icons/`: Componentes SVG de íconos generales (`general/`) y redes sociales (`social_media/`).
+- `src/scripts/`: Scripts del lado del cliente (animaciones de aliados, línea del tiempo, radio de pits).
+- `src/assets/` y `public/`: Recursos gráficos y estáticos (`src/assets/` se optimiza al compilar; `public/` sirve directamente favicons, fotos de perfil y `llms.txt`).
 
 ## Despliegue
 
