@@ -48,6 +48,10 @@ Para ejecutar o probar este proyecto de forma local, sigue estos pasos:
    ```bash
    pnpm run dev
    ```
+  o
+     ```bash
+   pnpm run dev --host
+   ``` 
 
    Abre tu navegador en `http://localhost:4321` para ver los cambios en tiempo real.
 
