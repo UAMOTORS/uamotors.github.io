@@ -49,7 +49,7 @@ Para ejecutar o probar este proyecto de forma local, sigue estos pasos:
    pnpm run dev
    ```
   o
-     ```bash
+  ```bash
    pnpm run dev --host
    ``` 
 
