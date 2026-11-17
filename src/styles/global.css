@@ -56,14 +56,11 @@ body {
 }
 
 html.dark body {
-background-image: linear-gradient(
-    to bottom,
-    black 0%,
-    #990000 100%
-  );
+  background-image: linear-gradient(to bottom,
+      var(--color-space-stone) 0%,
+      black 100%);
   @apply bg-black bg-cover bg-no-repeat text-whitesmoke;
 }
-
 html.light body {
   background-image: linear-gradient(180deg, #fdfcfb 0%, #e2d1c3 100%);
   @apply bg-space-sand bg-cover bg-no-repeat text-black;
