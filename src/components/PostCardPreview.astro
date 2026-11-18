@@ -59,14 +59,6 @@ const imgSrc =
       <FormattedDate date={new Date(pubDate)} />
     </div>
 
-    {category && (
-      <span class="rounded-full px-3 py-0.5 text-xs kanit-regular border border-space-red text-space-red bg-space-red/10 dark:border-space-yellow dark:text-space-yellow dark:bg-space-yellow/10">
-        {category}
-      </span>
-      )
-    }
-
-
     <h2
       class={`sigmar-ff text-balance mb-3 text-space-red dark:text-space-yellow ${isFeatured ? "text-2xl sm:text-3xl" : "text-xl sm:text-2xl"}`}
       set:html={title}
@@ -82,10 +74,12 @@ const imgSrc =
       )
     }
     
-    
-
-
-
+    {category && (
+      <span class="rounded-full px-3 py-0.5 text-xs kanit-regular border border-space-red text-space-red bg-space-red/10 dark:border-space-yellow dark:text-space-yellow dark:bg-space-yellow/10">
+        {category}
+      </span>
+      )
+    }
 
   </div>
 </article>
