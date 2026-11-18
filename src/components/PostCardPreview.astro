@@ -24,18 +24,18 @@ type Props = {
     pubDate: string;
     description?: string;
     image?: any;
+    category?:string;
   };
   isFeatured?: boolean;
 };
 
 const { post, isFeatured = false } = Astro.props;
-const { title, pubDate, description, image } = post;
+const { title, pubDate, description, image, category} = post;
 const imgSrc =
   typeof image === "string" && imageMap[image]
     ? imageMap[image]
     : image?.url || image;
 ---
-
 <article
   class={`bg-black/5 dark:bg-white/5 p-6 sm:p-8 rounded-3xl border border-black/10 dark:border-white/10 transition-all duration-300 hover:bg-black/10 dark:hover:bg-white/10 ${isFeatured ? "shadow-md dark:shadow-none" : ""}`}
 >
@@ -52,14 +52,26 @@ const imgSrc =
       </div>
     )
   } 
+
+
   <div class="flex flex-col">
-    <div class="mb-2 text-neutral-500 dark:text-neutral-400">
+    <div class="flex items-center justify-between gap-2 mb-2 text-neutral-500 dark:text-neutral-400">
       <FormattedDate date={new Date(pubDate)} />
     </div>
+
+    {category && (
+      <span class="rounded-full px-3 py-0.5 text-xs kanit-regular border border-space-red text-space-red bg-space-red/10 dark:border-space-yellow dark:text-space-yellow dark:bg-space-yellow/10">
+        {category}
+      </span>
+      )
+    }
+
+
     <h2
       class={`sigmar-ff text-balance mb-3 text-space-red dark:text-space-yellow ${isFeatured ? "text-2xl sm:text-3xl" : "text-xl sm:text-2xl"}`}
       set:html={title}
     />
+    
     {
       description && (
         <p
@@ -69,5 +81,11 @@ const imgSrc =
         </p>
       )
     }
+    
+    
+
+
+
+
   </div>
 </article>

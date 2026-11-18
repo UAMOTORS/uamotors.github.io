@@ -12,19 +12,23 @@
       "title": "Mejor Desempeño en Modalidad Virtual",
       "pubDate": "2026-09-21",
       "description": "El equipo obtuvo la evaluación más destacada en la fase virtual de Formula SAE, sobresaliendo por el rigor en modelado CAD, simulaciones de ingeniería y la defensa técnica del monoplaza.",
-      "image": "4"
+      "image": "4",
+      "category": "Virtual"
+
     },
     {
       "title": "3<sup class='lowercase'>er</sup> lugar en Costs Event",
       "pubDate": "2026-09-21",
       "description": "En nuestro primer año de participación, conquistamos el podio en la prueba de Costs Event, validando la viabilidad económica, control presupuestario y optimización de manufactura del monoplaza.",
-      "image": "5"
+      "image": "5",
+      "category": "Costos"
     },
     {
       "title": "Top 5 Clasificación General",
       "pubDate": "2026-09-21",
       "description": "Posicionamiento dentro de las 5 mejores escuderías en la tabla general de Formula SAE México, consolidando el trabajo de todo el equipo de la UAM frente a universidades de todo el país.",
-      "image": "6"
+      "image": "6",
+      "category": "Clasificación"
     }
   ]
 }
