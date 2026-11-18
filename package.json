@@ -10,19 +10,15 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/preact": "^6.1.1",
     "@astrojs/rss": "4.0.19",
-    "@astrojs/sitemap": "^3.7.4",
-    "@swup/astro": "^1.8.0",
-    "@tailwindcss/vite": "^4.2.1",
-    "astro": "^7.4.4",
-    "preact": "^10.29.0",
-    "sharp": "^0.34.5",
-    "tailwindcss": "^4.2.1"
+    "@astrojs/sitemap": "^3.7.5",
+    "@tailwindcss/vite": "^4.3.5",
+    "astro": "^7.4.12",
+    "tailwindcss": "^4.3.5"
   },
   "devDependencies": {
-    "prettier": "^3.8.1",
-    "prettier-plugin-tailwindcss": "^0.7.2",
-    "typescript": "^5.9.3"
+    "prettier": "^3.10.1",
+    "prettier-plugin-tailwindcss": "^0.8.1",
+    "typescript": "^7.0.2"
   }
 }

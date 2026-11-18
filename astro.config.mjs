@@ -1,5 +1,5 @@
 import { defineConfig } from "astro/config";
-import preact from "@astrojs/preact";
+// import preact from "@astrojs/preact";
 import sitemap from "@astrojs/sitemap";
 
 import tailwindcss from "@tailwindcss/vite";
@@ -16,7 +16,7 @@ export default defineConfig({
     },
   },
   integrations: [
-    preact(),
+    // preact(),
     sitemap({
       filter: (page) => !page.includes("/404"),
     }),
